@@ -1,3 +1,5 @@
+git config --global fetch.prune true
+git config --global pull.rebase preserve
 git config --global push.default simple
 
 git config --global alias.ci "commit"
