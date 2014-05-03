@@ -10,6 +10,8 @@ git config --global alias.lg "log --graph --pretty=format:'%C(auto)%h%d %Cgreen%
 git config --global alias.lp "log -p"
 git config --global alias.st "status"
 
+echo "git config --global user.name \"name\""
+echo "git config --global user.email \"email\""
 echo "git config --global credential.helper"
 echo "    wincred"
 echo "    /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring"
