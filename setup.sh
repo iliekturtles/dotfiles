@@ -9,6 +9,7 @@ git config --global alias.lag "log --all --graph --pretty=format:'%C(auto)%h%d %
 git config --global alias.lg "log --graph --pretty=format:'%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s'"
 git config --global alias.lp "log -p"
 git config --global alias.st "status"
+git config --global alias.unstage "reset HEAD --"
 
 echo "git config --global user.name \"name\""
 echo "git config --global user.email \"email\""
