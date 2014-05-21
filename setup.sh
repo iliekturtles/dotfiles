@@ -20,5 +20,5 @@ echo
 echo "~/.bashrc:"
 echo "    source /usr/share/git-core/contrib/completion/git-prompt.sh"
 echo "    export PS1=\"\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ \""
-echo "    export GIT_PS1_SHOWDIRTYSTATE=*"
-echo "    export GIT_PS1_SHOWSTASHSTATE=$"
+echo "    export GIT_PS1_SHOWDIRTYSTATE="
+echo "    export GIT_PS1_SHOWSTASHSTATE="
