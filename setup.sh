@@ -5,8 +5,8 @@ git config --global push.default simple
 
 git config --global alias.ci "commit"
 git config --global alias.ds "diff --staged"
-git config --global alias.lag "log --all --graph --pretty=changelog"
-git config --global alias.lg "log --graph --pretty=changelog"
+git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
+git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
 git config --global alias.st "status"
 git config --global alias.unstage "reset HEAD --"
