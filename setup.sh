@@ -9,6 +9,7 @@ git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
 git config --global alias.st "status"
 git config --global alias.unstage "reset HEAD --"
+git config --global alias.up "pull --ff-only"
 git config --global alias.update "pull --ff-only"
 
 echo "git config --global user.name \"name\""
