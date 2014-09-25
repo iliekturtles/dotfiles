@@ -12,3 +12,8 @@ highlight Conceal None
 
 au BufEnter * syntax match NonText / / conceal cchar=·
 au BufRead,BufNewFile *.md set filetype=markdown
+
+if has('gui_running')
+    set guifont=Monospace\ 11
+    colorscheme evening
+endif
