@@ -15,7 +15,8 @@ export GIT_PS1_SHOWSTASHSTATE=$
 #export LD_LIBRARY_PATH=/usr/local/lib
 
 # User specific aliases and functions
-alias la='ls -lAh'
+alias la='ls -lAh --color=auto'
+alias ll='ls -lh --color=auto'
 
 # Export $DBUS_SESSION_BUS_ADDRESS when connected via SSH to enable access
 # to gnome-keyring-daemon.
