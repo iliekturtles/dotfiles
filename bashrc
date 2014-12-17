@@ -20,7 +20,9 @@ alias ll='ls -lh --color=auto'
 
 # Export $DBUS_SESSION_BUS_ADDRESS when connected via SSH to enable access
 # to gnome-keyring-daemon.
-if [[ -n $SSH_CLIENT ]]; then
+pgrep "gnome-session" -u "$USER" > /dev/null
+
+if [[ ($? -eq 0) && (-n $SSH_CLIENT) ]]; then
     export $(cat /proc/$(pgrep "gnome-session" -u "$USER")/environ | grep -z "^DBUS_SESSION_BUS_ADDRESS=")
 fi
 
