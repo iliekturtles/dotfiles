@@ -4,6 +4,7 @@ git config --global push.default simple
 
 git config --global alias.ci "commit"
 git config --global alias.ds "diff --staged"
+git config --global alias.fat "fetch --all --tags"
 git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
 git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
