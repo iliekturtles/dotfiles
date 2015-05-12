@@ -6,7 +6,7 @@ set shiftwidth=4
 set t_Co=256
 set tabstop=4
 
-let &colorcolumn=join(range(81, 500), ",")
+let &colorcolumn="81," . join(range(101, 255), ",")
 highlight ColorColumn ctermbg=235
 highlight Conceal None
 
