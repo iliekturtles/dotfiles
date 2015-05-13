@@ -16,6 +16,7 @@ git config --global alias.update "pull --ff-only"
 echo "git config --global user.name \"name\""
 echo "git config --global user.email \"email\""
 echo "git config --global credential.helper"
+echo "   'cache --timeout=14400'"
 echo "    wincred"
 echo "    /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring"
 echo
