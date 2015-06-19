@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'chrisbra/vim-show-whitespace'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'phildawes/racer'
@@ -17,8 +18,6 @@ filetype plugin indent on
 
 " Defaults.
 "set cursorline
-set concealcursor=nvic
-set conceallevel=2
 set encoding=utf-8
 set expandtab
 set gdefault
@@ -55,7 +54,6 @@ nnoremap <leader>X ""X
 " Colors.
 colorscheme elflord
 highlight ColorColumn ctermbg=235
-highlight Conceal None
 
 " Vertical edge.
 let cc81=join(range(81, 255), ",")
@@ -66,8 +64,8 @@ au FileType rust let &l:colorcolumn=cc101
 " Racer.
 let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
 
-" Visible whitespace. Ware the copy and paste.
-au BufEnter * syntax match NonText / / conceal cchar=·
+" Visible whitespace. Ware the copy and paste, <leader>ws to toggle.
+au BufRead,BufNewFile * ShowWhiteToggle
 
 " Markdown syntax highlighting.
 au BufRead,BufNewFile *.md set filetype=markdown
