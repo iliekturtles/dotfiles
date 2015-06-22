@@ -61,7 +61,7 @@ highlight ColorColumn ctermbg=235
 let cc81=join(range(81, 255), ",")
 let cc101=join(range(101, 255), ",")
 let &colorcolumn=cc81
-au FileType rust let &l:colorcolumn=cc101
+au FileType rust,toml let &l:colorcolumn=cc101
 
 " Racer.
 let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
