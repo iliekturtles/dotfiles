@@ -18,6 +18,7 @@ filetype plugin indent on
 
 " Defaults.
 "set cursorline
+set clipboard=unnamed
 set encoding=utf-8
 set expandtab
 set gdefault
@@ -28,6 +29,7 @@ set scrolloff=10
 set shiftwidth=4
 set t_Co=256
 set tabstop=4
+set nowrap
 
 let mapleader=","
 
