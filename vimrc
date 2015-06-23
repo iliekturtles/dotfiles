@@ -36,6 +36,7 @@ let mapleader=","
 nnoremap / /\v
 vnoremap / /\v
 
+nnoremap <leader>, ,
 nnoremap <leader><space> :noh<cr>
 
 " Replace and delete without yanking.
