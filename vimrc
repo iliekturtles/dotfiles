@@ -29,6 +29,7 @@ set scrolloff=10
 set shiftwidth=4
 set t_Co=256
 set tabstop=4
+set tildeop
 set nowrap
 
 let mapleader=","
@@ -66,6 +67,7 @@ au FileType rust,toml let &l:colorcolumn=cc101
 
 " Racer.
 let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
+let $RUST_SRC_PATH="/home/mike/Source/rust/src/"
 
 " Visible whitespace. Ware the copy and paste, <leader>ws to toggle.
 au BufRead,BufNewFile * ShowWhiteToggle
