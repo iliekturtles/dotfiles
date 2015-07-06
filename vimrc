@@ -8,7 +8,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'chrisbra/vim-show-whitespace'
+if !has('patch711')
+    Plugin 'chrisbra/vim-show-whitespace'
+endif
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'phildawes/racer'
@@ -24,6 +26,9 @@ set expandtab
 set gdefault
 set hlsearch incsearch ignorecase smartcase
 set hidden
+if has('patch711')
+    set list listchars=tab:→ ,space:·,trail:·,nbsp:·
+endif
 set showmatch
 set scrolloff=10
 set shiftwidth=4
@@ -39,6 +44,9 @@ vnoremap / /\v
 
 nnoremap <leader>, ,
 nnoremap <leader><space> :noh<cr>
+if has('patch711')
+    nnoremap <leader>ws :set list!<cr>
+endif
 
 " Replace and delete without yanking.
 vnoremap p "_dP
@@ -69,8 +77,10 @@ au FileType rust,toml let &l:colorcolumn=cc101
 let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
 let $RUST_SRC_PATH="/home/mike/Source/rust/src/"
 
-" Visible whitespace. Ware the copy and paste, <leader>ws to toggle.
-au BufRead,BufNewFile * ShowWhiteToggle
+" Visible whitespace.
+if !has('patch711')
+    au BufRead,BufNewFile * ShowWhiteToggle
+endif
 
 " Markdown syntax highlighting.
 au BufRead,BufNewFile *.md set filetype=markdown
