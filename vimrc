@@ -47,6 +47,7 @@ nnoremap <leader><space> :noh<cr>
 if has('patch711')
     nnoremap <leader>ws :set list!<cr>
 endif
+vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
 " Replace and delete without yanking.
 vnoremap p "_dP
