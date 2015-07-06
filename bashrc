@@ -29,3 +29,7 @@ fi
 # Mouse settings to disable acceleration.
 # xinput set-prop 10 262 7
 # xset m 15/2 0
+
+# Disable scroll-lock (Ctrl-s, Ctrl-q)
+stty -ixon
+
