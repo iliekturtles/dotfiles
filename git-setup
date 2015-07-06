@@ -1,3 +1,4 @@
+#git config --global core.pager "less -RS"
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
 git config --global push.default simple
