@@ -12,6 +12,7 @@ export EDITOR=vim
 export PS1="\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
 export GIT_PS1_SHOWDIRTYSTATE=*
 export GIT_PS1_SHOWSTASHSTATE=$
+export RUST_SRC_PATH="~/Source/rust/src"
 #export LD_LIBRARY_PATH=/usr/local/lib
 
 # User specific aliases and functions

@@ -6,14 +6,18 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+if has('python')
+    Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'scrooloose/nerdcommenter'
 if !has('patch711')
     Plugin 'chrisbra/vim-show-whitespace'
 endif
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
-Plugin 'phildawes/racer'
+if !empty($RUST_SRC_PATH)
+    Plugin 'phildawes/racer'
+endif
 
 call vundle#end()
 filetype plugin indent on
@@ -57,12 +61,21 @@ nnoremap d "_d
 nnoremap D "_D
 nnoremap x "_x
 nnoremap X "_X
-nnoremap <leader>c ""c
-nnoremap <leader>C ""C
-nnoremap <leader>d ""d
-nnoremap <leader>D ""D
-nnoremap <leader>x ""x
-nnoremap <leader>X ""X
+if has('clipboard')
+    nnoremap <leader>c "*c
+    nnoremap <leader>C "*C
+    nnoremap <leader>d "*d
+    nnoremap <leader>D "*D
+    nnoremap <leader>x "*x
+    nnoremap <leader>X "*X
+else
+    nnoremap <leader>c ""c
+    nnoremap <leader>C ""C
+    nnoremap <leader>d ""d
+    nnoremap <leader>D ""D
+    nnoremap <leader>x ""x
+    nnoremap <leader>X ""X
+endif
 
 " Colors.
 colorscheme elflord
@@ -75,8 +88,9 @@ let &colorcolumn=cc81
 au FileType rust,toml let &l:colorcolumn=cc101
 
 " Racer.
-let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
-let $RUST_SRC_PATH="/home/mike/Source/rust/src/"
+if !empty($RUST_SRC_PATH)
+    let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
+endif
 
 " Visible whitespace.
 if !has('patch711')
