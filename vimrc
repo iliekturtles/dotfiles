@@ -2,8 +2,13 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('windows') && has('gui')
+    set rtp+=~/vimfiles/bundle/Vundle.vim
+    call vundle#begin('~/vimfiles/bundle')
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
 
 Plugin 'gmarik/Vundle.vim'
 if has('python')
@@ -101,7 +106,7 @@ endif
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " GUI settings.
-if has('gui_running')
-    set guifont=Monospace\ 11
-    colorscheme evening
+if has('gui')
+    set guifont=Consolas:h12
+    syntax on
 endif
