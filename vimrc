@@ -35,6 +35,7 @@ set expandtab
 set gdefault
 set hlsearch incsearch ignorecase smartcase
 set hidden
+set laststatus=2
 if has('patch711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
