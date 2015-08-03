@@ -23,14 +23,6 @@ alias ll='ls -lh --color=auto'
 
 #bind '"\t":complete'
 
-# Export $DBUS_SESSION_BUS_ADDRESS when connected via SSH to enable access
-# to gnome-keyring-daemon.
-pgrep "gnome-session" -u "$USER" > /dev/null
-
-if [[ ($? -eq 0) && (-n $SSH_CLIENT) ]]; then
-    export $(cat /proc/$(pgrep "gnome-session" -u "$USER")/environ | grep -z "^DBUS_SESSION_BUS_ADDRESS=")
-fi
-
 # Mouse settings to disable acceleration.
 # xinput set-prop 10 262 7
 # xset m 15/2 0
