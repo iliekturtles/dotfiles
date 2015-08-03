@@ -15,13 +15,13 @@ export GIT_PS1_SHOWSTASHSTATE=$
 export RUST_SRC_PATH="/home/mike/Source/rust/src"
 #export LD_LIBRARY_PATH=/usr/local/lib
 
-# User specific aliases and functions
+# User specific aliases, bindings, and functions
 alias la='ls -lAh --color=auto'
 alias ll='ls -lh --color=auto'
 #alias grep='grep --color=auto'
 #alias cargo='winpty cargo'
 
-#bind '"\t":menu-complete'
+#bind '"\t":complete'
 
 # Export $DBUS_SESSION_BUS_ADDRESS when connected via SSH to enable access
 # to gnome-keyring-daemon.
