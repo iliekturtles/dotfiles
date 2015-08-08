@@ -39,6 +39,7 @@ set laststatus=2
 if has('patch711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
+set pastetoggle=<F2>
 set showmatch
 set scrolloff=10
 set shiftwidth=4
