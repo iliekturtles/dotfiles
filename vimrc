@@ -105,7 +105,10 @@ if !has('patch711')
 endif
 
 " Markdown syntax highlighting.
-au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.md setfiletype markdown
+" XML syntax highlighting.
+au BufRead,BufNewFile *.proj setfiletype xml
+au BufRead,BufNewFile *.targets setfiletype xml
 
 " GUI settings.
 if has('gui')
