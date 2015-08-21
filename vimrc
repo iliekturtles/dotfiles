@@ -18,6 +18,7 @@ Plugin 'scrooloose/nerdcommenter'
 if !has('patch711')
     Plugin 'chrisbra/vim-show-whitespace'
 endif
+Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 if !empty($RUST_SRC_PATH)
