@@ -86,8 +86,8 @@ else
 endif
 
 " Colors.
-colorscheme elflord
-highlight ColorColumn ctermbg=235
+colorscheme elfmagic
+highlight ColorColumn ctermbg=236
 
 " Vertical edge.
 let cc81=join(range(81, 255), ",")
