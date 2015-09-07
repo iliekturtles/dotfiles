@@ -14,7 +14,9 @@ Plugin 'gmarik/Vundle.vim'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 endif
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 if !has('patch711')
     Plugin 'chrisbra/vim-show-whitespace'
 endif
@@ -61,6 +63,7 @@ nnoremap / /\v
 vnoremap / /\v
 
 nnoremap <leader>, ,
+nnoremap <leader>e :NERDTreeToggle<CR>
 nnoremap <leader><space> :noh<cr>
 if has('patch711')
     nnoremap <leader>ws :set list!<cr>
