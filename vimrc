@@ -42,10 +42,14 @@ set laststatus=2
 if has('patch711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
+set nrformats-=octal
 set pastetoggle=<F2>
-set showmatch
 set scrolloff=10
 set shiftwidth=4
+set showcmd
+set showmatch
+set sidescrolloff=5
+set smarttab
 set t_Co=256
 set tabstop=4
 set tildeop
