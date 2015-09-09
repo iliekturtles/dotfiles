@@ -21,6 +21,11 @@ alias ll='ls -lh --color=auto'
 #alias grep='grep --color=auto'
 #alias cargo='winpty cargo'
 
+#function cargo() {
+#    local cmd=$1
+#    shift && command cargo $cmd --color always $@
+#}
+
 #bind '"\t":complete'
 
 # Mouse settings to disable acceleration.
