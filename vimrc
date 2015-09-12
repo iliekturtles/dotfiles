@@ -59,18 +59,34 @@ set nowrap
 
 let mapleader=","
 
+" Map ,, to ,'s original functionality.
+nnoremap <leader>, ,
+
+" Use very magic searching.
 nnoremap / /\v
 vnoremap / /\v
 
-nnoremap <leader>, ,
-nnoremap <leader>e :NERDTreeToggle<CR>
+" Map e to toggle NERDTree.
+nnoremap <leader>e :NERDTreeToggle<cr>
+
+" Map l to toggle line numbers and rl to toggle relative line numbers.
+nnoremap <leader>l :set number!<cr>
+nnoremap <leader>rl :set number!<cr>:set relativenumber!<cr>
+vnoremap <leader>l :<c-u>set number!<cr>gv
+vnoremap <leader>rl :<c-u>set number!<cr>:<c-u>set relativenumber!<cr>gv
+
+" Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
+
+" Map ws to toggle white space.
 if has('patch711')
     nnoremap <leader>ws :set list!<cr>
 endif
+
+" Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
-" Replace and delete without yanking.
+" Replace and delete without yanking unless <leader> is used.
 vnoremap p "_dP
 nnoremap c "_c
 nnoremap C "_C
