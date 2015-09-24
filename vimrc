@@ -13,7 +13,9 @@ endif
 Plugin 'gmarik/Vundle.vim'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
-endif
+else
+    Plugin 'ervandew/supertab'
+end
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
