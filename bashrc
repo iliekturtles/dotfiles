@@ -1,36 +1,42 @@
-# .bashrc
-source /usr/share/git-core/contrib/completion/git-prompt.sh
+# Source global definitions.
+[ -f /etc/bashrc ] && \
+    . /etc/bashrc
+[ -z "$(type -t __git_ps1)" ] && \
+    source /usr/share/git-core/contrib/completion/git-prompt.sh
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
+# Export environment variables.
 export EDITOR=vim
 export PS1="\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
 export GIT_PS1_SHOWDIRTYSTATE=*
 export GIT_PS1_SHOWSTASHSTATE=$
-export RUST_SRC_PATH="/home/mike/Source/rust/src"
-#export LD_LIBRARY_PATH=/usr/local/lib
+
+# Export environment variables.
+[ -d /s ] && \
+    export SRC_PATH="/s"
+[ -d /home/mike/Source ] && \
+    export SRC_PATH="/home/mike/Source"
+[ -d "$SRC_PATH/rust/src" ] && \
+    export RUST_SRC_PATH="$SRC_PATH/rust/src"
+[ -f "$SRC_PATH/racer/target/release/racer" ] && \
+    export RACER_PATH="$SRC_PATH/racer/target/release/racer"
 
 # User specific aliases, bindings, and functions
 alias la='ls -lAh --color=auto'
 alias ll='ls -lh --color=auto'
-#alias grep='grep --color=auto'
-#alias cargo='winpty cargo'
 
-#function cargo() {
-#    local cmd=$1
-#    shift && command cargo $cmd --color always $@
-#}
+if [ ! -z $MSYSTEM ]; then
+    alias grep='grep --color=auto'
+    alias cargo='winpty cargo'
 
-#bind '"\t":complete'
+    #function cargo() {
+    #    local cmd=$1
+    #    shift && command cargo $cmd --color always $@
+    #}
 
-# Mouse settings to disable acceleration.
-# xinput set-prop 10 262 7
-# xset m 15/2 0
+    bind '"\t":complete'
+    bind '"\e[1;5C":forward-word'
+    bind '"\e[1;5D":backward-word'
+fi
 
 # Disable scroll-lock (Ctrl-s, Ctrl-q)
 stty -ixon

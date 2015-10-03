@@ -27,7 +27,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
-if !empty($RUST_SRC_PATH)
+if !empty($RACER_PATH)
     Plugin 'racer-rust/vim-racer'
 endif
 
@@ -135,8 +135,8 @@ au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
 
 " Racer.
-if !empty($RUST_SRC_PATH)
-    let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
+if !empty($RACER_PATH)
+    let g:racer_cmd=$RACER_PATH
 endif
 
 " GUI settings.
