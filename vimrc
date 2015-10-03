@@ -28,7 +28,7 @@ Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
 if !empty($RUST_SRC_PATH)
-    Plugin 'phildawes/racer'
+    Plugin 'racer-rust/vim-racer'
 endif
 
 call vundle#end()
@@ -122,21 +122,22 @@ let cc101=join(range(101, 255), ",")
 let &colorcolumn=cc81
 au FileType rust,toml let &l:colorcolumn=cc101
 
-" Racer.
-if !empty($RUST_SRC_PATH)
-    let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
-endif
+" Compiler settings.
+au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
 
 " Visible whitespace.
 if !has('patch711')
     au BufRead,BufNewFile * ShowWhiteToggle
 endif
 
-" Markdown syntax highlighting.
+" Syntax highlighting.
 au BufRead,BufNewFile *.md setfiletype markdown
-" XML syntax highlighting.
-au BufRead,BufNewFile *.proj setfiletype xml
-au BufRead,BufNewFile *.targets setfiletype xml
+au BufRead,BufNewFile *.proj,*.targets setfiletype xml
+
+" Racer.
+if !empty($RUST_SRC_PATH)
+    let g:racer_cmd="/home/mike/Source/racer/target/release/racer"
+endif
 
 " GUI settings.
 if has('gui')
