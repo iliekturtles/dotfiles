@@ -1,4 +1,3 @@
-git config --global core.commentChar auto
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
 git config --global push.default simple
@@ -18,9 +17,11 @@ git config --global alias.up "pull --ff-only"
 git config --global alias.update "pull --ff-only"
 
 if [ ! -z $MSYSTEM ]; then
+    git config --global core.commentChar ";"
     git config --global core.pager "less -RS"
     git config --global credential.helper wincred
 else
+    git config --global core.commentChar auto
     git config --global credential.helper 'cache --timeout=14400'
 fi
 
