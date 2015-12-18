@@ -35,6 +35,8 @@ call vundle#end()
 filetype plugin indent on
 
 " Defaults.
+set background=dark
+set backspace=indent,eol,start
 "set cursorline
 set clipboard=unnamed
 set encoding=utf-8
@@ -46,18 +48,24 @@ set laststatus=2
 if has('patch711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
+set nowrap
 set nrformats-=octal
 set pastetoggle=<F2>
+set ruler
 set scrolloff=10
 set shiftwidth=4
 set showcmd
 set showmatch
 set sidescrolloff=5
 set smarttab
+" Show EOL type and last modified timestamp, right after the filename
+set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
 set t_Co=256
 set tabstop=4
 set tildeop
-set nowrap
+set vb
+
+syntax on
 
 let mapleader=","
 
@@ -142,5 +150,4 @@ endif
 " GUI settings.
 if has('gui')
     set guifont=Consolas:h12
-    syntax on
 endif
