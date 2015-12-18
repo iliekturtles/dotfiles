@@ -99,25 +99,43 @@ vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 " Replace and delete without yanking unless <leader> is used.
 vnoremap p "_dP
 nnoremap c "_c
+vnoremap c "_c
 nnoremap C "_C
+vnoremap C "_C
 nnoremap d "_d
+vnoremap d "_d
 nnoremap D "_D
+vnoremap D "_D
 nnoremap x "_x
+vnoremap x "_x
 nnoremap X "_X
+vnoremap X "_X
 if has('clipboard')
     nnoremap <leader>c "*c
+    vnoremap <leader>c "*c
     nnoremap <leader>C "*C
+    vnoremap <leader>C "*C
     nnoremap <leader>d "*d
+    vnoremap <leader>d "*d
     nnoremap <leader>D "*D
+    vnoremap <leader>D "*D
     nnoremap <leader>x "*x
+    vnoremap <leader>x "*x
     nnoremap <leader>X "*X
+    vnoremap <leader>X "*X
 else
     nnoremap <leader>c ""c
+    vnoremap <leader>c ""c
     nnoremap <leader>C ""C
+    vnoremap <leader>C ""C
     nnoremap <leader>d ""d
+    vnoremap <leader>d ""d
     nnoremap <leader>D ""D
+    vnoremap <leader>D ""D
     nnoremap <leader>x ""x
+    vnoremap <leader>x ""x
     nnoremap <leader>X ""X
+    vnoremap <leader>X ""X
 endif
 
 " Colors.
