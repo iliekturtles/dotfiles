@@ -13,8 +13,8 @@ export GIT_PS1_SHOWSTASHSTATE=$
 # Export environment variables.
 [ -d /s ] && \
     export SRC_PATH="/s"
-[ -d /home/mike/Source ] && \
-    export SRC_PATH="/home/mike/Source"
+[ -d $HOME/Source ] && \
+    export SRC_PATH="$HOME/Source"
 [ -d "$SRC_PATH/rust/src" ] && \
     export RUST_SRC_PATH="$SRC_PATH/rust/src"
 [ -f "$SRC_PATH/racer/target/release/racer" ] && \
