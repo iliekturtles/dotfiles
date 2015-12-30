@@ -27,6 +27,8 @@ export GIT_PS1_SHOWSTASHSTATE=$
 [ -f "$SRC_PATH/racer/target/release/racer" ] && \
     export RACER_PATH="$SRC_PATH/racer/target/release/racer"
 pathadd "$HOME/.cargo/bin"
+[ -d "$HOME/.multirust/toolchains/stable/cargo/bin" ] && \
+    pathadd "$HOME/.multirust/toolchains/stable/cargo/bin"
 
 # User specific aliases, bindings, and functions
 alias la='ls -lAh --color=auto'
