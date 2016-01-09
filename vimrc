@@ -15,6 +15,9 @@ if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
     Plugin 'ervandew/supertab'
+    if !empty($RACER_PATH)
+        Plugin 'racer-rust/vim-racer'
+    endif
 end
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -27,9 +30,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
-if !empty($RACER_PATH)
-    Plugin 'racer-rust/vim-racer'
-endif
 
 call vundle#end()
 filetype plugin indent on
@@ -208,9 +208,16 @@ au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
 au BufRead,BufNewFile tmux.conf setfiletype tmux
 
-" Racer.
-if !empty($RACER_PATH)
-    let g:racer_cmd=$RACER_PATH
+if has('python')
+    " YouCompleteMe.
+    let g:ycm_rust_src_path=$RUST_SRC_PATH
+    nnoremap <leader>] :YcmCompleter GoTo<CR>
+    "nnoremap <leader>} :YcmCompleter GoToReferences<CR>
+else
+    " Racer.
+    if !empty($RACER_PATH)
+        let g:racer_cmd=$RACER_PATH
+    endif
 endif
 
 " GUI settings.
