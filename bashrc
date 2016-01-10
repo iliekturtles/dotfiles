@@ -33,6 +33,7 @@ pathadd "$HOME/.cargo/bin"
 # User specific aliases, bindings, and functions
 alias la='ls -lAh --color=auto'
 alias ll='ls -lh --color=auto'
+alias irssi='TERM=screen irssi'
 
 if [ ! -z $MSYSTEM ]; then
     export PS1="\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
