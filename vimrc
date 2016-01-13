@@ -206,7 +206,7 @@ endif
 " Syntax highlighting.
 au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
-au BufRead,BufNewFile tmux.conf setfiletype tmux
+au BufRead,BufNewFile tmux*.conf setfiletype tmux
 
 if has('python')
     " YouCompleteMe.
