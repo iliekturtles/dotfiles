@@ -27,6 +27,8 @@ if !has('patch711')
 endif
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
