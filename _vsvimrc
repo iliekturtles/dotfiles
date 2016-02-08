@@ -3,6 +3,7 @@ set clipboard=unnamed
 set hlsearch incsearch ignorecase smartcase
 set nrformats-=octal
 set scrolloff=5
+set selection=exclusive
 set tildeop
 set vsvim_useeditorindent
 set vsvim_useeditortab
