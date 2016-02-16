@@ -47,4 +47,7 @@ vnoremap <leader>x "*x
 nnoremap <leader>X "*X
 vnoremap <leader>X "*X
 
+nnoremap [<space> O<esc>
+nnoremap ]<space> o<esc>
+
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
