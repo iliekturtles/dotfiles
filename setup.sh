@@ -1,3 +1,4 @@
+cp bash_profile ~/.bash_profile
 cp bashrc ~/.bashrc
 
 if [ ! -z $MSYSTEM ]; then
@@ -8,7 +9,7 @@ else
     cp tmux.conf ~/.tmux.conf
 fi
 
-. ~/.bashrc
+. ~/.bash_profile
 
 ./git-setup.sh
 
