@@ -111,6 +111,10 @@ nnoremap d "_d
 vnoremap d "_d
 nnoremap D "_D
 vnoremap D "_D
+nnoremap s "_s
+vnoremap s "_s
+nnoremap S "_S
+vnoremap S "_S
 nnoremap x "_x
 vnoremap x "_x
 nnoremap X "_X
@@ -124,6 +128,10 @@ if has('clipboard')
     vnoremap <leader>d "*d
     nnoremap <leader>D "*D
     vnoremap <leader>D "*D
+    nnoremap <leader>s "*s
+    vnoremap <leader>s "*s
+    nnoremap <leader>S "*S
+    vnoremap <leader>S "*S
     nnoremap <leader>x "*x
     vnoremap <leader>x "*x
     nnoremap <leader>X "*X
@@ -137,6 +145,10 @@ else
     vnoremap <leader>d ""d
     nnoremap <leader>D ""D
     vnoremap <leader>D ""D
+    nnoremap <leader>s ""s
+    vnoremap <leader>s ""s
+    nnoremap <leader>S ""S
+    vnoremap <leader>S ""S
     nnoremap <leader>x ""x
     vnoremap <leader>x ""x
     nnoremap <leader>X ""X
