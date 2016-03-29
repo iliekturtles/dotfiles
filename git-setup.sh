@@ -1,6 +1,7 @@
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
 git config --global push.default simple
+git config --global push.recurseSubmodules check
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
 
 git config --global alias.ci "commit --verbose"
