@@ -29,6 +29,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-scripts/matchit.zip'
 Plugin 'OrangeT/vim-csharp'
 Plugin 'rust-lang/rust.vim'
 Plugin 'cespare/vim-toml'
@@ -37,16 +38,19 @@ call vundle#end()
 filetype plugin indent on
 
 " Defaults.
+set autowrite
 set background=dark
 set backspace=indent,eol,start
 "set cursorline
 set clipboard=unnamed
 set encoding=utf-8
 set expandtab
+set fo+=j               " Remove comment leader when joining lines.
 set gdefault
 set hlsearch incsearch ignorecase smartcase
 set hidden
 set laststatus=2
+set lazyredraw
 if has('patch711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
@@ -70,6 +74,9 @@ set vb
 syntax on
 
 let mapleader=","
+
+" Map kj to leave insert mode.
+imap kj <Esc>
 
 " Map ,, to ,'s original functionality.
 nnoremap <leader>, ,
@@ -95,11 +102,18 @@ if has('patch711')
     nnoremap <leader>ws :set list!<cr>
 endif
 
+" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
+
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
 " Map h to toggle hex mode.
 nnoremap <leader>h :Hexmode<CR>
+
+" Map Y yank to the end of the line.
+noremap Y y$
 
 " Replace and delete without yanking unless <leader> is used.
 vnoremap p "_dP

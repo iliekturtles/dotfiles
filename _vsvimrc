@@ -10,6 +10,9 @@ set vsvim_useeditortab
 
 let mapleader=","
 
+" Map kj to leave insert mode.
+imap kj <Esc>
+
 " Map ,, to ,'s original functionality.
 nnoremap <leader>, ,
 
@@ -19,6 +22,13 @@ vnoremap / /\v
 
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
+
+" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
+
+" Map Y yank to the end of the line.
+noremap Y y$
 
 " Replace and delete without yanking unless <leader> is used.
 vnoremap p "_dP
