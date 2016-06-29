@@ -1,4 +1,5 @@
 git config --global commit.verbose true
+git config --global core.excludesfile "~/.gitignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
@@ -30,5 +31,6 @@ else
     git config --global credential.helper 'cache --timeout=14400'
 fi
 
+cp gitignore ~/.gitignore
 echo "git config --global user.name \"name\""
 echo "git config --global user.email \"email\""
