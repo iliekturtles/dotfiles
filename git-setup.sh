@@ -28,6 +28,7 @@ if [ ! -z $MSYSTEM ]; then
 else
     git config --global core.autocrlf input
     git config --global core.commentChar auto
+    git config --global core.pager "less -S"
     git config --global credential.helper 'cache --timeout=14400'
 fi
 

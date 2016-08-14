@@ -14,6 +14,5 @@ pathsuffix() {
 
 # Setup PATH.
 pathsuffix "$HOME/.cargo/bin"
-pathsuffix "$HOME/.multirust/toolchains/stable/cargo/bin"
 pathsuffix "$HOME/.local/bin"
 pathsuffix "$HOME/bin"

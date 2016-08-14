@@ -15,7 +15,7 @@ if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
     Plugin 'ervandew/supertab'
-    if !empty($RACER_PATH)
+    if !empty($CARGO_HOME)
         Plugin 'racer-rust/vim-racer'
     endif
 end
@@ -271,8 +271,8 @@ if has('python')
     "nnoremap <leader>} :YcmCompleter GoToReferences<CR>
 else
     " Racer.
-    if !empty($RACER_PATH)
-        let g:racer_cmd=$RACER_PATH
+    if !empty($CARGO_HOME)
+        let g:racer_cmd="$CARGO_HOME/bin/racer"
     endif
 endif
 
