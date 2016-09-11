@@ -1,3 +1,4 @@
+#!sh
 git config --global commit.verbose true
 git config --global core.excludesfile "~/.gitignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"

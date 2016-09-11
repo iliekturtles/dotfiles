@@ -1,3 +1,4 @@
+#!sh
 mkdir -p ~/.vim/colors
 mkdir -p ~/.vim/syntax
 cp vimrc ~/.vim/vimrc
