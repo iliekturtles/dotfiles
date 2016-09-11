@@ -30,8 +30,6 @@ export GIT_PS1_SHOWSTASHSTATE=$
     export SRC_PATH="$HOME/Source"
 [ -d "$SRC_PATH/rust/src" ] && \
     export RUST_SRC_PATH="$SRC_PATH/rust/src"
-[ -d "$HOME/.cargo" ] && \
-    export CARGO_HOME="$HOME/.cargo"
 
 # User specific aliases, bindings, and functions
 alias grep='grep --color=auto'
