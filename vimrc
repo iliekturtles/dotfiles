@@ -42,7 +42,6 @@ set autowrite
 set background=dark
 set backspace=indent,eol,start
 "set cursorline
-set clipboard=unnamed
 set encoding=utf-8
 set expandtab
 set fo+=j               " Remove comment leader when joining lines.
@@ -112,58 +111,56 @@ nnoremap <leader>h :Hexmode<CR>
 noremap Y y$
 
 " Replace and delete without yanking unless <leader> is used.
-vnoremap p "_dP
-nnoremap c "_c
-vnoremap c "_c
-nnoremap C "_C
-vnoremap C "_C
-nnoremap d "_d
-vnoremap d "_d
-nnoremap D "_D
-vnoremap D "_D
-nnoremap s "_s
-vnoremap s "_s
-nnoremap S "_S
-vnoremap S "_S
-nnoremap x "_x
-vnoremap x "_x
-nnoremap X "_X
-vnoremap X "_X
-if has('clipboard')
-    nnoremap <leader>c "*c
-    vnoremap <leader>c "*c
-    nnoremap <leader>C "*C
-    vnoremap <leader>C "*C
-    nnoremap <leader>d "*d
-    vnoremap <leader>d "*d
-    nnoremap <leader>D "*D
-    vnoremap <leader>D "*D
-    nnoremap <leader>s "*s
-    vnoremap <leader>s "*s
-    nnoremap <leader>S "*S
-    vnoremap <leader>S "*S
-    nnoremap <leader>x "*x
-    vnoremap <leader>x "*x
-    nnoremap <leader>X "*X
-    vnoremap <leader>X "*X
+if has('xterm_clipboard')
+    set clipboard^=unnamed,unnamedplus
+    let s:register = '+'
+elseif has('clipboard')
+    set clipboard^=unnamed
+    let s:register = '*'
 else
-    nnoremap <leader>c ""c
-    vnoremap <leader>c ""c
-    nnoremap <leader>C ""C
-    vnoremap <leader>C ""C
-    nnoremap <leader>d ""d
-    vnoremap <leader>d ""d
-    nnoremap <leader>D ""D
-    vnoremap <leader>D ""D
-    nnoremap <leader>s ""s
-    vnoremap <leader>s ""s
-    nnoremap <leader>S ""S
-    vnoremap <leader>S ""S
-    nnoremap <leader>x ""x
-    vnoremap <leader>x ""x
-    nnoremap <leader>X ""X
-    vnoremap <leader>X ""X
+    let s:register = '"'
 endif
+
+function! s:reg()
+    echom v:register . ', ' . s:register
+    return v:register ==# s:register ? '"_' : ''
+endfunction
+
+vnoremap <expr> p '"_d"' . v:register . 'P'
+vnoremap <leader>p p
+
+nnoremap <expr> c <sid>reg() . 'c'
+nnoremap <leader>c c
+vnoremap <expr> c <sid>reg() . 'c'
+vnoremap <leader>c c
+nnoremap <expr> C <sid>reg() . 'C'
+nnoremap <leader>C C
+vnoremap <expr> C <sid>reg() . 'C'
+vnoremap <leader>C C
+nnoremap <expr> d <sid>reg() . 'd'
+nnoremap <leader>d d
+vnoremap <expr> d <sid>reg() . 'd'
+vnoremap <leader>d d
+nnoremap <expr> D <sid>reg() . 'D'
+nnoremap <leader>D D
+vnoremap <expr> D <sid>reg() . 'D'
+vnoremap <leader>D D
+nnoremap <expr> s <sid>reg() . 's'
+nnoremap <leader>s s
+vnoremap <expr> s <sid>reg() . 's'
+vnoremap <leader>s s
+nnoremap <expr> S <sid>reg() . 'S'
+nnoremap <leader>S S
+vnoremap <expr> S <sid>reg() . 'S'
+vnoremap <leader>S S
+nnoremap <expr> x <sid>reg() . 'x'
+nnoremap <leader>x x
+vnoremap <expr> x <sid>reg() . 'x'
+vnoremap <leader>x x
+nnoremap <expr> X <sid>reg() . 'X'
+nnoremap <leader>X X
+vnoremap <expr> X <sid>reg() . 'X'
+vnoremap <leader>X X
 
 " Smart window switching with awareness of Tmux panes. Now, I can use Ctrl+hjkl
 " in both Vim and Tmux (without using the prefix). Based on
