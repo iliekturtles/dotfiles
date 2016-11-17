@@ -102,10 +102,6 @@ if has('patch711')
     nnoremap <leader>ws :set list!<cr>
 endif
 
-" Stay in visual mode when indenting.
-vnoremap < <gv
-vnoremap > >gv
-
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
