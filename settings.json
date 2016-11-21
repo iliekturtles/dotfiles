@@ -1,0 +1,36 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.lineNumbers": "off",
+    "editor.rulers": [100],
+    "editor.insertSpaces": false,
+    "editor.wrappingColumn": -1,
+    "editor.cursorStyle": "block",
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "files.exclude": {
+        "**/.vs": true
+    },
+    "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
+    // Vim configuration
+    "vim.useSystemClipboard": false,
+    "vim.hlsearch": false,
+    "vim.otherModesKeyBindings": [],
+    "vim.otherModesKeyBindingsNonRecursive": [
+        // { "before": ["c"], "after": ["\"", "\"", "c"] },
+        // { "before": [",", "c"], "after": ["c"] },
+        // { "before": ["C"], "after": ["\"", "\"", "C"] },
+        // { "before": [",", "C"], "after": ["c"] },
+        // { "before": ["d"], "after": ["\"", "\"", "d"] },
+        // { "before": [",", "d"], "after": ["\"", "*", "d"] },
+        // { "before": ["D"], "after": ["\"", "\"", "D"] }
+
+        // { "before": ["p"], "after": ["\"", "*", "p"] },
+        // { "before": ["P"], "after": ["\"", "*", "P"] },
+        // { "before": ["y"], "after": ["\"", "*", "y"] },
+        // { "before": ["Y"], "after": ["\"", "*", "y", "$"] }
+    ],
+    "vim.insertModeKeyBindings": [],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        { "before": ["k", "j"], "after": ["<escape>"] }
+    ]
+}
