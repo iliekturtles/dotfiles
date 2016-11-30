@@ -3,7 +3,9 @@ git config --global commit.verbose true
 git config --global core.excludesfile "~/.gitignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
 git config --global fetch.prune true
+git config --global merge.ff only
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
+git config --global pull.ff only
 git config --global push.default simple
 git config --global push.recurseSubmodules check
 git config --global submodule.fetchJobs 0
