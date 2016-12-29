@@ -22,7 +22,7 @@ end
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-if !has('patch711')
+if !has('patch-7.4-711')
     Plugin 'chrisbra/vim-show-whitespace'
 endif
 Plugin 'tpope/vim-repeat'
@@ -50,7 +50,7 @@ set hlsearch incsearch ignorecase smartcase
 set hidden
 set laststatus=2
 set lazyredraw
-if has('patch711')
+if has('patch-7.4-711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
 set nowrap
@@ -97,7 +97,7 @@ vnoremap <leader>rl :<c-u>set number!<cr>:<c-u>set relativenumber!<cr>gv
 nnoremap <leader><space> :noh<cr>
 
 " Map ws to toggle white space.
-if has('patch711')
+if has('patch-7.4-711')
     nnoremap <leader>ws :set list!<cr>
 endif
 
@@ -248,7 +248,7 @@ au FileType rust,toml let &l:colorcolumn=cc101
 au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
 
 " Visible whitespace.
-if !has('patch711')
+if !has('patch-7.4-711')
     au BufRead,BufNewFile * ShowWhiteToggle
 endif
 
