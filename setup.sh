@@ -8,7 +8,9 @@ if [ ! -z $MSYSTEM ]; then
     dos2unix -n tmux.conf ~/.tmux.conf
     cp _vsvimrc ~/_vsvimrc
     cp minttyrc ~/.minttyrc
-    cat settings.json | envsubst > ~/AppData/Roaming/Code/User/settings.json
+
+    [ -d "$HOME/AppData/Roaming/Code/User" ] && \
+        cat settings.json | envsubst > ~/AppData/Roaming/Code/User/settings.json
 else
     cp tmux.conf ~/.tmux.conf
 fi
