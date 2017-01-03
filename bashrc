@@ -42,8 +42,8 @@ alias irssi='TERM=screen irssi'
 if [ ! -z $MSYSTEM ]; then
     export PS1="\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
 
-    [ -d /usr/share/terminfo ] && \
-        export TERMINFO=$(cygpath -w /usr/share/terminfo)
+    #[ -d /usr/share/terminfo ] && \
+    #    export TERMINFO=$(cygpath -w /usr/share/terminfo)
 
     alias cargo='winpty cargo'
 
