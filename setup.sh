@@ -4,10 +4,11 @@ cp bash_profile ~/.bash_profile
 cp bashrc ~/.bashrc
 
 mkdir -p ~/.config/git
-mkdir -p ~/.config/mintty
 
 # Setup tmux, VsVim, mintty, and VSCode.
 if [ ! -z $MSYSTEM ]; then
+    mkdir -p ~/.config/mintty
+
     dos2unix -n tmux.conf ~/.tmux.conf
     cp _vsvimrc ~/_vsvimrc
     cp minttyrc ~/.config/mintty/config
