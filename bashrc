@@ -28,10 +28,12 @@ export GIT_PS1_SHOWSTASHSTATE=$
     export SRC_PATH="/s"
 [ -d "$HOME/Source" ] && \
     export SRC_PATH="$HOME/Source"
-[ -d "$SRC_PATH/rust/src" ] && \
-    export RUST_SRC_PATH="$SRC_PATH/rust/src"
+if hash rustc 2>/dev/null; then
+    [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ] && \
+        export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
 
-# User specific aliases, bindings, and functions
+# User specific aliases, bindings, and functions.
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -57,7 +59,7 @@ if [ ! -z $MSYSTEM ]; then
     bind '"\e[1;5D":backward-word'
 fi
 
-# Disable scroll-lock (Ctrl-s, Ctrl-q)
+# Disable scroll-lock (Ctrl-s, Ctrl-q).
 stty -ixon
 
 # Check the window seize after each command.
