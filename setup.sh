@@ -8,13 +8,14 @@ mkdir -p ~/.config/git
 # Setup tmux, VsVim, mintty, and VSCode.
 if [ ! -z $MSYSTEM ]; then
     mkdir -p ~/.config/mintty
+    mkdir -p ~/AppData/Roaming/KeePass
+    mkdir -p ~/AppData/Roaming/Code/User
 
     dos2unix -n tmux.conf ~/.tmux.conf
     cp _vsvimrc ~/_vsvimrc
     cp minttyrc ~/.config/mintty/config
-
-    [ -d "$HOME/AppData/Roaming/Code/User" ] && \
-        cat settings.json | envsubst > ~/AppData/Roaming/Code/User/settings.json
+    cp KeePass.config.xml ~/AppData/Roaming/KeePass
+    cat settings.json | envsubst > ~/AppData/Roaming/Code/User/settings.json
 else
     cp tmux.conf ~/.tmux.conf
 fi
