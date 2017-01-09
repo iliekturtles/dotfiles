@@ -7,15 +7,51 @@
     "editor.cursorStyle": "block",
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
+    "workbench.editor.showTabCloseButton": false,
     "files.exclude": {
         "**/.vs": true
     },
     "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
     // Vim configuration
-    "vim.useSystemClipboard": false,
-    "vim.hlsearch": false,
+    "vim.leader": ",",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.easymotion": true,
     "vim.otherModesKeyBindings": [],
     "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": ["Z", "Z"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.files.save",
+                    "args": []
+                },
+                {
+                    "command": "workbench.action.closeActiveEditor",
+                    "args": []
+                }
+            ]
+        },
+        { "before": ["Y"], "after": ["y", "$"] },
+        { "before": ["c"], "after": ["\"", "1", "c"] },
+        { "before": ["C"], "after": ["\"", "1", "C"] },
+        { "before": ["d"], "after": ["\"", "1", "d"] },
+        { "before": ["D"], "after": ["\"", "1", "D"] },
+        { "before": ["s"], "after": ["\"", "1", "s"] },
+        { "before": ["S"], "after": ["\"", "1", "S"] },
+        { "before": ["x"], "after": ["\"", "1", "x"] },
+        { "before": ["X"], "after": ["\"", "1", "X"] },
+        { "before": ["<leader>", "c"], "after": ["c"] }
+        { "before": ["<leader>", "C"], "after": ["C"] }
+        { "before": ["<leader>", "d"], "after": ["d"] }
+        { "before": ["<leader>", "D"], "after": ["D"] }
+        { "before": ["<leader>", "s"], "after": ["s"] }
+        { "before": ["<leader>", "S"], "after": ["S"] }
+        { "before": ["<leader>", "x"], "after": ["x"] }
+        { "before": ["<leader>", "X"], "after": ["X"] }
+        { "before": ["[", "<space>"], "after": ["O", "<esc>"] }
+        { "before": ["]", "<space>"], "after": ["o", "<esc>"] }
         // { "before": ["c"], "after": ["\"", "\"", "c"] },
         // { "before": [",", "c"], "after": ["c"] },
         // { "before": ["C"], "after": ["\"", "\"", "C"] },
@@ -23,7 +59,6 @@
         // { "before": ["d"], "after": ["\"", "\"", "d"] },
         // { "before": [",", "d"], "after": ["\"", "*", "d"] },
         // { "before": ["D"], "after": ["\"", "\"", "D"] }
-
         // { "before": ["p"], "after": ["\"", "*", "p"] },
         // { "before": ["P"], "after": ["\"", "*", "P"] },
         // { "before": ["y"], "after": ["\"", "*", "y"] },
