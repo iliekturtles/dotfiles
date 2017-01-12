@@ -8,6 +8,7 @@
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "workbench.editor.showTabCloseButton": false,
+    "window.openFilesInNewWindow": false,
     "files.exclude": {
         "**/.vs": true
     },
