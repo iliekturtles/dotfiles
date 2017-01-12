@@ -43,27 +43,16 @@
         { "before": ["S"], "after": ["\"", "1", "S"] },
         { "before": ["x"], "after": ["\"", "1", "x"] },
         { "before": ["X"], "after": ["\"", "1", "X"] },
-        { "before": ["<leader>", "c"], "after": ["c"] }
-        { "before": ["<leader>", "C"], "after": ["C"] }
-        { "before": ["<leader>", "d"], "after": ["d"] }
-        { "before": ["<leader>", "D"], "after": ["D"] }
-        { "before": ["<leader>", "s"], "after": ["s"] }
-        { "before": ["<leader>", "S"], "after": ["S"] }
-        { "before": ["<leader>", "x"], "after": ["x"] }
-        { "before": ["<leader>", "X"], "after": ["X"] }
-        { "before": ["[", "<space>"], "after": ["O", "<esc>"] }
+        { "before": ["<leader>", "c"], "after": ["c"] },
+        { "before": ["<leader>", "C"], "after": ["C"] },
+        { "before": ["<leader>", "d"], "after": ["d"] },
+        { "before": ["<leader>", "D"], "after": ["D"] },
+        { "before": ["<leader>", "s"], "after": ["s"] },
+        { "before": ["<leader>", "S"], "after": ["S"] },
+        { "before": ["<leader>", "x"], "after": ["x"] },
+        { "before": ["<leader>", "X"], "after": ["X"] },
+        { "before": ["[", "<space>"], "after": ["O", "<esc>"] },
         { "before": ["]", "<space>"], "after": ["o", "<esc>"] }
-        // { "before": ["c"], "after": ["\"", "\"", "c"] },
-        // { "before": [",", "c"], "after": ["c"] },
-        // { "before": ["C"], "after": ["\"", "\"", "C"] },
-        // { "before": [",", "C"], "after": ["c"] },
-        // { "before": ["d"], "after": ["\"", "\"", "d"] },
-        // { "before": [",", "d"], "after": ["\"", "*", "d"] },
-        // { "before": ["D"], "after": ["\"", "\"", "D"] }
-        // { "before": ["p"], "after": ["\"", "*", "p"] },
-        // { "before": ["P"], "after": ["\"", "*", "P"] },
-        // { "before": ["y"], "after": ["\"", "*", "y"] },
-        // { "before": ["Y"], "after": ["\"", "*", "y", "$"] }
     ],
     "vim.insertModeKeyBindings": [],
     "vim.insertModeKeyBindingsNonRecursive": [
