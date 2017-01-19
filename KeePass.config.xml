@@ -110,8 +110,8 @@
 			<LockOnSessionSwitch>true</LockOnSessionSwitch>
 			<LockOnSuspend>true</LockOnSuspend>
 			<LockOnRemoteControlChange>true</LockOnRemoteControlChange>
-			<LockAfterTime>7200</LockAfterTime>
-			<LockAfterGlobalTime>0</LockAfterGlobalTime>
+			<LockAfterTime>0</LockAfterTime>
+			<LockAfterGlobalTime>900</LockAfterGlobalTime>
 		</WorkspaceLocking>
 		<Policy />
 		<MasterPassword>
