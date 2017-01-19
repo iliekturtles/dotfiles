@@ -152,6 +152,8 @@
 		<AutoTypeMatchByUrlInTitle>true</AutoTypeMatchByUrlInTitle>
 		<AutoTypeMatchByUrlHostInTitle>true</AutoTypeMatchByUrlHostInTitle>
 		<AutoTypeMatchByTagInTitle>true</AutoTypeMatchByTagInTitle>
+		<AutoTypeCancelOnWindowChange>true</AutoTypeCancelOnWindowChange>
+		<AutoTypeCancelOnTitleChange>true</AutoTypeCancelOnTitleChange>
 		<ProxyType>System</ProxyType>
 		<ProxyAuthType>Auto</ProxyAuthType>
 	</Integration>
