@@ -32,6 +32,8 @@ if hash rustc 2>/dev/null; then
     [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ] && \
         export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
+[ -f "$HOME/.cargo/bin/racer" ] && \
+    export RACER_PATH="$HOME/.cargo/bin/racer"
 
 # User specific aliases, bindings, and functions.
 alias grep='grep --color=auto'
@@ -47,12 +49,12 @@ if [ ! -z $MSYSTEM ]; then
     #[ -d /usr/share/terminfo ] && \
     #    export TERMINFO=$(cygpath -w /usr/share/terminfo)
 
-    alias cargo='winpty cargo'
+    #alias cargo='winpty cargo'
 
-    #function cargo() {
-    #    local cmd=$1
-    #    shift && command cargo $cmd --color always $@
-    #}
+    function cargo() {
+        local cmd=$1
+        shift && command cargo $cmd --color always $@
+    }
 
     bind '"\t":complete'
     bind '"\e[1;5C":forward-word'
