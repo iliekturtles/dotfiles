@@ -9,6 +9,8 @@
     "editor.renderControlCharacters": true,
     "workbench.editor.showTabCloseButton": false,
     "window.openFilesInNewWindow": false,
+    "window.reopenFolders": "all",
+    "window.showFullPath": true,
     "files.exclude": {
         "**/.vs": true
     },
