@@ -19,6 +19,3 @@ if [ ! -z $MSYSTEM ]; then
 else
     cp tmux.conf ~/.tmux.conf
 fi
-
-# Source bash_profile.
-. ~/.bash_profile

@@ -49,12 +49,12 @@ if [ ! -z $MSYSTEM ]; then
     #[ -d /usr/share/terminfo ] && \
     #    export TERMINFO=$(cygpath -w /usr/share/terminfo)
 
-    #alias cargo='winpty cargo'
+    alias cargo='winpty cargo'
 
-    function cargo() {
-        local cmd=$1
-        shift && command cargo $cmd --color always $@
-    }
+    #function cargo() {
+    #    local cmd=$1
+    #    shift && command cargo $cmd --color always $@
+    #}
 
     bind '"\t":complete'
     bind '"\e[1;5C":forward-word'
