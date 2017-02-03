@@ -7,13 +7,13 @@
     "editor.cursorStyle": "block",
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "workbench.editor.showTabCloseButton": false,
-    "window.openFilesInNewWindow": false,
+    "workbench.editor.tabCloseButton": "off",
     "window.reopenFolders": "all",
     "window.showFullPath": true,
     "files.exclude": {
         "**/.vs": true
     },
+    "files.hotExit": "onExitAndWindowClose",
     "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
     // Vim configuration
     "vim.leader": ",",
