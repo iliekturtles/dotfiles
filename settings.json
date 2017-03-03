@@ -11,7 +11,8 @@
     "window.reopenFolders": "all",
     "window.showFullPath": true,
     "files.exclude": {
-        "**/.vs": true
+        "**/.vs": true,
+        "**/target": true
     },
     "files.hotExit": "onExitAndWindowClose",
     "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
