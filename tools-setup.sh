@@ -14,9 +14,6 @@ if hash cargo 2>/dev/null; then
     if ! hash cargo-outdated 2>/dev/null; then
         cargo install cargo-outdated
     fi
-    if ! hash cargo-clippy 2>/dev/null; then
-        cargo +nightly install clippy
-    fi
     if ! hash racer 2>/dev/null; then
         cargo install racer
     fi
@@ -30,7 +27,7 @@ if hash cargo 2>/dev/null; then
         cargo install tokei
     fi
 
-    cargo install-update cargo-update cargo-check cargo-expand cargo-outdated clippy racer rg rustfmt tokei
+    cargo install-update cargo-update cargo-check cargo-expand cargo-outdated racer rg rustfmt tokei
 fi
 
 # Vim.
