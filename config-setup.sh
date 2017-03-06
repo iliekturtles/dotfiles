@@ -13,7 +13,7 @@ if [ ! -z $MSYSTEM ]; then
     cp _vsvimrc ~/_vsvimrc
     cp minttyrc ~/.config/mintty/config
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-    cat settings.json | envsubst > ~/AppData/Roaming/Code/User/settings.json
+    cat settings.json | envsubst '$USERNAME' > ~/AppData/Roaming/Code/User/settings.json
 else
     cp tmux.conf ~/.tmux.conf
 fi
