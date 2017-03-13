@@ -27,7 +27,7 @@ if hash cargo 2>/dev/null; then
         cargo install tokei
     fi
 
-    cargo install-update cargo-update cargo-check cargo-expand cargo-outdated racer rg rustfmt tokei
+    cargo install-update -a
 fi
 
 # Vim.
