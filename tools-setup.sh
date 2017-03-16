@@ -5,9 +5,6 @@ if hash cargo 2>/dev/null; then
         cargo install cargo-update
     fi
 
-    if ! hash cargo-check 2>/dev/null; then
-        cargo install cargo-check
-    fi
     if ! hash cargo-expand 2>/dev/null; then
         cargo install cargo-expand
     fi
