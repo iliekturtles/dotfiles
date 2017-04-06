@@ -9,6 +9,7 @@
     "editor.renderControlCharacters": true,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.enablePreview": false,
+    "workbench.editor.revealIfOpen": true,
     "workbench.iconTheme": "vs-seti",
     "window.reopenFolders": "all",
     "window.restoreFullscreen": true,
