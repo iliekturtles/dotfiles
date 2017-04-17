@@ -63,7 +63,14 @@
         { "before": ["<leader>", "x"], "after": ["x"] },
         { "before": ["<leader>", "X"], "after": ["X"] },
         { "before": ["[", "<space>"], "after": ["O", "<esc>"] },
-        { "before": ["]", "<space>"], "after": ["o", "<esc>"] }
+        { "before": ["]", "<space>"], "after": ["o", "<esc>"] },
+        {
+            "before": [ "<leader>", "<space>" ],
+            "after": [],
+            "commands": [ { "command": ":nohl", "args": [] } ]
+        },
+        { "before": ["g", "c"], "after": ["g", "b"] },
+        { "before": ["g", "C"], "after": ["g", "B"] }
     ],
     "vim.insertModeKeyBindings": [],
     "vim.insertModeKeyBindingsNonRecursive": [
