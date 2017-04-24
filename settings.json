@@ -29,6 +29,7 @@
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
     "vim.easymotion": true,
+    "vim.textwidth": 100,
     "vim.otherModesKeyBindings": [],
     "vim.otherModesKeyBindingsNonRecursive": [
         {
