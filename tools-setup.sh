@@ -23,6 +23,9 @@ if hash cargo 2>/dev/null; then
     if ! hash tokei 2>/dev/null; then
         cargo install tokei
     fi
+    if ! hash xsv 2>/dev/null; then
+        cargo install xsv
+    fi
 
     cargo install-update -a
 fi
