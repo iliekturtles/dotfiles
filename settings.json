@@ -69,9 +69,7 @@
             "before": [ "<leader>", "<space>" ],
             "after": [],
             "commands": [ { "command": ":nohl", "args": [] } ]
-        },
-        { "before": ["g", "c"], "after": ["g", "b"] },
-        { "before": ["g", "C"], "after": ["g", "B"] }
+        }
     ],
     "vim.insertModeKeyBindings": [],
     "vim.insertModeKeyBindingsNonRecursive": [
