@@ -1,8 +1,13 @@
 #!/bin/bash
 # Rust tools setup.
+if hash rustup 2>/dev/null; then
+    rustup self update
+    rustup update
+fi
+
 if hash cargo 2>/dev/null; then
     if ! hash cargo-install-update 2>/dev/null; then
-        cargo install cargo-update
+        cargo install cargo-update --vers 0.8.2
     fi
 
     if ! hash cargo-expand 2>/dev/null; then
@@ -17,9 +22,9 @@ if hash cargo 2>/dev/null; then
     if ! hash rg 2>/dev/null; then
         cargo install ripgrep
     fi
-    if ! hash rustfmt 2>/dev/null; then
-        cargo install rustfmt
-    fi
+    #if ! hash rustfmt-nightly 2>/dev/null; then
+        cargo +nightly install --force rustfmt-nightly
+    #fi
     if ! hash tokei 2>/dev/null; then
         cargo install tokei
     fi
@@ -27,7 +32,7 @@ if hash cargo 2>/dev/null; then
         cargo install xsv
     fi
 
-    cargo install-update -a
+    cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
 fi
 
 # Vim.
