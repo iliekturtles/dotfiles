@@ -28,7 +28,7 @@
         "executable": "rustup",
         "args": ["run", "nightly", "rls"],
         "useRustfmt": true
-    }
+    },
     // Vim configuration
     "vim.leader": ",",
     "vim.useSystemClipboard": true,
@@ -36,7 +36,6 @@
     "vim.easymotion": true,
     "vim.textwidth": 100,
     "vim.disableAnnoyingNeovimMessage": true,
-    "vim.disableAnnoyingGcMessage": true,
     "vim.otherModesKeyBindings": [],
     "vim.otherModesKeyBindingsNonRecursive": [
         {
