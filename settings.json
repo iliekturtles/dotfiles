@@ -24,10 +24,14 @@
     "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
     // Rust configuration
     "rust.docArgs": ["--no-deps"],
+    "rust.mode": "rls",
     "rust.rls": {
         "executable": "rustup",
         "args": ["run", "nightly", "rls"],
         "useRustfmt": true
+    },
+    "rust.rustup": {
+        "toolchain": "stable-x86_64-pc-windows-msvc"
     },
     // Vim configuration
     "vim.leader": ",",

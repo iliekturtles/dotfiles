@@ -31,6 +31,7 @@ export GIT_PS1_SHOWSTASHSTATE=$
 if hash rustc 2>/dev/null; then
     [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ] && \
         export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+        export RUST_TOOLCHAIN="$(basename $(rustc --print sysroot))"
 fi
 [ -f "$HOME/.cargo/bin/racer" ] && \
     export RACER_PATH="$HOME/.cargo/bin/racer"
