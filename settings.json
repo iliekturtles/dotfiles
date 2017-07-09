@@ -31,7 +31,7 @@
         "useRustfmt": true
     },
     "rust.rustup": {
-        "toolchain": "stable-x86_64-pc-windows-msvc"
+        "toolchain": "$RUST_TOOLCHAIN"
     },
     // Vim configuration
     "vim.leader": ",",
