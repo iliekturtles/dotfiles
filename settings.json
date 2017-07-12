@@ -11,7 +11,7 @@
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.enablePreview": false,
     "workbench.editor.revealIfOpen": true,
-    "window.reopenFolders": "all",
+    "window.restoreWindows": "all",
     "window.restoreFullscreen": true,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
     "window.newWindowDimensions": "maximized",
