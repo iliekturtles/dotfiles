@@ -43,7 +43,7 @@ fi
 
 # Vim.
 if hash vim 2>/dev/null; then
-    vim +PluginClean +PluginInstall!
+    vim +PluginClean +PluginInstall! +qall
 fi
 
 # VSCode extensions.
