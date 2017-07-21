@@ -2,6 +2,12 @@
 # Rust tools setup.
 if hash rustup 2>/dev/null; then
     rustup self update
+    #rustup set default-host x86_64-pc-windows-msvc
+    rustup toolchain add stable
+    rustup toolchain add nightly
+    rustup component add rls --toolchain nightly
+    rustup component add rust-analysis --toolchain nightly
+    rustup component add rust-src --toolchain nightly
     rustup update
 fi
 
