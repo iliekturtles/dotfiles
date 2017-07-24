@@ -1,4 +1,4 @@
-BoldAsFont=no
+BoldAsFont=-1
 BackgroundColour=16,16,16
 CursorType=block
 Font=Consolas
@@ -6,4 +6,3 @@ FontHeight=12
 Locale=en_US
 Charset=UTF-8
 Term=xterm-256color
-BellSound=yes

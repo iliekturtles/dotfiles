@@ -11,7 +11,7 @@ if [ ! -z $MSYSTEM ]; then
 
     dos2unix -n tmux.conf ~/.tmux.conf
     cp _vsvimrc ~/_vsvimrc
-    cp minttyrc ~/.config/mintty/config
+    dos2unix -n minttyrc ~/.config/mintty/config
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
     cat settings.json | envsubst '$USERNAME,$RUST_TOOLCHAIN' > ~/AppData/Roaming/Code/User/settings.json
 else
