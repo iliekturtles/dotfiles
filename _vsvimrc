@@ -65,3 +65,5 @@ nnoremap [<space> O<esc>
 nnoremap ]<space> o<esc>
 
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
+
+vnoremap S :vsc Edit.SurroundWith<CR>
