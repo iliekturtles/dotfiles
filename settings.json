@@ -77,9 +77,9 @@
         { "before": ["[", "<space>"], "after": ["O", "<esc>"] },
         { "before": ["]", "<space>"], "after": ["o", "<esc>"] },
         {
-            "before": [ "<leader>", "<space>" ],
+            "before": ["<leader>", "<space>"],
             "after": [],
-            "commands": [ { "command": ":nohl", "args": [] } ]
+            "commands": [{ "command": ":nohl", "args": [] }]
         }
     ],
     "vim.insertModeKeyBindings": [],
