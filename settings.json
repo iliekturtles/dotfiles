@@ -21,6 +21,7 @@
     },
     "files.hotExit": "onExitAndWindowClose",
     "explorer.openEditors.visible": 0,
+    "explorer.sortOrder": "type",
     "terminal.integrated.shell.windows": "C:\\Users\\$USERNAME\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
     "git.autofetch": false,
     // Rust configuration
