@@ -53,6 +53,9 @@ set lazyredraw
 if has('patch-7.4-711')
     set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 endif
+if has('mouse')
+    set mouse=a
+endif
 set nowrap
 set nrformats-=octal
 set pastetoggle=<F2>
