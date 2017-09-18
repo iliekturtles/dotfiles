@@ -11,6 +11,7 @@
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.enablePreview": false,
     "workbench.editor.revealIfOpen": true,
+    "workbench.startupEditor": "none",
     "window.restoreWindows": "all",
     "window.restoreFullscreen": true,
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
