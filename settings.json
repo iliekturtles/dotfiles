@@ -85,7 +85,5 @@
         }
     ],
     "vim.insertModeKeyBindings": [],
-    "vim.insertModeKeyBindingsNonRecursive": [
-        { "before": ["k", "j"], "after": ["<escape>"] }
-    ]
+    "vim.insertModeKeyBindingsNonRecursive": []
 }

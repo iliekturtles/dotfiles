@@ -77,9 +77,6 @@ syntax on
 
 let mapleader=","
 
-" Map kj to leave insert mode.
-imap kj <Esc>
-
 " Map ,, to ,'s original functionality.
 nnoremap <leader>, ,
 
