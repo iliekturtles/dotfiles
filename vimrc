@@ -1,14 +1,23 @@
-" Vundle
 set nocompatible
+
+" XDG setup.
+if empty($XDG_CONFIG_HOME)
+	let $XDG_CONFIG_HOME=expand("$HOME/.config")
+endif
+if empty($XDG_CACHE_HOME)
+	let $XDG_CACHE_HOME=expand("$HOME/.cache")
+endif
+
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set directory=$XDG_CACHE_HOME/vim/swap//
+set runtimepath=$XDG_CONFIG_HOME/vim,$XDG_CONFIG_HOME/vim/after,$VIM,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/bundle/Vundle.vim
+set undodir=$XDG_CACHE_HOME/vim/undo
+set viminfo='1000,s100,h,n$XDG_CACHE_HOME/vim/viminfo
+
+" Vundle
 filetype off
 
-if has('windows') && has('gui')
-    set rtp+=~/vimfiles/bundle/Vundle.vim
-    call vundle#begin('~/vimfiles/bundle')
-else
-    set rtp+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
-endif
+call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 if has('python')

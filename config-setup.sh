@@ -5,7 +5,7 @@ cp bashrc ~/.bashrc
 source ~/.bash_profile
 
 # Setup config directories.
-mkdir -p "$XDG_CONFIG_HOME/{git,tmux}"
+mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
 
 # Setup KeePass, mintty, tmux, VSCode, VsVim.
 if [ ! -z $MSYSTEM ]; then
@@ -66,7 +66,8 @@ echo "git config --global user.email \"email\""
 git config --global user.email
 
 # Vim.
-mkdir -p "$XDG_CONFIG_HOME/vim/{colors,syntax}"
+mkdir -p "$XDG_CONFIG_HOME/vim/"{colors,syntax}
+mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}
 cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
 cp elfmagic.vim "$XDG_CONFIG_HOME/vim/colors/elfmagic.vim"
 [ -f /usr/share/doc/tmux/examples/tmux.vim ] && \
