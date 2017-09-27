@@ -2,28 +2,30 @@
 # Bash setup.
 cp bash_profile ~/.bash_profile
 cp bashrc ~/.bashrc
+source ~/.bash_profile
+
+# Setup config directories.
+mkdir -p "$XDG_CONFIG_HOME/{git,tmux}"
 
 # Setup KeePass, mintty, tmux, VSCode, VsVim.
 if [ ! -z $MSYSTEM ]; then
-    mkdir -p ~/.config/mintty
-    mkdir -p ~/AppData/Roaming/KeePass
-    mkdir -p ~/AppData/Roaming/Code/User
+    mkdir -p "$XDG_CONFIG_HOME/mintty"
+    mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
 
-    dos2unix -n tmux.conf ~/.tmux.conf
+    dos2unix -n tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
-    dos2unix -n minttyrc ~/.config/mintty/config
+    dos2unix -n minttyrc "$XDG_CONFIG_HOME/mintty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
     cat settings.json | envsubst '$USERNAME,$RUST_TOOLCHAIN' > ~/AppData/Roaming/Code/User/settings.json
 else
-    cp tmux.conf ~/.tmux.conf
+    cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
 fi
 
 # Git.
-mkdir -p ~/.config/git
-touch ~/.config/git/config
+touch "$XDG_CONFIG_HOME/git/config"
 
 git config --global commit.verbose true
-git config --global core.excludesfile "~/.config/git/ignore"
+git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
@@ -57,20 +59,19 @@ else
     git config --global credential.helper 'cache --timeout=14400'
 fi
 
-cp gitignore ~/.config/git/ignore
+cp gitignore "$XDG_CONFIG_HOME/git/ignore"
 echo "git config --global user.name \"name\""
 git config --global user.name
 echo "git config --global user.email \"email\""
 git config --global user.email
 
 # Vim.
-mkdir -p ~/.vim/colors
-mkdir -p ~/.vim/syntax
-cp vimrc ~/.vim/vimrc
-cp elfmagic.vim ~/.vim/colors/elfmagic.vim
+mkdir -p "$XDG_CONFIG_HOME/vim/{colors,syntax}"
+cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
+cp elfmagic.vim "$XDG_CONFIG_HOME/vim/colors/elfmagic.vim"
 [ -f /usr/share/doc/tmux/examples/tmux.vim ] && \
-    cp /usr/share/doc/tmux/examples/tmux.vim ~/.vim/syntax/tmux.vim
+    cp /usr/share/doc/tmux/examples/tmux.vim "$XDG_CONFIG_HOME/vim/syntax/tmux.vim"
 [ -f /usr/share/vim/vimfiles/syntax/tmux.vim ] && \
-    cp /usr/share/vim/vimfiles/syntax/tmux.vim ~/.vim/syntax/tmux.vim
-[ ! -d ~/.vim/bundle/Vundle.vim ] && \
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    cp /usr/share/vim/vimfiles/syntax/tmux.vim "$XDG_CONFIG_HOME/vim/syntax/tmux.vim"
+[ ! -d "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim" ] && \
+    git clone https://github.com/VundleVim/Vundle.vim.git "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim"

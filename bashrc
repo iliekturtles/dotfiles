@@ -10,6 +10,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias la='ls -lAFh --color=auto'
 alias ll='ls -lFh --color=auto'
+alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/config"'
 alias irssi='TERM=screen irssi'
 
 function xsvp() {
