@@ -55,6 +55,9 @@ set encoding=utf-8
 set expandtab
 set fo+=j               " Remove comment leader when joining lines.
 set gdefault
+if has('gui')
+    set guioptions-=tT
+endif
 set hlsearch incsearch ignorecase smartcase
 set hidden
 set laststatus=2
