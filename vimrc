@@ -2,10 +2,10 @@ set nocompatible
 
 " XDG setup.
 if empty($XDG_CONFIG_HOME)
-	let $XDG_CONFIG_HOME=expand("$HOME/.config")
+	let $XDG_CONFIG_HOME=expand('$HOME/.config')
 endif
 if empty($XDG_CACHE_HOME)
-	let $XDG_CACHE_HOME=expand("$HOME/.cache")
+	let $XDG_CACHE_HOME=expand('$HOME/.cache')
 endif
 
 set backupdir=$XDG_CACHE_HOME/vim/backup
@@ -51,7 +51,7 @@ filetype plugin indent on
 set autowrite
 set background=dark
 set backspace=indent,eol,start
-"set cursorline
+set cursorline
 set encoding=utf-8
 set expandtab
 set fo+=j               " Remove comment leader when joining lines.
@@ -73,22 +73,26 @@ set nowrap
 set nrformats-=octal
 set pastetoggle=<F2>
 set ruler
-set scrolloff=10
+set scrolloff=5
 set shiftwidth=4
 set showcmd
 set showmatch
-set sidescrolloff=5
+set sidescroll=1
+set sidescrolloff=10
 set smarttab
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
+set switchbuf=usetab
 set t_Co=256
 set tabstop=4
 set tildeop
 set vb
+set wildmenu
+set wildmode=list:longest
 
 syntax on
 
-let mapleader=","
+let mapleader=','
 
 " Map ,, to ,'s original functionality.
 nnoremap <leader>, ,
@@ -99,6 +103,12 @@ vnoremap / /\v
 
 " Map e to toggle NERDTree.
 nnoremap <leader>e :NERDTreeToggle<cr>
+
+" Map bl to show the buffer list and prompt for selection.
+nnoremap <leader>bl :ls<cr>:b<space>
+
+"Map bw to close the current buffer with closing the split.
+nnoremap <leader>bw :bp\|bw#<cr>
 
 " Map l to toggle line numbers and rl to toggle relative line numbers.
 nnoremap <leader>l :set number!<cr>
@@ -234,8 +244,8 @@ set background=dark
 colorscheme PaperColor
 
 " Vertical edge.
-let cc81=join(range(81, 255), ",")
-let cc101=join(range(101, 255), ",")
+let cc81=join(range(81, 255), ',')
+let cc101=join(range(101, 255), ',')
 let &colorcolumn=cc81
 au FileType rust,toml let &l:colorcolumn=cc101
 
@@ -266,5 +276,5 @@ endif
 
 " GUI settings.
 if has('gui')
-    set guifont=Consolas:h12
+    set guifont=Consolas:h11
 endif
