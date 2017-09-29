@@ -1,8 +1,17 @@
 #!/bin/bash
+# Setup Windows environment variables.
+if [ ! -z $MSYSTEM ]; then
+    if [ -z $XDG_CONFIG_HOME ]; then
+        source ~/.bash_profile
+    fi
+    setx VIMINIT ":source $(cygpath -w $XDG_CONFIG_HOME/vim/vimrc)"
+    setx RUSTUP_HOME $(cygpath -w "$XDG_DATA_HOME/rustup")
+    setx CARGO_HOME $(cygpath -w "$XDG_DATA_HOME/cargo")
+fi
+
 # Rust tools setup.
 if hash rustup 2>/dev/null; then
     rustup self update
-    #rustup set default-host x86_64-pc-windows-msvc
     rustup toolchain add stable
     rustup toolchain add nightly
     rustup component add rls --toolchain nightly

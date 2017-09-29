@@ -24,8 +24,6 @@ export GIT_PS1_SHOWDIRTYSTATE=*
 export GIT_PS1_SHOWSTASHSTATE=$
 export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
 if [ ! -z $MSYSTEM ]; then
     export PS1="\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
     if [ -d /usr/share/terminfo ]; then
@@ -33,6 +31,8 @@ if [ ! -z $MSYSTEM ]; then
     fi
 else
     export PS1="\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
+    export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+    export CARGO_HOME="$XDG_DATA_HOME/cargo"
 fi
 
 # Setup PATH.
