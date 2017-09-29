@@ -69,7 +69,6 @@ git config --global user.email
 mkdir -p "$XDG_CONFIG_HOME/vim/"{colors,syntax}
 mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}
 cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
-cp elfmagic.vim "$XDG_CONFIG_HOME/vim/colors/elfmagic.vim"
 [ -f /usr/share/doc/tmux/examples/tmux.vim ] && \
     cp /usr/share/doc/tmux/examples/tmux.vim "$XDG_CONFIG_HOME/vim/syntax/tmux.vim"
 [ -f /usr/share/vim/vimfiles/syntax/tmux.vim ] && \

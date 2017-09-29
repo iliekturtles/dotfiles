@@ -20,6 +20,7 @@ filetype off
 call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
+Plugin 'NLKNguyen/papercolor-theme'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
@@ -225,8 +226,12 @@ function ToggleHex()
 endfunction
 
 " Colors.
-colorscheme elfmagic
-highlight ColorColumn ctermbg=236
+if !has('gui')
+    let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'transparent_background': 1 } } }
+endif
+
+set background=dark
+colorscheme PaperColor
 
 " Vertical edge.
 let cc81=join(range(81, 255), ",")
