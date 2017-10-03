@@ -7,16 +7,15 @@ source ~/.bash_profile
 # Setup config directories.
 mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
 
-# Setup KeePass, mintty, tmux, VSCode, VsVim.
+# Setup KeePass, mintty, tmux, VsVim.
 if [ ! -z $MSYSTEM ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
-    mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
+    mkdir -p ~/AppData/Roaming/KeePass
 
     dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-    cat settings.json | envsubst '$USERNAME,$RUST_TOOLCHAIN' > ~/AppData/Roaming/Code/User/settings.json
 else
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
 fi

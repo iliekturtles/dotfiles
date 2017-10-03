@@ -54,21 +54,3 @@ fi
 if hash vim 2>/dev/null; then
     vim +PluginClean +PluginInstall! +qall
 fi
-
-# VSCode extensions.
-if hash code 2>/dev/null; then
-    code --install-extension bungcip.better-toml
-    code --install-extension DotJoshJohnson.xml
-    code --install-extension slevesque.vscode-hexdump
-    code --install-extension vscodevim.vim
-
-    if hash cargo 2>/dev/null; then
-        code --install-extension kalitaalexey.vscode-rust
-    fi
-    if hash sqlcmd 2>/dev/null; then
-        code --install-extension ms-mssql.mssql
-    fi
-    if hash dotnet 2>/dev/null; then
-        code --install-extension ms-vscode.csharp
-    fi
-fi
