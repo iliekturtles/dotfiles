@@ -12,9 +12,9 @@ if [ ! -z $MSYSTEM ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
 
-    dos2unix -n tmux.conf "$XDG_CONFIG_HOME/tmux/config"
+    dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
-    dos2unix -n minttyrc "$XDG_CONFIG_HOME/mintty/config"
+    dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
     cat settings.json | envsubst '$USERNAME,$RUST_TOOLCHAIN' > ~/AppData/Roaming/Code/User/settings.json
 else
@@ -61,10 +61,10 @@ else
 fi
 
 cp gitignore "$XDG_CONFIG_HOME/git/ignore"
-echo "git config --global user.name \"name\""
-git config --global user.name
-echo "git config --global user.email \"email\""
-git config --global user.email
+if [[ ! $(git config --global user.name) ]]; then
+    echo "git config --global user.name \"name\""
+    echo "git config --global user.email \"email\""
+fi
 
 # Base16
 if [ ! -d "$XDG_CONFIG_HOME/base16-shell" ]; then
