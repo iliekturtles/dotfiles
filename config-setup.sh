@@ -66,6 +66,11 @@ git config --global user.name
 echo "git config --global user.email \"email\""
 git config --global user.email
 
+# Base16
+if [ ! -d "$XDG_CONFIG_HOME/base16-shell" ]; then
+    git clone https://github.com/chriskempson/base16-shell.git "$XDG_CONFIG_HOME/base16-shell"
+fi
+
 # Vim.
 mkdir -p "$XDG_CONFIG_HOME/vim/"{colors,syntax}
 mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}

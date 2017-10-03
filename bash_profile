@@ -51,6 +51,11 @@ if hash racer 2>/dev/null; then
 fi
 
 # Source bashrc.
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
+
+# Base16 shell coloring
+if [ -f "$XDG_CONFIG_HOME/base16-shell/scripts/base16-spacemacs.sh" ]; then
+    source "$XDG_CONFIG_HOME/base16-shell/scripts/base16-spacemacs.sh"
+fi
 
 # vim: set ft=sh:

@@ -20,7 +20,7 @@ filetype off
 call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'chriskempson/base16-vim'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
@@ -49,7 +49,6 @@ filetype plugin indent on
 
 " Defaults.
 set autowrite
-set background=dark
 set backspace=indent,eol,start
 set cursorline
 set encoding=utf-8
@@ -236,12 +235,8 @@ function ToggleHex()
 endfunction
 
 " Colors.
-if !has('gui')
-    let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'transparent_background': 1 } } }
-endif
-
-set background=dark
-colorscheme PaperColor
+let base16colorspace=256
+colorscheme base16-spacemacs
 
 " Vertical edge.
 let cc81=join(range(81, 255), ',')
