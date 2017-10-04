@@ -36,6 +36,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'OrangeT/vim-csharp'
@@ -54,7 +55,7 @@ set expandtab
 set fo+=j               " Remove comment leader when joining lines.
 set gdefault
 if has('gui')
-    set guioptions-=tT
+    set guioptions-=etT
 endif
 set hlsearch incsearch ignorecase smartcase
 set hidden
@@ -64,6 +65,7 @@ set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 if has('mouse')
     set mouse=a
 endif
+set noshowmode
 set nowrap
 set nrformats-=octal
 set pastetoggle=<F2>
@@ -72,6 +74,7 @@ set scrolloff=5
 set shiftwidth=4
 set showcmd
 set showmatch
+set showtabline=2
 set sidescroll=1
 set sidescrolloff=10
 set smarttab
