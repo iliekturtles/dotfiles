@@ -272,4 +272,6 @@ endif
 " GUI settings.
 if has('gui')
     set guifont=Consolas:h11
+
+    au GUIEnter * simalt ~x
 endif
