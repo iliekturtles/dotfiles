@@ -14,15 +14,17 @@ if hash rustup 2>/dev/null; then
     rustup self update
     rustup toolchain add stable
     rustup toolchain add nightly
-    rustup component add rls --toolchain nightly
+    rustup component add rls-preview --toolchain nightly
     rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
     rustup update
 fi
 
 if hash cargo 2>/dev/null; then
-    if ! hash cargo-install-update 2>/dev/null; then
-        cargo install cargo-update --vers 0.8.2
+    if hash cmake 2>/dev/null; then
+        if ! hash cargo-install-update 2>/dev/null; then
+            cargo install cargo-update
+        fi
     fi
 
     if ! hash cargo-expand 2>/dev/null; then
@@ -37,9 +39,9 @@ if hash cargo 2>/dev/null; then
     if ! hash rg 2>/dev/null; then
         cargo install ripgrep
     fi
-    #if ! hash rustfmt-nightly 2>/dev/null; then
-        cargo +nightly install --force rustfmt-nightly
-    #fi
+    if ! hash rustfmt 2>/dev/null; then
+        cargo +nightly install rustfmt-nightly
+    fi
     if ! hash tokei 2>/dev/null; then
         cargo install tokei
     fi
@@ -47,7 +49,12 @@ if hash cargo 2>/dev/null; then
         cargo install xsv
     fi
 
-    cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
+    if hash cargo-install-update 2>/dev/null; then
+        cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
+        cargo +nightly install-update rustfmt-nightly
+    else
+        echo "cargo install-update not installed."
+    fi
 fi
 
 # Vim.
