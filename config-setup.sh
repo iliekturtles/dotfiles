@@ -50,12 +50,12 @@ git config --global alias.update "pull --ff-only"
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
     git config --global core.commentChar ";"
-    git config --global core.pager "less -RS -x5"
+    git config --global core.pager "less -RS -x4"
     git config --global credential.helper wincred
 else
     git config --global core.autocrlf input
     git config --global core.commentChar auto
-    git config --global core.pager "less -S -x5"
+    git config --global core.pager "less -S -x4"
     git config --global credential.helper 'cache --timeout=14400'
 fi
 
