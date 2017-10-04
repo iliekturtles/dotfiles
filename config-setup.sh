@@ -8,7 +8,7 @@ source ~/.bash_profile
 mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
 
 # Setup KeePass, mintty, tmux, VsVim.
-if [ ! -z $MSYSTEM ]; then
+if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/KeePass
 
@@ -47,7 +47,7 @@ git config --global alias.unstage "reset HEAD --"
 git config --global alias.up "pull --ff-only"
 git config --global alias.update "pull --ff-only"
 
-if [ ! -z $MSYSTEM ]; then
+if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
     git config --global core.commentChar ";"
     git config --global core.pager "less -RS -x5"

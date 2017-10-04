@@ -1,7 +1,7 @@
 #!/bin/bash
 # Setup Windows environment variables.
-if [ ! -z $MSYSTEM ]; then
-    if [ -z $XDG_CONFIG_HOME ]; then
+if [ ! -z "$MSYSTEM" ]; then
+    if [ -z "$XDG_CONFIG_HOME" ]; then
         source ~/.bash_profile
     fi
     setx VIMINIT ":source $(cygpath -w $XDG_CONFIG_HOME/vim/vimrc)"
