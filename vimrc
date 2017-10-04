@@ -235,7 +235,7 @@ colorscheme base16-spacemacs
 let cc81=join(range(81, 255), ',')
 let cc101=join(range(101, 255), ',')
 let &colorcolumn=cc101
-au FileType gitcommit let &l:colorcolumn=cc81
+au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
 
 " Compiler settings.
 au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
