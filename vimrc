@@ -56,7 +56,8 @@ set expandtab
 set fo+=j               " Remove comment leader when joining lines.
 set gdefault
 if has('gui')
-    set guioptions-=etT
+    set guioptions-=e
+    set guioptions-=tT
 endif
 set hlsearch incsearch ignorecase smartcase
 set hidden
