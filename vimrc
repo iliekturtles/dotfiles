@@ -108,12 +108,6 @@ nnoremap <leader>bl :ls<cr>:b<space>
 "Map bw to close the current buffer with closing the split.
 nnoremap <leader>bw :bp\|bw#<cr>
 
-" Map l to toggle line numbers and rl to toggle relative line numbers.
-nnoremap <leader>l :set number!<cr>
-nnoremap <leader>rl :set number!<cr>:set relativenumber!<cr>
-vnoremap <leader>l :<c-u>set number!<cr>gv
-vnoremap <leader>rl :<c-u>set number!<cr>:<c-u>set relativenumber!<cr>gv
-
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
 
