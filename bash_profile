@@ -36,8 +36,10 @@ else
 fi
 
 # Setup PATH.
-pathsuffix "$CARGO_HOME/bin"
+pathsuffix "$(cygpath "$CARGO_HOME")/bin"
 pathsuffix "$HOME/.local/bin"
+pathsuffix "/c/Program Files (x86)/Microsoft Visual Studio/2017/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
+pathsuffix "/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
 
 # Export additional environment variables.
 if hash rustc 2>/dev/null; then

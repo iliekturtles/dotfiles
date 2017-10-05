@@ -21,12 +21,6 @@ if hash rustup 2>/dev/null; then
 fi
 
 if hash cargo 2>/dev/null; then
-    if hash cmake 2>/dev/null; then
-        if ! hash cargo-install-update 2>/dev/null; then
-            cargo install cargo-update
-        fi
-    fi
-
     if ! hash cargo-expand 2>/dev/null; then
         cargo install cargo-expand
     fi
@@ -49,11 +43,15 @@ if hash cargo 2>/dev/null; then
         cargo install xsv
     fi
 
-    if hash cargo-install-update 2>/dev/null; then
+    if hash cmake 2>/dev/null; then
+        if ! hash cargo-install-update 2>/dev/null; then
+            cargo install cargo-update
+        fi
+
         cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
         cargo +nightly install-update rustfmt-nightly
     else
-        echo "cargo install-update not installed."
+        echo "cargo install-update not installed (cmake missing)."
     fi
 fi
 
