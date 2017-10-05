@@ -26,6 +26,7 @@ touch "$XDG_CONFIG_HOME/git/config"
 git config --global commit.verbose true
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
+git config --global diff.tool vimdiff
 git config --global diff.wsErrorHighlight all
 git config --global fetch.prune true
 git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
@@ -35,6 +36,7 @@ git config --global push.recurseSubmodules check
 git config --global submodule.fetchJobs 0
 
 git config --global alias.ci "commit"
+git config --global alias.co "checkout"
 git config --global alias.ds "diff --staged"
 git config --global alias.down "merge --ff-only"
 git config --global alias.fat "fetch --all --tags"
@@ -45,7 +47,6 @@ git config --global alias.skipped '!git ls-files -v | grep "^[hS]"'
 git config --global alias.st "status -sb"
 git config --global alias.unstage "reset HEAD --"
 git config --global alias.up "pull --ff-only"
-git config --global alias.update "pull --ff-only"
 
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
