@@ -21,6 +21,7 @@ call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'iliekturtles/vim-code-dark'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
@@ -83,7 +84,6 @@ set smarttab
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
 set switchbuf=usetab
-set t_Co=256
 set tabstop=4
 set tildeop
 set vb
@@ -228,8 +228,13 @@ function ToggleHex()
 endfunction
 
 " Colors.
+set t_Co=256
+set t_ut=
+if has('termguicolors')
+    set termguicolors
+endif
 let base16colorspace=256
-colorscheme base16-spacemacs
+colorscheme codedark
 
 " Vertical edge.
 let cc81=join(range(81, 255), ',')
