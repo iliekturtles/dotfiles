@@ -49,6 +49,7 @@ call vundle#end()
 filetype plugin indent on
 
 " Defaults.
+set autoread
 set autowrite
 set backspace=indent,eol,start
 set cursorline
