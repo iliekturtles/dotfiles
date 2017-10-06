@@ -12,7 +12,14 @@ alias la='ls -lAFh --color=auto'
 alias ll='ls -lFh --color=auto'
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/config"'
 alias irssi='TERM=screen irssi'
-alias vims='if [ -f .session.vim ]; then vim -S .session.vim; else vim -c "Obsession .session.vim"; fi'
+
+function vims() {
+    if [ -f .session.vim ]; then
+        vim -S .session.vim $@
+    else
+        vim -c "Obsession .session.vim" $@
+    fi
+}
 
 function xsvp() {
     local cmd=$1
