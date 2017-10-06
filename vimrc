@@ -230,9 +230,6 @@ endfunction
 " Colors.
 set t_Co=256
 set t_ut=
-if has('termguicolors')
-    set termguicolors
-endif
 let base16colorspace=256
 colorscheme codedark
 
