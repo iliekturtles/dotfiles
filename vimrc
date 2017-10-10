@@ -248,6 +248,7 @@ au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
 " Syntax highlighting.
 au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
+au BufRead,BufNewFile *.sql set commentstring=--\ %s
 au BufRead,BufNewFile tmux*.conf setfiletype tmux
 
 if has('python')
