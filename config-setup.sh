@@ -36,6 +36,10 @@ git config --global push.recurseSubmodules check
 git config --global submodule.fetchJobs 0
 
 git config --global alias.ci "commit"
+git config --global alias.cia "commit -a"
+git config --global alias.ciaa "commit -a --amend"
+git config --global alias.cip "commit -p"
+git config --global alias.cipa "commit -p --amend"
 git config --global alias.co "checkout"
 git config --global alias.ds "diff --staged"
 git config --global alias.down "merge --ff-only"
