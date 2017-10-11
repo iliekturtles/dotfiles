@@ -1,15 +1,5 @@
 #!/bin/bash
-# Setup Windows environment variables.
-if [ ! -z "$MSYSTEM" ]; then
-    if [ -z "$XDG_CONFIG_HOME" ]; then
-        source ~/.bash_profile
-    fi
-    setx VIMINIT ":source $(cygpath -w $XDG_CONFIG_HOME/vim/vimrc)"
-    setx RUSTUP_HOME $(cygpath -w "$XDG_DATA_HOME/rustup")
-    setx CARGO_HOME $(cygpath -w "$XDG_DATA_HOME/cargo")
-fi
-
-# Rust tools setup.
+# Rust toolchain setup.
 if hash rustup 2>/dev/null; then
     rustup self update
     rustup toolchain add stable
@@ -20,6 +10,7 @@ if hash rustup 2>/dev/null; then
     rustup update
 fi
 
+# Rust tools setup.
 if hash cargo 2>/dev/null; then
     if ! hash cargo-expand 2>/dev/null; then
         cargo install cargo-expand
@@ -55,7 +46,7 @@ if hash cargo 2>/dev/null; then
     fi
 fi
 
-# Vim.
+# Vim plugin setup.
 if hash vim 2>/dev/null; then
     vim +PluginClean +PluginInstall! +qall
 fi
