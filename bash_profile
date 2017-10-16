@@ -20,6 +20,7 @@ export EDITOR=vim
 export HISTCONTROL=ignoreboth
 export HISTFILESIZE=2000
 export HISTSIZE=1000
+export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
 export GIT_PS1_SHOWDIRTYSTATE=*
 export GIT_PS1_SHOWSTASHSTATE=$
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
@@ -34,7 +35,6 @@ if [ ! -z $MSYSTEM ]; then
     pathsuffix "/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
 else
     export PS1="\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
-    export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
     export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
     export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
