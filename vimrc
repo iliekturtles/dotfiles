@@ -242,7 +242,7 @@ let &colorcolumn=cc101
 au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
 
 " Compiler settings.
-au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo
+au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
 
 " Syntax highlighting.
 au BufRead,BufNewFile *.md setfiletype markdown
