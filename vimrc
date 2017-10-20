@@ -114,9 +114,6 @@ nnoremap <leader>bw :bp\|bw#<cr>
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
 
-" Map ws to toggle white space.
-nnoremap <leader>ws :set list!<cr>
-
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
