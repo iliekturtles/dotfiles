@@ -78,7 +78,6 @@ set scrolloff=5
 set shiftwidth=4
 set showcmd
 set showmatch
-set showtabline=2
 set sidescroll=1
 set sidescrolloff=10
 set smarttab
