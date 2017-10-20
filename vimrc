@@ -126,17 +126,16 @@ noremap Y y$
 " Replace and delete without yanking unless <leader> is used.
 if has('xterm_clipboard')
     set clipboard^=unnamed,unnamedplus
-    let s:register = '+'
+    let g:register = '+'
 elseif has('clipboard')
     set clipboard^=unnamed
-    let s:register = '*'
+    let g:register = '*'
 else
-    let s:register = '"'
+    let g:register = '"'
 endif
 
 function! s:reg()
-    echom v:register . ', ' . s:register
-    return v:register ==# s:register ? '"_' : ''
+    return v:register ==# g:register ? '"_' : ''
 endfunction
 
 vnoremap <expr> p '"_d"' . v:register . 'P'
@@ -174,6 +173,9 @@ nnoremap <expr> X <sid>reg() . 'X'
 nnoremap <leader>X X
 vnoremap <expr> X <sid>reg() . 'X'
 vnoremap <leader>X X
+
+" Map f to copy the full file path.
+nnoremap <expr> <leader>f ':let @' . g:register . ' = expand("%:p")<CR>'
 
 " Map C-<direction> to move between splits.
 noremap <C-h> <C-w>h
