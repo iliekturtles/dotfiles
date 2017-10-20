@@ -111,6 +111,9 @@ nnoremap <leader>bl :ls<cr>:b<space>
 "Map bw to close the current buffer with closing the split.
 nnoremap <leader>bw :bp\|bw#<cr>
 
+"Map bv to open the previous buffer in a new split.
+nnoremap <leader>bv :bp\|vsp#<cr>
+
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
 
