@@ -84,7 +84,7 @@ set sidescrolloff=10
 set smarttab
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
-set switchbuf=usetab
+set switchbuf=useopen,usetab
 set tabstop=4
 set tildeop
 set vb
