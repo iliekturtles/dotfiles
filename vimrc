@@ -180,6 +180,12 @@ vnoremap <leader>X X
 " Map f to copy the full file path.
 nnoremap <expr> <leader>f ':let @' . g:register . ' = expand("%:p")<CR>'
 
+" Map C-scroll weel to scroll horizontally.
+noremap <C-ScrolLWheelDown> 4zl
+noremap <C-ScrolLWheelUp> 4zh
+noremap! <C-ScrolLWheelDown> <C-o>4zl
+noremap! <C-ScrolLWheelUp> <C-o>4zh
+
 " Map C-<direction> to move between splits.
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
