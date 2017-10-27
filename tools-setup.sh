@@ -3,6 +3,9 @@
 if hash rustup 2>/dev/null; then
     rustup self update
     rustup toolchain add stable
+    rustup component add rls-preview
+    rustup component add rust-analysis
+    rustup component add rust-src
     rustup toolchain add nightly
     rustup component add rls-preview --toolchain nightly
     rustup component add rust-analysis --toolchain nightly

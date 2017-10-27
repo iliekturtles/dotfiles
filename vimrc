@@ -40,6 +40,7 @@ Plugin 'iliekturtles/vim-unimpaired'
 Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'w0rp/ale'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'OrangeT/vim-csharp'
 
@@ -78,7 +79,6 @@ set noshowmode
 set nowrap
 set nrformats-=octal
 set pastetoggle=<F2>
-set ruler
 set scrolloff=5
 set shiftwidth=4
 set showcmd
@@ -87,8 +87,6 @@ set sidescroll=1
 set sidescrolloff=10
 set signcolumn=yes
 set smarttab
-" Show EOL type and last modified timestamp, right after the filename
-set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
 set switchbuf=useopen,usetab
 set tabstop=4
 set tildeop
@@ -256,6 +254,15 @@ function ToggleHex()
 endfunction
 
 " Colors.
+let g:lightline={
+\   'active': {
+\       'right': [
+\           ['lineinfo'],
+\           ['percent'],
+\           ['fileformat', 'fileencoding', 'filetype'],
+\       ]
+\   }
+\}
 set t_Co=256
 " set termguicolors
 set t_ut=
@@ -296,17 +303,14 @@ let g:gitgutter_sign_removed = ' ▐'
 let g:gitgutter_sign_removed_first_line = ' ▐'
 let g:gitgutter_sign_modified_removed = ' ▐'
 
-if has('python')
-    " YouCompleteMe.
-    let g:ycm_rust_src_path=$RUST_SRC_PATH
-    nnoremap <leader>] :YcmCompleter GoTo<CR>
-    "nnoremap <leader>} :YcmCompleter GoToReferences<CR>
-else
-    " Racer.
-    if !empty($RACER_PATH)
-        let g:racer_cmd=$RACER_PATH
-    endif
-endif
+" ALE
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_fixers = {'rust': ['rustfmt']}
+" let g:ale_completion_enabled = 1
+let g:ale_open_list = 1
+let g:ale_sign_error = '⮿'
+let g:ale_sign_info = '🛈'
+let g:ale_sign_warning = '🔺'
 
 " GUI settings.
 if has('gui')

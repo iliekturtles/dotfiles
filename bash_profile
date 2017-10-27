@@ -51,9 +51,6 @@ if hash rustc 2>/dev/null; then
     fi
     export RUST_TOOLCHAIN=$(basename $(rustc --print sysroot))
 fi
-if hash racer 2>/dev/null; then
-    export RACER_PATH=$(which racer)
-fi
 
 # Source bashrc.
 if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
