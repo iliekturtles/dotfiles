@@ -108,11 +108,11 @@ nnoremap <leader>e :NERDTreeToggle<cr>
 " Map bl to show the buffer list and prompt for selection.
 nnoremap <leader>bl :ls<cr>:b<space>
 
-"Map bw to close the current buffer with closing the split.
-nnoremap <leader>bw :bp\|bw#<cr>
+"Map bw to wipe the current buffer and switch to the alternate buffer.
+nnoremap <leader>bw :b#\|bw#<cr>
 
-"Map bv to open the previous buffer in a new split.
-nnoremap <leader>bv :bp\|vsp#<cr>
+"Map bv to open the alternate buffer in a new split.
+nnoremap <leader>bv :b#\|vsp#<cr>
 
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
