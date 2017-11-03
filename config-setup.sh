@@ -41,6 +41,7 @@ git config --global pull.ff only
 git config --global push.default simple
 git config --global push.recurseSubmodules check
 git config --global submodule.fetchJobs 0
+git config --global tig.tab-size 4
 
 git config --global alias.ci "commit"
 git config --global alias.cia "commit -a"
