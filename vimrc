@@ -20,8 +20,8 @@ filetype off
 call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'chriskempson/base16-vim'
 Plugin 'iliekturtles/vim-code-dark'
+Plugin 'andbar-ru/vim-unicon'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
@@ -238,9 +238,10 @@ endfunction
 
 " Colors.
 set t_Co=256
+" set termguicolors
 set t_ut=
-let base16colorspace=256
-colorscheme codedark
+set background=dark
+colorscheme unicon
 
 " Vertical edge.
 let cc81=join(range(81, 255), ',')
