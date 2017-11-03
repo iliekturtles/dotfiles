@@ -59,8 +59,8 @@ fi
 if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
 
 # Base16 shell coloring
-if [ -f "$XDG_CONFIG_HOME/base16-shell/scripts/base16-spacemacs.sh" ]; then
-    source "$XDG_CONFIG_HOME/base16-shell/scripts/base16-spacemacs.sh"
+if [ -f "$XDG_CONFIG_HOME/base16-shell/scripts/base16-atelier-forest.sh" ]; then
+    source "$XDG_CONFIG_HOME/base16-shell/scripts/base16-atelier-forest.sh"
 fi
 
 # vim: set ft=sh:
