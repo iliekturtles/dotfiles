@@ -41,9 +41,8 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'OrangeT/vim-csharp'
-Plugin 'rust-lang/rust.vim'
-Plugin 'cespare/vim-toml'
 
 call vundle#end()
 filetype plugin indent on
