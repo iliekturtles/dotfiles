@@ -13,6 +13,14 @@ alias ll='ls -lFh --color=auto'
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/config"'
 alias irssi='TERM=screen irssi'
 
+function gvims() {
+    if [ -f .gsession.vim ]; then
+        gvim -S .gsession.vim $@ & disown
+    else
+        gvim -c "Obsession .gsession.vim" $@ & disown
+    fi
+}
+
 function vims() {
     if [ -f .session.vim ]; then
         vim -S .session.vim $@

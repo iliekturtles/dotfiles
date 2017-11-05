@@ -6,7 +6,7 @@ source ~/.bash_profile
 
 # Setup Windows environment variables.
 if [ ! -z "$MSYSTEM" ] && [ -z "$VIMINIT" ]; then
-    setx VIMINIT ":source $(cygpath -w $XDG_CONFIG_HOME/vim/vimrc)"
+    setx VIMINIT ":source $(cygpath -m $XDG_CONFIG_HOME/vim/vimrc)"
     setx RUSTUP_HOME $(cygpath -w "$XDG_DATA_HOME/rustup")
     setx CARGO_HOME $(cygpath -w "$XDG_DATA_HOME/cargo")
 fi
