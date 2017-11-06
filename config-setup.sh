@@ -5,10 +5,13 @@ cp bashrc ~/.bashrc
 source ~/.bash_profile
 
 # Setup Windows environment variables.
-if [ ! -z "$MSYSTEM" ] && [ -z "$VIMINIT" ]; then
+_DOTFILES_VERSION="2"
+
+if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
+    setx DOTFILES_VERSION "$_DOTFILES_VERSION"
     setx VIMINIT ":source $(cygpath -m $XDG_CONFIG_HOME/vim/vimrc)"
-    setx RUSTUP_HOME $(cygpath -w "$XDG_DATA_HOME/rustup")
-    setx CARGO_HOME $(cygpath -w "$XDG_DATA_HOME/cargo")
+    setx RUSTUP_HOME "$(cygpath -w "$XDG_DATA_HOME/rustup")"
+    setx CARGO_HOME "$(cygpath -w "$XDG_DATA_HOME/cargo")"
 fi
 
 # Setup config directories.
