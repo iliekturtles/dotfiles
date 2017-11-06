@@ -87,12 +87,7 @@ if [ ! -d "$XDG_CONFIG_HOME/base16-shell" ]; then
 fi
 
 # Vim.
-mkdir -p "$XDG_CONFIG_HOME/vim/"{colors,syntax}
 mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}
 cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
-[ -f /usr/share/doc/tmux/examples/tmux.vim ] && \
-    cp /usr/share/doc/tmux/examples/tmux.vim "$XDG_CONFIG_HOME/vim/syntax/tmux.vim"
-[ -f /usr/share/vim/vimfiles/syntax/tmux.vim ] && \
-    cp /usr/share/vim/vimfiles/syntax/tmux.vim "$XDG_CONFIG_HOME/vim/syntax/tmux.vim"
 [ ! -d "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim" ] && \
     git clone https://github.com/VundleVim/Vundle.vim.git "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim"
