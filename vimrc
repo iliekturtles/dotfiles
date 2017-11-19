@@ -57,6 +57,10 @@ set encoding=utf-8
 set expandtab
 set fo+=j               " Remove comment leader when joining lines.
 set gdefault
+if executable('rg')
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 if has('gui')
     set guioptions-=e
     set guioptions-=tT
