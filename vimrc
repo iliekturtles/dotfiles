@@ -20,8 +20,7 @@ filetype off
 call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'iliekturtles/vim-code-dark'
-Plugin 'andbar-ru/vim-unicon'
+Plugin 'iliekturtles/vim-unicon'
 if has('python')
     Plugin 'Valloric/YouCompleteMe'
 else
