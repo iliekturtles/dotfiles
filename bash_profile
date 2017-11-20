@@ -26,7 +26,7 @@ export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 if [ ! -z $MSYSTEM ]; then
     export PS1="\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
     if [ -d /usr/share/terminfo ]; then
-        export MSYS_TERMINFO=`cygpath -w /usr/share/terminfo`
+        export MSYS_TERMINFO=$(cygpath -w /usr/share/terminfo)
     fi
 
     pathsuffix "$(cygpath "$CARGO_HOME")/bin"
@@ -49,10 +49,10 @@ if hash rustc 2>/dev/null; then
     if [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ]; then
         export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
     fi
-    export RUST_TOOLCHAIN=`basename $(rustc --print sysroot)`
+    export RUST_TOOLCHAIN=$(basename $(rustc --print sysroot))
 fi
 if hash racer 2>/dev/null; then
-    export RACER_PATH=`which racer`
+    export RACER_PATH=$(which racer)
 fi
 
 # Source bashrc.
