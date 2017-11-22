@@ -266,15 +266,19 @@ colorscheme unicon
 let cc81=join(range(81, 255), ',')
 let cc101=join(range(101, 255), ',')
 let &colorcolumn=cc101
-au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
 
-" Compiler settings.
+" Autocommands
+augroup vimrc
+au!
+
 au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
-
-" Syntax highlighting.
-au BufRead,BufNewFile *.md setfiletype markdown
-au BufRead,BufNewFile *.proj,*.targets setfiletype xml
 au BufRead,BufNewFile *.sql set commentstring=--\ %s
+
+au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
+au FileType qf setlocal scrolloff=0
+au FileType qf wincmd J
+
+augroup end
 
 " Git-gutter signs (en-space + right half block).
 let g:gitgutter_sign_added = ' ▐'
