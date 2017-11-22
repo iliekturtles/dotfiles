@@ -182,17 +182,26 @@ vnoremap <leader>X X
 " Map f to copy the full file path.
 nnoremap <expr> <leader>f ':let @' . g:register . ' = expand("%:p")<CR>'
 
+" Map C-<direction> to move between splits and tmux panes.
+function! TmuxMove(direction)
+    let wnr = winnr()
+    silent! execute 'wincmd ' . a:direction
+    " If the winnr is still the same after we moved, it is the last pane
+    if wnr == winnr()
+        call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
+    end
+endfunction
+
+nnoremap <silent> <c-h> :call TmuxMove('h')<cr>
+nnoremap <silent> <c-j> :call TmuxMove('j')<cr>
+nnoremap <silent> <c-k> :call TmuxMove('k')<cr>
+nnoremap <silent> <c-l> :call TmuxMove('l')<cr>
+
 " Map C-scroll weel to scroll horizontally.
 noremap <C-ScrolLWheelDown> 4zl
 noremap <C-ScrolLWheelUp> 4zh
 noremap! <C-ScrolLWheelDown> <C-o>4zl
 noremap! <C-ScrolLWheelUp> <C-o>4zh
-
-" Map C-<direction> to move between splits.
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
 
 " Hexmode, http://vim.wikia.com/wiki/Improved_hex_editing
 command -bar Hexmode call ToggleHex()
@@ -258,7 +267,6 @@ au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q>
 au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
 au BufRead,BufNewFile *.sql set commentstring=--\ %s
-au BufRead,BufNewFile tmux*.conf setfiletype tmux
 
 if has('python')
     " YouCompleteMe.
