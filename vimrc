@@ -183,6 +183,10 @@ vnoremap <leader>X X
 " Map f to copy the full file path.
 nnoremap <expr> <leader>f ':let @' . g:register . ' = expand("%:p")<CR>'
 
+" Map j and k to non-linewise movements.
+nmap j gj
+nmap k gk
+
 " Map C-<direction> to move between splits and tmux panes.
 function! TmuxMove(direction)
     let wnr = winnr()
