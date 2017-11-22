@@ -66,6 +66,7 @@ if has('gui')
 endif
 set hlsearch incsearch ignorecase smartcase
 set hidden
+set keywordprg=:help
 set laststatus=2
 set lazyredraw
 set list listchars=tab:→ ,space:·,trail:·,nbsp:·
