@@ -31,6 +31,7 @@ else
 end
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-repeat'
@@ -84,12 +85,14 @@ set showcmd
 set showmatch
 set sidescroll=1
 set sidescrolloff=10
+set signcolumn=yes
 set smarttab
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
 set switchbuf=useopen,usetab
 set tabstop=4
 set tildeop
+set updatetime=1000
 set vb
 set wildmenu
 set wildmode=list:longest
@@ -272,6 +275,13 @@ au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q>
 au BufRead,BufNewFile *.md setfiletype markdown
 au BufRead,BufNewFile *.proj,*.targets setfiletype xml
 au BufRead,BufNewFile *.sql set commentstring=--\ %s
+
+" Git-gutter signs (en-space + right half block).
+let g:gitgutter_sign_added = ' ▐'
+let g:gitgutter_sign_modified = ' ▐'
+let g:gitgutter_sign_removed = ' ▐'
+let g:gitgutter_sign_removed_first_line = ' ▐'
+let g:gitgutter_sign_modified_removed = ' ▐'
 
 if has('python')
     " YouCompleteMe.
