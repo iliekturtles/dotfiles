@@ -275,6 +275,7 @@ au!
 au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
 au BufRead,BufNewFile *.sql set commentstring=--\ %s
 
+au FileType gitcommit,markdown,text setlocal spell
 au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
 au FileType qf setlocal scrolloff=0
 au FileType qf wincmd J
