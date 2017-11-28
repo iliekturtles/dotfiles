@@ -74,6 +74,7 @@ set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 if has('mouse')
     set mouse=a
 endif
+set nojoinspaces
 set noshowmode
 set nowrap
 set nrformats-=octal
