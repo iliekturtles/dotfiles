@@ -278,6 +278,8 @@ au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
 au FileType qf setlocal scrolloff=0
 au FileType qf wincmd J
 
+au QuickFixCmdPost [^l]* nested cwindow
+au QuickFixCmdPost l* nested lwindow
 augroup end
 
 " Git-gutter signs (en-space + right half block).
