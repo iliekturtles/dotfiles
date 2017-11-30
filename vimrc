@@ -29,6 +29,7 @@ else
         Plugin 'racer-rust/vim-racer'
     endif
 end
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
@@ -283,6 +284,12 @@ au FileType qf wincmd J
 au QuickFixCmdPost [^l]* nested cwindow
 au QuickFixCmdPost l* nested lwindow
 augroup end
+
+" CtrlP
+if executable('rg')
+    let g:ctrlp_user_command = 'rg --files --color never %s'
+    let g:ctrlp_use_caching = 0
+endif
 
 " Git-gutter signs (en-space + right half block).
 let g:gitgutter_sign_added = ' ▐'
