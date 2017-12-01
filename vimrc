@@ -1,5 +1,3 @@
-set nocompatible
-
 " XDG setup.
 if empty($XDG_CONFIG_HOME)
     let $XDG_CONFIG_HOME=expand('$HOME/.config')
