@@ -2,10 +2,10 @@ set nocompatible
 
 " XDG setup.
 if empty($XDG_CONFIG_HOME)
-	let $XDG_CONFIG_HOME=expand('$HOME/.config')
+    let $XDG_CONFIG_HOME=expand('$HOME/.config')
 endif
 if empty($XDG_CACHE_HOME)
-	let $XDG_CACHE_HOME=expand('$HOME/.cache')
+    let $XDG_CACHE_HOME=expand('$HOME/.cache')
 endif
 
 set backupdir=$XDG_CACHE_HOME/vim/backup
@@ -232,8 +232,8 @@ function ToggleHex()
         let b:oldbin=&bin
         " set new options
         setlocal binary " make sure it overrides any textwidth, etc.
-        silent :e " this will reload the file without trickeries 
-                  "(DOS line endings will be shown entirely )
+        silent :e " this will reload the file without trickeries
+        "           (DOS line endings will be shown entirely )
         let &ft="xxd"
         " set status
         let b:editHex=1
@@ -243,7 +243,7 @@ function ToggleHex()
         " restore old options
         let &ft=b:oldft
         if !b:oldbin
-          setlocal nobinary
+            setlocal nobinary
         endif
         " set status
         let b:editHex=0
@@ -271,18 +271,18 @@ let &colorcolumn=cc101
 
 " Autocommands
 augroup vimrc
-au!
+    au!
 
-au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
-au BufRead,BufNewFile *.sql set commentstring=--\ %s
+    au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
+    au BufRead,BufNewFile *.sql set commentstring=--\ %s
 
-au FileType gitcommit,markdown,text setlocal spell
-au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
-au FileType qf setlocal scrolloff=0
-au FileType qf wincmd J
+    au FileType gitcommit,markdown,text setlocal spell
+    au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
+    au FileType qf setlocal scrolloff=0
+    au FileType qf wincmd J
 
-au QuickFixCmdPost [^l]* nested cwindow
-au QuickFixCmdPost l* nested lwindow
+    au QuickFixCmdPost [^l]* nested cwindow
+    au QuickFixCmdPost l* nested lwindow
 augroup end
 
 " CtrlP
