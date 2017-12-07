@@ -124,8 +124,11 @@ nnoremap <leader><space> :noh<cr>
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
+" Map gg to toggle GitGutter.
+nnoremap <leader>gg :GitGutterToggle<cr>
+
 " Map h to toggle hex mode.
-nnoremap <leader>h :Hexmode<CR>
+nnoremap <leader>h :Hexmode<cr>
 
 " Map Y yank to the end of the line.
 noremap Y y$
