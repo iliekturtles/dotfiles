@@ -2,15 +2,20 @@
 # Rust toolchain setup.
 if hash rustup 2>/dev/null; then
     rustup self update
+
+    # Stable.
     rustup toolchain add stable
     rustup component add rls-preview
     rustup component add rust-analysis
     rustup component add rust-src
-    rustup toolchain add nightly
-    rustup component add rls-preview --toolchain nightly
-    rustup component add rust-analysis --toolchain nightly
-    rustup component add rust-src --toolchain nightly
-    rustup update
+
+    # Nightly. Only update if rls-preview exists.
+    if curl -s https://static.rust-lang.org/dist/channel-rust-nightly.toml | grep -q "\[pkg.rls-preview\]"; then
+        rustup toolchain add nightly
+        rustup component add rls-preview --toolchain nightly
+        rustup component add rust-analysis --toolchain nightly
+        rustup component add rust-src --toolchain nightly
+    fi
 fi
 
 # Rust tools setup.
