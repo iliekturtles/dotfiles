@@ -263,9 +263,43 @@ let g:lightline={
 \           ['lineinfo'],
 \           ['percent'],
 \           ['fileformat', 'fileencoding', 'filetype'],
+\           ['linter_warnings', 'linter_errors'],
 \       ]
+\   },
+\   'component_expand': {
+\       'linter_warnings': 'LightlineLinterWarnings',
+\       'linter_errors': 'LightlineLinterErrors',
+\   },
+\   'component_type': {
+\       'linter_warnings': 'warning',
+\       'linter_errors': 'error',
 \   }
 \}
+
+function! LightlineLinterWarnings() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? '' : printf('%d 🔺', all_non_errors)
+endfunction
+
+function! LightlineLinterErrors() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? '' : printf('%d ⮿', all_errors)
+endfunction
+
+" function! LightlineLinterOK() abort
+"     let l:counts = ale#statusline#Count(bufnr(''))
+"     let l:all_errors = l:counts.error + l:counts.style_error
+"     let l:all_non_errors = l:counts.total - l:all_errors
+
+"     return l:counts.total == 0 ? '✓ ' : ''
+" endfunction
+
 set t_Co=256
 " set termguicolors
 set t_ut=
@@ -291,6 +325,8 @@ augroup vimrc
 
     au QuickFixCmdPost [^l]* nested cwindow
     au QuickFixCmdPost l* nested lwindow
+
+    au User ALELint call lightline#update()
 augroup end
 
 " CtrlP
