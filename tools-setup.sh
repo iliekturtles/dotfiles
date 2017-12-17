@@ -26,6 +26,9 @@ if hash cargo 2>/dev/null; then
     if ! hash cargo-outdated 2>/dev/null; then
         cargo install cargo-outdated
     fi
+    if ! hash clippy 2>/dev/null; then
+        cargo +nightly install clippy
+    fi
     if ! hash racer 2>/dev/null; then
         cargo install racer
     fi
@@ -48,7 +51,7 @@ if hash cargo 2>/dev/null; then
         fi
 
         cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
-        cargo +nightly install-update rustfmt-nightly
+        cargo +nightly install-update clippy rustfmt-nightly
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
