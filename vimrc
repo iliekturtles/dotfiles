@@ -321,8 +321,8 @@ augroup vimrc
     au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
     au BufRead,BufNewFile *.sql set commentstring=--\ %s
 
-    au FileType gitcommit,markdown,text setlocal spell
-    au FileType gitcommit let &l:colorcolumn=cc81 | setlocal tabstop=4
+    au FileType gitcommit let &l:colorcolumn=cc81 | setlocal spell | setlocal tabstop=4
+    au FileType markdown,text setlocal spell | setlocal textwidth=99
     au FileType qf setlocal scrolloff=0
     au FileType qf wincmd J
 
