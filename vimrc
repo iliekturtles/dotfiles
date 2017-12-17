@@ -124,8 +124,11 @@ nnoremap <leader><space> :noh<cr>
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
-" Map gg to toggle GitGutter.
-nnoremap <leader>gg :GitGutterToggle<cr>
+" Map tg to toggle GitGutter.
+nnoremap <leader>tg :GitGutterToggle<cr>
+
+"Map ta to toggle ALE.
+nnoremap <leader>ta :ALEToggle<cr>
 
 " Map h to toggle hex mode.
 nnoremap <leader>h :Hexmode<cr>
@@ -345,8 +348,10 @@ let g:gitgutter_sign_modified_removed = ' ▐'
 " ALE
 let g:ale_linters = {'rust': ['rls']}
 let g:ale_fixers = {'rust': ['rustfmt']}
-" let g:ale_completion_enabled = 1
-let g:ale_open_list = 1
+let g:ale_completion_enabled = 1
+" let g:ale_open_list = 1
+" let g:ale_list_window_size = 6
+" let g:ale_keep_list_window_open = 1
 let g:ale_sign_error = '⮿'
 let g:ale_sign_info = '🛈'
 let g:ale_sign_warning = '🔺'
