@@ -26,7 +26,7 @@ if hash cargo 2>/dev/null; then
     if ! hash cargo-outdated 2>/dev/null; then
         cargo install cargo-outdated
     fi
-    if ! hash clippy 2>/dev/null; then
+    if ! hash cargo-clippy 2>/dev/null; then
         cargo +nightly install clippy
     fi
     if ! hash racer 2>/dev/null; then
