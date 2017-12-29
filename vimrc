@@ -322,7 +322,7 @@ augroup vimrc
     au BufRead,BufNewFile *.sql set commentstring=--\ %s
 
     au FileType gitcommit let &l:colorcolumn=cc81 | setlocal spell | setlocal tabstop=4
-    au FileType markdown,text setlocal spell | setlocal textwidth=99
+    au FileType markdown,text setlocal spell | setlocal textwidth=100
     au FileType qf wincmd J
 
     au QuickFixCmdPost [^l]* nested cwindow
