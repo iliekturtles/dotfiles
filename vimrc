@@ -323,7 +323,6 @@ augroup vimrc
 
     au FileType gitcommit let &l:colorcolumn=cc81 | setlocal spell | setlocal tabstop=4
     au FileType markdown,text setlocal spell | setlocal textwidth=99
-    au FileType qf setlocal scrolloff=0
     au FileType qf wincmd J
 
     au QuickFixCmdPost [^l]* nested cwindow
