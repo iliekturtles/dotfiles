@@ -110,7 +110,7 @@ vnoremap / /\v
 nnoremap <leader>e :NERDTreeToggle<cr>
 
 " Map bl to show the buffer list and prompt for selection.
-nnoremap <leader>bl :ls<cr>:b<space>
+nnoremap <leader>bl :ls<cr>:b
 
 "Map bw to wipe the current buffer and switch to the alternate buffer.
 nnoremap <leader>bw :b#\|bw#<cr>
