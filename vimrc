@@ -118,6 +118,12 @@ nnoremap <leader>bw :b#\|bw#<cr>
 "Map bv to open the alternate buffer in a new split.
 nnoremap <leader>bv :b#\|vsp#<cr>
 
+" Map bp to copy the full file path.
+nnoremap <expr> <leader>bp ':let @' . g:register . ' = expand("%:p")<CR>'
+
+" Map f to :grep!
+nnoremap <leader>f :grep! ''<left>
+
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
 
@@ -186,9 +192,6 @@ nnoremap <expr> X <sid>reg() . 'X'
 nnoremap <leader>X X
 vnoremap <expr> X <sid>reg() . 'X'
 vnoremap <leader>X X
-
-" Map f to copy the full file path.
-nnoremap <expr> <leader>f ':let @' . g:register . ' = expand("%:p")<CR>'
 
 " Map j and k to non-linewise movements.
 nmap j gj
