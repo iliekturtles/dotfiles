@@ -193,9 +193,11 @@ nnoremap <leader>X X
 vnoremap <expr> X <sid>reg() . 'X'
 vnoremap <leader>X X
 
-" Map j and k to non-linewise movements.
-nmap j gj
-nmap k gk
+" Map j/k to non-linewise movements and gj/gk to linewise.
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " Map C-<direction> to move between splits and tmux panes.
 function! TmuxMove(direction)
