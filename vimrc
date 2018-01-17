@@ -37,7 +37,6 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-speeddating'
 Plugin 'iliekturtles/vim-unimpaired'
-Plugin 'itchyny/lightline.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'w0rp/ale'
@@ -106,9 +105,6 @@ nnoremap <leader>, ,
 nnoremap / /\v
 vnoremap / /\v
 
-" Map e to toggle NERDTree.
-nnoremap <leader>e :NERDTreeToggle<cr>
-
 " Map bl to show the buffer list and prompt for selection.
 nnoremap <leader>bl :ls<cr>:b
 
@@ -130,14 +126,20 @@ nnoremap <leader><space> :noh<cr>
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
-" Map tg to toggle GitGutter.
-nnoremap <leader>tg :GitGutterToggle<cr>
+" Map e to toggle NERDTree.
+nnoremap <leader>e :NERDTreeToggle<cr>
 
 "Map ta to toggle ALE.
 nnoremap <leader>ta :ALEToggle<cr>
 
-" Map h to toggle hex mode.
-nnoremap <leader>h :Hexmode<cr>
+" Map tg to toggle GitGutter.
+nnoremap <leader>tg :GitGutterToggle<cr>
+
+" Map th to toggle hex mode.
+nnoremap <leader>th :Hexmode<cr>
+
+" Map ts to toggle status line.
+nnoremap <leader>ts :ToggleStatusLine<cr>
 
 " Map Y yank to the end of the line.
 noremap Y y$
@@ -265,49 +267,6 @@ function ToggleHex()
 endfunction
 
 " Colors.
-let g:lightline={
-\   'active': {
-\       'right': [
-\           ['lineinfo'],
-\           ['percent'],
-\           ['fileformat', 'fileencoding', 'filetype'],
-\           ['linter_warnings', 'linter_errors'],
-\       ]
-\   },
-\   'component_expand': {
-\       'linter_warnings': 'LightlineLinterWarnings',
-\       'linter_errors': 'LightlineLinterErrors',
-\   },
-\   'component_type': {
-\       'linter_warnings': 'warning',
-\       'linter_errors': 'error',
-\   }
-\}
-
-function! LightlineLinterWarnings() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf('%d 🔺', all_non_errors)
-endfunction
-
-function! LightlineLinterErrors() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? '' : printf('%d ⮿', all_errors)
-endfunction
-
-" function! LightlineLinterOK() abort
-"     let l:counts = ale#statusline#Count(bufnr(''))
-"     let l:all_errors = l:counts.error + l:counts.style_error
-"     let l:all_non_errors = l:counts.total - l:all_errors
-
-"     return l:counts.total == 0 ? '✓ ' : ''
-" endfunction
-
 set t_Co=256
 " set termguicolors
 set t_ut=
@@ -333,7 +292,8 @@ augroup vimrc
     au QuickFixCmdPost [^l]* nested cwindow
     au QuickFixCmdPost l* nested lwindow
 
-    au User ALELint call lightline#update()
+    au User AleLintPre let b:ale_info=' ⭮ ' | let b:ale_errors='' | let b:ale_warnings='' | redrawstatus
+    au User AleLintPost call s:AleStatus() | redrawstatus
 augroup end
 
 " CtrlP
@@ -358,7 +318,117 @@ let g:ale_completion_enabled = 1
 " let g:ale_keep_list_window_open = 1
 let g:ale_sign_error = '⮿'
 let g:ale_sign_info = '🛈'
-let g:ale_sign_warning = '🔺'
+let g:ale_sign_warning = '⯅'
+
+fun! s:AleStatus()
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:errors = l:counts.error + l:counts.style_error
+    let l:warnings = l:counts.warning + l:counts.style_warning
+
+    let b:ale_info = ''
+
+    if l:errors > 0 || l:warnings > 0
+        let b:ale_errors = printf("  %d %s ", l:errors, g:ale_sign_error)
+        let b:ale_warnings = printf("  %d %s ", l:warnings, g:ale_sign_warning)
+    else
+        let b:ale_warnings = ''
+        let b:ale_errors = ''
+    endif
+endf
+
+" Status line.
+" Adapted from https://github.com/lifepillar/vimrc/blob/697f8f659f047ebb23b7ae0f96778781ec07c1eb/vimrc#L205
+" See :h mode() (some of these are never used in the status line).
+let g:mode_map = {
+    \ 'n':      [' NORMAL ', 'NormalMode'],
+    \ 'no':     [' PENDING', 'NormalMode'],
+    \ 'v':      [' VISUAL ', 'VisualMode'],
+    \ 'V':      [' V-LINE ', 'VisualMode'],
+    \ "\<c-v>": [' V-BLOCK', 'VisualMode'],
+    \ 's':      [' SELECT ', 'VisualMode'],
+    \ 'S':      [' S-LINE ', 'VisualMode'],
+    \ "\<c-s>": [' S-BLOCK', 'VisualMode'],
+    \ 'i':      [' INSERT ', 'InsertMode'],
+    \ 'ic':     ['COMPLETE', 'InsertMode'],
+    \ 'ix':     [' CTRL-X ', 'InsertMode'],
+    \ 'R':      [' REPLACE', 'ReplaceMode'],
+    \ 'Rc':     ['COMPLETE', 'ReplaceMode'],
+    \ 'Rv':     [' REPLACE', 'ReplaceMode'],
+    \ 'Rx':     [' CTRL-X ', 'ReplaceMode'],
+    \ 'c':      [' COMMAND', 'CommandMode'],
+    \ 'cv':     [' COMMAND', 'CommandMode'],
+    \ 'ce':     [' COMMAND', 'CommandMode'],
+    \ 'r':      [' PROMPT ', 'CommandMode'],
+    \ 'rm':     [' -MORE- ', 'CommandMode'],
+    \ 'r?':     ['CONFIRM ', 'CommandMode'],
+    \ '!':      [' SHELL  ', 'CommandMode'],
+    \ 't':      ['TERMINAL', 'CommandMode']}
+
+" newMode may be a value as returned by mode(1) or the name of a highlight group.
+" Note: setting highlight groups while computing the status line may cause the
+" startup screen to disappear. See: https://github.com/powerline/powerline/issues/250
+fun! s:updateStatusLineHighlight(newMode)
+    execute 'hi! link CurrMode' get(g:mode_map, a:newMode, ["", a:newMode])[1]
+
+    return 1
+endf
+
+" nr is always the number of the currently active window. In a %{} context, winnr()
+" always refers to the window to which the status line being drawn belongs. Since this
+" function is invoked in a %{} context, winnr() may be different from a:nr. We use this
+" fact to detect whether we are drawing in the active window or in an inactive window.
+fun! SetupStl(nr)
+    return get(extend(w:, {
+            \ "lf_active": winnr() != a:nr
+            \ ? 0
+            \ : (mode(1) ==# get(g:, "lf_cached_mode", "")
+            \ ? 1
+            \ : s:updateStatusLineHighlight(get(extend(g:, { "lf_cached_mode": mode(1) }), "lf_cached_mode"))
+            \ )
+            \ }), "", "")
+endf
+
+fun! BuildStatusLine(nr)
+    return '%{SetupStl('.a:nr.')}
+        \%#CurrMode#%{w:["lf_active"] ? "  " . get(g:mode_map, mode(1), [mode(1)])[0] . (&paste ? "| PASTE " : " ") : ""}
+        \%<%8* %f %{&modified ? "| + " : (!&modifiable ? "| - " : (&previewwindow ? " | PRV " : ""))}
+        \%*%=
+        \%5*%{get(b:, "ale_info", "")}
+        \%#DiffDelete#%{get(b:, "ale_errors", "")}
+        \%#DiffChange#%{get(b:, "ale_warnings", "")}
+        \%6* %{&fileformat} | %{(strlen(&fenc) ? &fenc : &enc) . (&bomb ? ",BOM" : "")} | %{&filetype}
+        \ %7* %p %%
+        \ %8* %l:%c '
+endf
+
+fun! s:enableStatusLine()
+    if exists("g:default_stl") | return | endif
+
+    let g:default_stl = &statusline
+    set statusline=%!BuildStatusLine(winnr()) " winnr() is always the number of the *active* window
+endf
+
+fun! s:disableStatusLine()
+    if !exists("g:default_stl") | return | endif
+
+    let &statusline = g:default_stl
+    unlet g:default_stl
+endf
+
+fun! s:toggleStatusLine()
+    if exists("g:default_stl")
+        call s:disableStatusLine()
+    else
+        call s:enableStatusLine()
+    endif
+endf
+
+" Custom status line
+command! -nargs=0 EnableStatusLine call <sid>enableStatusLine()
+command! -nargs=0 DisableStatusLine call <sid>disableStatusLine()
+command! -nargs=0 ToggleStatusLine call <sid>toggleStatusLine()
+
+EnableStatusLine
 
 " GUI settings.
 if has('gui')
