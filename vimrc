@@ -364,5 +364,10 @@ let g:ale_sign_warning = '🔺'
 if has('gui')
     set guifont=Consolas:h11
 
-    au GUIEnter * simalt ~x
+    augroup gui
+        au!
+
+        " Maximize.
+        au GUIEnter * simalt ~x
+    augroup end
 endif
