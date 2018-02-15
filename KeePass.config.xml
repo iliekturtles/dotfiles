@@ -7,7 +7,7 @@
 	<Application>
 		<LastUpdateCheck>2017-01-03T12:47:30Z</LastUpdateCheck>
 		<LastUsedFile>
-			<Path>gdrive:///Mike Boutin/Work/Mike.kdbx</Path>
+			<Path>gdrive:///Mike Boutin/Serious business/Mike.kdbx</Path>
 			<CredProtMode>Obf</CredProtMode>
 			<CredSaveMode>SaveCred</CredSaveMode>
 		</LastUsedFile>
@@ -15,7 +15,7 @@
 			<MaxItemCount>12</MaxItemCount>
 			<Items>
 				<ConnectionInfo>
-					<Path>gdrive:///Mike Boutin/Work/Mike.kdbx</Path>
+					<Path>gdrive:///Mike Boutin/Serious business/Mike.kdbx</Path>
 					<CredProtMode>Obf</CredProtMode>
 					<CredSaveMode>SaveCred</CredSaveMode>
 				</ConnectionInfo>
