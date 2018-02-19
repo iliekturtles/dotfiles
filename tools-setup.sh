@@ -8,6 +8,7 @@ if hash rustup 2>/dev/null; then
     rustup component add rls-preview
     rustup component add rust-analysis
     rustup component add rust-src
+    rustup component add rustfmt-preview
 
     # Nightly. Only update if rls-preview exists.
     if curl -s https://static.rust-lang.org/dist/channel-rust-nightly.toml | grep -q "\[pkg.rls-preview\]"; then
@@ -15,6 +16,7 @@ if hash rustup 2>/dev/null; then
         rustup component add rls-preview --toolchain nightly
         rustup component add rust-analysis --toolchain nightly
         rustup component add rust-src --toolchain nightly
+        rustup component add rustfmt-preview --toolchain nightly
     fi
 fi
 
@@ -35,9 +37,6 @@ if hash cargo 2>/dev/null; then
     if ! hash rg 2>/dev/null; then
         cargo install ripgrep
     fi
-    if ! hash rustfmt 2>/dev/null; then
-        cargo +nightly install rustfmt-nightly
-    fi
     if ! hash tokei 2>/dev/null; then
         cargo install tokei
     fi
@@ -51,7 +50,7 @@ if hash cargo 2>/dev/null; then
         fi
 
         cargo install-update cargo-expand cargo-outdated racer ripgrep tokei xsv
-        cargo +nightly install-update clippy rustfmt-nightly
+        cargo +nightly install-update clippy
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
