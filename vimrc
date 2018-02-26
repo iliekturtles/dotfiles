@@ -398,7 +398,7 @@ fun! BuildStatusLine(nr)
         \%#DiffChange#%{get(b:, "ale_warnings", "")}
         \%6* %{&fileformat} | %{(strlen(&fenc) ? &fenc : &enc) . (&bomb ? ",BOM" : "")} | %{&filetype}
         \ %7* %p %%
-        \ %8* %l:%c '
+        \ %8* %l:%v '
 endf
 
 fun! s:enableStatusLine()
