@@ -33,6 +33,7 @@ fi
 # Git.
 touch "$XDG_CONFIG_HOME/git/config"
 
+git config --global core.commentChar ";"
 git config --global commit.verbose true
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
@@ -65,12 +66,10 @@ git config --global alias.up "pull --ff-only"
 
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
-    git config --global core.commentChar ";"
     git config --global core.pager "less -RS -x4"
     git config --global credential.helper wincred
 else
     git config --global core.autocrlf input
-    git config --global core.commentChar auto
     git config --global core.pager "less -S -x4"
     git config --global credential.helper 'cache --timeout=14400'
 fi
