@@ -1,4 +1,23 @@
 #!/bin/bash
+# Git and Vim setup.
+if hash apt-cache 2>/dev/null; then
+    if ! apt-cache policy | grep -q "git-core/ppa"; then
+        sudo apt-add-repository ppa:git-core/ppa
+        sudo apt update
+        sudo apt install git
+    fi
+    if ! apt-cache policy | grep -q "jonathonf/vim"; then
+        sudo add-apt-repository ppa:jonathonf/vim
+        sudo apt update
+        sudo apt install vim
+    fi
+fi
+
+# Vim plugin setup.
+if hash vim 2>/dev/null; then
+    vim +PluginClean +PluginInstall! +qall
+fi
+
 # Rust toolchain setup.
 if hash rustup 2>/dev/null; then
     rustup self update
@@ -54,9 +73,4 @@ if hash cargo 2>/dev/null; then
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
-fi
-
-# Vim plugin setup.
-if hash vim 2>/dev/null; then
-    vim +PluginClean +PluginInstall! +qall
 fi
