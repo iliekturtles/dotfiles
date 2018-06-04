@@ -37,8 +37,11 @@ else
     if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
         debian_chroot=$(cat /etc/debian_chroot)
     fi
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        user_host="\[\e[00;32m\]\u@\h "
+    fi
 
-    export PS1="${debian_chroot:+($debian_chroot)}\[\e[00;32m\]\u@\h "
+    export PS1="${debian_chroot:+($debian_chroot)}${user_host}"
     export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
     export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
     export CARGO_HOME="$XDG_DATA_HOME/cargo"
