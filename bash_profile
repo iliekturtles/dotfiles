@@ -24,7 +24,7 @@ export GIT_PS1_SHOWDIRTYSTATE=*
 export GIT_PS1_SHOWSTASHSTATE=$
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 if [ ! -z $MSYSTEM ]; then
-    export PS1="\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
+    export PS1=""
     if [ -d /usr/share/terminfo ]; then
         export MSYS_TERMINFO=$(cygpath -w /usr/share/terminfo)
     fi
@@ -34,13 +34,19 @@ if [ ! -z $MSYSTEM ]; then
     pathsuffix "/c/Program Files (x86)/Microsoft Visual Studio/2017/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
     pathsuffix "/c/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
 else
-    export PS1="\[\e[00;32m\]\u@\h \[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
+    if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+        debian_chroot=$(cat /etc/debian_chroot)
+    fi
+
+    export PS1="${debian_chroot:+($debian_chroot)}\[\e[00;32m\]\u@\h "
     export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
     export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
     export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
     pathsuffix "$CARGO_HOME/bin"
 fi
+
+export PS1="\[\e]0;\w\a\]$PS1\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
 
 pathsuffix "$HOME/.local/bin"
 

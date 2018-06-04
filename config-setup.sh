@@ -15,7 +15,7 @@ if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
 fi
 
 # Setup config directories.
-mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
+mkdir -p "$XDG_CONFIG_HOME"/{git,tmux,vim}
 
 # Setup KeePass, mintty, tmux, VsVim.
 if [ ! -z "$MSYSTEM" ]; then
