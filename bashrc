@@ -47,6 +47,9 @@ if [ ! -z $MSYSTEM ]; then
     bind '"\e[1;5D":backward-word'
 fi
 
+# Set tab-stops to 4 characters
+tabs -4
+
 # Disable scroll-lock (Ctrl-s, Ctrl-q).
 stty -ixon
 
