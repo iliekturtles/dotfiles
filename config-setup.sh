@@ -32,7 +32,7 @@ else
 fi
 
 # Git.
-touch "$XDG_CONFIG_HOME/git/config"
+touch "$XDG_CONFIG_HOME/git/"{config,credentials}
 
 git config --global core.commentChar ";"
 git config --global commit.verbose true
@@ -72,7 +72,7 @@ if [ ! -z "$MSYSTEM" ]; then
 else
     git config --global core.autocrlf input
     git config --global core.pager "less -S -x4"
-    git config --global credential.helper 'cache --timeout=14400'
+    git config --global credential.helper store
 fi
 
 cp gitignore "$XDG_CONFIG_HOME/git/ignore"
