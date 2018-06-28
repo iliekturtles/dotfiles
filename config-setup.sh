@@ -28,6 +28,11 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
 else
+    # WSL
+    if grep -q Microsoft /proc/version && ! diff -q wsl.conf /etc/wsl.conf; then
+        sudo cp wsl.conf /etc/wsl.conf
+    fi
+
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
 fi
 
