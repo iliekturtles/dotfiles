@@ -25,6 +25,7 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
+    dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
 else
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
