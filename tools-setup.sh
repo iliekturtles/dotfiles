@@ -24,24 +24,18 @@ if hash rustup 2>/dev/null; then
 
     # Stable.
     rustup toolchain add stable
+    rustup component add clippy-preview
     rustup component add rls-preview
     rustup component add rust-analysis
     rustup component add rust-src
     rustup component add rustfmt-preview
 
-    # Nightly. Only update if clippy-preview and rls-preview exists.
-    curl -Os https://static.rust-lang.org/dist/channel-rust-nightly.toml
-
-    if grep -q "\[pkg.rls-preview\]" channel-rust-nightly.toml && grep -q "\[pkg.clippy-preview\]" channel-rust-nightly.toml; then
-        rustup toolchain add nightly
-        rustup component add clippy-preview --toolchain nightly
-        rustup component add rls-preview --toolchain nightly
-        rustup component add rust-analysis --toolchain nightly
-        rustup component add rust-src --toolchain nightly
-        rustup component add rustfmt-preview --toolchain nightly
-    fi
-
-    rm channel-rust-nightly.toml
+    rustup toolchain add nightly
+    rustup component add clippy-preview --toolchain nightly
+    rustup component add rls-preview --toolchain nightly
+    rustup component add rust-analysis --toolchain nightly
+    rustup component add rust-src --toolchain nightly
+    rustup component add rustfmt-preview --toolchain nightly
 fi
 
 # Rust tools setup.
