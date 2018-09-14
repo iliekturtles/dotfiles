@@ -64,7 +64,7 @@ if hash cargo 2>/dev/null; then
             cargo install cargo-update
         fi
 
-        cargo install-update cargo-expand cargo-outdated ripgrep tokei xsv
+        cargo install-update cargo-update cargo-expand cargo-outdated ripgrep tokei xsv
         cargo +nightly install-update racer
     else
         echo "cargo install-update not installed (cmake missing)."
