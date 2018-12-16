@@ -24,18 +24,18 @@ if hash rustup 2>/dev/null; then
 
     # Stable.
     rustup toolchain add stable
-    rustup component add clippy-preview
-    rustup component add rls-preview
+    rustup component add clippy
+    rustup component add rls
     rustup component add rust-analysis
     rustup component add rust-src
-    rustup component add rustfmt-preview
+    rustup component add rustfmt
 
     rustup toolchain add nightly
-    rustup component add clippy-preview --toolchain nightly
-    rustup component add rls-preview --toolchain nightly
+    rustup component add clippy --toolchain nightly
+    rustup component add rls --toolchain nightly
     rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
-    rustup component add rustfmt-preview --toolchain nightly
+    rustup component add rustfmt --toolchain nightly
 fi
 
 # Rust tools setup.
