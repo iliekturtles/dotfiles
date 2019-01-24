@@ -1,4 +1,11 @@
 #!/bin/bash
+# Package setup
+if hash apt 2>/dev/null; then
+    if ! dpkg -l | grep ^ii | grep -q cmake; then
+        sudo apt install cmake libssl-dev pkg-config
+    fi
+fi
+
 # Git and Vim setup.
 if hash apt-cache 2>/dev/null; then
     if ! apt-cache policy | grep -q "git-core/ppa"; then
