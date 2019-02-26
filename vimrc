@@ -135,6 +135,12 @@ nnoremap <leader>ta :ALEToggle<cr>
 " Map tg to toggle GitGutter.
 nnoremap <leader>tg :GitGutterToggle<cr>
 
+" Map []h to previous and next hunk. []H to first and last hunk.
+nnoremap [H gg:GitGutterNextHunk<cr>
+nnoremap [h :GitGutterPrevHunk<cr>
+nnoremap ]h :GitGutterNextHunk<cr>
+nnoremap ]H G:GitGutterPrevHunk<cr>
+
 " Map th to toggle hex mode.
 nnoremap <leader>th :Hexmode<cr>
 
