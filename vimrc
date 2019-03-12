@@ -316,7 +316,7 @@ let g:gitgutter_sign_removed_first_line = ' ▐'
 let g:gitgutter_sign_modified_removed = ' ▐'
 
 " ALE
-let g:ale_linters = {'rust': ['rls', 'cargo', 'rustc']}
+let g:ale_linters = {'rust': ['rls', 'cargo']}
 let g:ale_fixers = {'rust': ['rustfmt']}
 let g:ale_completion_enabled = 1
 " let g:ale_open_list = 1
@@ -325,6 +325,9 @@ let g:ale_completion_enabled = 1
 let g:ale_sign_error = '⮿'
 let g:ale_sign_info = '🛈'
 let g:ale_sign_warning = '⯅'
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_rust_rls_executable = 'ra_lsp_server'
+let g:ale_rust_rls_toolchain = ''
 
 fun! s:AleStatus()
     let l:counts = ale#statusline#Count(bufnr(''))

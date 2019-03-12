@@ -52,6 +52,9 @@ if hash cargo 2>/dev/null; then
         if ! hash cargo-install-update 2>/dev/null; then
             cargo install cargo-update
         fi
+        if ! hash ra_lsp_server 2>/dev/null; then
+            cargo install --git https://github.com/rust-analyzer/rust-analyzer.git ra_lsp_server
+        fi
         if ! hash racer 2>/dev/null; then
             cargo install-update-config racer -t nightly
         fi
@@ -65,6 +68,8 @@ if hash cargo 2>/dev/null; then
             ripgrep \
             tokei \
             xsv
+        cargo install-update -g \
+            ra_lsp_server
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
