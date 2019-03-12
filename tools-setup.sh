@@ -37,6 +37,7 @@ if hash rustup 2>/dev/null; then
     rustup component add rust-src
     rustup component add rustfmt
 
+    # Nightly.
     rustup toolchain add nightly
     rustup component add clippy --toolchain nightly
     rustup component add rls --toolchain nightly
@@ -47,35 +48,23 @@ fi
 
 # Rust tools setup.
 if hash cargo 2>/dev/null; then
-    if ! hash cargo-expand 2>/dev/null; then
-        cargo install cargo-expand
-    fi
-    if ! hash cargo-outdated 2>/dev/null; then
-        cargo install cargo-outdated
-    fi
-    if ! hash cargo-tree 2>/dev/null; then
-        cargo install cargo-tree
-    fi
-    if ! hash racer 2>/dev/null; then
-        cargo +nightly install racer
-    fi
-    if ! hash rg 2>/dev/null; then
-        cargo install ripgrep
-    fi
-    if ! hash tokei 2>/dev/null; then
-        cargo install tokei
-    fi
-    if ! hash xsv 2>/dev/null; then
-        cargo install xsv
-    fi
-
     if hash cmake 2>/dev/null; then
         if ! hash cargo-install-update 2>/dev/null; then
             cargo install cargo-update
         fi
+        if ! hash racer 2>/dev/null; then
+            cargo install-update-config racer -t nightly
+        fi
 
-        cargo install-update cargo-update cargo-expand cargo-outdated cargo-tree ripgrep tokei xsv
-        cargo +nightly install-update racer
+        cargo install-update -i \
+            cargo-update \
+            cargo-expand \
+            cargo-outdated \
+            cargo-tree \
+            racer \
+            ripgrep \
+            tokei \
+            xsv
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
