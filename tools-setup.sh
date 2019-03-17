@@ -55,19 +55,17 @@ if hash cargo 2>/dev/null; then
         if ! hash ra_lsp_server 2>/dev/null; then
             cargo install --git https://github.com/rust-analyzer/rust-analyzer.git ra_lsp_server
         fi
-        if ! hash racer 2>/dev/null; then
-            cargo install-update-config racer -t nightly
-        fi
 
         cargo install-update -i \
             cargo-update \
             cargo-expand \
             cargo-outdated \
             cargo-tree \
-            racer \
             ripgrep \
             tokei \
             xsv
+        cargo +nightly install-update -i \
+            racer
         cargo install-update -g \
             ra_lsp_server
     else
