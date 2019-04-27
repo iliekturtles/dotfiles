@@ -16,6 +16,7 @@ fi
 
 # Setup config directories.
 mkdir -p "$XDG_CONFIG_HOME"/{git,tmux,vim}
+mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 
 # Setup KeePass, mintty, tmux, VsVim.
 if [ ! -z "$MSYSTEM" ]; then

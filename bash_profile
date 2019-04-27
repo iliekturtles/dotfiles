@@ -67,6 +67,11 @@ fi
 # Source bashrc.
 if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
 
+# Source bash completion scripts
+for bcfile in "$XDG_DATA_HOME/bash_completion/completions"/*; do
+    [ -f "$bcfile" ] && . $bcfile
+done
+
 # Base16 shell coloring
 if [ -f "$XDG_CONFIG_HOME/base16-shell/scripts/base16-atelier-forest.sh" ]; then
     source "$XDG_CONFIG_HOME/base16-shell/scripts/base16-atelier-forest.sh"

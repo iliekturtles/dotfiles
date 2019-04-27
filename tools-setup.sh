@@ -44,6 +44,10 @@ if hash rustup 2>/dev/null; then
     rustup component add rust-analysis --toolchain nightly
     rustup component add rust-src --toolchain nightly
     rustup component add rustfmt --toolchain nightly
+
+    # Completions
+    rustup completions bash rustup > "$XDG_DATA_HOME/bash_completion/completions/rustup"
+    rustup completions bash cargo > "$XDG_DATA_HOME/bash_completion/completions/cargo"
 fi
 
 # Rust tools setup.
