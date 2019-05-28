@@ -316,7 +316,8 @@ let g:gitgutter_sign_removed_first_line = ' ▐'
 let g:gitgutter_sign_modified_removed = ' ▐'
 
 " ALE
-let g:ale_linters = {'rust': ['rls', 'cargo']}
+" let g:ale_linters = {'rust': ['rls', 'cargo']}
+let g:ale_linters = {'rust': ['rls']}
 let g:ale_fixers = {'rust': ['rustfmt']}
 let g:ale_completion_enabled = 1
 " let g:ale_open_list = 1
