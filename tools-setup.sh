@@ -63,6 +63,7 @@ if hash cargo 2>/dev/null; then
 
         cargo install-update -i \
             cargo-update \
+            cargo-asm \
             cargo-expand \
             cargo-outdated \
             cargo-tree \
