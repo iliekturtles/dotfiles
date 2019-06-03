@@ -58,7 +58,7 @@ if hash cargo 2>/dev/null; then
         fi
         if ! hash ra_lsp_server 2>/dev/null; then
             git clone https://github.com/rust-analyzer/rust-analyzer.git cargo-update/rust-analyzer
-            cargo install --git "$(pwd)/cargo-update/rust-analyzer" ra_lsp_server
+            cargo install --git "file://$(pwd)/cargo-update/rust-analyzer" ra_lsp_server
         fi
 
         cargo install-update -i \
