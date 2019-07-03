@@ -19,14 +19,7 @@ call vundle#begin('$XDG_CONFIG_HOME/vim/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'iliekturtles/vim-unicon'
-if has('python')
-    Plugin 'Valloric/YouCompleteMe'
-else
-    Plugin 'ervandew/supertab'
-    if !empty($RACER_PATH)
-        Plugin 'racer-rust/vim-racer'
-    endif
-end
+Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
