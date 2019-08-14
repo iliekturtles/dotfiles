@@ -58,12 +58,6 @@ if hash cargo 2>/dev/null; then
         fi
         if ! hash ra_lsp_server 2>/dev/null; then
             git clone https://github.com/rust-analyzer/rust-analyzer.git cargo-update/ra_lsp_server
-
-            if [ ! -z "$MSYSTEM" ]; then
-                cargo install --git "$(pwd)/cargo-update/ra_lsp_server" ra_lsp_server
-            else
-                cargo install --git "file://$(pwd)/cargo-update/ra_lsp_server" ra_lsp_server
-            fi
         fi
 
         cargo install-update -i \
@@ -75,10 +69,11 @@ if hash cargo 2>/dev/null; then
             ripgrep \
             tokei \
             xsv
-        cargo +nightly install-update -i \
-            racer
-        cargo install-update -g -t . \
-            ra_lsp_server
+
+        pushd cargo-update/ra_lsp_server
+        git fat && git down && git submodule update --init
+        cargo install-ra --server
+        popd
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
