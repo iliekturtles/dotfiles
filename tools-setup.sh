@@ -78,3 +78,39 @@ if hash cargo 2>/dev/null; then
         echo "cargo install-update not installed (cmake missing)."
     fi
 fi
+
+if hash code 2>/dev/null; then
+    if ! code --list-extensions | grep -q "bungcip.better-toml"; then
+        code --install-extension bungcip.better-toml
+    fi
+
+    if ! code --list-extensions | grep -q "dotjoshjohnson.xml"; then
+        code --install-extension dotjoshjohnson.xml
+    fi
+
+    if hash sqlcmd 2>/dev/null; then
+        if ! code --list-extensions | grep -q "ms-mssql.mssql"; then
+            code --install-extension ms-mssql.mssql
+        fi
+    fi
+
+    if ! code --list-extensions | grep -q "ms-vscode.csharp"; then
+        code --install-extension ms-vscode.csharp
+    fi
+
+    if ! code --list-extensions | grep -q "ms-vscode-remote.remote-wsl"; then
+        code --install-extension ms-vscode-remote.remote-wsl
+    fi
+
+    if ! code --list-extensions | grep -q "ra-lsp"; then
+        code --install-extension ra-lsp-0.0.1.vsix
+    fi
+
+    # if ! code --list-extensions | grep -q "slevesque.vscode-hexdump"; then
+    #     code --install-extension slevesque.vscode-hexdump
+    # fi
+
+    if ! code --list-extensions | grep -q "vscodevim.vim"; then
+        code --install-extension vscodevim.vim
+    fi
+fi

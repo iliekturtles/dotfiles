@@ -1,0 +1,91 @@
+{
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.cursorSurroundingLines": 5,
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "off",
+    "editor.minimap.enabled": false,
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [100],
+    "editor.wordWrapColumn": 100,
+
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.revealIfOpen": true,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.startupEditor": "none",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "window.newWindowDimensions": "maximized",
+    "window.restoreWindows": "all",
+    "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
+
+    "files.exclude": {
+        "** /.vs": true,
+        "** /target": true
+    },
+    "files.hotExit": "onExitAndWindowClose",
+
+    "explorer.openEditors.visible": 0,
+    "explorer.sortOrder": "type",
+
+    "rust-analyzer.enableEnhancedTyping": false,
+    "rust-analyzer.rainbowHighlightingOn": true,
+    "rust-analyzer.highlightingOn": true
+
+    "telemetry.enableTelemetry": false,
+
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\wsl.exe",
+
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.hlsearch": true,
+    "vim.leader": ",",
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.insert": "#3352ce",
+    // "vim.statusBarColors.normal": "#1b6d1b",
+    "vim.statusBarColors.replace": "#ab2b52",
+    "vim.statusBarColors.visual": "#944a25",
+    "vim.statusBarColors.visualblock": "#944a25",
+    "vim.statusBarColors.visualline": "#944a25",
+    "vim.substituteGlobalFlag": true,
+    "vim.textwidth": 100,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //     "before": ["Z", "Z"],
+        //     "commands": [":wq"]
+        // },
+        { "before": ["Y"], "after": ["y", "$"] },
+        { "before": ["c"], "after": ["\"", "_", "c"] },
+        { "before": ["C"], "after": ["\"", "_", "C"] },
+        { "before": ["d"], "after": ["\"", "_", "d"] },
+        { "before": ["D"], "after": ["\"", "_", "D"] },
+        { "before": ["s"], "after": ["\"", "_", "s"] },
+        { "before": ["S"], "after": ["\"", "_", "S"] },
+        { "before": ["x"], "after": ["\"", "_", "x"] },
+        { "before": ["X"], "after": ["\"", "_", "X"] },
+        { "before": ["<leader>", "c"], "after": ["c"] },
+        { "before": ["<leader>", "C"], "after": ["C"] },
+        { "before": ["<leader>", "d"], "after": ["d"] },
+        { "before": ["<leader>", "D"], "after": ["D"] },
+        { "before": ["<leader>", "s"], "after": ["s"] },
+        { "before": ["<leader>", "S"], "after": ["S"] },
+        { "before": ["<leader>", "x"], "after": ["x"] },
+        { "before": ["<leader>", "X"], "after": ["X"] },
+        { "before": ["[", "<space>"], "after": ["O", "<esc>"] },
+        { "before": ["]", "<space>"], "after": ["o", "<esc>"] },
+        {
+            "before": ["<leader>", "<space>"],
+            "after": [],
+            "commands": [{ "command": ":nohl", "args": [] }]
+        }
+    ],
+    "vim.visualModeKeyBindings": [],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["p"], "after": ["\"", "_", "d", "P"] }
+    ]
+}

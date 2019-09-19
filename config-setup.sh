@@ -18,16 +18,17 @@ fi
 mkdir -p "$XDG_CONFIG_HOME"/{git,tmux,vim}
 mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 
-# Setup KeePass, mintty, tmux, VsVim.
+# Setup KeePass, mintty, tmux, VsCode, VsVim.
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
-    mkdir -p ~/AppData/Roaming/KeePass
+    mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
 
     dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
+    cp settings.json ~/AppData/Roaming/Code/User
 else
     # WSL
     if grep -q Microsoft /proc/version && ! diff -q wsl.conf /etc/wsl.conf; then
