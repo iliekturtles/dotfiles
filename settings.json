@@ -33,7 +33,7 @@
 
     "rust-analyzer.enableEnhancedTyping": false,
     "rust-analyzer.rainbowHighlightingOn": true,
-    "rust-analyzer.highlightingOn": true
+    "rust-analyzer.highlightingOn": true,
 
     "telemetry.enableTelemetry": false,
 
@@ -50,7 +50,7 @@
     "vim.statusBarColors.visual": "#944a25",
     "vim.statusBarColors.visualblock": "#944a25",
     "vim.statusBarColors.visualline": "#944a25",
-    "vim.substituteGlobalFlag": true,
+    "vim.gdefault": true,
     "vim.textwidth": 100,
     "vim.useSystemClipboard": true,
     "vim.normalModeKeyBindings": [],
