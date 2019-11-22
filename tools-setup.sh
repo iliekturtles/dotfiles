@@ -79,7 +79,7 @@ if hash cargo 2>/dev/null; then
 fi
 
 # VSCode extension setup.
-if hash code 2>/dev/null; then
+if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
     if ! code --list-extensions | grep -q "bungcip.better-toml"; then
         code --install-extension bungcip.better-toml
     fi
