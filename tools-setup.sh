@@ -28,20 +28,19 @@ fi
 # Rust toolchain setup.
 if hash rustup 2>/dev/null; then
     rustup self update
+    rustup set profile minimal
 
     # Stable.
     rustup toolchain add stable
     rustup component add clippy
-    rustup component add rls
-    rustup component add rust-analysis
+    rustup component add rust-docs
     rustup component add rust-src
     rustup component add rustfmt
 
     # Nightly.
     rustup toolchain add nightly
     rustup component add clippy --toolchain nightly
-    rustup component add rls --toolchain nightly
-    rustup component add rust-analysis --toolchain nightly
+    rustup component add rust-docs --toolchain nightly
     rustup component add rust-src --toolchain nightly
     rustup component add rustfmt --toolchain nightly
 
