@@ -76,8 +76,8 @@ if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
         code --install-extension bungcip.better-toml
     fi
 
-    if ! code --list-extensions | grep -q "dotjoshjohnson.xml"; then
-        code --install-extension dotjoshjohnson.xml
+    if ! code --list-extensions | grep -q "DotJoshJohnson.xml"; then
+        code --install-extension DotJoshJohnson.xml
     fi
 
     if hash sqlcmd 2>/dev/null; then
