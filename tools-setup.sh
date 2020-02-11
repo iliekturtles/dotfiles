@@ -55,9 +55,6 @@ if hash cargo 2>/dev/null; then
         if ! hash cargo-install-update 2>/dev/null; then
             cargo install cargo-update
         fi
-        if ! hash ra_lsp_server 2>/dev/null; then
-            git clone https://github.com/rust-analyzer/rust-analyzer.git cargo-update/ra_lsp_server
-        fi
 
         cargo install-update -i \
             cargo-update \
@@ -68,11 +65,6 @@ if hash cargo 2>/dev/null; then
             ripgrep \
             tokei \
             xsv
-
-        pushd cargo-update/ra_lsp_server
-        git fat && git down && git submodule update --init
-        cargo install-ra --server
-        popd
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
@@ -102,8 +94,8 @@ if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
         code --install-extension ms-vscode-remote.remote-wsl
     fi
 
-    if ! code --list-extensions | grep -q "ra-lsp"; then
-        code --install-extension ra-lsp-0.0.1.vsix
+    if ! code --list-extensions | grep -q "matklad.rust-analyzer"; then
+        code --install-extension matklad.rust-analyzer
     fi
 
     # if ! code --list-extensions | grep -q "slevesque.vscode-hexdump"; then
