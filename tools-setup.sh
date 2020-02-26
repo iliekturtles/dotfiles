@@ -37,6 +37,9 @@ if hash rustup 2>/dev/null; then
     rustup component add rust-src
     rustup component add rustfmt
 
+    # Beta.
+    rustup toolchain add beta
+
     # Nightly.
     rustup toolchain add nightly
     rustup component add clippy --toolchain nightly
