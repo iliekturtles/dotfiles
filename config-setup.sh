@@ -80,7 +80,13 @@ if [ ! -z "$MSYSTEM" ]; then
 else
     git config --global core.autocrlf input
     git config --global core.pager "less -S -x4"
-    git config --global credential.helper store
+
+    # WSL
+    if grep -q Microsoft /proc/version; then
+        git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe"
+    else
+        git config --global credential.helper store
+    fi
 fi
 
 cp gitignore "$XDG_CONFIG_HOME/git/ignore"
