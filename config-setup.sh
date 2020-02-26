@@ -41,8 +41,8 @@ fi
 # Git.
 touch "$XDG_CONFIG_HOME/git/"{config,credentials}
 
-git config --global core.commentChar ";"
 git config --global commit.verbose true
+git config --global core.commentChar ";"
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
 git config --global diff.tool vimdiff
@@ -62,8 +62,8 @@ git config --global alias.cip "commit -p"
 git config --global alias.cipa "commit -p --amend"
 git config --global alias.co "checkout"
 git config --global alias.cop "checkout -p"
-git config --global alias.ds "diff --staged"
 git config --global alias.down "merge --ff-only"
+git config --global alias.ds "diff --staged"
 git config --global alias.fat "fetch --all --tags"
 git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
 git config --global alias.lg "log --graph --pretty=changelog --date-order"
@@ -97,5 +97,6 @@ fi
 # Vim.
 mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}
 cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
-[ ! -d "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim" ] && \
+if [ ! -d "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim" ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim"
+fi
