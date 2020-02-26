@@ -92,6 +92,8 @@ fi
 # Base16
 if [ ! -d "$XDG_CONFIG_HOME/base16-shell" ]; then
     git clone https://github.com/chriskempson/base16-shell.git "$XDG_CONFIG_HOME/base16-shell"
+else
+    git -C "$XDG_CONFIG_HOME/base16-shell" pull
 fi
 
 # Vim.
