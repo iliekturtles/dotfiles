@@ -89,8 +89,8 @@ if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
         fi
     fi
 
-    if ! code --list-extensions | grep -q "ms-vscode.csharp"; then
-        code --install-extension ms-vscode.csharp
+    if ! code --list-extensions | grep -q "ms-dotnettools.csharp"; then
+        code --install-extension ms-dotnettools.csharp
     fi
 
     if ! code --list-extensions | grep -q "ms-vscode-remote.remote-wsl"; then
