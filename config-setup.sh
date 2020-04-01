@@ -72,6 +72,7 @@ git config --global alias.skipped '!git ls-files -v | grep "^[hS]"'
 git config --global alias.st "status -sb"
 git config --global alias.unstage "reset HEAD --"
 git config --global alias.up "pull --ff-only"
+git config --global alias.fcs '!git fat && git checkout $1 && git down ; git submodule update ; :'
 
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
