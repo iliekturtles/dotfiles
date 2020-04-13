@@ -62,9 +62,11 @@ git config --global alias.cip "commit -p"
 git config --global alias.cipa "commit -p --amend"
 git config --global alias.co "checkout"
 git config --global alias.cop "checkout -p"
+git config --global alias.cs '!git checkout $1 && git down ; git submodule update ; :'
 git config --global alias.down "merge --ff-only"
 git config --global alias.ds "diff --staged"
 git config --global alias.fat "fetch --all --tags"
+git config --global alias.fcs '!git fat && git checkout $1 && git down ; git submodule update ; :'
 git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
 git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
@@ -72,7 +74,6 @@ git config --global alias.skipped '!git ls-files -v | grep "^[hS]"'
 git config --global alias.st "status -sb"
 git config --global alias.unstage "reset HEAD --"
 git config --global alias.up "pull --ff-only"
-git config --global alias.fcs '!git fat && git checkout $1 && git down ; git submodule update ; :'
 
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
