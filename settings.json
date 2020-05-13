@@ -31,9 +31,10 @@
     "explorer.openEditors.visible": 0,
     "explorer.sortOrder": "type",
 
+    "rust-analyzer.checkOnSave.allFeatures": false,
     "rust-analyzer.enableEnhancedTyping": false,
-    "rust-analyzer.rainbowHighlightingOn": true,
     "rust-analyzer.highlightingOn": true,
+    "rust-analyzer.rainbowHighlightingOn": true,
 
     "telemetry.enableTelemetry": false,
 
