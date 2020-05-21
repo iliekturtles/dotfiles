@@ -13,11 +13,6 @@
     "workbench.editor.revealIfOpen": true,
     "workbench.editor.tabCloseButton": "off",
     "workbench.startupEditor": "none",
-    "workbench.colorCustomizations": {
-        "statusBar.background": "#005f5f",
-        "statusBar.noFolderBackground": "#005f5f",
-        "statusBar.debuggingBackground": "#005f5f"
-    },
     "window.newWindowDimensions": "maximized",
     "window.restoreWindows": "all",
     "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}${separator}${appName}",
@@ -32,9 +27,6 @@
     "explorer.sortOrder": "type",
 
     "rust-analyzer.checkOnSave.allFeatures": false,
-    "rust-analyzer.enableEnhancedTyping": false,
-    "rust-analyzer.highlightingOn": true,
-    "rust-analyzer.rainbowHighlightingOn": true,
 
     "telemetry.enableTelemetry": false,
 
