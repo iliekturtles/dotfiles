@@ -64,10 +64,13 @@ if hash cargo 2>/dev/null; then
             cargo-asm \
             cargo-expand \
             cargo-outdated \
-            cargo-tree \
             ripgrep \
             tokei \
             xsv
+
+        if hash cargo-tree 2>/dev/null; then
+            cargo uninstall cargo-tree
+        fi
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
