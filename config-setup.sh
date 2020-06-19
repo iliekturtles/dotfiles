@@ -67,6 +67,7 @@ git config --global alias.down "merge --ff-only"
 git config --global alias.ds "diff --staged"
 git config --global alias.fat "fetch --all --tags"
 git config --global alias.fcs '!git fat && git checkout $1 && git down ; git submodule update ; :'
+git config --global alias.frs '!git fat && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
 git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
 git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
