@@ -104,9 +104,9 @@ if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
         code --install-extension matklad.rust-analyzer
     fi
 
-    # if ! code --list-extensions | grep -q "slevesque.vscode-hexdump"; then
-    #     code --install-extension slevesque.vscode-hexdump
-    # fi
+    if ! code --list-extensions | grep -q "ms-vscode.hexeditor"; then
+        code --install-extension ms-vscode.hexeditor
+    fi
 
     if ! code --list-extensions | grep -q "vscodevim.vim"; then
         code --install-extension vscodevim.vim
