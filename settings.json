@@ -80,5 +80,10 @@
     "vim.visualModeKeyBindings": [],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": ["p"], "after": ["\"", "_", "d", "P"] }
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    }
 }
