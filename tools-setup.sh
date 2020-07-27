@@ -30,22 +30,10 @@ if hash rustup 2>/dev/null; then
     rustup self update
     rustup set profile minimal
 
-    # Stable.
-    rustup toolchain add stable
-    rustup component add clippy
-    rustup component add rust-docs
-    rustup component add rust-src
-    rustup component add rustfmt
-
-    # Beta.
-    rustup toolchain add beta
-
-    # Nightly.
-    rustup toolchain add nightly
-    rustup component add clippy --toolchain nightly
-    rustup component add rust-docs --toolchain nightly
-    rustup component add rust-src --toolchain nightly
-    rustup component add rustfmt --toolchain nightly
+    # Toolchains.
+    rustup toolchain install --profile minimal stable --component clippy,rust-docs,rust-src,rustfmt
+    rustup toolchain install --profile minimal beta
+    rustup toolchain install --profile minimal nightly --component clippy,rust-docs,rust-src,rustfmt
 
     # Completions
     rustup completions bash rustup > "$XDG_DATA_HOME/bash_completion/completions/rustup"
