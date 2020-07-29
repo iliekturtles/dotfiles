@@ -71,6 +71,7 @@ git config --global alias.frs '!git fat && git checkout $1 && git reset --hard o
 git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
 git config --global alias.lg "log --graph --pretty=changelog --date-order"
 git config --global alias.lp "log -p"
+git config --global alias.rs '!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
 git config --global alias.skipped '!git ls-files -v | grep "^[hS]"'
 git config --global alias.st "status -sb"
 git config --global alias.unstage "reset HEAD --"
