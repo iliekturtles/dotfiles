@@ -73,6 +73,10 @@ if ! grep -q Microsoft /proc/version && hash code 2>/dev/null; then
         code --install-extension bungcip.better-toml
     fi
 
+    if ! code --list-extensions | grep -q "streetsidesoftware.code-spell-checker"; then
+        code --install-extension streetsidesoftware.code-spell-checker
+    fi
+
     if ! code --list-extensions | grep -q "DotJoshJohnson.xml"; then
         code --install-extension DotJoshJohnson.xml
     fi
