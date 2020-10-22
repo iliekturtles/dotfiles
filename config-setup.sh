@@ -28,7 +28,7 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-    cp settings.json ~/AppData/Roaming/Code/User
+    # cp settings.json ~/AppData/Roaming/Code/User
 else
     # WSL
     if grep -q Microsoft /proc/version && ! diff -q wsl.conf /etc/wsl.conf; then
