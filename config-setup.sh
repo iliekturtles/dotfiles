@@ -45,6 +45,7 @@ git config --global commit.verbose true
 git config --global core.commentChar ";"
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 git config --global credential.https://github.com.username "mike.boutin@gmail.com"
+git config --global diff.algorithm histogram
 git config --global diff.tool vimdiff
 git config --global diff.wsErrorHighlight all
 git config --global fetch.prune true
@@ -65,6 +66,7 @@ git config --global alias.cop "checkout -p"
 git config --global alias.cs '!git checkout $1 && git down ; git submodule update ; :'
 git config --global alias.down "merge --ff-only"
 git config --global alias.ds "diff --staged"
+git config --global alias.f "fetch"
 git config --global alias.facs '!git fat && git checkout $1 && git down ; git submodule update ; :'
 git config --global alias.fars '!git fat && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
 git config --global alias.fat "fetch --all --tags"
