@@ -52,6 +52,7 @@ if hash cargo 2>/dev/null; then
             cargo-asm \
             cargo-expand \
             cargo-outdated \
+            cargo-sweep \
             ripgrep \
             tokei \
             xsv
@@ -59,6 +60,8 @@ if hash cargo 2>/dev/null; then
         if hash cargo-tree 2>/dev/null; then
             cargo uninstall cargo-tree
         fi
+
+        cargo sweep -i -r -v ..
     else
         echo "cargo install-update not installed (cmake missing)."
     fi
