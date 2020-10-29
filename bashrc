@@ -13,6 +13,7 @@ alias ll='ls -lFh --color=auto'
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/config"'
 alias irssi='TERM=screen irssi'
 alias pd='pushd'
+alias history='HISTTIMEFORMAT="%F %T " history | sort -rn | less -FS'
 
 function gvims() {
     if [ -f .gsession.vim ]; then
