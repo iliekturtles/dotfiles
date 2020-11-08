@@ -57,12 +57,12 @@ export PS1="\[\e]0;\w\a\]$PS1\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[
 pathsuffix "$HOME/.local/bin"
 
 # Export additional environment variables.
-if hash rustc 2>/dev/null; then
-    if [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ]; then
-        export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-    fi
-    export RUST_TOOLCHAIN=$(basename $(rustc --print sysroot))
-fi
+# if hash rustc 2>/dev/null; then
+#     if [ -d "$(rustc --print sysroot)/lib/rustlib/src/rust/src" ]; then
+#         export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+#     fi
+#     export RUST_TOOLCHAIN=$(basename $(rustc --print sysroot))
+# fi
 
 # Source bashrc.
 if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
