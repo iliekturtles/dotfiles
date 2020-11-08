@@ -37,13 +37,6 @@ function xsvp() {
 }
 
 if [ ! -z $MSYSTEM ]; then
-    alias cargo='winpty cargo'
-
-    #function cargo() {
-    #    local cmd=$1
-    #    shift && command cargo $cmd --color always $@
-    #}
-
     bind '"\t":complete'
     bind '"\e[1;5C":forward-word'
     bind '"\e[1;5D":backward-word'
