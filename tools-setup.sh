@@ -2,21 +2,21 @@
 # Package setup
 if hash apt 2>/dev/null; then
     if ! dpkg -l | grep ^ii | grep -q cmake; then
-        sudo apt install cmake libssl-dev pkg-config
+        sudo apt install -y cmake libssl-dev pkg-config
     fi
 fi
 
 # Git and Vim setup.
 if hash apt-cache 2>/dev/null; then
     if ! apt-cache policy | grep -q "git-core/ppa"; then
-        sudo apt-add-repository ppa:git-core/ppa
+        sudo apt-add-repository -y ppa:git-core/ppa
         sudo apt update
-        sudo apt install git
+        sudo apt install -y git
     fi
     if ! apt-cache policy | grep -q "jonathonf/vim"; then
-        sudo add-apt-repository ppa:jonathonf/vim
+        sudo add-apt-repository -y ppa:jonathonf/vim
         sudo apt update
-        sudo apt install vim
+        sudo apt install -y vim
     fi
 fi
 
