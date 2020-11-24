@@ -52,7 +52,7 @@ else
     pathsuffix "$CARGO_HOME/bin"
 fi
 
-export PS1="\[\e]0;\w\a\]$PS1\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[0m\]\$ "
+export PS1="\[\e]0;\w\a\]$PS1\[\e[00;33m\]\w\$(__git_ps1 ' \[\e[00;36m\](%s)')\[\e[01;\$((\${PIPESTATUS[-1]}!=0?31:0))m\]\$\[\e[0m\] "
 
 pathsuffix "$HOME/.local/bin"
 
