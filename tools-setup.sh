@@ -48,11 +48,13 @@ if hash cargo 2>/dev/null; then
         fi
 
         cargo install-update -i \
+            bat \
             cargo-update \
             cargo-asm \
             cargo-expand \
             cargo-outdated \
             cargo-sweep \
+            hyperfine \
             ripgrep \
             tokei \
             xsv
