@@ -1,22 +1,21 @@
 #!/bin/bash
 # Package setup
 if hash apt 2>/dev/null; then
-    if ! dpkg -l | grep ^ii | grep -q cmake; then
-        sudo apt install -y cmake libssl-dev pkg-config
-    fi
-fi
+    REPOSITORIES=(
+        'git-core/ppa'
+        'jonathonf/vim'
+    )
 
-# Git and Vim setup.
-if hash apt-cache 2>/dev/null; then
-    if ! apt-cache policy | grep -q "git-core/ppa"; then
-        sudo apt-add-repository -y ppa:git-core/ppa
+    for repository in "${REPOSITORIES[@]}"
+    do
+        if ! apt-cache policy | grep -q "$repository"; then
+            sudo apt-add-repository -y ppa:"$repository"
+        fi
+    done
+
+    if ! dpkg -l | grep ^ii | grep -q vim; then
         sudo apt update
-        sudo apt install -y git
-    fi
-    if ! apt-cache policy | grep -q "jonathonf/vim"; then
-        sudo add-apt-repository -y ppa:jonathonf/vim
-        sudo apt update
-        sudo apt install -y vim
+        sudo apt install -y cmake git libssl-dev pkg-config vim
     fi
 fi
 
@@ -71,41 +70,26 @@ fi
 
 # VSCode extension setup.
 if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
-    if ! code --list-extensions | grep -q "bungcip.better-toml"; then
-        code --install-extension bungcip.better-toml
-    fi
-
-    if ! code --list-extensions | grep -q "streetsidesoftware.code-spell-checker"; then
-        code --install-extension streetsidesoftware.code-spell-checker
-    fi
-
-    if ! code --list-extensions | grep -q "DotJoshJohnson.xml"; then
-        code --install-extension DotJoshJohnson.xml
-    fi
+    EXTENSIONS=(
+        'bungcip.better-toml'
+        'DotJoshJohnson.xml'
+        'dunstontc.viml'
+        'matklad.rust-analyzer'
+        'ms-dotnettools.csharp'
+        'ms-vscode-remote.remote-wsl'
+        'ms-vscode.hexeditor'
+        'streetsidesoftware.code-spell-checker'
+        'vscodevim.vim'
+    )
 
     if hash sqlcmd 2>/dev/null; then
-        if ! code --list-extensions | grep -q "ms-mssql.mssql"; then
-            code --install-extension ms-mssql.mssql
+        EXTENSIONS+=('ms-mssql.mssql')
+    fi
+
+    for extension in "${EXTENSIONS[@]}"
+    do
+        if ! code --list-extensions | grep -q "$extension"; then
+            code --install-extension "$extension"
         fi
-    fi
-
-    if ! code --list-extensions | grep -q "ms-dotnettools.csharp"; then
-        code --install-extension ms-dotnettools.csharp
-    fi
-
-    if ! code --list-extensions | grep -q "ms-vscode-remote.remote-wsl"; then
-        code --install-extension ms-vscode-remote.remote-wsl
-    fi
-
-    if ! code --list-extensions | grep -q "matklad.rust-analyzer"; then
-        code --install-extension matklad.rust-analyzer
-    fi
-
-    if ! code --list-extensions | grep -q "ms-vscode.hexeditor"; then
-        code --install-extension ms-vscode.hexeditor
-    fi
-
-    if ! code --list-extensions | grep -q "vscodevim.vim"; then
-        code --install-extension vscodevim.vim
-    fi
+    done
 fi
