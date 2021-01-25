@@ -48,7 +48,7 @@ tabs -4
 # Disable scroll-lock (Ctrl-s, Ctrl-q).
 stty -ixon
 
-# Check the window seize after each command.
+# Check the window size after each command.
 shopt -s checkwinsize
 shopt -s histappend
 

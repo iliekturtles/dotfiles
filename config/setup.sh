@@ -1,25 +1,22 @@
 #!/bin/bash
-# Bash setup.
-cp bash_logout ~/.bash_logout
-cp bash_profile ~/.bash_profile
-cp bashrc ~/.bashrc
-source ~/.bash_profile
+cd "${0%/*}"
 
-# Setup Windows environment variables.
-_DOTFILES_VERSION="2"
+_DOTFILES_VERSION="3"
 
 if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
+    echo "Setup Windows environment variables..."
+
     setx DOTFILES_VERSION "$_DOTFILES_VERSION"
-    setx VIMINIT ":source $(cygpath -m $XDG_CONFIG_HOME/vim/vimrc)"
+    setx VIMINIT "if "'!'"has(\"nvim\") | source $(cygpath -m $XDG_CONFIG_HOME/vim/init.vim) | else | source $(cygpath -m $XDG_CONFIG_HOME/nvim/init.vim) | endif"
     setx RUSTUP_HOME "$(cygpath -w "$XDG_DATA_HOME/rustup")"
     setx CARGO_HOME "$(cygpath -w "$XDG_DATA_HOME/cargo")"
 fi
 
-# Setup config directories.
-mkdir -p "$XDG_CONFIG_HOME"/{git,tmux,vim}
+echo "Setup config directories..."
+mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
 mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 
-# Setup KeePass, mintty, tmux, VsCode, VsVim.
+echo "Setup KeePass, mintty, tmux, VsVim, and WSL..."
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
@@ -29,18 +26,18 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-    # cp settings.json ~/AppData/Roaming/Code/User
 else
-    # WSL
-    if grep -q Microsoft /proc/version && ! diff -q wsl.conf /etc/wsl.conf; then
+    if [ ! -z "$WSL_DISTRO_NAME" ] && ! diff -q wsl.conf /etc/wsl.conf; then
         sudo cp wsl.conf /etc/wsl.conf
     fi
 
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
 fi
 
-# Git.
+echo "Setup git..."
 touch "$XDG_CONFIG_HOME/git/"{config,credentials}
+
+cp gitignore "$XDG_CONFIG_HOME/git/ignore"
 
 git config --global commit.verbose true
 git config --global core.commentChar ";"
@@ -83,8 +80,6 @@ git config --global alias.st "status -sb"
 git config --global alias.unstage "reset HEAD --"
 git config --global alias.up "pull --ff-only"
 
-git config --global --unset credential.helper
-
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
     git config --global core.pager "less -RS -x4"
@@ -93,22 +88,14 @@ else
     git config --global core.pager "less -S -x4"
 fi
 
-cp gitignore "$XDG_CONFIG_HOME/git/ignore"
 if [[ ! $(git config --global user.name) ]]; then
     echo "git config --global user.name \"name\""
     echo "git config --global user.email \"email\""
 fi
 
-# Base16
+echo "Setup Base16..."
 if [ ! -d "$XDG_CONFIG_HOME/base16-shell" ]; then
     git clone https://github.com/chriskempson/base16-shell.git "$XDG_CONFIG_HOME/base16-shell"
 else
     git -C "$XDG_CONFIG_HOME/base16-shell" pull
-fi
-
-# Vim.
-mkdir -p "$XDG_CACHE_HOME/vim/"{backup,swap,undo}
-cp vimrc "$XDG_CONFIG_HOME/vim/vimrc"
-if [ ! -d "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim" ]; then
-    git clone https://github.com/VundleVim/Vundle.vim.git "$XDG_CONFIG_HOME/vim/bundle/Vundle.vim"
 fi

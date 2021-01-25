@@ -1,0 +1,66 @@
+set backspace=indent,eol,start
+set clipboard=unnamed
+set hlsearch incsearch ignorecase smartcase
+set nrformats-=octal
+set scrolloff=5
+set selection=exclusive
+set tildeop
+set vsvim_useeditorindent
+set vsvim_useeditortab
+
+let mapleader=","
+
+" Map ,, to ,'s original functionality.
+nnoremap <leader>, ,
+
+" Use very magic searching.
+nnoremap / /\v
+vnoremap / /\v
+
+" Map space to stop search highlighting.
+nnoremap <leader><space> :noh<cr>
+
+" Map Y yank to the end of the line.
+noremap Y y$
+
+" Replace and delete without yanking unless <leader> is used.
+vnoremap p "_dP
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap s "_s
+vnoremap s "_s
+nnoremap S "_S
+vnoremap S "_S
+nnoremap x "_x
+vnoremap x "_x
+nnoremap X "_X
+vnoremap X "_X
+nnoremap <leader>c "*c
+vnoremap <leader>c "*c
+nnoremap <leader>C "*C
+vnoremap <leader>C "*C
+nnoremap <leader>d "*d
+vnoremap <leader>d "*d
+nnoremap <leader>D "*D
+vnoremap <leader>D "*D
+nnoremap <leader>s "*s
+vnoremap <leader>s "*s
+nnoremap <leader>S "*S
+vnoremap <leader>S "*S
+nnoremap <leader>x "*x
+vnoremap <leader>x "*x
+nnoremap <leader>X "*X
+vnoremap <leader>X "*X
+
+nnoremap [<space> O<esc>
+nnoremap ]<space> o<esc>
+
+nmap <C-]> :vsc Edit.GoToDefinition<CR>
+
+vnoremap S :vsc Edit.SurroundWith<CR>

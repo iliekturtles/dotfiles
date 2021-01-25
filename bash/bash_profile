@@ -45,7 +45,7 @@ else
     fi
 
     export PS1="${debian_chroot:+($debian_chroot)}${user_host}"
-    export VIMINIT=":source $XDG_CONFIG_HOME/vim/vimrc"
+    export VIMINIT="if "'!'"has(\"nvim\") | source $XDG_CONFIG_HOME/vim/init.vim | else | source $XDG_CONFIG_HOME/nvim/init.vim | endif"
     export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
     export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
