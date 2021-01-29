@@ -1,5 +1,6 @@
 #!/bin/bash
 # Bash setup.
+cp bash_logout ~/.bash_logout
 cp bash_profile ~/.bash_profile
 cp bashrc ~/.bashrc
 source ~/.bash_profile
