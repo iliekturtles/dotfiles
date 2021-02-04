@@ -30,6 +30,8 @@ if hash cargo 2>/dev/null; then
             cargo-expand \
             cargo-outdated \
             cargo-sweep \
+            dua-cli \
+            fd-find \
             hyperfine \
             ripgrep \
             tokei \
