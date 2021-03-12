@@ -51,6 +51,8 @@ git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) 
 git config --global pull.ff only
 git config --global push.default simple
 git config --global push.recurseSubmodules check
+git config --global rerere.autoUpdate true
+git config --global rerere.enabled true
 git config --global submodule.fetchJobs 0
 git config --global tig.tab-size 4
 
