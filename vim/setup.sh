@@ -49,9 +49,7 @@ if hash nvim 2>/dev/null; then
     fi
 
     echo "Install win32yank..."
-    if [ ! -z "$MSYSTEM" ] && [ -d "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/" ]; then
-        cp win32yank.exe "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/"
-    elif [ ! -z "$WSL_DISTRO_NAME" ]; then
+    if [ ! -z "$WSL_DISTRO_NAME" ]; then
         mkdir -p "~/.local/bin"
         cp win32yank.exe ~/.local/bin/
     fi

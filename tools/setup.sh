@@ -54,6 +54,11 @@ if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
     fi
 
     if wsl -l >/dev/null; then
+        echo "Install win32yank..."
+        if [ ! -z "$MSYSTEM" ] && [ -d "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/" ]; then
+            cp ../vim/win32yank.exe "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/"
+        fi
+
         EXTENSIONS+=('asvetliakov.vscode-neovim')
         OLD_EXTENSIONS+=('vscodevim.vim')
     else
