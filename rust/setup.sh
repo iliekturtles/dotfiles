@@ -2,7 +2,7 @@
 cd "${0%/*}"
 
 if hash rustup 2>/dev/null; then
-	echo "Rust toolchain setup..."
+    echo "Rust toolchain setup..."
     rustup self update
     rustup set profile minimal
 
@@ -23,7 +23,7 @@ if hash cargo 2>/dev/null; then
             cargo install cargo-update
         fi
 
-        cargo install-update -i \
+        RUSTFLAGS="-C target-cpu=native" cargo install-update -i \
             bat \
             cargo-update \
             cargo-asm \
