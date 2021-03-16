@@ -33,6 +33,7 @@ if hash cargo 2>/dev/null; then
             dua-cli \
             fd-find \
             hyperfine \
+            pastel \
             ripgrep \
             tokei \
             xsv
