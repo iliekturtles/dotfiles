@@ -85,64 +85,64 @@ endif
 "     let &modifiable=l:oldmodifiable
 " endfunction
 
-" " Autocommands
-" augroup vimrc
-"     au!
+" Autocommands
+augroup vimrc
+    au!
 
-"     au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
-"     au BufRead,BufNewFile *.sql set commentstring=--\ %s
+    au BufRead,BufNewFile Cargo.toml,Cargo.lock,*.rs compiler cargo | nnoremap <C-Q> :make build<CR>
+    au BufRead,BufNewFile *.sql set commentstring=--\ %s
 
-"     au FileType gitcommit let &l:colorcolumn=cc81 | setlocal spell | setlocal tabstop=4
-"     au FileType markdown,text setlocal spell | setlocal textwidth=100
-"     au FileType qf wincmd J
+    au FileType gitcommit let &l:colorcolumn=cc81 | setlocal spell | setlocal tabstop=4
+    au FileType markdown,text setlocal spell | setlocal textwidth=100
+    au FileType qf wincmd J
 
-"     au QuickFixCmdPost [^l]* nested cwindow
-"     au QuickFixCmdPost l* nested lwindow
+    au QuickFixCmdPost [^l]* nested cwindow
+    au QuickFixCmdPost l* nested lwindow
 
-"     au User AleLintPre let b:ale_info=' ⭮ ' | let b:ale_errors='' | let b:ale_warnings='' | redrawstatus
-"     au User AleLintPost call s:AleStatus() | redrawstatus
-" augroup end
+    au User AleLintPre let b:ale_info=' ⭮ ' | let b:ale_errors='' | let b:ale_warnings='' | redrawstatus
+    au User AleLintPost call s:AleStatus() | redrawstatus
+augroup end
 
-" " CtrlP
-" if executable('rg')
-"     let g:ctrlp_user_command = 'rg --files --color never %s'
-"     let g:ctrlp_use_caching = 0
-" endif
+" CtrlP
+if executable('rg')
+    let g:ctrlp_user_command = 'rg --files --color never %s'
+    let g:ctrlp_use_caching = 0
+endif
 
-" " Git-gutter signs (en-space + right half block).
-" let g:gitgutter_sign_added = ' ▐'
-" let g:gitgutter_sign_modified = ' ▐'
-" let g:gitgutter_sign_removed = ' ▐'
-" let g:gitgutter_sign_removed_first_line = ' ▐'
-" let g:gitgutter_sign_modified_removed = ' ▐'
+" Git-gutter signs (en-space + right half block).
+let g:gitgutter_sign_added = ' ▐'
+let g:gitgutter_sign_modified = ' ▐'
+let g:gitgutter_sign_removed = ' ▐'
+let g:gitgutter_sign_removed_first_line = ' ▐'
+let g:gitgutter_sign_modified_removed = ' ▐'
 
-" " ALE
-" " let g:ale_linters = {'rust': ['rls', 'cargo']}
-" let g:ale_linters = {'rust': ['rls']}
-" let g:ale_fixers = {'rust': ['rustfmt']}
-" let g:ale_completion_enabled = 1
-" " let g:ale_open_list = 1
-" " let g:ale_list_window_size = 6
-" " let g:ale_keep_list_window_open = 1
-" let g:ale_sign_error = '⮿'
-" let g:ale_sign_info = '🛈'
-" let g:ale_sign_warning = '⯅'
-" let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
-" let g:ale_rust_rls_executable = 'ra_lsp_server'
-" let g:ale_rust_rls_toolchain = ''
+" ALE
+" let g:ale_linters = {'rust': ['rls', 'cargo']}
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_fixers = {'rust': ['rustfmt']}
+let g:ale_completion_enabled = 1
+" let g:ale_open_list = 1
+" let g:ale_list_window_size = 6
+" let g:ale_keep_list_window_open = 1
+let g:ale_sign_error = '⮿'
+let g:ale_sign_info = '🛈'
+let g:ale_sign_warning = '⯅'
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_rust_rls_executable = 'ra_lsp_server'
+let g:ale_rust_rls_toolchain = ''
 
-" fun! s:AleStatus()
-"     let l:counts = ale#statusline#Count(bufnr(''))
-"     let l:errors = l:counts.error + l:counts.style_error
-"     let l:warnings = l:counts.warning + l:counts.style_warning
+fun! s:AleStatus()
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:errors = l:counts.error + l:counts.style_error
+    let l:warnings = l:counts.warning + l:counts.style_warning
 
-"     let b:ale_info = ''
+    let b:ale_info = ''
 
-"     if l:errors > 0 || l:warnings > 0
-"         let b:ale_errors = printf("  %d %s ", l:errors, g:ale_sign_error)
-"         let b:ale_warnings = printf("  %d %s ", l:warnings, g:ale_sign_warning)
-"     else
-"         let b:ale_warnings = ''
-"         let b:ale_errors = ''
-"     endif
-" endf
+    if l:errors > 0 || l:warnings > 0
+        let b:ale_errors = printf("  %d %s ", l:errors, g:ale_sign_error)
+        let b:ale_warnings = printf("  %d %s ", l:warnings, g:ale_sign_warning)
+    else
+        let b:ale_warnings = ''
+        let b:ale_errors = ''
+    endif
+endf
