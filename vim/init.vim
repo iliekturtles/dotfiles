@@ -2,8 +2,8 @@
 if empty($XDG_CONFIG_HOME)
     let $XDG_CONFIG_HOME=expand('$HOME/.config')
 endif
-if empty($XDG_CACHE_HOME)
-    let $XDG_CACHE_HOME=expand('$HOME/.cache')
+if empty($XDG_DATA_HOME)
+    let $XDG_DATA_HOME=expand('$HOME/.local/share')
 endif
 
 " VIM / NeoVIM setup
