@@ -50,7 +50,7 @@ if hash nvim 2>/dev/null; then
 
     echo "Install win32yank..."
     if [ ! -z "$WSL_DISTRO_NAME" ]; then
-        mkdir -p "~/.local/bin"
+        mkdir -p "$HOME/.local/bin"
         cp win32yank.exe ~/.local/bin/
     fi
 

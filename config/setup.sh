@@ -10,6 +10,9 @@ if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
     setx VIMINIT "if "'!'"has(\"nvim\") | source $(cygpath -m $XDG_CONFIG_HOME/vim/init.vim) | else | source $(cygpath -m $XDG_CONFIG_HOME/nvim/init.vim) | endif"
     setx RUSTUP_HOME "$(cygpath -w "$XDG_DATA_HOME/rustup")"
     setx CARGO_HOME "$(cygpath -w "$XDG_DATA_HOME/cargo")"
+
+    echo "Windows environment variables set, prompt restart required."
+    exit
 fi
 
 echo "Setup config directories..."
