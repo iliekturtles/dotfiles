@@ -31,7 +31,8 @@ if [ ! -z "$MSYSTEM" ]; then
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
 else
     if [ ! -z "$WSL_DISTRO_NAME" ] && ! diff -q wsl.conf /etc/wsl.conf; then
-        sudo cp wsl.conf /etc/wsl.conf
+        sudo cp -f wsl.conf /etc/wsl.conf
+        sudo cp -f resolv.conf /etc/resolv.conf
     fi
 
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
