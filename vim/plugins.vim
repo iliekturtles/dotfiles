@@ -130,6 +130,7 @@ let g:ale_sign_warning = '⯅'
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 let g:ale_rust_rls_executable = 'ra_lsp_server'
 let g:ale_rust_rls_toolchain = ''
+let g:ale_rust_rustfmt_options = '--edition 2018'
 
 fun! s:AleStatus()
     let l:counts = ale#statusline#Count(bufnr(''))
