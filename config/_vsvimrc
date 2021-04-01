@@ -1,7 +1,7 @@
 set backspace=indent,eol,start
 set clipboard=unnamed
 set hlsearch incsearch ignorecase smartcase
-set nrformats-=octal
+set nrformats=bin,hex
 set scrolloff=5
 set selection=exclusive
 set tildeop
