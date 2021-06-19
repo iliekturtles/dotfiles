@@ -32,6 +32,7 @@ if [ ! -z "$MSYSTEM" ]; then
 else
     if [ ! -z "$WSL_DISTRO_NAME" ] && ! diff -q wsl.conf /etc/wsl.conf; then
         sudo cp -f wsl.conf /etc/wsl.conf
+        sudo unlink /etc/resolv.conf
         sudo cp -f resolv.conf /etc/resolv.conf
     fi
 
