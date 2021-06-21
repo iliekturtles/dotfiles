@@ -45,6 +45,7 @@ if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
         'ms-vscode-remote.remote-wsl'
         'ms-vscode.hexeditor'
         'streetsidesoftware.code-spell-checker'
+        'vadimcn.vscode-lldb'
     )
     OLD_EXTENSIONS=(
     )
