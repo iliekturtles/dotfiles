@@ -1,0 +1,78 @@
+[core]
+	autocrlf = true
+	commentChar = ";"
+	excludesfile = ~/$XDG_CONFIG_HOME/git/ignore
+	pager = delta
+[commit]
+	verbose = true
+[credential "https://github.com"]
+	username = mike.boutin@gmail.com
+[delta]
+	features = decorations
+	line-numbers = true
+	navigate = true
+	tabs = 4
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-decoration-style = yellow ol
+	file-style = omit
+	hunk-header-style = file syntax
+	hunk-header-decoration-style = blue ul
+	hunk-header-file-style = normal bold
+	; minus-style = syntax auto
+	; minus-emph-style = syntax auto
+	; whitespace-error-style = magenta reverse
+[diff]
+	algorithm = histogram
+	tool = vimdiff
+	wsErrorHighlight = all
+[fetch]
+	prune = true
+[interactive]
+	diffFilter = delta --color-only --features=interactive
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[pretty]
+	changelog = format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s
+[pull]
+	ff = only
+[push]
+	default = simple
+	recurseSubmodules = check
+[rerere]
+	autoUpdate = true
+	enabled = true
+[submodule]
+	fetchJobs = 0
+[tig]
+	tab-size = 4
+[alias]
+	ci = commit
+	cia = commit -a
+	ciaa = commit -a --amend
+	cip = commit -p
+	cipa = commit -p --amend
+	co = checkout
+	cop = checkout -p
+	cs = "!git checkout $1 && git down ; git submodule update ; :"
+	down = merge --ff-only
+	ds = diff --staged
+	f = fetch
+	facs = "!git fat && git checkout $1 && git down ; git submodule update ; :"
+	fars = "!git fat && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	fat = fetch --all --tags
+	fcs = "!git ft && git checkout $1 && git down ; git submodule update ; :"
+	frs = "!git ft && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	ft = fetch --tags
+	lag = log --all --graph --pretty=changelog --date-order
+	lg = log --graph --pretty=changelog --date-order
+	lp = log -p
+	rs = "!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	skipped = !git ls-files -v | grep \"^[hS]\"
+	st = status -sb
+	unstage = reset HEAD --
+	up = pull --ff-only

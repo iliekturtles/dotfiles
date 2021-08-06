@@ -32,6 +32,7 @@ if hash cargo 2>/dev/null; then
             cargo-sweep \
             cargo-update \
             fd-find \
+            git-delta \
             hyperfine \
             pastel \
             ripgrep \

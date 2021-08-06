@@ -40,64 +40,39 @@ else
 fi
 
 echo "Setup git..."
-touch "$XDG_CONFIG_HOME/git/"{config,credentials}
+touch "$XDG_CONFIG_HOME/git/"{credentials}
+gitusername=$(git config --global user.name)
+gituseremail=$(git config --global user.email)
 
+cp gitconfig "$XDG_CONFIG_HOME/git/config"
 cp gitignore "$XDG_CONFIG_HOME/git/ignore"
 
-git config --global commit.verbose true
-git config --global core.commentChar ";"
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
-git config --global credential.https://github.com.username "mike.boutin@gmail.com"
-git config --global diff.algorithm histogram
-git config --global diff.tool vimdiff
-git config --global diff.wsErrorHighlight all
-git config --global fetch.prune true
-git config --global pretty.changelog "format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s"
-git config --global pull.ff only
-git config --global push.default simple
-git config --global push.recurseSubmodules check
-git config --global rerere.autoUpdate true
-git config --global rerere.enabled true
-git config --global submodule.fetchJobs 0
-git config --global tig.tab-size 4
 
-git config --global alias.ci "commit"
-git config --global alias.cia "commit -a"
-git config --global alias.ciaa "commit -a --amend"
-git config --global alias.cip "commit -p"
-git config --global alias.cipa "commit -p --amend"
-git config --global alias.co "checkout"
-git config --global alias.cop "checkout -p"
-git config --global alias.cs '!git checkout $1 && git down ; git submodule update ; :'
-git config --global alias.down "merge --ff-only"
-git config --global alias.ds "diff --staged"
-git config --global alias.f "fetch"
-git config --global alias.facs '!git fat && git checkout $1 && git down ; git submodule update ; :'
-git config --global alias.fars '!git fat && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
-git config --global alias.fat "fetch --all --tags"
-git config --global alias.fcs '!git ft && git checkout $1 && git down ; git submodule update ; :'
-git config --global alias.frs '!git ft && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
-git config --global alias.ft "fetch --tags"
-git config --global alias.lag "log --all --graph --pretty=changelog --date-order"
-git config --global alias.lg "log --graph --pretty=changelog --date-order"
-git config --global alias.lp "log -p"
-git config --global alias.rs '!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :'
-git config --global alias.skipped '!git ls-files -v | grep "^[hS]"'
-git config --global alias.st "status -sb"
-git config --global alias.unstage "reset HEAD --"
-git config --global alias.up "pull --ff-only"
 
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
-    git config --global core.pager "less -RS -x4"
 else
     git config --global core.autocrlf input
-    git config --global core.pager "less -S -x4"
 fi
 
-if [[ ! $(git config --global user.name) ]]; then
-    echo "git config --global user.name \"name\""
-    echo "git config --global user.email \"email\""
+if [[ -z "$gitusername"  ]]; then
+    name="Mike Boutin"
+    email="mike.boutin@gmail.com"
+
+    read -e -i "$name" -p "git user.name: " input
+    git config --global user.name "${input:-$name}"
+
+    read -e -i "$email" -p "git user.email: " input
+    git config --global user.email "${input:-$email}"
+
+    if [ "$email" != "$input" ]; then
+        git config user.name "$name"
+        git config user.email "$email"
+    fi
+else
+    git config --global user.name "$gitusername"
+    git config --global user.email "$gituseremail"
 fi
 
 echo "Setup Base16..."
