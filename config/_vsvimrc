@@ -64,3 +64,8 @@ nnoremap ]<space> o<esc>
 nmap <C-]> :vsc Edit.GoToDefinition<CR>
 
 vnoremap S :vsc Edit.SurroundWith<CR>
+
+nnoremap <leader>,f :vsc Tools.InvokePeasyMotion<CR>
+nnoremap <leader>,F :vsc Tools.InvokePeasyMotion<CR>
+nnoremap <leader>,j :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
+nnoremap <leader>,k :vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
