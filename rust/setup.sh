@@ -25,18 +25,20 @@ if hash cargo 2>/dev/null; then
 
         RUSTFLAGS="-C target-cpu=native" cargo install-update -i \
             bat \
-            cargo-update \
             cargo-asm \
+            cargo-deadlinks \
             cargo-expand \
             cargo-outdated \
             cargo-sweep \
-            dua-cli \
+            cargo-update \
             fd-find \
             hyperfine \
             pastel \
             ripgrep \
             tokei \
             xsv
+            # dua-cli
+            # hexyl
 
         if hash cargo-tree 2>/dev/null; then
             cargo uninstall cargo-tree
