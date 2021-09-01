@@ -40,39 +40,17 @@ else
 fi
 
 echo "Setup git..."
-touch "$XDG_CONFIG_HOME/git/"{credentials}
-gitusername=$(git config --global user.name)
-gituseremail=$(git config --global user.email)
+touch "$XDG_CONFIG_HOME/git/credentials"
 
 cp gitconfig "$XDG_CONFIG_HOME/git/config"
 cp gitignore "$XDG_CONFIG_HOME/git/ignore"
 
 git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
 
-
 if [ ! -z "$MSYSTEM" ]; then
     git config --global core.autocrlf true
 else
     git config --global core.autocrlf input
-fi
-
-if [[ -z "$gitusername"  ]]; then
-    name="Mike Boutin"
-    email="mike.boutin@gmail.com"
-
-    read -e -i "$name" -p "git user.name: " input
-    git config --global user.name "${input:-$name}"
-
-    read -e -i "$email" -p "git user.email: " input
-    git config --global user.email "${input:-$email}"
-
-    if [ "$email" != "$input" ]; then
-        git config user.name "$name"
-        git config user.email "$email"
-    fi
-else
-    git config --global user.name "$gitusername"
-    git config --global user.email "$gituseremail"
 fi
 
 echo "Setup Base16..."
