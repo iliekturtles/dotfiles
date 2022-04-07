@@ -2,6 +2,8 @@
 	useConfigOnly = true
 [includeIf "gitdir:D:/Code/"]
 	path = "D:/Code/.gitconfig"
+[checkout]
+	defaultRemote = origin
 [core]
 	autocrlf = true
 	commentChar = ";"
