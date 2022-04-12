@@ -78,7 +78,7 @@
 	lag = log --all --graph --pretty=changelog --date-order
 	lg = log --graph --pretty=changelog --date-order
 	lp = log -p
-	pr = !BRANCH=$(git rev-parse --abbrev-ref HEAD) PR_REMOTE=$(git config push.pr-remote) && git push "$PR_REMOTE" --force-with-lease && git checkout master && git branch -D $BRANCH && git down
+	pr = !BRANCH=$(git rev-parse --abbrev-ref HEAD) PR_REMOTE=$(git config push.pr-remote || git config checkout.defaultRemote) && git push "${PR_REMOTE:-origin}" --force-with-lease && git checkout master && git branch -D $BRANCH && git down
 	rs = "!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
 	skipped = !git ls-files -v | grep \"^[hS]\"
 	st = status -sb
