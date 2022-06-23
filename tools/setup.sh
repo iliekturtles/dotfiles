@@ -40,14 +40,15 @@ if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
         'bungcip.better-toml'
         'DotJoshJohnson.xml'
         'dunstontc.viml'
-        'matklad.rust-analyzer'
         'ms-dotnettools.csharp'
         'ms-vscode-remote.remote-wsl'
         'ms-vscode.hexeditor'
+        'rust-lang.rust-analyzer'
         'streetsidesoftware.code-spell-checker'
         'vadimcn.vscode-lldb'
     )
     OLD_EXTENSIONS=(
+        'matklad.rust-analyzer'
     )
 
     if hash sqlcmd 2>/dev/null; then
