@@ -55,7 +55,7 @@ if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
         EXTENSIONS+=('ms-mssql.mssql')
     fi
 
-    if wsl -l >/dev/null; then
+    if wsl -l >/dev/null && [ "$EDITOR" == "nvim" ]; then
         echo "Install win32yank..."
         if [ ! -z "$MSYSTEM" ] && [ -d "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/" ]; then
             cp ../vim/win32yank.exe "$LOCALAPPDATA/Programs/Microsoft VS Code/bin/"

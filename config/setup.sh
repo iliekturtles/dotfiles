@@ -22,7 +22,7 @@ mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 echo "Setup KeePass, mintty, tmux, VsVim, and WSL..."
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
-    mkdir -p ~/AppData/Roaming/{KeePass,Code/User}
+    mkdir -p ~/AppData/Roaming/KeePass
 
     dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
     cp _vsvimrc ~/_vsvimrc
