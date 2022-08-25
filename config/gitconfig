@@ -49,6 +49,8 @@
 [push]
 	default = simple
 	recurseSubmodules = check
+[rebase]
+	autoSquash = true
 [rerere]
 	autoUpdate = true
 	enabled = true
