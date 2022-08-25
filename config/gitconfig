@@ -60,10 +60,10 @@
 	tab-size = 4
 [alias]
 	ci = commit
-	cia = commit -a
-	ciaa = commit -a --amend
-	cip = commit -p
-	cipa = commit -p --amend
+	cia = "!git add -AN && git commit -a"
+	ciaa = "!git add -AN && git commit -a --amend"
+	cip = "!git add -AN && git commit -p"
+	cipa = "!git add -AN && git commit -p --amend"
 	co = checkout
 	cop = checkout -p
 	cs = "!git checkout $1 && git down ; git submodule update ; :"
