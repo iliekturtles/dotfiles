@@ -89,6 +89,8 @@ chroot)
     #aw Dotfiles
     #aw List of Applications
     #aw zsh
+    #aw pacman
+    #aw pacman package signing
 
     echo
     ;&
