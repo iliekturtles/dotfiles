@@ -88,6 +88,7 @@ chroot)
 
     #aw Dotfiles
     #aw List of Applications
+    #aw zsh
 
     echo
     ;&
