@@ -22,7 +22,6 @@ grml-zsh-config
 #amd-microcode
 #intel-microcode
 #linux-firmware-marvell
-#iwd
-#iwgtk
+#iwd iwgtk
 #linux-surface linux-surface-headers
 #iptsd #touch screen
