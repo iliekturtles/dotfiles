@@ -17,6 +17,7 @@ bat
 pkgstats openssh
 grml-zsh-config
 #cockpit
+zsh-doc
 
 # Machine specific
 #amd-microcode
