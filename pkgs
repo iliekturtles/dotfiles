@@ -1,12 +1,10 @@
+base base-devel linux linux-firmware
+
 vim
 nvim
 git
-iwd
-iwgtk
-#amd-microcode
-#intel-microcode
-linux-firmware
-linux-firmware-marvell
+man-db man-pages texinfo
+zsh zsh-completions
 
 #exa?
 #fd?
@@ -15,8 +13,16 @@ linux-firmware-marvell
 ripgrep
 bat
 
-pkgstats
+# UNKNOWN, remove?
+pkgstats openssh
+grml-zsh-config
 #cockpit
 
+# Machine specific
+#amd-microcode
+#intel-microcode
+#linux-firmware-marvell
+#iwd
+#iwgtk
 #linux-surface linux-surface-headers
 #iptsd #touch screen

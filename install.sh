@@ -1,20 +1,105 @@
-timedatectl set-ntp true
-sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads' /etc/pacman.conf
+set -eu -o pipefail
 
-#pacstrap /mnt base linux linux-firmware
-#pacman -Sy vim man-db man-pages texinfo
-#pacman pkgstats
+case ${1:-start} in
+# Connect to the internet.
+start)
+    echo '================================ start ================================'
 
-systemctl enable systemd-networkd.service
-systemctl enable systemd-resolved.service
-#systemd-boot efibootmgr?
-#linux-surface
+    echo 'Connect to the internet:'
+    echo ' * Check `ip link`.'
+    echo ' * Plug in wired cable.'
+    echo ' * Use `iwctl station <wlan> connect "network name"` to connect to wireless.'
+    echo ' * Verify connection `ping example.org`.'
+    echo
+    read -p 'Press enter to continue once connected... '
 
-#?? pacman-key --init && pacman-key --populate archlinux
+    echo
+    ;&
 
-#/etc/pacman.conf Color ParallelDownloads
-#aw Reflector
-#edit /etc/udev/hwdb.d/10-keyboard.hwdb
+prompt)
+    echo '================================ prompt ================================'
 
-#aw Dotfiles
-#aw List of Applications
+    timezone='US\Eastern'
+
+    echo 'Enter system and user information:'
+    echo
+    read -p 'Username: ' user
+    read -p 'Password: ' pass
+    read -p 'Root password: ' rootpass
+    read -p 'Hostname: ' host
+    read -er -p 'Timezone: ' -i "${timezone}" timezone
+
+    echo "${user}
+${pass}
+${rootpass}
+${host}
+${timezone}" > setup.conf
+
+    echo
+    ;&
+
+wtf)
+    echo '================================ wtf ================================'
+
+    echo 'Partition disks'
+    echo 'Format partitions'
+    echo 'Mount partitions'
+
+    echo
+    ;&
+
+omg)
+    echo '================================ omg ================================'
+
+    #timedatectl set-ntp true
+    #sed -i 's #Color Color ; s #ParallelDownloads ParallelDownloads' /etc/pacman.conf
+    echo 'Validate /etc/pacman.d/mirrorlist'
+
+    echo
+    ;&
+
+pacstrap)
+    echo '================================ pacstrap ================================'
+
+    #pacstrap /mnt base linux linux-firmware
+    #REPLACE linux with $kernel_package
+
+    #genfstab -U /mnt >> /mnt/etc/fstab
+
+    echo
+    ;&
+
+chroot)
+    echo '================================ chroot ================================'
+
+    #ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
+    #hwclock --systohc
+    #systemctl enable systemd-networkd.service
+    #systemctl enable systemd-resolved.service
+    #systemd-boot efibootmgr?
+    #linux-surface
+
+    #?? pacman-key --init && pacman-key --populate archlinux
+
+    #/etc/pacman.conf Color ParallelDownloads
+    #aw Reflector
+    #edit /etc/udev/hwdb.d/10-keyboard.hwdb
+    #edit /etc/sudoers, allow %wheel
+
+    #aw Dotfiles
+    #aw List of Applications
+
+    echo
+    ;&
+
+end)
+    echo '================================ end ================================'
+
+    echo 'Setup complete.'
+    ;;
+
+*)
+    echo "Invalid step \`$1\`."
+    echo '    Valid steps: start, prompt, , pacstrap, chroot.'
+    ;;
+esac
