@@ -76,21 +76,29 @@ chroot)
     #hwclock --systohc
     #systemctl enable systemd-networkd.service
     #systemctl enable systemd-resolved.service
+    #edit /etc/xdg/reflector/reflector.conf
+    #systemctl enable reflector.service
     #systemd-boot efibootmgr?
     #linux-surface
 
     #?? pacman-key --init && pacman-key --populate archlinux
 
     #/etc/pacman.conf Color ParallelDownloads
+    #	multilib, linux-surface?
     #aw Reflector
     #edit /etc/udev/hwdb.d/10-keyboard.hwdb
+    #edit /etc/udev/rules.d/99-disable-surface-touch.rules
     #edit /etc/sudoers, allow %wheel
 
     #aw Dotfiles
     #aw List of Applications
     #aw zsh
+    	#set $ZDOTDIR?
+	#use zcompile?
+
     #aw pacman
     #aw pacman package signing
+    #.local/share/applications/*.desktop
 
     echo
     ;&

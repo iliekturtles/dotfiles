@@ -5,6 +5,8 @@ nvim
 git
 man-db man-pages texinfo
 zsh zsh-completions
+tmux
+openssh #configure sshd
 
 #exa?
 #fd?
@@ -12,17 +14,33 @@ zsh zsh-completions
 #skim?
 ripgrep
 bat
+#systemd-homed?
 
 # UNKNOWN, remove?
 pkgstats openssh
 grml-zsh-config
 #cockpit
 zsh-doc zsh-syntax-highlighting zsh-autosuggestions
+lynx
+signal-desktop #edit .desktop file, --start-in-tray
+steam
+code
+#aur visual-studio-code-bin
+discord
+#firefox
 
 # Machine specific
 #amd-microcode
 #intel-microcode
 #linux-firmware-marvell
-#iwd iwgtk
-#linux-surface linux-surface-headers
+#iwd
+#aur iwgtk
+#linux-surface linux-surface-headers #remove linux?
 #iptsd #touch screen
+#libva-intel-driver #intel-media-driver?
+
+#KDE
+plasma-wayland-session plasma-meta
+#kde-applications-meta
+#sddm-git sddm-kcm
+#/etc/sddm.conf.d/kde_settings.conf
