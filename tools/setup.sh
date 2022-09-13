@@ -1,6 +1,10 @@
 #!/bin/bash
 cd "${0%/*}"
 
+# https://packages.msys2.org/package/zsh?repo=msys&variant=x86_64
+# https://packages.msys2.org/package/tmux?repo=msys&variant=x86_64
+# https://packages.msys2.org/package/libevent?repo=msys&variant=x86_64
+
 if hash apt 2>/dev/null; then
     echo "Package setup..."
 
