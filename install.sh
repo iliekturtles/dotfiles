@@ -1,3 +1,4 @@
+#!/bin/bash
 set -eu -o pipefail
 
 case ${1:-start} in
@@ -38,8 +39,8 @@ ${timezone}" > setup.conf
     echo
     ;&
 
-wtf)
-    echo '================================ wtf ================================'
+partition)
+    echo '================================ partition ================================'
 
     echo 'Partition disks'
     echo 'Format partitions'
@@ -103,20 +104,7 @@ chroot)
     #aw pacman package signing
     #.local/share/applications/*.desktop
 
-    #onedriver
-    #MOUNTPOINT="~/OneDrive"
-    #mkdir -p $MOUNTPOINT
-    #export SERVICE_NAME=$(systemd-escape --template onedriver@.service --path $MOUNTPOINT)
-    #
-    ## mount onedrive
-    #systemctl --user daemon-reload
-    #systemctl --user start $SERVICE_NAME
-    #
-    ## automatically mount onedrive when you login
-    #systemctl --user enable $SERVICE_NAME
-    #
-    ## check onedriver's logs for the current day
-    #journalctl --user -u $SERVICE_NAME --since today
+    #winetricks corefonts
 
     echo
     ;&
@@ -129,9 +117,6 @@ end)
 
 *)
     echo "Invalid step \`$1\`."
-    echo '    Valid steps: start, prompt, , pacstrap, chroot.'
+    echo '    Valid steps: start, prompt, partition, pacstrap, chroot.'
     ;;
 esac
-
-
-#winetricks corefonts
