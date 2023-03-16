@@ -1,0 +1,69 @@
+add_newline = false
+command_timeout = 2000
+format = """($username$hostname )$directory\
+( \\($git_branch$git_commit$git_status$git_state\\))\
+$cmd_duration\
+$jobs\
+$battery\
+$status\
+$container\
+$character"""
+
+#spaces??????
+#git lag colors
+
+[username]
+format = '[$user]($style)'
+style_user = 'purple'
+
+[hostname]
+format = '@[$hostname]($style)'
+style = 'purple'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bold yellow'
+truncate_to_repo = false
+truncation_length = 0
+use_os_path_sep = false
+
+[directory.substitutions]
+'C:' = '/c'
+'D:' = '/d'
+
+[git_branch]
+format = '[$branch(:$remote_branch)]($style)'
+style = 'cyan'
+
+[git_commit]
+format = '[\($hash$tag\)]($style)'
+style = 'cyan'
+tag_disabled = false
+tag_symbol = ' '
+
+[git_status]
+deleted = 'x'
+format = '( [$all_status$ahead_behind]($style))'
+style = 'cyan'
+
+[git_state]
+format = '|[$state( $progress_current/$progress_total)]($style)'
+style = 'cyan'
+
+[cmd_duration]
+format = ' [$duration]($style)'
+
+[jobs]
+format = ' [$number$symbol]($style)'
+
+[battery]
+format = ' [$symbol$percentage]($style)'
+
+[status]
+disabled = false
+format = ' [\[$status( $signal_name)\]]($style)'
+
+[character]
+error_symbol = '\$'
+success_symbol = '\$'
+vimcmd_symbol = '[<](bold)'

@@ -56,4 +56,7 @@ shopt -s histappend
 # Better handle non-text input files.
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# Enable Starship.
+eval "$(starship init bash)"
+
 # vim: set ft=sh:

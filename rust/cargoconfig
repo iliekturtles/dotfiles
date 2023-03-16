@@ -1,0 +1,3 @@
+[build]
+rustflags = "-C target-cpu=native"
+#target-dir = "D:/dev/rust/.cargo/target"
