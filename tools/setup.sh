@@ -45,6 +45,7 @@ if [ ! -z "$MSYSTEM" ] && hash code 2>/dev/null; then
         'DotJoshJohnson.xml'
         'dunstontc.viml'
         'ms-dotnettools.csharp'
+        'ms-vscode-remote.remote-ssh'
         'ms-vscode-remote.remote-wsl'
         'ms-vscode.hexeditor'
         'rust-lang.rust-analyzer'
