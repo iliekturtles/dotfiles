@@ -5,9 +5,8 @@
 [checkout]
 	defaultRemote = origin
 [core]
-	autocrlf = true
 	commentChar = ";"
-	excludesfile = ~/$XDG_CONFIG_HOME/git/ignore
+	excludesfile = /home/mike/.config/git/ignore
 	pager = delta
 [commit]
 	verbose = true
@@ -95,3 +94,5 @@
 	az-merge-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^(.+\\.)([^\\/]+)\\?version=GB(.+)$/git remote add \\2 \\1\\2 \\&\\& git fetch \\2 \\3 \\&\\& git merge \\2\\/\\3 \\; git remote remove \\2/\" | source /dev/stdin"
 	gh-pull-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^(.+)\\/tree\\/(.+)$/git switch -C \\2 origin\\/master~50 \\&\\& git pull \\1 \\2/\" | source /dev/stdin"
 	gh-merge-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^(https:\\/\\/github.com\\/)([^\\/]+)\\/([^\\/]+)\\/tree\\/(.+)$/git remote add \\2 \\1\\2\\/\\3.git \\&\\& git fetch \\2 \\4 \\&\\& git merge \\2\\/\\4 \\; git remote remove \\2/\" | source /dev/stdin"
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

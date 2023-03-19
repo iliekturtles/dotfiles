@@ -2,3 +2,6 @@
 !.*
 
 .config/.dotfiles/
+
+.config/git/credentials
+.local/share/delta
