@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+function set_title() {
+    echo -ne "\e]0;$PWD\a"
+}
+
 function sshmux() {
     ssh -t $@ 'bash -l -c '"'"'exec tmux new -A -s ssh'"'"''
 }
