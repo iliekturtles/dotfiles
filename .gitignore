@@ -1,7 +1,12 @@
 /*
 !.*
 
+.cache/
 .config/.dotfiles/
+.config/vim/autoload/
+.config/vim/plug/
+.local/share/delta/
+.local/share/vim/
 
 .config/git/credentials
-.local/share/delta
+.config/vim/viminfo
