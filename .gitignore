@@ -7,7 +7,9 @@
 .config/vim/plug/
 .local/share/delta/
 .local/share/vim/
+.ssh/
 
 .bash_history
 .config/git/credentials
 .config/vim/viminfo
+.local/share/lesshst
