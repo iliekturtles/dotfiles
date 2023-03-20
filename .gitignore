@@ -8,5 +8,6 @@
 .local/share/delta/
 .local/share/vim/
 
+.bash_history
 .config/git/credentials
 .config/vim/viminfo
