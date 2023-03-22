@@ -1,0 +1,19 @@
+[$Version]
+update_info=delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize,kcminputrc_fix_botched_5_21_0.upd:kcminputrc_fix_botched_5_21_0_pre,kcminputrc_fix_botched_5_21_0.upd:kcminputrc_fix_botched_5_21_0,kcminputrc_repeat.upd:kcminputrc_migrate_key_repeat
+
+[Keyboard]
+NumLock=0
+
+[Libinput][1293][512][Belkin Belkin n52te Mouse]
+PointerAcceleration=-0.200
+PointerAccelerationProfile=1
+
+[Libinput][6940][6959][Corsair Corsair Gaming SABRE RGB Mouse]
+PointerAcceleration=0.200
+PointerAccelerationProfile=1
+
+[Libinput][6940][6959][ckb1: Corsair Gaming SABRE RGB Mouse vM]
+PointerAccelerationProfile=1
+
+[Tmp]
+update_info=delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize
