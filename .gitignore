@@ -12,7 +12,8 @@
 .config/systemd/user/*.wants
 .config/vim/autoload/
 .config/vim/plug/
-.local/share/
+.config/vlc/
+.local/
 .ssh/
 Desktop/
 
