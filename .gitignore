@@ -16,6 +16,12 @@
 .local/
 .ssh/
 Desktop/
+Downloads/
+Games/
+Music/
+OneDrive/
+Source/
+Videos/
 
 .bash_history
 .config/KDE/UserFeedback.conf
