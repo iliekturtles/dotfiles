@@ -9,9 +9,6 @@ $status\
 $container\
 $character"""
 
-#spaces??????
-#git lag colors
-
 [username]
 format = '[$user]($style)'
 style_user = 'purple'
@@ -32,12 +29,12 @@ use_os_path_sep = false
 'D:' = '/d'
 
 [git_branch]
-format = '[$branch(:$remote_branch)]($style)'
-style = 'cyan'
+format = '[$branch]($style)(:[$remote_branch](red))'
+style = 'green'
 
 [git_commit]
 format = '[\($hash$tag\)]($style)'
-style = 'cyan'
+style = 'yellow'
 tag_disabled = false
 tag_symbol = ' '
 
@@ -48,10 +45,11 @@ style = 'cyan'
 
 [git_state]
 format = '|[$state( $progress_current/$progress_total)]($style)'
-style = 'cyan'
+style = 'purple'
 
 [cmd_duration]
 format = ' [$duration]($style)'
+style = 'dimmed red'
 
 [jobs]
 format = ' [$number$symbol]($style)'
@@ -67,3 +65,4 @@ format = ' [\[$status( $signal_name)\]]($style)'
 error_symbol = '\$'
 success_symbol = '\$'
 vimcmd_symbol = '[<](bold)'
+
