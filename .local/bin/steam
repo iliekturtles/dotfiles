@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+HOME="$XDG_DATA_HOME/steam" exec /usr/bin/steam "$@"
