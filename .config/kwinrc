@@ -6,6 +6,9 @@ Id_1=80efbaf8-8e53-489e-9736-6010721d96d4
 Number=1
 Rows=1
 
+[Effect-windowview]
+BorderActivateAll=9
+
 [Tiling]
 padding=4
 
@@ -14,3 +17,6 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][eefebce9-52d3-5bff-8490-46b59c2db081]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Xwayland]
+Scale=1
