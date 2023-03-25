@@ -27,6 +27,8 @@ Videos/
 .config/KDE/UserFeedback.conf
 .config/KeePassXCrc
 .config/QtProject.conf
+.config/ckb-next/ckb-next_backup_*.conf
+.config/configstore/update-notifier-electron-builder.json
 .config/dconf/user
 .config/git/credentials
 .config/gtkrc
