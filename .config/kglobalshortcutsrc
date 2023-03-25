@@ -226,6 +226,10 @@ _launch=Alt+Space\tAlt+F2\tSearch,Alt+Space\tAlt+F2\tSearch,KRunner
 _k_friendly_name=Emoji Selector
 _launch=Meta+.,Meta+.,Emoji Selector
 
+[org.keepassxc.KeePassXC.desktop]
+_k_friendly_name=KeePassXC
+_launch=Ctrl+Alt+K,none,KeePassXC
+
 [org_kde_powerdevil]
 Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Decrease Keyboard Brightness
 Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Decrease Screen Brightness
