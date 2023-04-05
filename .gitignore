@@ -39,9 +39,7 @@ Videos/
 .config/kde.org/systemsettings.conf
 .config/ksmserverrc
 .config/onedrive/.sync_list.hash
-.config/onedrive/items.sqlite3
-.config/onedrive/items.sqlite3-shm
-.config/onedrive/items.sqlite3-wal
+.config/onedrive/items.sqlite3*
 .config/onedrive/refresh_token
 .config/plasmanotifyrc
 .config/trashrc
