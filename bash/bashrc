@@ -32,6 +32,10 @@ function vims() {
     fi
 }
 
+function set_title() {
+    echo -ne "\e]0;$PWD\a"
+}
+
 function xsvp() {
     local cmd=$1
     shift && command xsv $cmd -d"|" $@
@@ -58,5 +62,6 @@ shopt -s histappend
 
 # Enable Starship.
 eval "$(starship init bash)"
+starship_precmd_user_func="set_title"
 
 # vim: set ft=sh:
