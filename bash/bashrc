@@ -36,6 +36,10 @@ function set_title() {
     echo -ne "\e]0;$PWD\a"
 }
 
+function sshmux() {
+    ssh -t $@ 'bash -l -c '"'"'exec tmux -f $XDG_CONFIG_HOME/tmux/config new -A -s ssh'"'"''
+}
+
 function xsvp() {
     local cmd=$1
     shift && command xsv $cmd -d"|" $@
