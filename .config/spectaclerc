@@ -1,0 +1,8 @@
+[$Version]
+update_info=spectacle_clipboard.upd:clipboard-settings-change,spectacle_rememberregion.upd:spectacle-migrate-rememberregion
+
+[General]
+clipboardGroup=PostScreenshotCopyImage
+
+[GuiConfig]
+window-position=2560,82

@@ -8,6 +8,7 @@
 .config/cef_user_data
 .config/ckb-next/
 .config/discord/
+.config/libaccounts-glib/
 .config/pulse/
 .config/session/
 .config/systemd/user/*.wants
