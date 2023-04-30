@@ -81,7 +81,7 @@ DialogWidth=720
 [Containments][3][Applets][18][Configuration][General]
 groupingStrategy=0
 highlightWindows=false
-launchers=preferred://browser,applications:org.kde.konsole.desktop,applications:org.kde.dolphin.desktop
+launchers=applications:org.kde.dolphin.desktop,preferred://browser,applications:Alacritty.desktop
 showToolTips=false
 
 [Containments][3][Applets][4]
