@@ -3,6 +3,7 @@
 
 .cache/
 .config/.dotfiles/
+.config/Code/
 .config/Signal/
 .config/awakened-poe-trade/
 .config/cef_user_data
