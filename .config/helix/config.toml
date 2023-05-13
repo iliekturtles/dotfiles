@@ -1,0 +1,16 @@
+theme = "onedarker"
+
+[editor]
+color-modes = true
+#cursorline = true # Selection/cursorline have the same color.
+gutters = ["diagnostics", "spacer", "diff"]
+rulers = [100]
+true-color = true
+whitespace.render.nbsp = "all"
+whitespace.render.space = "all"
+whitespace.render.tab = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
