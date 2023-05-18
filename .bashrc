@@ -17,6 +17,7 @@ alias dot='git --git-dir=$HOME/.config/.dotfiles --work-tree=$HOME'
 alias hx='helix'
 alias la='ls -lAFh --color=auto --group-directories-first'
 alias ll='ls -lFh --color=auto --group-directories-first'
+alias yeet='paru -Rcns'
 
 # Enable Starship.
 eval "$(starship init bash)"
