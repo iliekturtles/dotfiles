@@ -25,7 +25,7 @@ if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/KeePass
 
-    dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/config"
+    dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
     cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
@@ -37,7 +37,7 @@ else
         sudo cp -f resolv.conf /etc/resolv.conf
     fi
 
-    cp tmux.conf "$XDG_CONFIG_HOME/tmux/config"
+    cp tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
 fi
 
 echo "Setup git..."

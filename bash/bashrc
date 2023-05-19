@@ -10,7 +10,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias la='ls -lAFh --color=auto'
 alias ll='ls -lFh --color=auto'
-alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/config"'
 alias irssi='TERM=screen irssi'
 alias pd='pushd'
 alias history='HISTTIMEFORMAT="%F %T " history | sort -rn | less -FS'
@@ -37,7 +36,7 @@ function set_title() {
 }
 
 function sshmux() {
-    ssh -t $@ 'bash -l -c '"'"'exec tmux -f $XDG_CONFIG_HOME/tmux/config new -A -s ssh'"'"''
+    ssh -t $@ 'bash -l -c '"'"'exec tmux new -A -s ssh'"'"''
 }
 
 function xsvp() {
