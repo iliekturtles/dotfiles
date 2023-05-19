@@ -37,6 +37,11 @@
 	prune = true
 [interactive]
 	diffFilter = delta --color-only --features=interactive
+[merge]
+	tool = vimdiff
+	guitool = tortoisemerge
+[mergetool]
+	keepBackup = false
 [pager]
 	diff = delta
 	log = delta
