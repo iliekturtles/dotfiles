@@ -1,0 +1,5 @@
+# Map CAPS to ESC for all inputs.
+# Reload with:
+#    systemd-hwdb update && udevadm trigger
+evdev:input:*
+ KEYBOARD_KEY_70039=esc
