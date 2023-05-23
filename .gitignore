@@ -39,7 +39,6 @@ Videos/
 .config/kde.org/UserFeedback.org.kde.dolphin.conf
 .config/kde.org/UserFeedback.org.kde.plasmashell.conf
 .config/kde.org/systemsettings.conf
-.config/ksmserverrc
 .config/onedrive/.sync_list.hash
 .config/onedrive/items.sqlite3*
 .config/onedrive/refresh_token
