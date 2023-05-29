@@ -15,10 +15,12 @@ File1[$e]=/usr/share/sddm/faces/root.face.icon
 File2[$e]=/usr/share/sddm/themes/elarun/elarun.jpg
 File3[$e]=/usr/share/sddm/themes/maldives/background.jpg
 File4[$e]=/usr/share/sddm/themes/maya/screenshots/hi_IN.png
+File5[$e]=$HOME/Screenshot_20230523_162643.png
 Name1[$e]=root.face.icon
 Name2[$e]=elarun.jpg
 Name3[$e]=background.jpg
 Name4[$e]=hi_IN.png
+Name5[$e]=Screenshot_20230523_162643.png
 
 [SideBar]
 InformationSplitterSizes=212,243
