@@ -1,0 +1,65 @@
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "c"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "css"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "diff"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "git-commit"
+indent = { tab-width = 4, unit = "    " }
+comment-token = ";"
+
+[[language]]
+name = "git-rebase"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "html"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "javascript"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "json"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "markdown"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "msbuild"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "scss"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "toml"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "typescript"
+indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "xml"
+indent = { tab-width = 4, unit = "\t" }
+

@@ -2,6 +2,7 @@ includes = ["dotter/windows.toml", "dotter/local-includes.toml"]
 packages = [
 	"bash",
 	"fish",
+	"helix",
 	"msys2",
 	"neovim",
 	"neovim-qt",
