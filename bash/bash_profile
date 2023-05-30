@@ -26,6 +26,9 @@ done < <(sed -r '/^\s*(#.*)?$|^\s*PATH=/d' ~/.config/environment.d/envvars.conf)
 
 {{/if}}
 # Update PATH.
+{{#if (and dotter.packages.msys2 dotter.packages.git)}}
+pathprefix "~/AppData/Local/Programs/Git/cmd"
+{{/if}}
 {{#each shell.PATH_PREFIX}}
 pathprefix "{{this}}"
 {{/each}}

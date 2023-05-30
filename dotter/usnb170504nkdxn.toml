@@ -3,6 +3,7 @@ packages = [
 	"bash",
 	"bat",
 	"fish",
+	"git",
 	"helix",
 	"msys2",
 	"neovim",

@@ -1,0 +1,89 @@
+[user]
+	useConfigOnly = true
+[includeIf "gitdir:{{#if (eq dotter.os "unix")}}{{shell.SOURCE_HOME}}{{else}}{{(trim_end (command_output (concat "cygpath -m " shell.SOURCE_HOME)))}}{{/if}}/"]
+	path = "{{#if (eq dotter.os "unix")}}{{shell.SOURCE_HOME}}{{else}}{{(trim_end (command_output (concat "cygpath -m " shell.SOURCE_HOME)))}}{{/if}}/.gitconfig"
+[checkout]
+	defaultRemote = origin
+[core]
+	autocrlf = {{git.core.autocrlf}}
+	commentChar = ";"
+	excludesfile = {{env_var "XDG_CONFIG_HOME"}}/git/ignore
+[commit]
+	verbose = true
+[credential]
+{{#if git.credential.helper}}
+	helper = /usr/lib/git-core/git-credential-libsecret
+{{/if}}
+[credential "https://github.com"]
+	username = mike.boutin@gmail.com
+[diff]
+	algorithm = histogram
+	tool = {{git.diff.tool}}
+	wsErrorHighlight = all
+[fetch]
+	prune = true
+[filter "dotfiles"]
+	clean = "dotter/filter.sh %f"
+[http]
+{{#if git.http.sslbackend}}
+	sslbackend = {{git.http.sslbackend}}
+{{/if}}
+[interactive]
+[merge]
+	guitool = {{git.merge.guitool}}
+	tool = {{git.merge.tool}}
+[mergetool]
+	keepBackup = false
+[pretty]
+	changelog = format:%C(auto)%h%d %Cgreen%an %Cred(%cr) %Creset%s
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+	default = simple
+	recurseSubmodules = check
+[rebase]
+	autoSquash = true
+[rerere]
+	autoUpdate = true
+	enabled = true
+[submodule]
+	fetchJobs = 0
+[tig]
+	tab-size = 4
+[alias]
+	ci = commit
+	cia = "!git add -AN && git commit -a"
+	ciaa = "!git add -AN && git commit -a --amend"
+	cip = "!git add -AN && git commit -p"
+	cipa = "!git add -AN && git commit -p --amend"
+	co = checkout
+	cop = checkout -p
+	cs = "!git checkout $1 && git down ; git submodule update ; :"
+	down = merge --ff-only
+	drop-pr = "!BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git branch -D $BRANCH && git down"
+	ds = diff --staged
+	f = fetch
+	facs = "!git fat && git checkout $1 && git down ; git submodule update ; :"
+	fars = "!git fat && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	fat = fetch --all --tags
+	fcs = "!git ft && git checkout $1 && git down ; git submodule update ; :"
+	frs = "!git ft && git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	ft = fetch --tags
+	lag = log --all --graph --pretty=changelog --date-order
+	lg = log --graph --pretty=changelog --date-order
+	lp = log -p
+	pr = "!BRANCH=$(git rev-parse --abbrev-ref HEAD) PR_REMOTE=$(git config push.pr-remote || git config checkout.defaultRemote) && git push \"${PR_REMOTE:-origin}\" --force-with-lease && git checkout master && git branch -D $BRANCH && git down"
+	rs = "!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
+	skipped = "!git ls-files -v | grep \"^[hS]\""
+	st = status -sb
+	unstage = reset HEAD --
+	up = pull --ff-only
+	az-pull-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^(.+)\\?version=GB(.+)$/git fetch \\1 \\2 \\&\\& git switch -C \\2 FETCH_HEAD/\" | source /dev/stdin"
+	az-merge-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^(.+)\\?version=GB(.+)$/git fetch \\1 \\2 \\&\\& git merge FETCH_HEAD/\" | source /dev/stdin"
+	gh-pull-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^https:\\/\\/github.com\\/([^\\/]+)\\/([^\\/]+)\\/tree\\/(.+)$/git fetch https:\\/\\/github.com\\/\\1\\/\\2 \\3 \\&\\& git switch -C \\1\\/\\3 FETCH_HEAD/\" | source /dev/stdin"
+	gh-merge-pr = "!function urldecode() { : \"${*//+/ }\"; echo -e \"${_//%/\\\\x}\"; }; urldecode $1 | sed -E \"s/^https:\\/\\/github.com\\/([^\\/]+)\\/([^\\/]+)\\/tree\\/(.+)$/git fetch https:\\/\\/github.com\\/\\1\\/\\2 \\3 \\&\\& git merge FETCH_HEAD/\" | source /dev/stdin"
+[safe]
+{{#each git.safe.directory}}
+	directory = {{this}}
+{{/each}}

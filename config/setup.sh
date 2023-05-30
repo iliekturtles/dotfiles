@@ -14,9 +14,6 @@ if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
     exit
 fi
 
-echo "Setup config directories..."
-mkdir -p "$XDG_CONFIG_HOME"/git
-
 echo "Setup KeePass, mintty, and VsVim..."
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
@@ -26,20 +23,6 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-fi
-
-echo "Setup git..."
-touch "$XDG_CONFIG_HOME/git/credentials"
-
-cp gitconfig "$XDG_CONFIG_HOME/git/config"
-cp gitignore "$XDG_CONFIG_HOME/git/ignore"
-
-git config --global core.excludesfile "$XDG_CONFIG_HOME/git/ignore"
-
-if [ ! -z "$MSYSTEM" ]; then
-    git config --global core.autocrlf true
-else
-    git config --global core.autocrlf input
 fi
 
 echo "Setup Base16..."

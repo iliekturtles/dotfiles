@@ -57,6 +57,7 @@ depends = ["shell"]
 "fish/fish_variables" = "$XDG_CONFIG_HOME/fish/fish_variables"
 "fish/interactive.fish" = "$XDG_CONFIG_HOME/fish/interactive.fish"
 "fish/login.fish" = "$XDG_CONFIG_HOME/fish/login.fish"
+"fish/functions/dot.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/dot.fish", if = "dotter.packages.git" }
 "fish/functions/hx.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/hx.fish", if = "dotter.packages.helix" }
 "fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
 "fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
@@ -65,6 +66,29 @@ depends = ["shell"]
 "fish/functions/vi.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/vi.fish", if = "dotter.packages.neovim" }
 "fish/functions/yeet.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yeet.fish", if = "dotter.packages.pacman" }
 "fish/functions/yolo.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yolo.fish", if = "dotter.packages.pacman" }
+
+[git.files]
+"git/config" = "$XDG_CONFIG_HOME/git/config"
+"git/ignore" = "$XDG_CONFIG_HOME/git/ignore"
+
+[git.variables.git.core]
+autocrlf = "input"
+
+[git.variables.git.credential]
+helper = "/usr/lib/git-core/git-credential-libsecret"
+
+[git.variables.git.diff]
+tool = "nvimdiff"
+
+[git.variables.git.http]
+sslbackend = ""
+
+[git.variables.git.merge]
+guitool = ""
+tool = "nvimdiff"
+
+[git.variables.git.safe]
+directory = []
 
 [helix.files]
 "helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"

@@ -5,6 +5,7 @@ packages = [
 	"bash",
 	"bat",
 	"fish",
+	"git",
 	"helix",
 	"htop",
 	"linux",

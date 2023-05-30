@@ -6,7 +6,7 @@ end
 
 {{/if}}
 # Update PATH.
-{{#if dotter.packages.msys2}}
+{{#if (and dotter.packages.msys2 dotter.packages.git)}}
 fish_add_path -pg "~/AppData/Local/Programs/Git/cmd"
 {{/if}}
 {{#each shell.PATH_PREFIX}}

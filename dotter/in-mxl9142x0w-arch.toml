@@ -4,6 +4,7 @@ packages = [
 	"bash",
 	"bat",
 	"fish",
+	"git",
 	"helix",
 	"htop",
 	"neovim",
