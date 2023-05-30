@@ -15,20 +15,17 @@ if [ ! -z "$MSYSTEM" ] && [ "$DOTFILES_VERSION" != "$_DOTFILES_VERSION" ]; then
 fi
 
 echo "Setup config directories..."
-mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
+mkdir -p "$XDG_CONFIG_HOME"/git
 
-echo "Setup KeePass, mintty, tmux, and VsVim..."
+echo "Setup KeePass, mintty, and VsVim..."
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/KeePass
 
-    dos2unix -n -q tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
     cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
-else
-    cp tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
 fi
 
 echo "Setup git..."
