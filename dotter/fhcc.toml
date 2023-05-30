@@ -14,6 +14,7 @@ packages = [
 	"ripgrep",
 	"ssh",
 	"sshd",
+	"starship",
 	"systemd",
 	"systemd-networkd",
 ]

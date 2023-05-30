@@ -9,6 +9,7 @@ packages = [
 	"neovim",
 	"paru",
 	"ripgrep",
+	"starship",
 	"systemd",
 	"wsl",
 ]

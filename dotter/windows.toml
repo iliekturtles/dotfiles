@@ -4,3 +4,6 @@
 
 [shell.variables.ssh]
 connection-sharing = false
+
+[starship.variables.starship]
+command_timeout = 10000
