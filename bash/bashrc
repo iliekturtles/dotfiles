@@ -31,6 +31,11 @@ function nvim-qts() {
 {{/if}}
 
 # Aliases.
+{{#if dotter.packages.helix}}
+{{#if (eq dotter.os "unix")}}
+alias hx='helix'
+{{/if}}
+{{/if}}
 alias la='ls -lAFh --color=auto --group-directories-first'
 alias ll='ls -lFh --color=auto --group-directories-first'
 {{#if dotter.packages.neovim}}
