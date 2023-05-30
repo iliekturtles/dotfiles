@@ -1,2 +1,6 @@
+[helix.files]
+"helix/config.toml" = "$APPDATA/helix/config.toml"
+"helix/languages.toml" = "$APPDATA/helix/languages.toml"
+
 [shell.variables.ssh]
 connection-sharing = false

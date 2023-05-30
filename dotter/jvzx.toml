@@ -4,6 +4,7 @@ packages = [
 	"amd",
 	"bash",
 	"fish",
+	"helix",
 	"linux",
 	"neovim",
 	"neovim-qt",

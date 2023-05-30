@@ -1,0 +1,28 @@
+theme = "onedarker"
+
+[editor]
+color-modes = true
+#cursorline = true # Selection/cursorline have similar colors.
+gutters = ["diagnostics", "spacer", "diff"]
+rulers = [101]
+true-color = true
+whitespace.render.nbsp = "all"
+whitespace.render.space = "all"
+whitespace.render.tab = "all"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator", "separator", "file-type", "file-line-ending", "file-encoding"]
+right = ["diagnostics", "selections", "primary-selection-length", "separator", "position-percentage", "total-line-numbers", "position"]
+
+[editor.lsp]
+# enable = false
+display-messages = true
+
+[keys.normal]
+x = "extend_line"
+Z = {Q = ":quit!", Z = ":write-quit!"}

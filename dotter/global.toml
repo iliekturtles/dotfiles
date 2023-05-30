@@ -52,10 +52,15 @@ depends = ["shell"]
 "fish/fish_variables" = "$XDG_CONFIG_HOME/fish/fish_variables"
 "fish/interactive.fish" = "$XDG_CONFIG_HOME/fish/interactive.fish"
 "fish/login.fish" = "$XDG_CONFIG_HOME/fish/login.fish"
+"fish/functions/hx.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/hx.fish", if = "dotter.packages.helix" }
 "fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
 "fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
 "fish/functions/sshmux.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/sshmux.fish", if = "dotter.packages.ssh" }
 "fish/functions/vi.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/vi.fish", if = "dotter.packages.neovim" }
+
+[helix.files]
+"helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"
+"helix/languages.toml" = "$XDG_CONFIG_HOME/helix/languages.toml"
 
 [intel]
 
