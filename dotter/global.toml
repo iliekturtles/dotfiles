@@ -132,6 +132,12 @@ depends = ["shell"]
 [systemd.files]
 "systemd/environment.d/envvars.conf" = "$XDG_CONFIG_HOME/environment.d/envvars.conf"
 
+[tmux.files]
+"tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
+
+[tmux.variables.tmux]
+default-terminal = ""
+
 [windows]
 depends = ["shell"]
 

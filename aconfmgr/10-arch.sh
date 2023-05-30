@@ -30,6 +30,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.ripgrep}}AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
+{{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'
@@ -51,6 +52,9 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.paru}}CopyFile '/etc/paru.conf'{{/if}}
 {{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
+{{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
+{{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' group utmp{{/if}}
+{{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' mode 2755{{/if}}
 {{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
 {{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
