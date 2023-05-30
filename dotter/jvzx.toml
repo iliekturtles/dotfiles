@@ -17,6 +17,7 @@ packages = [
 	"starship",
 	"systemd",
 	"systemd-networkd",
+	"tmux",
 ]
 
 [files]
