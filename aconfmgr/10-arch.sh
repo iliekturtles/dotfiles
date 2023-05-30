@@ -35,6 +35,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}{{/if}}
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}{{/if}}
+{{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'
@@ -63,6 +64,8 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.paru}}CopyFile '/etc/paru.conf'{{/if}}
 {{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
+{{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' group utmp{{/if}}
+{{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' mode 2755{{/if}}
 {{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
 {{#if systemd-networkd.ethernet}}CopyFile '/etc/systemd/network/10-ethernet.network'{{/if}}

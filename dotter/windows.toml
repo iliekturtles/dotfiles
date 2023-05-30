@@ -7,3 +7,6 @@ connection-sharing = false
 
 [starship.variables.starship]
 command_timeout = 10000
+
+[tmux.variables.tmux]
+default-terminal = "xterm-256color"

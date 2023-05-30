@@ -11,6 +11,7 @@ packages = [
 	"ripgrep",
 	"starship",
 	"systemd",
+	"tmux",
 	"wsl",
 ]
 

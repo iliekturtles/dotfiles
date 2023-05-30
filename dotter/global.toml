@@ -153,6 +153,12 @@ ethernet = true
 wlan = false
 wwan = false
 
+[tmux.files]
+"tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
+
+[tmux.variables.tmux]
+default-terminal = ""
+
 [windows]
 depends = ["shell"]
 
