@@ -133,6 +133,12 @@ connection-sharing = true
 [sshd]
 depends = ["ssh"]
 
+[starship.files]
+"starship/starship.toml" = "$XDG_CONFIG_HOME/starship.toml"
+
+[starship.variables.starship]
+command_timeout = 2000
+
 [systemd]
 depends = ["shell"]
 
