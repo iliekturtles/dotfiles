@@ -1,13 +1,14 @@
 add_newline = false
-command_timeout = 2000
+command_timeout = {{starship.command_timeout}}
 format = """($username$hostname )$directory\
 ( \\($git_branch$git_commit$git_status$git_state\\))\
 $fill\
 $cmd_duration\
 $jobs\
+$shlvl\
 $battery\
 $status\
-$container\
+$container \
 $line_break\
 $character"""
 
@@ -58,6 +59,12 @@ style = 'dimmed red'
 
 [jobs]
 format = ' [$number$symbol]($style)'
+
+[shlvl]
+disabled = false
+format = ' [$shlvl$symbol]($style)'
+symbol = '↕'
+threshold = 1
 
 [battery]
 format = ' [$symbol$percentage]($style)'
