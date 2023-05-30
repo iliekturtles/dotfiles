@@ -29,6 +29,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.paru}}AddPackage --foreign paru-bin # Feature packed AUR helper{{/if}}
 {{#if dotter.packages.ripgrep}}AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
+{{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'

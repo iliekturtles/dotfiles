@@ -10,6 +10,7 @@ packages = [
 	"pacman",
 	"ripgrep",
 	"ssh",
+	"starship",
 	"windows",
 	"wsl-client",
 ]
