@@ -31,6 +31,9 @@ function nvim-qts() {
 {{/if}}
 
 # Aliases.
+{{#if dotter.packages.git}}
+alias dot='git --git-dir=$HOME/.config/.dotfiles --work-tree=$HOME'
+{{/if}}
 {{#if dotter.packages.helix}}
 {{#if (eq dotter.os "unix")}}
 alias hx='helix'
