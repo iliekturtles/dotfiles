@@ -41,7 +41,7 @@ if hash cmake 2>/dev/null; then
         hyperfine \
         {{#if dotter.packages.ripgrep}}ripgrep{{/if}} \
         {{#if dotter.packages.starship}}starship{{/if}} \
-        xsv
+        {{#if dotter.packages.xsv}}xsv{{/if}}
         #cargo-asm \
         #cargon-binstall \
         #cargo-deadlinks \
