@@ -30,6 +30,13 @@ if ! systemctl is-enabled fstrim.timer > /dev/null; then
     sudo systemctl enable fstrim.timer
 fi
 {{/if}}
+{{#if dotter.packages.pacman}}
+
+if ! systemctl is-enabled paccache.service > /dev/null; then
+    sudo systemctl enable paccache.service
+    sudo systemctl start paccache.service
+fi
+{{/if}}
 {{#if dotter.packages.sshd}}
 
 if ! systemctl is-enabled sshd.service > /dev/null; then

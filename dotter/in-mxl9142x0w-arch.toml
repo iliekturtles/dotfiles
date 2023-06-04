@@ -5,6 +5,7 @@ packages = [
 	"fish",
 	"helix",
 	"neovim",
+	"pacman",
 	"systemd",
 	"wsl",
 ]

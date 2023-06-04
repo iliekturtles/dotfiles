@@ -6,6 +6,7 @@ packages = [
 	"msys2",
 	"neovim",
 	"neovim-qt",
+	"pacman",
 	"ssh",
 	"windows",
 	"wsl-client",
