@@ -19,6 +19,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
+"aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
@@ -55,8 +56,11 @@ depends = ["shell"]
 "fish/functions/hx.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/hx.fish", if = "dotter.packages.helix" }
 "fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
 "fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
+"fish/functions/pacdiff.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/pacdiff.fish", if = "(and dotter.packages.neovim dotter.packages.pacman)" }
 "fish/functions/sshmux.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/sshmux.fish", if = "dotter.packages.ssh" }
 "fish/functions/vi.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/vi.fish", if = "dotter.packages.neovim" }
+"fish/functions/yeet.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yeet.fish", if = "dotter.packages.pacman" }
+"fish/functions/yolo.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yolo.fish", if = "dotter.packages.pacman" }
 
 [helix.files]
 "helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"
@@ -84,6 +88,9 @@ surface = false
 
 [neovim-qt]
 depends = ["neovim"]
+
+[pacman.variables]
+pacman = "pacman"
 
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
