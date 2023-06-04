@@ -38,8 +38,15 @@ alias hx='helix'
 {{/if}}
 alias la='ls -lAFh --color=auto --group-directories-first'
 alias ll='ls -lFh --color=auto --group-directories-first'
+{{#if (and dotter.packages.neovim dotter.packages.pacman)}}
+alias pacdiff='DIFFPROG="nvim -d" /usr/bin/pacdiff -s'
+{{/if}}
 {{#if dotter.packages.neovim}}
 alias vi='nvim'
+{{/if}}
+{{#if dotter.packages.pacman}}
+alias yeet='{{first_non_empty pacman}} -Rcns'
+alias yolo='{{first_non_empty pacman}} -S'
 {{/if}}
 
 # Bash settings.
