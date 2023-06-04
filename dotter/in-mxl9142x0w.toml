@@ -18,6 +18,7 @@ packages = [
 	"tmux",
 	"windows",
 	"wsl-client",
+	"xsv",
 ]
 
 [files]

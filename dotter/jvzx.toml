@@ -21,6 +21,7 @@ packages = [
 	"systemd",
 	"tig",
 	"tmux",
+	"xsv",
 ]
 
 [files]

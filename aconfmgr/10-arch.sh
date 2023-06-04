@@ -40,6 +40,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
 {{#if dotter.packages.tig}}AddPackage tig # Text-mode interface for Git.{{/if}}
 {{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
+{{#if dotter.packages.xsv}}AddPackage xsv # A CLI for indexing, slicing, analyzing, splitting and joining CSV files{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'
