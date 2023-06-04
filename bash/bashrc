@@ -35,6 +35,13 @@ function nvim-qts() {
 }
 {{/if}}
 {{/if}}
+{{#if dotter.packages.xsv}}
+
+function xsvp() {
+    local cmd=$1
+    shift && command xsv $cmd -d"|" $@
+}
+{{/if}}
 
 # Aliases.
 {{#if dotter.packages.git}}

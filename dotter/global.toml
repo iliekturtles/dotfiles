@@ -72,6 +72,7 @@ depends = ["shell"]
 "fish/functions/vi.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/vi.fish", if = "dotter.packages.neovim" }
 "fish/functions/yeet.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yeet.fish", if = "dotter.packages.pacman" }
 "fish/functions/yolo.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yolo.fish", if = "dotter.packages.pacman" }
+"fish/functions/xsvp.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/xsvp.fish", if = "dotter.packages.xsv" }
 
 [git.files]
 "git/config" = "$XDG_CONFIG_HOME/git/config"
@@ -201,3 +202,5 @@ depends = ["shell"]
 [wsl]
 
 [wsl-client]
+
+[xsv]
