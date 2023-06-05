@@ -1,0 +1,59 @@
+#!/usr/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
+if [[ "${TRACE-0}" == "1" ]]; then
+    set -o xtrace
+fi
+
+DEFAULT_PACKAGES=( {{#each dotter.packages}}{{assign "update" (concat @key "/dotupdate.sh")}}{{#if (and this (command_success (concat "test -f " ../update)))}}{{@key}} {{/if}}{{/each}})
+
+if [[ "${1-}" =~ ^-*h(elp)?$ ]]; then
+    echo 'Run extended dot file update scripts.
+
+Usage:
+    dotupdate [PACKAGE ...]
+    dotupdate --help|-h
+
+Arguments:
+    <PACKAGE>
+        Run extended update scripts for each of the given packages in order.
+        Default: '"${DEFAULT_PACKAGES[@]}"
+    exit
+fi
+
+cd "$(dirname "$0")"
+
+{{! Package scripts, $package/$dotupdate.sh }}
+{{#each dotter.packages}}
+{{assign "update" (concat @key "/dotupdate.sh")}}{{#if (and this (command_success (concat "test -f " ../update)))}}
+# {{@key}} update script.
+function update_{{@key}}() {
+{{include_template ../update}}}
+{{/if}}
+{{/each}}
+
+function main() {
+     if [ "$#" -gt 0 ]; then
+        local packages=( "$@" )
+     else
+        local packages=( "${DEFAULT_PACKAGES[@]}" )
+     fi
+
+     for package in "${packages[@]}"
+     do
+        echo "Updating $package..."
+
+         case "$package" in
+{{#each dotter.packages}}{{assign "update" (concat @key "/dotupdate.sh")}}{{#if (and this (command_success (concat "test -f " ../update)))}}            "{{@key}}") update_{{@key}} ;;
+            {{/if}}
+            {{/each}}
+             *)
+                echo "ERROR: $package is not defined"
+                exit 1
+                ;;
+         esac
+     done
+}
+
+main "$@"

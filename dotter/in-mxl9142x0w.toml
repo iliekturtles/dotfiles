@@ -4,3 +4,6 @@ packages = []
 [files]
 
 [variables]
+
+[variables.shell]
+SOURCE_HOME = "/d/Code"

@@ -1,2 +1,19 @@
 [helpers]
 concat = "dotter/helpers/concat.rhai"
+
+[shell.files]
+"shell/dotupdate" = "~/.local/bin/dotupdate"
+
+[shell.variables.shell]
+EDITOR = "nvim"
+Encoding = "UTF-8"
+LESS = "-iFR -x4 --incsearch --mouse --wheel-lines=4"
+Locale = "en_US"
+LocalTimeZone = "US/Eastern"
+PATH_PREFIX = ["$HOME/.local/bin"]
+PATH_SUFFIX = []
+SOURCE_HOME = "~/Source"
+XDG_CACHE_HOME = "$HOME/.cache"
+XDG_CONFIG_HOME = "$HOME/.config"
+XDG_DATA_HOME = "$HOME/.local/share"
+XDG_STATE_HOME = "$HOME/.local/state"
