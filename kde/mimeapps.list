@@ -1,5 +1,9 @@
 [Added Associations]
 inode/directory=org.kde.dolphin.desktop;
+{{#if dotter.packages.firefox}}x-scheme-handler/http=firefox.desktop;{{/if}}
+{{#if dotter.packages.firefox}}x-scheme-handler/https=firefox.desktop;{{/if}}
 
 [Default Applications]
 inode/directory=org.kde.dolphin.desktop;
+{{#if dotter.packages.firefox}}x-scheme-handler/http=firefox.desktop;{{/if}}
+{{#if dotter.packages.firefox}}x-scheme-handler/https=firefox.desktop;{{/if}}
