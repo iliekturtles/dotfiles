@@ -13,6 +13,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
 {{#if dotter.packages.bat}}AddPackage bat # Cat clone with syntax highlighting and git integration{{/if}}
 {{#if dotter.packages.delta}}AddPackage git-delta # Syntax-highlighting pager for git and diff output{{/if}}
+{{#if dotter.packages.firefox}}AddPackage firefox # Standalone web browser from mozilla.org{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.git}}AddPackage git # the fast distributed version control system{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}

@@ -5,6 +5,7 @@ packages = [
 	"bash",
 	"bat",
 	"delta",
+	"firefox",
 	"fish",
 	"git",
 	"helix",

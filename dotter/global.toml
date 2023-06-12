@@ -56,6 +56,10 @@ depends = ["git"]
 [delta.variables.delta]
 DELTA_PAGER = "less -S"
 
+[firefox.files]
+"firefox/local/bin/firefox" = "~/.local/bin/firefox"
+"firefox/local/share/applications/firefox.desktop" = "$XDG_DATA_HOME/applications/firefox.desktop"
+
 [fish]
 depends = ["shell"]
 
