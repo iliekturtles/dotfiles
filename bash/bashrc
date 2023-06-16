@@ -57,6 +57,9 @@ alias ll='ls -lFh --color=auto --group-directories-first'
 {{#if (and dotter.packages.neovim dotter.packages.pacman)}}
 alias pacdiff='DIFFPROG="nvim -d" /usr/bin/pacdiff -s'
 {{/if}}
+{{#if dotter.packages.windowsterminal}}
+alias tmux='script -c tmux /dev/null'
+{{/if}}
 {{#if dotter.packages.neovim}}
 alias vi='nvim'
 {{/if}}
