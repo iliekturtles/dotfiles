@@ -3,6 +3,8 @@ packages = [
 	"bash",
 	"fish",
 	"msys2",
+	"neovim",
+	"neovim-qt",
 	"ssh",
 	"windows",
 	"wsl-client",

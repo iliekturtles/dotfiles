@@ -55,6 +55,7 @@ depends = ["shell"]
 "fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
 "fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
 "fish/functions/sshmux.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/sshmux.fish", if = "dotter.packages.ssh" }
+"fish/functions/vi.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/vi.fish", if = "dotter.packages.neovim" }
 
 [intel]
 
@@ -67,6 +68,17 @@ surface = false
 
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
+
+[neovim.files]
+"neovim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
+"neovim/mappings.vim" = "$XDG_CONFIG_HOME/nvim/mappings.vim"
+"neovim/plugins.vim" = "$XDG_CONFIG_HOME/nvim/plugins.vim"
+"neovim/settings.vim" = "$XDG_CONFIG_HOME/nvim/settings.vim"
+"neovim/statusline.vim" = "$XDG_CONFIG_HOME/nvim/statusline.vim"
+"neovim/ui.vim" = "$XDG_CONFIG_HOME/nvim/ui.vim"
+
+[neovim-qt]
+depends = ["neovim"]
 
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"

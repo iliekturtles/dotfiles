@@ -5,6 +5,8 @@ packages = [
 	"bash",
 	"fish",
 	"linux",
+	"neovim",
+	"neovim-qt",
 	"ssh",
 	"sshd",
 	"systemd",
