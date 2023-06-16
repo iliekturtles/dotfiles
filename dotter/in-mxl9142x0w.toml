@@ -1,10 +1,12 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
+	"msys2",
 	"windows",
 	"wsl-client",
 ]
 
 [files]
+"msys2/etc/nsswitch.conf" = "C:/Users/mjboutin/msys64/etc/nsswitch.conf"
 
 [variables]
 

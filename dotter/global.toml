@@ -13,6 +13,9 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
 
+[msys2.files]
+"msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
+
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
 
