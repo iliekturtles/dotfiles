@@ -1,6 +1,6 @@
 " Colors.
 set t_Co=256
-" set termguicolors
+set termguicolors
 set t_ut=
 set background=dark
 colorscheme unicon
@@ -12,8 +12,6 @@ let &colorcolumn=cc101
 
 " GUI settings.
 if has('gui')
-    set guifont=Consolas:h11
-
     augroup gui
         au!
 

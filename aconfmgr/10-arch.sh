@@ -18,6 +18,8 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-firmware-marvell # Firmware files for Linux - marvell / Firmware for Marvell devices{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface # The Linux kernel and modules{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
+{{#if dotter.packages.neovim-qt}}AddPackage neovim-qt # GUI for Neovim{{/if}}
+{{#if dotter.packages.neovim}}AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 
 # Configuration files.

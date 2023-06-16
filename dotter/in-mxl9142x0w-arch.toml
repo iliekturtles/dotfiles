@@ -3,6 +3,7 @@ packages = [
 	"aconfmgr",
 	"bash",
 	"fish",
+	"neovim",
 	"systemd",
 	"wsl",
 ]
