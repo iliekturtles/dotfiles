@@ -1,4 +1,4 @@
-call plug#begin('$XDG_CONFIG_HOME/$VIM_NVIM/plug')
+call plug#begin()
 
 Plug 'iliekturtles/vim-unicon'
 " Plug 'ervandew/supertab'
