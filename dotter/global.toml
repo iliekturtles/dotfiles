@@ -39,6 +39,9 @@ HISTSIZE = "1000"
 
 [bat]
 
+[delta]
+depends = ["git"]
+
 [fish]
 depends = ["shell"]
 

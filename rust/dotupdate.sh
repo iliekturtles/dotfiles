@@ -35,7 +35,7 @@ if hash cmake 2>/dev/null; then
         cargo-sweep \
         cargo-update \
         dotter \
-        git-delta \
+        {{#if dotter.packages.delta}}git-delta{{/if}} \
         hexyl \
         hyperfine \
         {{#if dotter.packages.ripgrep}}ripgrep{{/if}} \

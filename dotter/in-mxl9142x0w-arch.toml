@@ -3,6 +3,7 @@ packages = [
 	"aconfmgr",
 	"bash",
 	"bat",
+	"delta",
 	"fish",
 	"git",
 	"helix",
