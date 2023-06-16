@@ -20,7 +20,7 @@ mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
 mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 cp starship.toml "$XDG_CONFIG_HOME"
 
-echo "Setup KeePass, mintty, tmux, VsVim, and WSL..."
+echo "Setup KeePass, mintty, tmux, and VsVim..."
 if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/KeePass
@@ -31,12 +31,6 @@ if [ ! -z "$MSYSTEM" ]; then
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
 else
-    if [ ! -z "$WSL_DISTRO_NAME" ] && ! diff -q wsl.conf /etc/wsl.conf; then
-        sudo cp -f wsl.conf /etc/wsl.conf
-        sudo unlink /etc/resolv.conf
-        sudo cp -f resolv.conf /etc/resolv.conf
-    fi
-
     cp tmux.conf "$XDG_CONFIG_HOME/tmux/tmux.conf"
 fi
 

@@ -17,12 +17,14 @@ CopyFile '/etc/locale.conf'
 CopyFile '/etc/locale.gen'
 CopyFile '/etc/sudoers'
 CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
-CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
+{{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
+{{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
 {{#if systemd-networkd.ethernet}}CopyFile '/etc/systemd/network/10-ethernet.network'{{/if}}
 {{#if systemd-networkd.wlan}}CopyFile '/etc/systemd/network/20-wlan.network'{{/if}}
 {{#if systemd-networkd.wlan}}CreateDir '/etc/iwd'{{/if}}
 {{#if systemd-networkd.wwan}}CopyFile '/etc/systemd/network/30-wwan.network'{{/if}}
+{{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
 
 # Ignored paths.
 IgnorePath '*/lost+found'
@@ -66,3 +68,14 @@ IgnorePath '/usr/lib/vlc/plugins/plugins.dat'
 IgnorePath '/usr/lib32/**/*.cache'
 IgnorePath '/usr/share/*'
 IgnorePath '/var/*'
+{{#if dotter.packages.wsl}}IgnorePath '/etc/hosts'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/etc/ld.so.conf.d/ld.wsl.conf'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/etc/timezone'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/init'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/pkglist.x86_64.txt'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/usr/bin/groupmems'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/usr/bin/mount.drvfs'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/usr/bin/wslinfo'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/usr/bin/wslpath'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/usr/lib/wsl/*'{{/if}}
+{{#if dotter.packages.wsl}}IgnorePath '/version'{{/if}}

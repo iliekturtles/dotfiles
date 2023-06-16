@@ -1,6 +1,7 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
 	"windows",
+	"wsl-client",
 ]
 
 [files]

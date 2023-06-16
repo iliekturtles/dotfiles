@@ -10,6 +10,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
 "aconfmgr/files/etc/systemd/network/20-wlan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/20-wlan.network", if = "systemd-networkd.wlan" }
 "aconfmgr/files/etc/systemd/network/30-wwan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/30-wwan.network", if = "systemd-networkd.wwan" }
+"aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
 
 [shell.files]
@@ -45,3 +46,7 @@ wwan = false
 
 [windows]
 depends = ["shell"]
+
+[wsl]
+
+[wsl-client]
