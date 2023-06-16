@@ -7,6 +7,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/locale.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.conf" }
 "aconfmgr/files/etc/locale.gen" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.gen" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
+"aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
@@ -33,3 +34,7 @@ depends = ["shell"]
 
 [windows]
 depends = ["shell"]
+
+[wsl]
+
+[wsl-client]
