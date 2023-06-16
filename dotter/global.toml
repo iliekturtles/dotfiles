@@ -9,6 +9,9 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 
+[msys2.files]
+"msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
+
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
 
