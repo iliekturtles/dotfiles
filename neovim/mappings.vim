@@ -109,18 +109,3 @@ nnoremap j gj
 nnoremap k gk
 nnoremap gj j
 nnoremap gk k
-
-" Map C-<direction> to move between splits and tmux panes.
-function! MoveWindowPane(direction)
-    let wnr = winnr()
-    silent! execute 'wincmd ' . a:direction
-    " If the winnr is still the same after we moved, it is the last pane
-    if wnr == winnr() && !has('g:vscode')
-        call system('tmux select-pane -' . tr(a:direction, 'phjkl', 'lLDUR'))
-    end
-endfunction
-
-nnoremap <silent> <c-h> :call MoveWindowPane('h')<cr>
-nnoremap <silent> <c-j> :call MoveWindowPane('j')<cr>
-nnoremap <silent> <c-k> :call MoveWindowPane('k')<cr>
-nnoremap <silent> <c-l> :call MoveWindowPane('l')<cr>

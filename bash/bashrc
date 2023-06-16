@@ -7,10 +7,35 @@ function sshmux() {
     ssh -t $@ 'exec bash -l -c '"'"'exec tmux new -A -s ssh'"'"''
 }
 {{/if}}
+{{#if dotter.packages.neovim}}
+
+# Start or restore a neovim session.
+function nvims() {
+    if [ -f .session.vim ]; then
+        nvim -S .session.vim $@
+    else
+        nvim -c "Obsession .session.vim" $@
+    fi
+}
+{{#if dotter.packages.neovim-qt}}
+
+# Start or restore a neovim-qt session.
+function nvim-qts() {
+    if [ -f .gsession.vim ]; then
+        nvim-qt -S .gsession.vim $@ & disown
+    else
+        nvim-qt -c "Obsession .gsession.vim" $@ & disown
+    fi
+}
+{{/if}}
+{{/if}}
 
 # Aliases.
 alias la='ls -lAFh --color=auto --group-directories-first'
 alias ll='ls -lFh --color=auto --group-directories-first'
+{{#if dotter.packages.neovim}}
+alias vi='nvim'
+{{/if}}
 
 # Bash settings.
 shopt -s extglob    # Enable extended glob patterns.
