@@ -49,6 +49,12 @@ HISTSIZE = "1000"
 
 [bat]
 
+[delta]
+depends = ["git"]
+
+[delta.variables.delta]
+DELTA_PAGER = "less -S"
+
 [fish]
 depends = ["shell"]
 

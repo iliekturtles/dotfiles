@@ -8,6 +8,9 @@
 	autocrlf = {{git.core.autocrlf}}
 	commentChar = ";"
 	excludesfile = {{env_var "XDG_CONFIG_HOME"}}/git/ignore
+{{#if dotter.packages.delta}}
+	pager = delta
+{{/if}}
 [commit]
 	verbose = true
 [credential]
@@ -16,8 +19,30 @@
 {{/if}}
 [credential "https://github.com"]
 	username = mike.boutin@gmail.com
+{{#if dotter.packages.delta}}
+[delta]
+	features = decorations
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+	line-numbers = true
+	navigate = true
+	tabs = 4
+	true-color = always
+[delta "interactive"]
+	keep-plus-minus-markers = false
+[delta "decorations"]
+	commit-decoration-style = yellow ol
+	file-style = omit
+	hunk-header-style = file syntax
+	hunk-header-decoration-style = blue ul
+	hunk-header-file-style = normal bold
+	; minus-style = syntax auto
+	; minus-emph-style = syntax auto
+	; whitespace-error-style = magenta reverse
+{{/if}}
 [diff]
 	algorithm = histogram
+	colorMoved = default
 	tool = {{git.diff.tool}}
 	wsErrorHighlight = all
 [fetch]
@@ -29,7 +54,14 @@
 	sslbackend = {{git.http.sslbackend}}
 {{/if}}
 [interactive]
+{{#if dotter.packages.delta}}
+{{#if (eq dotter.os "unix")}}
+	# Pipe bug in git-for-windows 1.42.
+	diffFilter = delta --color-only --features=interactive
+{{/if}}
+{{/if}}
 [merge]
+	conflictStyle = diff3
 	guitool = {{git.merge.guitool}}
 	tool = {{git.merge.tool}}
 [mergetool]

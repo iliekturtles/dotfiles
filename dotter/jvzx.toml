@@ -4,6 +4,7 @@ packages = [
 	"amd",
 	"bash",
 	"bat",
+	"delta",
 	"fish",
 	"git",
 	"helix",

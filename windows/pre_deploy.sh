@@ -26,6 +26,11 @@ setenv HISTFILE "{{bash.HISTFILE}}"
 setenv HISTFILESIZE "{{bash.HISTFILESIZE}}"
 setenv HISTSIZE "{{bash.HISTSIZE}}"
 {{/if}}
+{{#if dotter.packages.delta}}
+
+echo "Setting delta variables..."
+setenv DELTA_PAGER "{{delta.DELTA_PAGER}}"
+{{/if}}
 {{#if dotter.packages.rust}}
 
 echo Setting rust variables...
