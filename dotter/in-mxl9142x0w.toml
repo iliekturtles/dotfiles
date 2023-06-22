@@ -10,6 +10,7 @@ packages = [
 	"neovim-qt",
 	"pacman",
 	"ripgrep",
+	"rust",
 	"ssh",
 	"starship",
 	"tig",
