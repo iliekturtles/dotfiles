@@ -6,7 +6,6 @@ if [ ! -z "$MSYSTEM" ]; then
     mkdir -p "$XDG_CONFIG_HOME/mintty"
     mkdir -p ~/AppData/Roaming/KeePass
 
-    cp _vsvimrc ~/_vsvimrc
     dos2unix -n -q minttyrc "$XDG_CONFIG_HOME/mintty/config"
     dos2unix -n -q minttyrc "$APPDATA/wsltty/config"
     cp KeePass.config.xml ~/AppData/Roaming/KeePass
