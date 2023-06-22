@@ -248,6 +248,9 @@ wwan = false
 [tmux.variables.tmux]
 default-terminal = ""
 
+[vsvim.files]
+"vsvim/vsvimrc" = "~/.vsvimrc"
+
 [windows]
 depends = ["shell"]
 
