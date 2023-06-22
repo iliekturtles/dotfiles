@@ -9,6 +9,9 @@ end
 {{#if (and dotter.packages.msys2 dotter.packages.git)}}
 fish_add_path -pg "~/AppData/Local/Programs/Git/cmd"
 {{/if}}
+{{#if dotter.packages.rust}}
+fish_add_path -pg "$CARGO_HOME/bin"
+{{/if}}
 {{#each shell.PATH_PREFIX}}
 fish_add_path -pg "{{this}}"
 {{/each}}
