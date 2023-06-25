@@ -23,6 +23,9 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 "aconfmgr/files/etc/xdg/reflector/reflector.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/xdg/reflector/reflector.conf" }
 
+[alacritty.files]
+"alacritty/alacritty.toml" = "$XDG_CONFIG_HOME/alacritty.toml"
+
 [amd]
 
 [bash]
