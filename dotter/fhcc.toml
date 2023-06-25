@@ -1,6 +1,7 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
 	"aconfmgr",
+	"alacritty",
 	"bash",
 	"bat",
 	"delta",

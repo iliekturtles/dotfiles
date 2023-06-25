@@ -33,6 +33,9 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/xdg/reflector/reflector.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/xdg/reflector/reflector.conf" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
 
+[alacritty.files]
+"alacritty/alacritty.toml" = "$XDG_CONFIG_HOME/alacritty.toml"
+
 [amd]
 
 [bash]
