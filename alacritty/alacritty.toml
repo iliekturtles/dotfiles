@@ -1,0 +1,57 @@
+# https://github.com/aarowill/base16-alacritty/blob/master/colors/base16-atelier-forest-256.yml
+# Base16 Atelier Forest 256 - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+[[colors.indexed_colors]]
+color = "0xdf5320"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xc33ff3"
+index = 17
+
+[[colors.indexed_colors]]
+color = "0x2c2421"
+index = 18
+
+[[colors.indexed_colors]]
+color = "0x68615e"
+index = 19
+
+[[colors.indexed_colors]]
+color = "0x9c9491"
+index = 20
+
+[[colors.indexed_colors]]
+color = "0xe6e2e0"
+index = 21
+
+[colors.bright]
+black = "0x766e6b"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0xf1efee"
+yellow = "0xc38418"
+
+[colors.cursor]
+cursor = "0xa8a19f"
+text = "0x1b1918"
+
+[colors.normal]
+black = "0x1b1918"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0xa8a19f"
+yellow = "0xc38418"
+
+[colors.primary]
+background = "0x1b1918"
+foreground = "0xa8a19f"
+
+[window]
+startup_mode = "Maximized"

@@ -9,6 +9,7 @@ AddPackage pkgstats # Submit a list of installed packages to the Arch Linux proj
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
+{{#if dotter.packages.alacritty}}AddPackage alacritty # A cross-platform, GPU-accelerated terminal emulator{{/if}}
 {{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
 {{#if dotter.packages.bat}}AddPackage bat # Cat clone with syntax highlighting and git integration{{/if}}
