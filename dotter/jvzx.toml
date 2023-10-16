@@ -8,7 +8,7 @@ packages = [
 	"linux",
 	"neovim",
 	"neovim-qt",
-	"pacman",
+	"paru",
 	"ssh",
 	"sshd",
 	"systemd",
