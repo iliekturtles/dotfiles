@@ -45,8 +45,8 @@ alias pacdiff='DIFFPROG="nvim -d" /usr/bin/pacdiff -s'
 alias vi='nvim'
 {{/if}}
 {{#if dotter.packages.pacman}}
-alias yeet='{{first_non_empty pacman}} -Rcns'
-alias yolo='{{first_non_empty pacman}} -S'
+alias yeet='{{first_non_empty paru pacman}} -Rcns'
+alias yolo='{{first_non_empty paru pacman}} -S'
 {{/if}}
 
 # Bash settings.
