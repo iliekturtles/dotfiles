@@ -1,5 +1,12 @@
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
+{{#if dotter.packages.ssh}}
+
+# SSH directly into the "ssh" tmux session.
+function sshmux() {
+    ssh -t $@ 'exec bash -l -c '"'"'exec tmux new -A -s ssh'"'"''
+}
+{{/if}}
 
 # Aliases.
 alias la='ls -lAFh --color=auto --group-directories-first'
