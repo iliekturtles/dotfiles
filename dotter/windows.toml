@@ -1,0 +1,2 @@
+[shell.variables.ssh]
+connection-sharing = false

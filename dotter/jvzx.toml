@@ -5,6 +5,7 @@ packages = [
 	"bash",
 	"fish",
 	"linux",
+	"ssh",
 	"systemd",
 	"systemd-networkd",
 ]
