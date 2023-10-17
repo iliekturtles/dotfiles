@@ -53,6 +53,7 @@ depends = ["shell"]
 "fish/login.fish" = "$XDG_CONFIG_HOME/fish/login.fish"
 "fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
 "fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
+"fish/functions/sshmux.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/sshmux.fish", if = "dotter.packages.ssh" }
 
 [intel]
 
@@ -82,6 +83,12 @@ XDG_CACHE_HOME = "$HOME/.cache"
 XDG_CONFIG_HOME = "$HOME/.config"
 XDG_DATA_HOME = "$HOME/.local/share"
 XDG_STATE_HOME = "$HOME/.local/state"
+
+[ssh.files]
+"ssh/config" = "~/.ssh/config"
+
+[ssh.variables.ssh]
+connection-sharing = true
 
 [systemd]
 depends = ["shell"]

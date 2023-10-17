@@ -1,8 +1,9 @@
-includes = ["dotter/local-includes.toml"]
+includes = ["dotter/windows.toml", "dotter/local-includes.toml"]
 packages = [
 	"bash",
 	"fish",
 	"msys2",
+	"ssh",
 	"windows",
 	"wsl-client",
 ]
