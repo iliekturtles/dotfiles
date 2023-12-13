@@ -9,6 +9,7 @@ packages = [
 	"helix",
 	"htop",
 	"intel",
+	"kde",
 	"linux",
 	"neovim",
 	"neovim-qt",
@@ -26,8 +27,12 @@ packages = [
 ]
 
 [files]
+"kde/kwinoutputconfig-fhcc.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [variables]
+
+[variables.kde]
+scale = 1.5
 
 [variables.linux]
 lts = true
