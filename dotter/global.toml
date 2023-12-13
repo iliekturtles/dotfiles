@@ -21,6 +21,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/paru.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/paru.conf", if = "dotter.packages.paru" }
+"aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
 "aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
@@ -105,6 +106,50 @@ directory = []
 "htop/htoprc" = "$XDG_CONFIG_HOME/htop/htoprc"
 
 [intel]
+
+[kde.files]
+"kde/dolphinrc" = "$XDG_CONFIG_HOME/dolphinrc"
+"kde/gwenviewrc" = "$XDG_CONFIG_HOME/gwenviewrc"
+"kde/kactivitymanagerd-statsrc" = "$XDG_CONFIG_HOME/kactivitymanagerd-statsrc"
+"kde/kactivitymanagerdrc" = "$XDG_CONFIG_HOME/kactivitymanagerdrc"
+"kde/kconf_updaterc" = "$XDG_CONFIG_HOME/kconf_updaterc"
+"kde/kded5rc" = "$XDG_CONFIG_HOME/kded5rc"
+"kde/kdedefaults/kcminputrc" = "$XDG_CONFIG_HOME/kdedefaults/kcminputrc"
+"kde/kdedefaults/kdeglobals" = "$XDG_CONFIG_HOME/kdedefaults/kdeglobals"
+"kde/kdedefaults/kscreenlockerrc" = "$XDG_CONFIG_HOME/kdedefaults/kscreenlockerrc"
+"kde/kdedefaults/ksplashrc" = "$XDG_CONFIG_HOME/kdedefaults/ksplashrc"
+"kde/kdedefaults/kwinrc" = "$XDG_CONFIG_HOME/kdedefaults/kwinrc"
+"kde/kdedefaults/package" = "$XDG_CONFIG_HOME/kdedefaults/package"
+"kde/kdedefaults/plasmarc" = "$XDG_CONFIG_HOME/kdedefaults/plasmarc"
+"kde/kdeglobals" = "$XDG_CONFIG_HOME/kdeglobals"
+"kde/kglobalshortcutsrc" = "$XDG_CONFIG_HOME/kglobalshortcutsrc"
+"kde/kiorc" = "$XDG_CONFIG_HOME/kiorc"
+"kde/kscreenlockerrc" = "$XDG_CONFIG_HOME/kscreenlockerrc"
+"kde/kservicemenurc" = "$XDG_CONFIG_HOME/kservicemenurc"
+"kde/ktimezonedrc" = "$XDG_CONFIG_HOME/ktimezonedrc"
+"kde/ktrashrc" = "$XDG_CONFIG_HOME/ktrashrc"
+"kde/kwinrc" = "$XDG_CONFIG_HOME/kwinrc"
+"kde/kxkbrc" = "$XDG_CONFIG_HOME/kxkbrc"
+"kde/mimeapps.list" = "$XDG_CONFIG_HOME/mimeapps.list"
+"kde/plasma-localerc" = "$XDG_CONFIG_HOME/plasma-localerc"
+"kde/plasma-org.kde.plasma.desktop-appletsrc" = "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc"
+"kde/plasmashellrc" = "$XDG_CONFIG_HOME/plasmashellrc"
+"kde/powerdevilrc" = "$XDG_CONFIG_HOME/powerdevilrc"
+"kde/powermanagementprofilesrc" = "$XDG_CONFIG_HOME/powermanagementprofilesrc"
+"kde/spectaclerc" = "$XDG_CONFIG_HOME/spectaclerc"
+"kde/systemmonitorrc" = "$XDG_CONFIG_HOME/systemmonitorrc"
+"kde/systemsettingsrc" = "$XDG_CONFIG_HOME/systemsettingsrc"
+"kde/Trolltech.conf" = "$XDG_CONFIG_HOME/Trolltech.conf"
+"kde/user-dirs.dirs" = "$XDG_CONFIG_HOME/user-dirs.dirs"
+"kde/user-dirs.locale" = "$XDG_CONFIG_HOME/user-dirs.locale"
+"kde/xsettingsd/xsettingsd.conf" = "$XDG_CONFIG_HOME/xsettingsd/xsettingsd.conf"
+#"kde/kwinoutputconfig-$HOSTNAME.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
+
+[kde.variables.kde]
+scale = 1
+taskManagerScreen = 0
+
+[kde.variables.kde.kwinrc.tiling]
 
 [linux.variables.linux]
 bluetooth = false

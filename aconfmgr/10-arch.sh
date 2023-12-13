@@ -18,6 +18,20 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
+{{#if dotter.packages.kde}}AddPackage kde-gtk-config # GTK2 and GTK3 Configurator for KDE{{/if}}
+{{#if dotter.packages.kde}}#AddPackage libappindicator-gtk3 # Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library){{/if}}
+{{#if dotter.packages.kde}}AddPackage dolphin # KDE File Manager{{/if}}
+{{#if dotter.packages.kde}}AddPackage gwenview # A fast and easy to use image viewer{{/if}}
+{{#if dotter.packages.kde}}AddPackage kcalc # Scientific Calculator{{/if}}
+{{#if dotter.packages.kde}}AddPackage kscreen # KDE screen management software{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-desktop # KDE Plasma Desktop{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-pa # Plasma applet for audio volume management using PulseAudio{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-systemmonitor # An interface for monitoring system sensors, process information and other system resources{{/if}}
+{{#if dotter.packages.kde}}AddPackage sddm # QML based X11 and Wayland display manager{{/if}}
+{{#if dotter.packages.kde}}AddPackage sddm-kcm # KDE Config Module for SDDM{{/if}}
+{{#if dotter.packages.kde}}AddPackage spectacle # KDE screenshot capture utility{{/if}}
+{{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
+{{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage --foreign iwgtk # Lightweight wireless networking GUI (front-end for iwd){{/if}}{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}
@@ -57,6 +71,8 @@ CopyFile '/etc/locale.gen'
 CopyFile '/etc/sudoers'
 CopyFile '/etc/xdg/reflector/reflector.conf'
 CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
+{{#if dotter.packages.kde}}CopyFile '/etc/sddm.conf.d/kde_settings.conf'{{/if}}
+{{#if dotter.packages.kde}}CreateFile '/etc/sddm.conf' > /dev/null{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch-fallback.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/loader.conf' 755{{/if}}
@@ -100,6 +116,7 @@ IgnorePath '/etc/.updated'
 IgnorePath '/etc/X11/xorg.conf.d/00-keyoard.conf'
 IgnorePath '/etc/adjtime'
 IgnorePath '/etc/ca-certificates/*'
+IgnorePath '/etc/fonts/conf.d/*'
 IgnorePath '/etc/fstab'
 IgnorePath '/etc/group*'
 IgnorePath '/etc/gshadow*'
@@ -127,11 +144,13 @@ IgnorePath '/etc/systemd/user/**.target'
 IgnorePath '/etc/systemd/user/**.timer'
 IgnorePath '/etc/udev/hwdb.bin'
 IgnorePath '/etc/vconsole.conf'
+IgnorePath '/etc/xml/catalog'
 IgnorePath '/swapfile'
 IgnorePath '/usr/bin/groupmems'
 IgnorePath '/usr/lib/**/*.cache'
 IgnorePath '/usr/lib/clock-epoch'
 IgnorePath '/usr/lib/ghc-*'
+IgnorePath '/usr/lib/gtk-*'
 IgnorePath '/usr/lib/locale/locale-archive'
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/lib/perl5/*'

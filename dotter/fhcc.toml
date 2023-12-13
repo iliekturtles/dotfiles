@@ -9,6 +9,7 @@ packages = [
 	"helix",
 	"htop",
 	"intel",
+	"kde",
 	"linux",
 	"neovim",
 	"neovim-qt",
@@ -26,8 +27,15 @@ packages = [
 ]
 
 [files]
+"kde/kwinoutputconfig-fhcc.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [variables]
+
+[variables.kde]
+scale = 1.5
+
+[variables.kde.kwinrc.tiling]
+"881a5b1e-33d4-5406-b87d-f7a09402d83e" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
 
 [variables.linux]
 default-kernel = "arch-surface"

@@ -9,6 +9,7 @@ packages = [
 	"git",
 	"helix",
 	"htop",
+	"kde",
 	"linux",
 	"neovim",
 	"neovim-qt",
@@ -26,5 +27,13 @@ packages = [
 ]
 
 [files]
+"kde/kwinoutputconfig-jvzx.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [variables]
+
+[variables.kde]
+taskManagerScreen = 1
+
+[variables.kde.kwinrc.tiling]
+"3d20ebec-4175-5f2e-8cf6-7acdf4420451" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+"8e16c2eb-0e77-545e-bdf3-890cc9c55574" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }

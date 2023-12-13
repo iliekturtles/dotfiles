@@ -1,0 +1,18 @@
+[General]
+clipboardGroup=PostScreenshotCopyImage
+
+[GuiConfig]
+captureMode=0
+includeShadow=false
+quitAfterSaveCopyExport=true
+
+[ImageSave]
+imageSaveLocation=file:///home/{{env_var "USER"}}/
+translatedScreenshotsFolder=Screenshots
+
+[KFileDialog Settings]
+detailViewIconSize=16
+
+[VideoSave]
+translatedScreencastsFolder=Screencasts
+videoSaveLocation=file:///home/{{env_var "USER"}}/
