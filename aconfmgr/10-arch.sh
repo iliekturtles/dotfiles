@@ -18,6 +18,20 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}IgnorePackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
+{{#if dotter.packages.kde}}AddPackage kde-gtk-config # GTK2 and GTK3 Configurator for KDE{{/if}}
+{{#if dotter.packages.kde}}#AddPackage libappindicator-gtk3 # Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library){{/if}}
+{{#if dotter.packages.kde}}AddPackage dolphin # KDE File Manager{{/if}}
+{{#if dotter.packages.kde}}AddPackage gwenview # A fast and easy to use image viewer{{/if}}
+{{#if dotter.packages.kde}}AddPackage kcalc # Scientific Calculator{{/if}}
+{{#if dotter.packages.kde}}AddPackage kscreen # KDE screen management software{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-desktop # KDE Plasma Desktop{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-pa # Plasma applet for audio volume management using PulseAudio{{/if}}
+{{#if dotter.packages.kde}}AddPackage plasma-systemmonitor # An interface for monitoring system sensors, process information and other system resources{{/if}}
+{{#if dotter.packages.kde}}AddPackage sddm # QML based X11 and Wayland display manager{{/if}}
+{{#if dotter.packages.kde}}AddPackage sddm-kcm # KDE Config Module for SDDM{{/if}}
+{{#if dotter.packages.kde}}AddPackage spectacle # KDE screenshot capture utility{{/if}}
+{{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
+{{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage --foreign iwgtk # Lightweight wireless networking GUI (front-end for iwd){{/if}}{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage iptsd # Userspace daemon for Intel Precise Touch & Stylus{{/if}}{{/if}}
@@ -41,6 +55,8 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.tig}}AddPackage tig # Text-mode interface for Git.{{/if}}
 {{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
 {{#if dotter.packages.xsv}}AddPackage xsv # A CLI for indexing, slicing, analyzing, splitting and joining CSV files{{/if}}
+{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}
+{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'
@@ -50,6 +66,8 @@ CopyFile '/etc/locale.gen'
 CopyFile '/etc/sudoers'
 CopyFile '/etc/xdg/reflector/reflector.conf'
 CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
+{{#if dotter.packages.kde}}CopyFile '/etc/sddm.conf.d/kde_settings.conf'{{/if}}
+{{#if dotter.packages.kde}}CreateFile '/etc/sddm.conf' > /dev/null{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch-fallback.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/loader.conf' 755{{/if}}
@@ -72,6 +90,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 # Systemd targets.
 CreateLink /etc/systemd/system/multi-user.target.wants/reflector.service /usr/lib/systemd/system/reflector.service
 CreateLink /etc/systemd/system/timers.target.wants/reflector.timer /usr/lib/systemd/system/reflector.timer
+{{#if dotter.packages.kde}}CreateLink '/etc/systemd/system/display-manager.service' '/usr/lib/systemd/system/sddm.service'{{/if}}
 {{#if dotter.packages.pacman}}CreateLink '/etc/systemd/system/timers.target.wants/paccache.timer' '/usr/lib/systemd/system/paccache.timer'{{/if}}
 
 # Ignored paths.
@@ -87,6 +106,7 @@ IgnorePath '/etc/.updated'
 IgnorePath '/etc/X11/xorg.conf.d/00-keyoard.conf'
 IgnorePath '/etc/adjtime'
 IgnorePath '/etc/ca-certificates/*'
+IgnorePath '/etc/fonts/conf.d/*'
 IgnorePath '/etc/fstab'
 IgnorePath '/etc/group*'
 IgnorePath '/etc/gshadow*'
@@ -105,11 +125,13 @@ IgnorePath '/etc/subgid*'
 IgnorePath '/etc/subuid*'
 IgnorePath '/etc/udev/hwdb.bin'
 IgnorePath '/etc/vconsole.conf'
+IgnorePath '/etc/xml/catalog'
 IgnorePath '/swapfile'
 IgnorePath '/usr/bin/groupmems'
 IgnorePath '/usr/lib/**/*.cache'
 IgnorePath '/usr/lib/clock-epoch'
 IgnorePath '/usr/lib/ghc-*'
+IgnorePath '/usr/lib/gtk-*'
 IgnorePath '/usr/lib/locale/locale-archive'
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/lib/perl5/*'
@@ -118,6 +140,11 @@ IgnorePath '/usr/lib/vlc/plugins/plugins.dat'
 IgnorePath '/usr/lib32/**/*.cache'
 IgnorePath '/usr/share/*'
 IgnorePath '/var/*'
+{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/default.target.wants/xdg-user-dirs-update.service'{{/if}}
+{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/pipewire-session-manager.service'{{/if}}
+{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/pipewire.service.wants/wireplumber.service'{{/if}}
+{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/sockets.target.wants/pipewire-pulse.socket'{{/if}}
+{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/sockets.target.wants/pipewire.socket'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/hosts'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/ld.so.conf.d/ld.wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/timezone'{{/if}}

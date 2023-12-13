@@ -9,6 +9,7 @@ packages = [
 	"git",
 	"helix",
 	"htop",
+	"kde",
 	"linux",
 	"neovim",
 	"neovim-qt",
@@ -25,5 +26,6 @@ packages = [
 ]
 
 [files]
+"kde/kwinoutputconfig-jvzx.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [variables]

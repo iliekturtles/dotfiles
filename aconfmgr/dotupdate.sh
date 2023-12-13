@@ -19,6 +19,12 @@ if ! systemctl is-enabled reflector.timer > /dev/null; then
     sudo systemctl enable reflector.timer
     sudo systemctl start reflector.timer
 fi
+{{#if dotter.packages.kde}}
+
+if ! systemctl is-enabled sddm.service > /dev/null; then
+    sudo systemctl enable sddm.service
+fi
+{{/if}}
 {{#if dotter.packages.linux}}
 
 if [[ "/etc/udev/hwdb.d/10-keyboard.hwdb" -nt "/etc/udev/hwdb.bin" ]]; then
