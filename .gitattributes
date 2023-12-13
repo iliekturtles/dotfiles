@@ -1,3 +1,4 @@
 fish/fish_variables text eol=lf
+kde/* filter=dotfiles
 msys2/nsswitch.conf text eol=lf
 tmux/tmux.conf text eol=lf
