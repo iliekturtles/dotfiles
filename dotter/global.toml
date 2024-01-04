@@ -1,6 +1,17 @@
 [helpers]
 concat = "dotter/helpers/concat.rhai"
 
+[aconfmgr.files]
+"aconfmgr/10-arch.sh" = "$XDG_CONFIG_HOME/aconfmgr/10-arch.sh"
+"aconfmgr/files/etc/hostname" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/hostname" }
+"aconfmgr/files/etc/locale.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.conf" }
+"aconfmgr/files/etc/locale.gen" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.gen" }
+"aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
+"aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
+"aconfmgr/files/etc/systemd/network/20-wlan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/20-wlan.network", if = "systemd-networkd.wlan" }
+"aconfmgr/files/etc/systemd/network/30-wwan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/30-wwan.network", if = "systemd-networkd.wwan" }
+"aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
+
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
 
@@ -17,3 +28,17 @@ XDG_CACHE_HOME = "$HOME/.cache"
 XDG_CONFIG_HOME = "$HOME/.config"
 XDG_DATA_HOME = "$HOME/.local/share"
 XDG_STATE_HOME = "$HOME/.local/state"
+
+[systemd]
+depends = ["shell"]
+
+[systemd.files]
+"systemd/environment.d/envvars.conf" = "$XDG_CONFIG_HOME/environment.d/envvars.conf"
+
+[systemd-networkd]
+depends=["systemd"]
+
+[systemd-networkd.variables.systemd-networkd]
+ethernet = true
+wlan = false
+wwan = false

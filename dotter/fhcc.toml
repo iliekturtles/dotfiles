@@ -1,6 +1,13 @@
 includes = ["dotter/local-includes.toml"]
-packages = []
+packages = [
+	"aconfmgr",
+	"systemd",
+	"systemd-networkd",
+]
 
 [files]
 
 [variables]
+
+[variables.systemd-networkd]
+wlan = true

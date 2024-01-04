@@ -1,5 +1,9 @@
 includes = ["dotter/local-includes.toml"]
-packages = []
+packages = [
+	"aconfmgr",
+	"systemd",
+	"systemd-networkd",
+]
 
 [files]
 
