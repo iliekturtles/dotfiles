@@ -42,3 +42,6 @@ depends=["systemd"]
 ethernet = true
 wlan = false
 wwan = false
+
+[windows]
+depends = ["shell"]
