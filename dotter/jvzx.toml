@@ -17,6 +17,7 @@ packages = [
 	"sshd",
 	"starship",
 	"systemd",
+	"tig",
 	"tmux",
 ]
 
