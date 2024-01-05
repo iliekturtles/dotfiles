@@ -1,5 +1,7 @@
 includes = ["dotter/local-includes.toml"]
-packages = []
+packages = [
+	"windows",
+]
 
 [files]
 
