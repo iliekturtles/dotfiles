@@ -3,6 +3,7 @@ packages = [
 	"aconfmgr",
 	"amd",
 	"bash",
+	"fish",
 	"linux",
 	"systemd",
 	"systemd-networkd",

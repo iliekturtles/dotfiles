@@ -43,6 +43,17 @@ HISTFILE = "$XDG_DATA_HOME/bash_history"
 HISTFILESIZE = "2000"
 HISTSIZE = "1000"
 
+[fish]
+depends = ["shell"]
+
+[fish.files]
+"fish/config.fish" = "$XDG_CONFIG_HOME/fish/config.fish"
+"fish/fish_variables" = "$XDG_CONFIG_HOME/fish/fish_variables"
+"fish/interactive.fish" = "$XDG_CONFIG_HOME/fish/interactive.fish"
+"fish/login.fish" = "$XDG_CONFIG_HOME/fish/login.fish"
+"fish/functions/la.fish" = "$XDG_CONFIG_HOME/fish/functions/la.fish"
+"fish/functions/ll.fish" = "$XDG_CONFIG_HOME/fish/functions/ll.fish"
+
 [intel]
 
 [linux.variables.linux]

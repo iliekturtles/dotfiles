@@ -2,6 +2,7 @@ includes = ["dotter/local-includes.toml"]
 packages = [
 	"aconfmgr",
 	"bash",
+	"fish",
 	"intel",
 	"linux",
 	"systemd",

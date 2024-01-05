@@ -10,6 +10,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
 {{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
+{{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
