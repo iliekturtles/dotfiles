@@ -101,6 +101,8 @@ depends = ["pacman"]
 [paru.variables]
 paru = "paru"
 
+[ripgrep]
+
 [shell.files]
 "shell/dotupdate" = "~/.local/bin/dotupdate"
 

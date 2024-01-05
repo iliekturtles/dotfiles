@@ -8,6 +8,7 @@ packages = [
 	"htop",
 	"neovim",
 	"paru",
+	"ripgrep",
 	"systemd",
 	"wsl",
 ]
