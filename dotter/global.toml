@@ -30,3 +30,6 @@ depends = ["shell"]
 
 [systemd.files]
 "systemd/environment.d/envvars.conf" = "$XDG_CONFIG_HOME/environment.d/envvars.conf"
+
+[windows]
+depends = ["shell"]
