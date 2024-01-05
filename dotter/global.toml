@@ -30,6 +30,19 @@ concat = "dotter/helpers/concat.rhai"
 
 [amd]
 
+[bash]
+depends = ["shell"]
+
+[bash.files]
+"bash/bash_profile" = "~/.bash_profile"
+"bash/bashrc" = "~/.bashrc"
+
+[bash.variables.bash]
+HISTCONTROL = "ignoreboth"
+HISTFILE = "$XDG_DATA_HOME/bash_history"
+HISTFILESIZE = "2000"
+HISTSIZE = "1000"
+
 [intel]
 
 [linux.variables.linux]

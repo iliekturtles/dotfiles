@@ -8,6 +8,8 @@ AddPackage man-pages # Linux man pages
 AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
 AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
+{{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
+{{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
@@ -95,6 +97,7 @@ IgnorePath '/swapfile'
 IgnorePath '/usr/bin/groupmems'
 IgnorePath '/usr/lib/**/*.cache'
 IgnorePath '/usr/lib/clock-epoch'
+IgnorePath '/usr/lib/ghc-*'
 IgnorePath '/usr/lib/locale/locale-archive'
 IgnorePath '/usr/lib/modules/*'
 IgnorePath '/usr/lib/perl5/*'
