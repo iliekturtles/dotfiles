@@ -12,6 +12,7 @@ packages = [
 	"ripgrep",
 	"ssh",
 	"starship",
+	"tig",
 	"tmux",
 	"windows",
 	"wsl-client",

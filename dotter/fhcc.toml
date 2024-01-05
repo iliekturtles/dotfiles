@@ -18,6 +18,7 @@ packages = [
 	"starship",
 	"systemd",
 	"systemd-networkd",
+	"tig",
 	"tmux",
 ]
 

@@ -177,6 +177,8 @@ ethernet = true
 wlan = false
 wwan = false
 
+[tig]
+
 [tmux.files]
 "tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
 
