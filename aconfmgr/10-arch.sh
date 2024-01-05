@@ -11,6 +11,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
 {{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
+{{#if dotter.packages.bat}}AddPackage bat # Cat clone with syntax highlighting and git integration{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}

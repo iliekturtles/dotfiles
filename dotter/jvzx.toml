@@ -3,6 +3,7 @@ packages = [
 	"aconfmgr",
 	"amd",
 	"bash",
+	"bat",
 	"fish",
 	"helix",
 	"htop",
