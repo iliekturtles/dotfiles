@@ -11,6 +11,7 @@ packages = [
 	"neovim",
 	"neovim-qt",
 	"paru",
+	"ripgrep",
 	"ssh",
 	"sshd",
 	"systemd",

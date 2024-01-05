@@ -8,6 +8,7 @@ packages = [
 	"neovim",
 	"neovim-qt",
 	"pacman",
+	"ripgrep",
 	"ssh",
 	"windows",
 	"wsl-client",

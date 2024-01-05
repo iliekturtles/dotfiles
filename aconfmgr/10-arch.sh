@@ -30,6 +30,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
 {{#if dotter.packages.paru}}AddPackage --foreign paru-bin # Feature packed AUR helper{{/if}}
+{{#if dotter.packages.ripgrep}}AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}{{/if}}
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}{{/if}}
