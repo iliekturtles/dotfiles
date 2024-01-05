@@ -44,6 +44,8 @@ HISTFILE = "$XDG_DATA_HOME/bash_history"
 HISTFILESIZE = "2000"
 HISTSIZE = "1000"
 
+[bat]
+
 [fish]
 depends = ["shell"]
 

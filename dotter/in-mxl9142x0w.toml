@@ -1,6 +1,7 @@
 includes = ["dotter/windows.toml", "dotter/local-includes.toml"]
 packages = [
 	"bash",
+	"bat",
 	"fish",
 	"helix",
 	"msys2",
