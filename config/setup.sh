@@ -17,7 +17,6 @@ fi
 
 echo "Setup config directories..."
 mkdir -p "$XDG_CONFIG_HOME"/{git,tmux}
-mkdir -p "$XDG_DATA_HOME/bash_completion/completions"
 cp starship.toml "$XDG_CONFIG_HOME"
 
 echo "Setup KeePass, mintty, tmux, and VsVim..."
