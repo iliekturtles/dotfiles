@@ -19,6 +19,12 @@ if ! systemctl is-enabled reflector.timer > /dev/null; then
     sudo systemctl enable reflector.timer
     sudo systemctl start reflector.timer
 fi
+{{#if dotter.packages.games}}
+
+if ! groups | grep -q "gamemode" ; then
+    sudo usermod -aG gamemode "{{env_var "USER"}}"
+fi
+{{/if}}
 {{#if dotter.packages.kde}}
 
 if ! systemctl is-enabled sddm.service > /dev/null; then

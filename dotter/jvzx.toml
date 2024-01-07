@@ -8,6 +8,7 @@ packages = [
 	"delta",
 	"firefox",
 	"fish",
+	"games",
 	"git",
 	"helix",
 	"htop",
