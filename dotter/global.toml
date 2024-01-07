@@ -82,6 +82,16 @@ depends = ["shell"]
 "fish/functions/yolo.fish" = { type = "template", target = "$XDG_CONFIG_HOME/fish/functions/yolo.fish", if = "dotter.packages.pacman" }
 "fish/functions/xsvp.fish" = { type = "symbolic", target = "$XDG_CONFIG_HOME/fish/functions/xsvp.fish", if = "dotter.packages.xsv" }
 
+[games.files]
+"games/local/bin/steam" = "~/.local/bin/steam"
+"games/local/bin/steam-runtime" = "~/.local/bin/steam-runtime"
+"games/local/share/applications/steam.desktop" = "~/.local/share/applications/steam.desktop"
+
+[games.variables.games]
+poe = { pob = false, awakened = false }
+steam = { screensaver-fix = true }
+wow = { curseforge = false }
+
 [git.files]
 "git/config" = "$XDG_CONFIG_HOME/git/config"
 "git/ignore" = "$XDG_CONFIG_HOME/git/ignore"

@@ -7,6 +7,7 @@ packages = [
 	"delta",
 	"firefox",
 	"fish",
+	"games",
 	"git",
 	"helix",
 	"htop",
@@ -32,6 +33,9 @@ packages = [
 "kde/kwinoutputconfig-fhcc.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [variables]
+
+[variables.games]
+poe = { pob = true, awakened = false }
 
 [variables.kde]
 scale = 1.5

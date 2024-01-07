@@ -8,14 +8,24 @@ AddPackage man-pages # Linux man pages
 AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
 AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 AddPackage unzip # For extracting and viewing files in .zip archives
-{{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
 {{#if dotter.packages.alacritty}}AddPackage alacritty # A cross-platform, GPU-accelerated terminal emulator{{/if}}
+{{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
 {{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
 {{#if dotter.packages.bat}}AddPackage bat # Cat clone with syntax highlighting and git integration{{/if}}
 {{#if dotter.packages.delta}}AddPackage git-delta # Syntax-highlighting pager for git and diff output{{/if}}
 {{#if dotter.packages.firefox}}AddPackage firefox # Standalone web browser from mozilla.org{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
+{{#if dotter.packages.games}}AddPackage --foreign proton-ge-custom-bin # A fancy custom distribution of Valves Proton with various patches{{/if}}
+{{#if dotter.packages.games}}AddPackage discord # All-in-one voice and text chat for gamers{{/if}}
+{{#if dotter.packages.games}}AddPackage gamemode # A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS{{/if}}
+{{#if dotter.packages.games}}AddPackage lib32-gamemode # A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS{{/if}}
+{{#if dotter.packages.games}}AddPackage steam # Valve's digital software delivery system{{/if}}
+{{#if dotter.packages.games}}AddPackage ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New{{/if}}
+{{#if dotter.packages.games}}{{#if games.poe.awakened}}AddPackage --foreign awakened-poe-trade-bin # Path of Exile trading app for price checking{{/if}}{{/if}}
+{{#if dotter.packages.games}}{{#if games.poe.pob}}AddPackage --foreign path-of-building-community-git # An offline build planner for Path of Exile using PoBFrontend, LocalIdentity's fork{{/if}}{{/if}}
+{{#if dotter.packages.games}}{{#if games.steam.screensaver-fix}}AddPackage --foreign steam-screensaver-fix # Fix for steam screensaving bug.{{/if}}{{/if}}
+{{#if dotter.packages.games}}{{#if games.wow.curseforge}}AddPackage --foreign curseforge # CurseForge desktop client for Linux{{/if}}{{/if}}
 {{#if dotter.packages.git}}AddPackage git # the fast distributed version control system{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
