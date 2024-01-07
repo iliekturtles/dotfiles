@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+HOME="$XDG_DATA_HOME/steam" {{#if games.steam.screensaver-fix}}DEBUGGER="steam_sdl_injection.sh" {{/if}}exec /usr/bin/steam-runtime "$@"
