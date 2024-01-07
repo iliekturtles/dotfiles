@@ -1,8 +1,8 @@
 [Favorites-org.kde.plasma.kickoff.favorites.instance-23-a9d3db61-dcfd-486b-8168-770b6a3ed057]
-ordering=
+ordering={{#if dotter.packages.games}}applications:discord.desktop,applications:steam.desktop,{{#if games.poe.pob}}applications:PathOfBuildingCommunity.desktop,{{/if}}{{#if games.poe.awakened}}applications:awakened-poe-trade.desktop,{{/if}}{{#if games.wow.curseforge}}applications:curseforge.desktop,{{/if}}{{/if}}applications:org.kde.plasma-systemmonitor.desktop
 
 [Favorites-org.kde.plasma.kickoff.favorites.instance-23-global]
-ordering=
+ordering={{#if dotter.packages.games}}applications:discord.desktop,applications:steam.desktop,{{#if games.poe.pob}}applications:PathOfBuildingCommunity.desktop,{{/if}}{{#if games.poe.awakened}}applications:awakened-poe-trade.desktop,{{/if}}{{#if games.wow.curseforge}}applications:curseforge.desktop,{{/if}}{{/if}}applications:org.kde.plasma-systemmonitor.desktop
 
 [Favorites-org.kde.plasma.kickoff.favorites.instance-3-a9d3db61-dcfd-486b-8168-770b6a3ed057]
 ordering=preferred://browser,org.kde.kontact.desktop,systemsettings.desktop,org.kde.dolphin.desktop,org.kde.discover.desktop
