@@ -1,6 +1,8 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
 	"aconfmgr",
+	"intel",
+	"linux",
 	"systemd",
 	"systemd-networkd",
 ]
@@ -8,6 +10,11 @@ packages = [
 [files]
 
 [variables]
+
+[variables.linux]
+default-kernel = "arch-surface"
+lts = true
+surface = true
 
 [variables.systemd-networkd]
 wlan = true

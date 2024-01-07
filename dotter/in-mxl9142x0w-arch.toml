@@ -8,3 +8,6 @@ packages = [
 [files]
 
 [variables]
+
+[variables.linux]
+fstrim = false

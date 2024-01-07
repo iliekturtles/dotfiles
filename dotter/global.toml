@@ -3,15 +3,41 @@ concat = "dotter/helpers/concat.rhai"
 
 [aconfmgr.files]
 "aconfmgr/10-arch.sh" = "$XDG_CONFIG_HOME/aconfmgr/10-arch.sh"
+"aconfmgr/files/boot/loader/entries/arch-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-fallback.conf", if = "dotter.packages.linux" }
+"aconfmgr/files/boot/loader/entries/arch-lts-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-lts-fallback.conf", if = "linux.lts" }
+"aconfmgr/files/boot/loader/entries/arch-lts.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-lts.conf", if = "linux.lts" }
+"aconfmgr/files/boot/loader/entries/arch-surface-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-surface-fallback.conf", if = "linux.surface" }
+"aconfmgr/files/boot/loader/entries/arch-surface.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-surface.conf", if = "linux.surface" }
+"aconfmgr/files/boot/loader/entries/arch.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch.conf", if = "dotter.packages.linux" }
+"aconfmgr/files/boot/loader/loader.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/loader.conf", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/hostname" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/hostname" }
+"aconfmgr/files/etc/bluetooth/input.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/input.conf", if = "linux.bluetooth" }
+"aconfmgr/files/etc/bluetooth/main.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/main.conf", if = "linux.bluetooth" }
+"aconfmgr/files/etc/bluetooth/network.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/network.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/locale.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.conf" }
 "aconfmgr/files/etc/locale.gen" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.gen" }
+"aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
+"aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
+"aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
 "aconfmgr/files/etc/systemd/network/20-wlan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/20-wlan.network", if = "systemd-networkd.wlan" }
 "aconfmgr/files/etc/systemd/network/30-wwan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/30-wwan.network", if = "systemd-networkd.wwan" }
+"aconfmgr/files/etc/udev/hwdb.d/10-keyboard.hwdb" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/udev/hwdb.d/10-keyboard.hwdb", if = "dotter.packages.linux" }
+"aconfmgr/files/etc/udev/rules.d/99-disable-surface-touch.rules" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/udev/rules.d/99-disable-surface-touch.rules", if = "linux.surface" }
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
+
+[amd]
+
+[intel]
+
+[linux.variables.linux]
+bluetooth = false
+default-kernel = "arch"
+fstrim = true
+lts = false
+surface = false
 
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"

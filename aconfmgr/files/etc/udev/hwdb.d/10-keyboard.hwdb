@@ -1,0 +1,3 @@
+# Remap caps to escape for all inputs.
+evdev:input:*
+ KEYBOARD_KEY_70039=esc
