@@ -19,3 +19,14 @@ if ! systemctl is-enabled reflector.timer > /dev/null; then
     sudo systemctl enable reflector.timer
     sudo systemctl start reflector.timer
 fi
+{{#if dotter.packages.linux}}
+
+if [[ "/etc/udev/hwdb.d/10-keyboard.hwdb" -nt "/etc/udev/hwdb.bin" ]]; then
+    echo "Updating hardware db..."
+    sudo systemd-hwdb update
+fi
+
+if ! systemctl is-enabled fstrim.timer > /dev/null; then
+    sudo systemctl enable fstrim.timer
+fi
+{{/if}}

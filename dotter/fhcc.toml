@@ -1,9 +1,14 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
 	"aconfmgr",
+	"intel",
+	"linux",
 	"systemd",
 ]
 
 [files]
 
 [variables]
+
+[variables.linux]
+surface = true
