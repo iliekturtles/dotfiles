@@ -50,3 +50,20 @@ if ! systemctl is-enabled sshd.service > /dev/null; then
     sudo systemctl start sshd.service
 fi
 {{/if}}
+{{#if dotter.packages.systemd-networkd}}
+
+if ! systemctl is-enabled systemd-networkd.service > /dev/null; then
+    sudo systemctl enable systemd-networkd.service
+    sudo systemctl start systemd-networkd.service
+fi
+
+if ! systemctl is-enabled systemd-resolved.service > /dev/null; then
+    sudo systemctl enable systemd-resolved.service
+    sudo systemctl start systemd-resolved.service
+fi
+
+if ! systemctl is-enabled iwd.service > /dev/null; then
+    sudo systemctl enable iwd.service
+    sudo systemctl start iwd.service
+fi
+{{/if}}

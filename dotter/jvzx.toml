@@ -23,6 +23,7 @@ packages = [
 	"sshd",
 	"starship",
 	"systemd",
+	"systemd-networkd",
 	"tig",
 	"tmux",
 	"xsv",

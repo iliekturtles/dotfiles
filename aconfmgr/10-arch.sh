@@ -63,11 +63,11 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.rust}}AddPackage rustup # The Rust toolchain installer{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
+{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}{{/if}}
+{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}{{/if}}
 {{#if dotter.packages.tig}}AddPackage tig # Text-mode interface for Git.{{/if}}
 {{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
 {{#if dotter.packages.xsv}}AddPackage xsv # A CLI for indexing, slicing, analyzing, splitting and joining CSV files{{/if}}
-{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}
-{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}
 
 # Configuration files.
 #CopyFile '/etc/fstab'
@@ -96,6 +96,10 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' mode 2755{{/if}}
 {{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
+{{#if systemd-networkd.ethernet}}CopyFile '/etc/systemd/network/10-ethernet.network'{{/if}}
+{{#if systemd-networkd.wlan}}CopyFile '/etc/systemd/network/20-wlan.network'{{/if}}
+{{#if systemd-networkd.wlan}}CreateDir '/etc/iwd'{{/if}}
+{{#if systemd-networkd.wwan}}CopyFile '/etc/systemd/network/30-wwan.network'{{/if}}
 {{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
 
 # Systemd targets.
@@ -103,6 +107,8 @@ CreateLink /etc/systemd/system/multi-user.target.wants/reflector.service /usr/li
 CreateLink /etc/systemd/system/timers.target.wants/reflector.timer /usr/lib/systemd/system/reflector.timer
 {{#if dotter.packages.kde}}CreateLink '/etc/systemd/system/display-manager.service' '/usr/lib/systemd/system/sddm.service'{{/if}}
 {{#if dotter.packages.pacman}}CreateLink '/etc/systemd/system/timers.target.wants/paccache.timer' '/usr/lib/systemd/system/paccache.timer'{{/if}}
+{{#if dotter.packages.systemd-networkd}}CreateLink '/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service' '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
+{{#if systemd-networkd.wlan}}CreateLink '/etc/systemd/system/multi-user.target.wants/iwd.service' '/usr/lib/systemd/system/iwd.service'{{/if}}
 
 # Ignored paths.
 IgnorePath '*/lost+found'

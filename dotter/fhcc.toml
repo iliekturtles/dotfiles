@@ -23,6 +23,7 @@ packages = [
 	"sshd",
 	"starship",
 	"systemd",
+	"systemd-networkd",
 	"tig",
 	"tmux",
 	"xsv",
@@ -38,3 +39,6 @@ scale = 1.5
 
 [variables.linux]
 surface = true
+
+[variables.systemd-networkd]
+wlan = true
