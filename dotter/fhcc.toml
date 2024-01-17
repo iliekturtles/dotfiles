@@ -13,6 +13,7 @@ packages = [
 	"htop",
 	"intel",
 	"kde",
+	"keepassxc",
 	"linux",
 	"neovim",
 	"neovim-qt",

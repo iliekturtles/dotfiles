@@ -80,6 +80,9 @@ case "$1" in
         remove_section_key "MainWindow" "[0-9]+x[0-9]+ screen: (Height|Width)"
         remove_section_key "MainWindow" "State"
         ;;
+    "keepassxc/keepassxc.ini")
+        remove_section "KeeShare"
+        ;;
     *) # Do no transformations.
         cat
         exit 0
