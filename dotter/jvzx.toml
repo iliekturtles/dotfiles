@@ -13,6 +13,7 @@ packages = [
 	"helix",
 	"htop",
 	"kde",
+	"keepassxc",
 	"linux",
 	"neovim",
 	"neovim-qt",

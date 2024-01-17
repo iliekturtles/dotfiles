@@ -163,6 +163,10 @@ directory = []
 scale = 1
 taskManagerScreen = 0
 
+[keepassxc.files]
+"keepassxc/autostart/org.keepassxc.KeePassXC.desktop" = "$XDG_CONFIG_HOME/autostart/org.keepassxc.KeePassXC.desktop"
+"keepassxc/keepassxc.ini" = "$XDG_CONFIG_HOME/keepassxc/keepassxc.ini"
+
 [linux.variables.linux]
 fstrim = true
 lts = false
