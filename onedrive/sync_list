@@ -1,0 +1,2 @@
+{{#if dotter.packages.games}}{{#if games.poe.pob}}Games/Path of Exile{{/if}}{{/if}}
+{{#if dotter.packages.keepassxc}}Serious Business/KeePass{{/if}}
