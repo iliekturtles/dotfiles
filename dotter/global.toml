@@ -225,6 +225,10 @@ XDG_CONFIG_HOME = "$HOME/.config"
 XDG_DATA_HOME = "$HOME/.local/share"
 XDG_STATE_HOME = "$HOME/.local/state"
 
+[signal.files]
+"signal/autostart/signal-desktop.desktop" = "$XDG_CONFIG_HOME/autostart/signal-desktop.desktop"
+"signal/local/share/applications/signal-desktop.desktop" = "$XDG_DATA_HOME/applications/signal-desktop.desktop"
+
 [ssh.files]
 "ssh/config" = "~/.ssh/config"
 

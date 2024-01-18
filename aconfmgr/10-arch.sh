@@ -68,6 +68,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.rust}}AddPackage hyperfine # A command-line benchmarking tool{{/if}}
 {{#if dotter.packages.rust}}AddPackage lldb # Next generation, high-performance debugger{{/if}}
 {{#if dotter.packages.rust}}AddPackage rustup # The Rust toolchain installer{{/if}}
+{{#if dotter.packages.signal}}AddPackage signal-desktop # Signal Private Messenger for Linux{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}{{/if}}

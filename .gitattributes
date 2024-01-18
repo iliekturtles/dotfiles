@@ -2,4 +2,5 @@ fish/fish_variables text eol=lf
 kde/* filter=dotfiles
 keepassxc/keepassxc.ini filter=dotfiles
 msys2/nsswitch.conf text eol=lf
+signal/ephemeral.json filter=dotfiles
 tmux/tmux.conf text eol=lf

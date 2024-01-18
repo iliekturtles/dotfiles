@@ -4,6 +4,8 @@ inode/directory=org.kde.dolphin.desktop;
 {{#if dotter.packages.firefox}}x-scheme-handler/https=firefox.desktop;{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}x-scheme-handler/cfauth=CurseForge.desktop;{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}x-scheme-handler/curseforge=curseforge.desktop;CurseForge.desktop;{{/if}}{{/if}}
+{{#if dotter.packages.signal}}x-scheme-handler/sgnl=signal-desktop.desktop;signal.desktop;{{/if}}
+{{#if dotter.packages.signal}}x-scheme-handler/signalcaptcha=signal-desktop.desktop;signal.desktop;{{/if}}
 
 [Default Applications]
 inode/directory=org.kde.dolphin.desktop;
@@ -11,3 +13,5 @@ inode/directory=org.kde.dolphin.desktop;
 {{#if dotter.packages.firefox}}x-scheme-handler/https=firefox.desktop;{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}x-scheme-handler/cfauth=CurseForge.desktop;{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}x-scheme-handler/curseforge=curseforge.desktop;CurseForge.desktop;{{/if}}{{/if}}
+{{#if dotter.packages.signal}}x-scheme-handler/sgnl=signal-desktop.desktop{{/if}}
+{{#if dotter.packages.signal}}x-scheme-handler/signalcaptcha=signal-desktop.desktop{{/if}}

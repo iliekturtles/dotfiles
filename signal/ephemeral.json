@@ -1,0 +1,9 @@
+{
+  "localeOverride": null,
+  "theme-setting": "system",
+  "spell-check": true,
+  "window": {
+    "autoHideMenuBar": true,
+    "fullscreen": false,
+  }
+}
