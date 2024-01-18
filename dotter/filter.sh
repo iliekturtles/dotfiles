@@ -83,6 +83,9 @@ case "$1" in
     "keepassxc/keepassxc.ini")
         remove_section "KeeShare"
         ;;
+    "signal/ephemeral.json")
+        args+=(-e "/\"(maximized|width|height|x|y)\":/d")
+        ;;
     *) # Do no transformations.
         cat
         exit 0
