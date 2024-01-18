@@ -16,6 +16,7 @@ packages = [
 	"starship",
 	"tig",
 	"tmux",
+	"vscode",
 	"vsvim",
 	"windows",
 	"windowsterminal",

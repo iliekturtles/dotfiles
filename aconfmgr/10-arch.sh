@@ -76,6 +76,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}{{/if}}
 {{#if dotter.packages.tig}}AddPackage tig # Text-mode interface for Git.{{/if}}
 {{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
+{{#if dotter.packages.vscode}}AddPackage --foreign visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version){{/if}}
 {{#if dotter.packages.xsv}}AddPackage xsv # A CLI for indexing, slicing, analyzing, splitting and joining CSV files{{/if}}
 
 # Configuration files.

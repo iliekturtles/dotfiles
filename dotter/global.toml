@@ -270,6 +270,10 @@ wwan = false
 [tmux.variables.tmux]
 default-terminal = ""
 
+[vscode.files]
+"vscode/local/bin/code" = { type = "symbolic", target = "~/.local/bin/code", if = "dotter.packages.linux" }
+"vscode/local/share/applications/code.desktop" = { type = "symbolic", target = "$XDG_DATA_HOME/applications/vscode.desktop", if = "dotter.packages.linux" }
+
 [vsvim.files]
 "vsvim/vsvimrc" = "~/.vsvimrc"
 
