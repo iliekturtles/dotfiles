@@ -17,6 +17,7 @@ packages = [
 	"linux",
 	"neovim",
 	"neovim-qt",
+	"onedrive",
 	"paru",
 	"ripgrep",
 	"rust",

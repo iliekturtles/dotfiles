@@ -56,6 +56,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
 {{#if dotter.packages.neovim-qt}}AddPackage neovim-qt # GUI for Neovim{{/if}}
 {{#if dotter.packages.neovim}}AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs{{/if}}
+{{#if dotter.packages.onedrive}}AddPackage --foreign onedrive-abraunegg-git # Free OneDrive client written in D - abraunegg's fork. Use `liblphobos` and `ldc`.{{/if}}
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
 {{#if dotter.packages.paru}}AddPackage --foreign paru-bin # Feature packed AUR helper{{/if}}
