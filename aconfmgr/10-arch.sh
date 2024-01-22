@@ -6,6 +6,7 @@ AddPackage base-devel # Basic tools to build Arch Linux packages
 AddPackage man-db # A utility for reading man pages
 AddPackage man-pages # Linux man pages
 AddPackage pkgstats # Submit a list of installed packages to the Arch Linux project
+AddPackage reflector # A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.amd}}AddPackage --foreign amd-zen-ucode-platomav # Microcode update image for AMD Zen CPUs (family 17h and 19h) from platomav's github{{/if}}
 {{#if dotter.packages.bash}}AddPackage bash-completion # Programmable completion for the bash shell{{/if}}
@@ -37,6 +38,7 @@ CopyFile '/etc/hostname'
 CopyFile '/etc/locale.conf'
 CopyFile '/etc/locale.gen'
 CopyFile '/etc/sudoers'
+CopyFile '/etc/xdg/reflector/reflector.conf'
 CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch-fallback.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch.conf' 755{{/if}}

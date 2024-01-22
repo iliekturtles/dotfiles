@@ -29,6 +29,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/udev/hwdb.d/10-keyboard.hwdb" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/udev/hwdb.d/10-keyboard.hwdb", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/udev/rules.d/99-disable-surface-touch.rules" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/udev/rules.d/99-disable-surface-touch.rules", if = "linux.surface" }
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
+"aconfmgr/files/etc/xdg/reflector/reflector.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/xdg/reflector/reflector.conf" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
 
 [amd]
