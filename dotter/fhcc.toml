@@ -6,6 +6,7 @@ packages = [
 	"intel",
 	"linux",
 	"ssh",
+	"sshd",
 	"systemd",
 	"systemd-networkd",
 ]
