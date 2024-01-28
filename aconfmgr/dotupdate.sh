@@ -30,3 +30,10 @@ if ! systemctl is-enabled fstrim.timer > /dev/null; then
     sudo systemctl enable fstrim.timer
 fi
 {{/if}}
+{{#if dotter.packages.sshd}}
+
+if ! systemctl is-enabled sshd.service > /dev/null; then
+    sudo systemctl enable sshd.service
+    sudo systemctl start sshd.service
+fi
+{{/if}}

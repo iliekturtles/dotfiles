@@ -35,6 +35,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface-fallback.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
+{{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
 {{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
 {{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
@@ -64,6 +65,7 @@ IgnorePath '/etc/pacman.d/mirrorlist' # Managed by reflector
 IgnorePath '/etc/passwd*'
 IgnorePath '/etc/shadow*'
 IgnorePath '/etc/shells'
+IgnorePath '/etc/ssh/ssh_host_*'
 IgnorePath '/etc/ssl/certs/*'
 IgnorePath '/etc/subgid*'
 IgnorePath '/etc/subuid*'
