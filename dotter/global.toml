@@ -19,6 +19,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
+"aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
 "aconfmgr/files/etc/systemd/network/20-wlan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/20-wlan.network", if = "systemd-networkd.wlan" }
@@ -89,6 +90,9 @@ XDG_STATE_HOME = "$HOME/.local/state"
 
 [ssh.variables.ssh]
 connection-sharing = true
+
+[sshd]
+depends = ["ssh"]
 
 [systemd]
 depends = ["shell"]

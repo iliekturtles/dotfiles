@@ -46,6 +46,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface-fallback.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
+{{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
 {{#if dotter.packages.wsl}}CopyFile '/etc/wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
@@ -82,6 +83,7 @@ IgnorePath '/etc/passim.conf'
 IgnorePath '/etc/passwd*'
 IgnorePath '/etc/shadow*'
 IgnorePath '/etc/shells'
+IgnorePath '/etc/ssh/ssh_host_*'
 IgnorePath '/etc/ssl/certs/*'
 IgnorePath '/etc/subgid*'
 IgnorePath '/etc/subuid*'
