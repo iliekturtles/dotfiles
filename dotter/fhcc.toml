@@ -4,6 +4,7 @@ packages = [
 	"bash",
 	"fish",
 	"helix",
+	"htop",
 	"intel",
 	"linux",
 	"neovim",
