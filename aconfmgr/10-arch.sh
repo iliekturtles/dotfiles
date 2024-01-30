@@ -13,6 +13,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.bash}}AddPackage shellcheck # Shell script analysis tool{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
+{{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}

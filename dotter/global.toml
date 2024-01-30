@@ -68,6 +68,9 @@ depends = ["shell"]
 "helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"
 "helix/languages.toml" = "$XDG_CONFIG_HOME/helix/languages.toml"
 
+[htop.files]
+"htop/htoprc" = "$XDG_CONFIG_HOME/htop/htoprc"
+
 [intel]
 
 [linux.variables.linux]
