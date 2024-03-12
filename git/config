@@ -22,6 +22,8 @@
 {{#if dotter.packages.delta}}
 [delta]
 	features = decorations
+	hyperlinks = true
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"= decorations
 	line-numbers = true
 	navigate = true
 	tabs = 4
@@ -40,6 +42,7 @@
 {{/if}}
 [diff]
 	algorithm = histogram
+	colorMoved = default
 	tool = {{git.diff.tool}}
 	wsErrorHighlight = all
 [fetch]
@@ -58,6 +61,7 @@
 {{/if}}
 {{/if}}
 [merge]
+	conflictStyle = diff3
 	guitool = {{git.merge.guitool}}
 	tool = {{git.merge.tool}}
 [mergetool]

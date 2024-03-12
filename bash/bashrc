@@ -1,5 +1,11 @@
 # If not running interactively, don't do anything.
 [[ $- != *i* ]] && return
+{{#if (and dotter.packages.ripgrep dotter.packages.delta)}}
+
+function dg() {
+    rg --json -C2 $@ | delta
+}
+{{/if}}
 {{#if dotter.packages.ssh}}
 
 # SSH directly into the "ssh" tmux session.
