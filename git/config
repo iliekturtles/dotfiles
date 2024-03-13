@@ -23,7 +23,7 @@
 [delta]
 	features = decorations
 	hyperlinks = true
-	hyperlinks-file-link-format = "vscode://file/{path}:{line}"= decorations
+	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 	line-numbers = true
 	navigate = true
 	tabs = 4
