@@ -106,14 +106,6 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if systemd-networkd.wwan}}CopyFile '/etc/systemd/network/30-wwan.network'{{/if}}
 {{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
 
-# Systemd targets.
-CreateLink /etc/systemd/system/multi-user.target.wants/reflector.service /usr/lib/systemd/system/reflector.service
-CreateLink /etc/systemd/system/timers.target.wants/reflector.timer /usr/lib/systemd/system/reflector.timer
-{{#if dotter.packages.kde}}CreateLink '/etc/systemd/system/display-manager.service' '/usr/lib/systemd/system/sddm.service'{{/if}}
-{{#if dotter.packages.pacman}}CreateLink '/etc/systemd/system/timers.target.wants/paccache.timer' '/usr/lib/systemd/system/paccache.timer'{{/if}}
-{{#if dotter.packages.systemd-networkd}}CreateLink '/etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service' '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
-{{#if systemd-networkd.wlan}}CreateLink '/etc/systemd/system/multi-user.target.wants/iwd.service' '/usr/lib/systemd/system/iwd.service'{{/if}}
-
 # Ignored paths.
 IgnorePath '*/lost+found'
 IgnorePath '/boot/*-ucode.img'
@@ -144,6 +136,12 @@ IgnorePath '/etc/ssh/ssh_host_*'
 IgnorePath '/etc/ssl/certs/*'
 IgnorePath '/etc/subgid*'
 IgnorePath '/etc/subuid*'
+IgnorePath '/etc/systemd/system/**/*.service'
+IgnorePath '/etc/systemd/system/**/*.socket'
+IgnorePath '/etc/systemd/system/**/*.target'
+IgnorePath '/etc/systemd/user/**/*.service'
+IgnorePath '/etc/systemd/user/**/*.socket'
+IgnorePath '/etc/systemd/user/**/*.target'
 IgnorePath '/etc/udev/hwdb.bin'
 IgnorePath '/etc/vconsole.conf'
 IgnorePath '/etc/xml/catalog'
@@ -161,11 +159,6 @@ IgnorePath '/usr/lib/vlc/plugins/plugins.dat'
 IgnorePath '/usr/lib32/**/*.cache'
 IgnorePath '/usr/share/*'
 IgnorePath '/var/*'
-{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/default.target.wants/xdg-user-dirs-update.service'{{/if}}
-{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/pipewire-session-manager.service'{{/if}}
-{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/pipewire.service.wants/wireplumber.service'{{/if}}
-{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/sockets.target.wants/pipewire-pulse.socket'{{/if}}
-{{#if dotter.packages.kde}}IgnorePath '/etc/systemd/user/sockets.target.wants/pipewire.socket'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/hosts'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/ld.so.conf.d/ld.wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/timezone'{{/if}}
@@ -177,27 +170,3 @@ IgnorePath '/var/*'
 {{#if dotter.packages.wsl}}IgnorePath '/usr/bin/wslpath'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/usr/lib/wsl/*'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/version'{{/if}}
-
-# Default systemd targets.
-IgnorePath '/etc/systemd/system/ctrl-alt-del.target'
-IgnorePath '/etc/systemd/system/dbus-org.freedesktop.home1.service'
-IgnorePath '/etc/systemd/system/dbus-org.freedesktop.network1.service'
-IgnorePath '/etc/systemd/system/dbus-org.freedesktop.resolve1.service'
-IgnorePath '/etc/systemd/system/dbus-org.freedesktop.timesync1.service'
-IgnorePath '/etc/systemd/system/getty.target.wants/getty@tty1.service'
-IgnorePath '/etc/systemd/system/multi-user.target.wants/machines.target'
-IgnorePath '/etc/systemd/system/multi-user.target.wants/remote-cryptsetup.target'
-IgnorePath '/etc/systemd/system/multi-user.target.wants/remote-fs.target'
-IgnorePath '/etc/systemd/system/multi-user.target.wants/systemd-homed.service'
-IgnorePath '/etc/systemd/system/multi-user.target.wants/systemd-networkd.service'
-IgnorePath '/etc/systemd/system/sockets.target.wants/systemd-journald-audit.socket'
-IgnorePath '/etc/systemd/system/sockets.target.wants/systemd-networkd.socket'
-IgnorePath '/etc/systemd/system/sockets.target.wants/systemd-userdbd.socket'
-IgnorePath '/etc/systemd/system/sysinit.target.wants/systemd-boot-update.service'
-IgnorePath '/etc/systemd/system/sysinit.target.wants/systemd-network-generator.service'
-IgnorePath '/etc/systemd/system/sysinit.target.wants/systemd-pstore.service'
-IgnorePath '/etc/systemd/system/sysinit.target.wants/systemd-resolved.service'
-IgnorePath '/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service'
-IgnorePath '/etc/systemd/system/systemd-homed.service.wants/systemd-homed-activate.service'
-IgnorePath '/etc/systemd/system/systemd-journald.service.wants/systemd-journald-audit.socket'
-IgnorePath '/etc/systemd/user/sockets.target.wants/p11-kit-server.socket'
