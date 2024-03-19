@@ -6,9 +6,6 @@ RightButton;NoModifier=org.kde.contextmenu
 RightButton;NoModifier=org.kde.contextmenu
 
 [Containments][21]
-ItemGeometries-1234x823=
-ItemGeometries-1440x960=
-ItemGeometriesHorizontal=
 activityId=a9d3db61-dcfd-486b-8168-770b6a3ed057
 formfactor=0
 immutability=1

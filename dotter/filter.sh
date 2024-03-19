@@ -55,6 +55,7 @@ case "$1" in
     "kde/plasma-org.kde.plasma.desktop-appletsrc")
         remove_key "DialogHeight"
         remove_key "DialogWidth"
+        remove_key "ItemGeometries[^=]*"
         remove_key "popupHeight"
         remove_key "popupWidth"
         remove_key "PreloadWeight"

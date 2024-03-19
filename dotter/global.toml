@@ -157,6 +157,7 @@ directory = []
 
 [kde.variables.kde]
 scale = 1
+taskManagerScreen = 0
 
 [keepassxc.files]
 "keepassxc/autostart/org.keepassxc.KeePassXC.desktop" = "$XDG_CONFIG_HOME/autostart/org.keepassxc.KeePassXC.desktop"
