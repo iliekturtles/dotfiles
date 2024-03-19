@@ -1,6 +1,5 @@
 [
     {
-        "data": {{json_to_str format="json_pretty" kde.display.outputs}},
         "data": [
             {
                 "autoRotation": "InTabletMode",

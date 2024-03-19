@@ -62,7 +62,7 @@ plugin=org.kde.plasma.taskmanager
 
 [Containments][22][Applets][41][Configuration][General]
 groupingStrategy=0
-launchers=preferred://filemanager,applications:Alacritty.desktop
+launchers=preferred://filemanager,applications:Alacritty.desktop,applications:firefox.desktop
 separateLaunchers=false
 showToolTips=false
 wheelSkipMinimized=false
@@ -127,7 +127,7 @@ plugin=org.kde.plasma.brightness
 [Containments][28][ConfigDialog]
 
 [Containments][28][General]
-extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.cameraindicator,org.kde.plasma.mediacontroller,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.brightness,chrome_status_icon_1,KeePassXC,org.twosheds.iwgtk
+extraItems=org.kde.plasma.manage-inputmethod,org.kde.plasma.cameraindicator,org.kde.plasma.mediacontroller,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.brightness
 hiddenItems=org.kde.plasma.volume,org.twosheds.iwgtk
 knownItems=org.kde.plasma.clipboard,org.kde.plasma.manage-inputmethod,org.kde.plasma.cameraindicator,org.kde.plasma.mediacontroller,org.kde.plasma.volume,org.kde.plasma.battery,org.kde.plasma.notifications,org.kde.plasma.keyboardlayout,org.kde.plasma.devicenotifier,org.kde.plasma.brightness,org.kde.kscreen
 shownItems=chrome_status_icon_1,org.kde.plasma.brightness,KeePassXC
