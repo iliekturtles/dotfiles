@@ -31,6 +31,11 @@ setenv HISTSIZE "{{bash.HISTSIZE}}"
 echo "Setting delta variables..."
 setenv DELTA_PAGER "{{delta.DELTA_PAGER}}"
 {{/if}}
+{{#if dotter.packages.dotnet}}
+
+echo "Setting dotnet variables..."
+setenv DOTNET_CLI_TELEMETRY_OPTOUT "{{dotnet.DOTNET_CLI_TELEMETRY_OPTOUT}}"
+{{/if}}
 {{#if dotter.packages.rust}}
 
 echo Setting rust variables...
