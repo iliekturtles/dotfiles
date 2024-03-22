@@ -3,6 +3,7 @@ packages = [
 	"bash",
 	"bat",
 	"delta",
+	"dotnet",
 	"fish",
 	"git",
 	"helix",
