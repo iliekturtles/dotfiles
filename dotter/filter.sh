@@ -32,6 +32,7 @@ case "$1" in
     "kde/"*)
         remove_section "\\\$Version"
         remove_section_key "KFileDialog Settings" "Recent (File|URL)s\\[\\\$e\\]"
+        remove_key "lastScreen"
         ;;&
     "kde/dolphinrc")
         remove_section_key "General" "ViewPropsTimestamp"
