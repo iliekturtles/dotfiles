@@ -12,8 +12,10 @@ BorderActivateAll=9
 [Tiling]
 padding=4
 
-[Tiling][881a5b1e-33d4-5406-b87d-f7a09402d83e]
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+{{#each kde.kwinrc.tiling}}
+[Tiling][{{@key}}]
+tiles={{json_to_str this}}
 
+{{/each}}
 [Xwayland]
 Scale={{kde.scale}}
