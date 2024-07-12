@@ -42,5 +42,5 @@ packages = [
 taskManagerScreen = 1
 
 [variables.kde.kwinrc.tiling]
-"3d20ebec-4175-5f2e-8cf6-7acdf4420451" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
-"8e16c2eb-0e77-545e-bdf3-890cc9c55574" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+"5e038539-1348-5f39-b48c-d4ccf7420d2c" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+"eefebce9-52d3-5bff-8490-46b59c2db081" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }

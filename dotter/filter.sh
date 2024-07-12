@@ -52,15 +52,7 @@ case "$1" in
         ;;
     "kde/kdeglobals")
         remove_section_key "DirSelect Dialog" "History Items\\[\\\$e\\]"
-        ;;
-    "kde/plasma-org.kde.plasma.desktop-appletsrc")
-        remove_section_key "ScreenMapping" "screenMapping"
-        remove_key "DialogHeight"
-        remove_key "DialogWidth"
-        remove_key "ItemGeometries[^=]*"
-        remove_key "popupHeight"
-        remove_key "popupWidth"
-        remove_key "PreloadWeight"
+        remove_section_key "DirSelect Dialog" "DirSelectDialog Size"
         ;;
     "kde/plasmashellrc")
         remove_key "PreloadWeight"

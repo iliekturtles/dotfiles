@@ -3,6 +3,8 @@
         "data": [
             {
                 "autoRotation": "InTabletMode",
+                "brightness": 1,
+                "colorProfileSource": "sRGB",
                 "connectorName": "DP-1",
                 "edidHash": "7b89b9b09c780a7deea1f975db2cde78",
                 "edidIdentifier": "DEL 16857 1095512652 36 2021 0",
@@ -15,7 +17,7 @@
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": 1,
+                "scale": {{kde.scale}},
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
                 "transform": "Normal",
@@ -24,6 +26,8 @@
             },
             {
                 "autoRotation": "InTabletMode",
+                "brightness": 1,
+                "colorProfileSource": "sRGB",
                 "connectorName": "DP-2",
                 "edidHash": "d35d924c0e4f7078e0b8e01e59c5c42b",
                 "edidIdentifier": "DEL 16857 1095457100 36 2021 0",

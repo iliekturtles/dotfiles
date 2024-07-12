@@ -133,7 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=cb4c6ee5cc9a59dbe09fb467a529af1bf5c55c97
+ColorSchemeHash=4a48bd34ba53d580d8594cb0216221e77518509f
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop

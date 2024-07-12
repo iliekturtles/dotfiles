@@ -31,11 +31,11 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
-{{#if dotter.packages.kde}}AddPackage kde-gtk-config # GTK2 and GTK3 Configurator for KDE{{/if}}
 {{#if dotter.packages.kde}}#AddPackage libappindicator-gtk3 # Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library){{/if}}
 {{#if dotter.packages.kde}}AddPackage dolphin # KDE File Manager{{/if}}
 {{#if dotter.packages.kde}}AddPackage gwenview # A fast and easy to use image viewer{{/if}}
 {{#if dotter.packages.kde}}AddPackage kcalc # Scientific Calculator{{/if}}
+{{#if dotter.packages.kde}}AddPackage kde-gtk-config # GTK2 and GTK3 Configurator for KDE{{/if}}
 {{#if dotter.packages.kde}}AddPackage kscreen # KDE screen management software{{/if}}
 {{#if dotter.packages.kde}}AddPackage plasma-desktop # KDE Plasma Desktop{{/if}}
 {{#if dotter.packages.kde}}AddPackage plasma-pa # Plasma applet for audio volume management using PulseAudio{{/if}}
