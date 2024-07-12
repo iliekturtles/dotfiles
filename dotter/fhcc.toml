@@ -45,7 +45,7 @@ poe = { pob = true, awakened = false }
 scale = 1.5
 
 [variables.kde.kwinrc.tiling]
-"881a5b1e-33d4-5406-b87d-f7a09402d83e" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+"6d9fe4df-7b78-5008-b1ee-2d74432082d4" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
 
 [variables.linux]
 default-kernel = "arch-surface"

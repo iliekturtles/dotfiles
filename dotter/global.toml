@@ -149,7 +149,6 @@ directory = []
 "kde/kxkbrc" = "$XDG_CONFIG_HOME/kxkbrc"
 "kde/mimeapps.list" = "$XDG_CONFIG_HOME/mimeapps.list"
 "kde/plasma-localerc" = "$XDG_CONFIG_HOME/plasma-localerc"
-"kde/plasma-org.kde.plasma.desktop-appletsrc" = "$XDG_CONFIG_HOME/plasma-org.kde.plasma.desktop-appletsrc"
 "kde/plasmashellrc" = "$XDG_CONFIG_HOME/plasmashellrc"
 "kde/powerdevilrc" = "$XDG_CONFIG_HOME/powerdevilrc"
 "kde/powermanagementprofilesrc" = "$XDG_CONFIG_HOME/powermanagementprofilesrc"
