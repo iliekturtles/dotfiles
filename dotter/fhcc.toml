@@ -12,6 +12,7 @@ packages = [
 	"helix",
 	"htop",
 	"intel",
+	"jellyfin",
 	"kde",
 	"keepassxc",
 	"linux",
