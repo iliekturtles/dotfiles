@@ -31,6 +31,8 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
+{{#if dotter.packages.jellyfin}}AddPackage jellyfin-server # Jellyfin server backend{{/if}}
+{{#if dotter.packages.jellyfin}}AddPackage jellyfin-web # Web client for Jellyfin{{/if}}
 {{#if dotter.packages.kde}}#AddPackage libappindicator-gtk3 # Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library){{/if}}
 {{#if dotter.packages.kde}}AddPackage dolphin # KDE File Manager{{/if}}
 {{#if dotter.packages.kde}}AddPackage gwenview # A fast and easy to use image viewer{{/if}}
@@ -88,6 +90,18 @@ CopyFile '/etc/locale.gen'
 CopyFile '/etc/sudoers'
 CopyFile '/etc/xdg/reflector/reflector.conf'
 CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
+{{#if dotter.packages.jellyfin}}CopyFile /etc/jellyfin/encoding.xml '' jellyfin jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}CopyFile /etc/jellyfin/logging.default.json '' jellyfin jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}CopyFile /etc/jellyfin/migrations.xml '' jellyfin jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}CopyFile /etc/jellyfin/network.xml '' jellyfin jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}CopyFile /etc/jellyfin/system.xml '' jellyfin jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin group jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin mode 750{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin owner jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin/jellyfin.env group jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin/jellyfin.env owner jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin/logging.json group jellyfin{{/if}}
+{{#if dotter.packages.jellyfin}}SetFileProperty /etc/jellyfin/logging.json owner jellyfin{{/if}}
 {{#if dotter.packages.kde}}CopyFile '/etc/sddm.conf.d/kde_settings.conf'{{/if}}
 {{#if dotter.packages.kde}}CreateFile '/etc/sddm.conf' > /dev/null{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch-fallback.conf' 755{{/if}}

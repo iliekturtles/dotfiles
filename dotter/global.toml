@@ -14,6 +14,11 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/bluetooth/input.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/input.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/main.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/main.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/network.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/network.conf", if = "linux.bluetooth" }
+"aconfmgr/files/etc/jellyfin/encoding.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/encoding.xml", if = "dotter.packages.jellyfin" }
+"aconfmgr/files/etc/jellyfin/logging.default.json" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/logging.default.json", if = "dotter.packages.jellyfin" }
+"aconfmgr/files/etc/jellyfin/migrations.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/migrations.xml", if = "dotter.packages.jellyfin" }
+"aconfmgr/files/etc/jellyfin/network.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/network.xml", if = "dotter.packages.jellyfin" }
+"aconfmgr/files/etc/jellyfin/system.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/system.xml", if = "dotter.packages.jellyfin" }
 "aconfmgr/files/etc/locale.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.conf" }
 "aconfmgr/files/etc/locale.gen" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.gen" }
 "aconfmgr/files/etc/makepkg.conf.d/localcompression.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/makepkg.conf.d/localcompression.conf", if = "dotter.packages.pacman" }
@@ -128,6 +133,8 @@ directory = []
 "htop/htoprc" = { type = "template", target = "$XDG_CONFIG_HOME/htop/htoprc" }
 
 [intel]
+
+[jellyfin]
 
 [kde.files]
 "kde/dolphinrc" = "$XDG_CONFIG_HOME/dolphinrc"
