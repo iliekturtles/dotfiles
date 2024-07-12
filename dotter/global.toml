@@ -123,7 +123,7 @@ directory = []
 "helix/languages.toml" = "$XDG_CONFIG_HOME/helix/languages.toml"
 
 [htop.files]
-"htop/htoprc" = "$XDG_CONFIG_HOME/htop/htoprc"
+"htop/htoprc" = { type = "template", target = "$XDG_CONFIG_HOME/htop/htoprc" }
 
 [intel]
 
