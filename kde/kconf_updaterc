@@ -4,12 +4,13 @@ updateInfoAdded=true
 done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
 
 [kcalcrc.upd]
+done=remove_deprecated_gtk4_option
 
 [kwin.upd]
-done=kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default
+done=remove_deprecated_gtk4_option,kwin-6.0-reset-active-mouse-screen,kwin-6.0-delete-desktop-switching-shortcuts,kwin-6.0-remove-breeze-tabbox-default,kwin-6.1-remove-gridview-expose-shortcuts
 
 [migrate-calendar-to-plugin-id.upd]
-done=kwin-6.0-remove-breeze-tabbox-default,migrate-calendar-plugins
+done=kwin-6.1-remove-gridview-expose-shortcuts,migrate-calendar-plugins
 
 [plasma6.0-remove-dpi-settings.upd]
 done=migrate-calendar-plugins,plasma6.0-remove-dpi-settings
@@ -24,4 +25,4 @@ done=plasma6.0-remove-old-shortcuts,plasmashell-6.0-keep-custom-position-of-pane
 done=plasmashell-6.0-keep-custom-position-of-panels,plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels
 
 [spectacle.upd]
-done=plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels,24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.02.0-change_placeholder_format
+done=plasmashell-6.0-keep-default-floating-setting-for-plasma-5-panels,24.02.0-video_format,24.02.0-keep_old_save_location,24.02.0-rename_settings,24.02.0-keep_old_filename_templates,24.05.2-change_placeholder_format
