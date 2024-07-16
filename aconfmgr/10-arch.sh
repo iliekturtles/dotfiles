@@ -106,6 +106,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/udev/rules.d/99-disable-surface-touch.rules'{{/if}}{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
+{{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
 {{#if dotter.packages.paru}}CopyFile '/etc/paru.conf'{{/if}}
 {{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
