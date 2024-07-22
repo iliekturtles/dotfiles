@@ -1,0 +1,58 @@
+includes = ["dotter/local-includes.toml"]
+packages = [
+	"aconfmgr",
+	"amd",
+	"alacritty",
+	"bash",
+	"bat",
+	"delta",
+	"firefox",
+	"fish",
+	"games",
+	"git",
+	"helix",
+	"htop",
+	"kde",
+	"keepassxc",
+	"linux",
+	"neovim",
+	"neovim-qt",
+	"nvidia",
+	"onedrive",
+	"paru",
+	"ripgrep",
+	"rust",
+	"signal",
+	"ssh",
+	"sshd",
+	"starship",
+	"systemd",
+	"systemd-networkd",
+	"tig",
+	"tmux",
+	"vscode",
+	"xsv",
+]
+
+[files]
+"kde/kwinoutputconfig-rkdc.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
+
+[variables]
+
+[variables.games]
+poe = { pob = true, awakened = true }
+
+[variables.kde]
+scale = 1.75
+
+[variables.kde.kwinrc.tiling]
+"462cc8b0-dedb-5c3e-a01d-55f2b27a3433" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+
+[variables.linux]
+asus = true
+bluetooth = true
+lts = true
+
+[variables.systemd-networkd]
+ethernet = false
+wlan = true
