@@ -17,6 +17,7 @@ packages = [
 	"linux",
 	"neovim",
 	"neovim-qt",
+	"nvidia",
 	"onedrive",
 	"paru",
 	"ripgrep",
