@@ -17,6 +17,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/locale.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.conf" }
 "aconfmgr/files/etc/locale.gen" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/locale.gen" }
 "aconfmgr/files/etc/makepkg.conf.d/localcompression.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/makepkg.conf.d/localcompression.conf", if = "dotter.packages.pacman" }
+"aconfmgr/files/etc/mkinitcpio.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }

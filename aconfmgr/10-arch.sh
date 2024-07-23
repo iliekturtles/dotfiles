@@ -93,6 +93,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch-fallback.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/entries/arch.conf' 755{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/boot/loader/loader.conf' 755{{/if}}
+{{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.conf'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.d/linux.preset'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/udev/hwdb.d/10-keyboard.hwdb'{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/input.conf{{/if}}{{/if}}
