@@ -59,6 +59,8 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
 {{#if dotter.packages.neovim-qt}}AddPackage neovim-qt # GUI for Neovim{{/if}}
 {{#if dotter.packages.neovim}}AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs{{/if}}
+{{#if dotter.packages.nvidia}}AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel{{/if}}
+{{#if dotter.packages.nvidia}}AddPackage nvidia-dkms # NVIDIA drivers - module sources{{/if}}
 {{#if dotter.packages.onedrive}}AddPackage --foreign onedrive-abraunegg-git # Free OneDrive client written in D - abraunegg's fork. Use `liblphobos` and `ldc`.{{/if}}
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
@@ -120,8 +122,10 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/udev/rules.d/99-disable-surface-touch.rules'{{/if}}{{/if}}
+{{#if dotter.packages.nvidia}}CopyFile '/etc/modprobe.d/nvidia.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
+{{#if dotter.packages.pacman}}{{#if dotter.packages.nvidia}}CopyFile '/etc/pacman.d/hooks/nvidia.hook'{{/if}}{{/if}}
 {{#if dotter.packages.paru}}CopyFile '/etc/paru.conf'{{/if}}
 {{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}

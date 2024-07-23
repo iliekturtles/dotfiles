@@ -26,7 +26,9 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
+"aconfmgr/files/etc/modprobe.d/nvidia.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/nvidia.conf", if = "dotter.packages.nvidia" }
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
+"aconfmgr/files/etc/pacman.d/hooks/nvidia.hook" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.d/hooks/nvidia.hook", if = "(and dotter.packages.pacman dotter.packages.nvidia)" }
 "aconfmgr/files/etc/paru.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/paru.conf", if = "dotter.packages.paru" }
 "aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
 "aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
@@ -203,6 +205,8 @@ surface = false
 
 [neovim-qt]
 depends = ["neovim"]
+
+[nvidia]
 
 [onedrive.files]
 "onedrive/config" = "$XDG_CONFIG_HOME/onedrive/config"
