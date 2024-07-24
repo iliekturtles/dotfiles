@@ -41,6 +41,15 @@
 ##
 ## Defaults specification
 ##
+## Preserve editor environment variables for visudo.
+## To preserve these for all commands, remove the "!visudo" qualifier.
+Defaults!/usr/bin/visudo env_keep += "SUDO_EDITOR EDITOR VISUAL"
+##
+## Use a hard-coded PATH instead of the user's to find commands.
+## This also helps prevent poorly written scripts from running
+## artbitrary commands under sudo.
+Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/bin"
+##
 ## You may wish to keep some of the following environment variables
 ## when running commands via sudo.
 ##
@@ -64,9 +73,6 @@
 ## Uncomment to enable special input methods.  Care should be taken as
 ## this may allow users to subvert the command being run via sudo.
 # Defaults env_keep += "XMODIFIERS GTK_IM_MODULE QT_IM_MODULE QT_IM_SWITCHER"
-##
-## Uncomment to use a hard-coded PATH instead of the user's to find commands
-# Defaults secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 ##
 ## Uncomment to restore the historic behavior where a command is run in
 ## the user's own terminal.
