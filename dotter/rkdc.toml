@@ -5,6 +5,7 @@ packages = [
 	"alacritty",
 	"bash",
 	"bat",
+	"chrome",
 	"delta",
 	"firefox",
 	"fish",

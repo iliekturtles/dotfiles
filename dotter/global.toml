@@ -68,6 +68,8 @@ HISTSIZE = "1000"
 
 [bat]
 
+[chrome]
+
 [delta]
 depends = ["git"]
 
