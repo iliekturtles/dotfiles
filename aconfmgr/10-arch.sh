@@ -52,6 +52,10 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}
 {{#if dotter.packages.linux}}AddPackage power-profiles-daemon # Makes power profiles handling available over D-Bus{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage asusctl # Asus laptop control utilities{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage rog-control-center # Asus laptop control utilities{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage supergfxctl # A utility for Linux graphics switching on Intel/AMD iGPU + nVidia dGPU laptops{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage switcheroo-control # D-Bus service to check the availability of dual-GPU{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}AddPackage linux-lts # The LTS Linux kernel and modules{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage iptsd # Userspace daemon for Intel Precise Touch & Stylus{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-firmware-marvell # Firmware files for Linux - marvell / Firmware for Marvell devices{{/if}}{{/if}}
@@ -112,6 +116,12 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.conf'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.d/linux.preset'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/udev/hwdb.d/10-keyboard.hwdb'{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/asusd.ron{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/aura_19b6.ron{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/fan_curves.ron{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/mkinitcpio.conf.d/asus.conf{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/modprobe.d/supergfxd.conf{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/supergfxd.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/input.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/main.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/network.conf{{/if}}{{/if}}

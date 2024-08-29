@@ -11,9 +11,15 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/boot/loader/entries/arch.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch.conf", if = "dotter.packages.linux" }
 "aconfmgr/files/boot/loader/loader.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/loader.conf", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/hostname" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/hostname" }
+"aconfmgr/files/etc/asusd/asusd.ron" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/asusd/asusd.ron", if = "linux.asus" }
+"aconfmgr/files/etc/asusd/aura_19b6.ron" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/asusd/aura_19b6.ron", if = "linux.asus" }
+"aconfmgr/files/etc/asusd/fan_curves.ron" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/asusd/fan_curves.ron", if = "linux.asus" }
 "aconfmgr/files/etc/bluetooth/input.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/input.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/main.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/main.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/network.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/network.conf", if = "linux.bluetooth" }
+"aconfmgr/files/etc/mkinitcpio.conf.d/asus.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf.d/asus.conf", if = "linux.asus" }
+"aconfmgr/files/etc/modprobe.d/supergfxd.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/supergfxd.conf", if = "linux.asus" }
+"aconfmgr/files/etc/supergfxd.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/supergfxd.conf", if = "linux.asus" }
 "aconfmgr/files/etc/jellyfin/encoding.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/encoding.xml", if = "dotter.packages.jellyfin" }
 "aconfmgr/files/etc/jellyfin/logging.default.json" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/logging.default.json", if = "dotter.packages.jellyfin" }
 "aconfmgr/files/etc/jellyfin/migrations.xml" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/jellyfin/migrations.xml", if = "dotter.packages.jellyfin" }
@@ -186,6 +192,7 @@ taskManagerScreen = 0
 "keepassxc/keepassxc.ini" = "$XDG_CONFIG_HOME/keepassxc/keepassxc.ini"
 
 [linux.variables.linux]
+asus = false
 bluetooth = false
 default-kernel = "arch"
 fstrim = true
