@@ -116,6 +116,9 @@ wow = { curseforge = false }
 "git/config" = "$XDG_CONFIG_HOME/git/config"
 "git/ignore" = "$XDG_CONFIG_HOME/git/ignore"
 
+[git.variables.git.commit]
+gpgsign = false
+
 [git.variables.git.core]
 autocrlf = "input"
 
@@ -134,6 +137,12 @@ tool = "nvimdiff"
 
 [git.variables.git.safe]
 directory = []
+
+[git.variables.git.tag]
+gpgsign = false
+
+[git.variables.git.user]
+signingKey = "~/.ssh/id_rsa"
 
 [helix.files]
 "helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"
