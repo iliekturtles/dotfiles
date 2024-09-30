@@ -30,5 +30,8 @@ packages = [
 
 [variables]
 
+[variables.git.user]
+signingKey = "#~/.ssh/id_rsa"
+
 [variables.shell]
 SOURCE_HOME = "/d/Code"

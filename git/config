@@ -1,5 +1,6 @@
 [user]
 	useConfigOnly = true
+	signingKey = {{git.user.signingKey}}
 [includeIf "gitdir:{{#if (eq dotter.os "unix")}}{{shell.SOURCE_HOME}}{{else}}{{(trim_end (command_output (concat "cygpath -m " shell.SOURCE_HOME)))}}{{/if}}/"]
 	path = "{{#if (eq dotter.os "unix")}}{{shell.SOURCE_HOME}}{{else}}{{(trim_end (command_output (concat "cygpath -m " shell.SOURCE_HOME)))}}{{/if}}/.gitconfig"
 [checkout]
@@ -12,6 +13,7 @@
 	pager = delta
 {{/if}}
 [commit]
+	gpgSign = {{git.commit.gpgsign}}
 	verbose = true
 [credential]
 {{#if git.credential.helper}}
@@ -49,6 +51,10 @@
 	prune = true
 [filter "dotfiles"]
 	clean = "dotter/filter.sh %f"
+[gpg]
+	format = ssh
+[gpg.ssh]
+	allowedSignersFile = ~/.ssh/allowed_signers
 [http]
 {{#if git.http.sslbackend}}
 	sslbackend = {{git.http.sslbackend}}
@@ -81,6 +87,8 @@
 	enabled = true
 [submodule]
 	fetchJobs = 0
+[tag]
+	gpgSign = {{git.tag.gpgsign}}
 [tig]
 	tab-size = 4
 [alias]

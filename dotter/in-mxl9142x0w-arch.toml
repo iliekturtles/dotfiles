@@ -25,5 +25,8 @@ packages = [
 
 [variables]
 
+[variables.git.user]
+signingKey = "#~/.ssh/id_rsa"
+
 [variables.linux]
 fstrim = false
