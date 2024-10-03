@@ -57,6 +57,8 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage rog-control-center # Asus laptop control utilities{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage supergfxctl # A utility for Linux graphics switching on Intel/AMD iGPU + nVidia dGPU laptops{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage switcheroo-control # D-Bus service to check the availability of dual-GPU{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage linux-g14 # The g14 Linux kernel and modules{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage linux-g14-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}AddPackage linux-lts # The LTS Linux kernel and modules{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage iptsd # Userspace daemon for Intel Precise Touch & Stylus{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-firmware-marvell # Firmware files for Linux - marvell / Firmware for Marvell devices{{/if}}{{/if}}
@@ -126,6 +128,9 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/input.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/main.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.bluetooth}}CopyFile /etc/bluetooth/network.conf{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}CopyFile '/boot/loader/entries/arch-g14-fallback.conf' 755{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}CopyFile '/boot/loader/entries/arch-g14.conf' 755{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}CopyFile '/etc/mkinitcpio.d/linux-g14.preset'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}CopyFile '/boot/loader/entries/arch-lts-fallback.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}CopyFile '/boot/loader/entries/arch-lts.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}CopyFile '/etc/mkinitcpio.d/linux-lts.preset'{{/if}}{{/if}}
