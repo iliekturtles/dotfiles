@@ -52,6 +52,7 @@ scale = 1.75
 [variables.linux]
 asus = true
 bluetooth = true
+g14 = true
 lts = true
 
 [variables.systemd-networkd]

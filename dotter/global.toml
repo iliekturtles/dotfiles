@@ -4,6 +4,8 @@ concat = "dotter/helpers/concat.rhai"
 [aconfmgr.files]
 "aconfmgr/10-arch.sh" = "$XDG_CONFIG_HOME/aconfmgr/10-arch.sh"
 "aconfmgr/files/boot/loader/entries/arch-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-fallback.conf", if = "dotter.packages.linux" }
+"aconfmgr/files/boot/loader/entries/arch-g14-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-g14-fallback.conf", if = "linux.g14" }
+"aconfmgr/files/boot/loader/entries/arch-g14.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-g14.conf", if = "linux.g14" }
 "aconfmgr/files/boot/loader/entries/arch-lts-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-lts-fallback.conf", if = "linux.lts" }
 "aconfmgr/files/boot/loader/entries/arch-lts.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-lts.conf", if = "linux.lts" }
 "aconfmgr/files/boot/loader/entries/arch-surface-fallback.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/boot/loader/entries/arch-surface-fallback.conf", if = "linux.surface" }
@@ -30,6 +32,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/makepkg.conf.d/localcompression.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/makepkg.conf.d/localcompression.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/mkinitcpio.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-lts.preset", if = "linux.lts" }
+"aconfmgr/files/etc/mkinitcpio.d/linux-g14.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-g14.preset", if = "linux.g14" }
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/modprobe.d/nvidia.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/nvidia.conf", if = "dotter.packages.nvidia" }
@@ -207,6 +210,7 @@ asus = false
 bluetooth = false
 default-kernel = "arch"
 fstrim = true
+g14 = false
 lts = false
 surface = false
 
