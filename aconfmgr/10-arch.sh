@@ -40,6 +40,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.kde}}AddPackage kcalc # Scientific Calculator{{/if}}
 {{#if dotter.packages.kde}}AddPackage kde-gtk-config # GTK2 and GTK3 Configurator for KDE{{/if}}
 {{#if dotter.packages.kde}}AddPackage kscreen # KDE screen management software{{/if}}
+{{#if dotter.packages.kde}}AddPackage ktorrent # A powerful BitTorrent client for KDE{{/if}}
 {{#if dotter.packages.kde}}AddPackage plasma-desktop # KDE Plasma Desktop{{/if}}
 {{#if dotter.packages.kde}}AddPackage plasma-pa # Plasma applet for audio volume management using PulseAudio{{/if}}
 {{#if dotter.packages.kde}}AddPackage plasma-systemmonitor # An interface for monitoring system sensors, process information and other system resources{{/if}}
