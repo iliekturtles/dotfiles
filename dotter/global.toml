@@ -38,7 +38,6 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/modprobe.d/nvidia.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/nvidia.conf", if = "dotter.packages.nvidia" }
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/pacman.d/hooks/nvidia.hook" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.d/hooks/nvidia.hook", if = "(and dotter.packages.pacman dotter.packages.nvidia)" }
-"aconfmgr/files/etc/paru.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/paru.conf", if = "dotter.packages.paru" }
 "aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
 "aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
@@ -243,6 +242,9 @@ pacman = "pacman"
 
 [paru]
 depends = ["pacman"]
+
+[paru.files]
+"paru/paru.conf" = "$XDG_CONFIG_HOME/paru/paru.conf"
 
 [paru.variables]
 paru = "paru"
