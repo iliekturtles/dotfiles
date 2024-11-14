@@ -73,5 +73,13 @@
       <Item1>852816e0-2712-49a9-9240-c6fc5fcad1a8</Item1>
       <Item2>UpdateDefaultPluginRepository10.9</Item2>
     </ValueTupleOfGuidString>
+    <ValueTupleOfGuidString>
+      <Item1>a8e61960-7726-4450-8f3d-82c12daabbcb</Item1>
+      <Item2>MigrateEncodingOptions</Item2>
+    </ValueTupleOfGuidString>
+    <ValueTupleOfGuidString>
+      <Item1>4ef123d5-8eff-4b0b-869d-3aed07a60e1b</Item1>
+      <Item2>MoveTrickplayFiles</Item2>
+    </ValueTupleOfGuidString>
   </Applied>
 </MigrationOptions>
