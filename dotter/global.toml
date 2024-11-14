@@ -213,6 +213,7 @@ fstrim = true
 g14 = false
 lts = false
 surface = false
+tpmoverride = false
 
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"

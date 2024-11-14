@@ -139,6 +139,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/boot/loader/entries/arch-surface.conf' 755{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/udev/rules.d/99-disable-surface-touch.rules'{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.tpmoverride}}CreateLink /etc/systemd/system/dev-tpmrm0.device /dev/null{{/if}}{{/if}}
 {{#if dotter.packages.nvidia}}CopyFile '/etc/modprobe.d/nvidia.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
