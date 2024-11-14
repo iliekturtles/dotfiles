@@ -2,6 +2,7 @@
     {
         "data": [
             {
+                "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
                 "brightness": 1,
                 "colorProfileSource": "sRGB",
@@ -25,6 +26,7 @@
                 "wideColorGamut": false
             },
             {
+                "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
                 "brightness": 1,
                 "colorProfileSource": "sRGB",
