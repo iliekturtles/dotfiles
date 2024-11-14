@@ -24,6 +24,9 @@ fi
 if ! groups | grep -q "gamemode" ; then
     sudo usermod -aG gamemode "{{env_var "USER"}}"
 fi
+if ! groups | grep -q "games" ; then
+    sudo usermod -aG games "{{env_var "USER"}}"
+fi
 {{/if}}
 {{#if dotter.packages.kde}}
 
