@@ -31,10 +31,10 @@ if hash cmake 2>/dev/null; then
     fi
 
     RUSTFLAGS="-C target-cpu=native" cargo install-update -i \
+        bacon \
         {{#if dotter.packages.bat}}bat{{/if}} \
         cargo-sweep \
         cargo-update \
-        cargo-watch \
         dotter \
         {{#if dotter.packages.delta}}git-delta{{/if}} \
         hexyl \
