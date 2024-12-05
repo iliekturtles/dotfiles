@@ -23,6 +23,17 @@ function nvims() {
         nvim -c "Obsession .session.vim" $@
     fi
 }
+{{#if dotter.packages.neovide}}
+
+# Start or restore a neovide session.
+function neovides() {
+    if [ -f .gsession.vim ]; then
+        neovide -S .gsession.vim $@ & disown
+    else
+        neovide -c "Obsession .gsession.vim" $@ & disown
+    fi
+}
+{{/if}}
 {{#if dotter.packages.neovim-qt}}
 
 # Start or restore a neovim-qt session.

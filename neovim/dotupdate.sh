@@ -12,3 +12,6 @@ if [ ! -f "$XDG_DATA_HOME/$NVIMDATA/site/autoload/plug.vim" ]; then
 fi
 
 nvim +PlugUpgrade +PlugClean +PlugUpdate! +qall
+{{#if (and dotter.packages.neovide (eq dotter.os "windows"))}}
+neovide +NeovideRegisterRightClick +qall
+{{/if}}

@@ -9,6 +9,7 @@ packages = [
 	"helix",
 	"msys2",
 	"neovim",
+	"neovide",
 	"neovim-qt",
 	"pacman",
 	"ripgrep",

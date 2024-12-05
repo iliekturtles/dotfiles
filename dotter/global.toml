@@ -226,6 +226,9 @@ tpmoverride = false
 "neovim/statusline.vim" = "$XDG_CONFIG_HOME/nvim/statusline.vim"
 "neovim/ui.vim" = "$XDG_CONFIG_HOME/nvim/ui.vim"
 
+[neovide]
+depends = ["neovim"]
+
 [neovim-qt]
 depends = ["neovim"]
 

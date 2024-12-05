@@ -17,6 +17,7 @@ packages = [
 	"keepassxc",
 	"linux",
 	"neovim",
+	"neovide",
 	"neovim-qt",
 	"nvidia",
 	"onedrive",

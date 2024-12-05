@@ -19,3 +19,13 @@ if has('gui')
         au GUIEnter * simalt ~x
     augroup end
 endif
+
+{{#if dotter.packages.neovide}}
+" Neovide settings
+if exists("g:neovide")
+    if has('win32')
+        set guifont=Cascadia\ Mono:h11
+    endif
+    let g:neovide_cursor_animation_length = 0
+endif
+{{/if}}
