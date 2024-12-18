@@ -16,6 +16,11 @@ cd "$(dirname "$0")"
 # Example: `bash -c './dotter.sh deploy -vp <<<"variables.shell.EDITOR = \"nvim\"'`
 # Example: `cat variables.toml | ./dotter.sh deploy -vp`
 
+# Ensure dotter/local-includes.toml exists
+if [ ! -f dotter/local-includes.toml ]; then
+    touch dotter/local-includes.toml
+fi
+
 # Ensure XDG variable initialization. Definitions are duplicated in dotter/global.toml.
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
