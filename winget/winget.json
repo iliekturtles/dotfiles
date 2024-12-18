@@ -14,6 +14,7 @@
 				{{#if dotter.packages.neovim}}{ "PackageIdentifier" : "Neovim.Neovim" },{{/if}}
 				{{#if dotter.packages.onedrive}}{ "PackageIdentifier" : "Microsoft.OneDrive" },{{/if}}
 				{{#if dotter.packages.rust}}{ "PackageIdentifier" : "Rustlang.Rustup" },{{/if}}
+				{{#if dotter.packages.tortoisegit}}{ "PackageIdentifier" : "TortoiseGit.TortoiseGit" },{{/if}}
 				{{#if dotter.packages.windowsterminal}}{ "PackageIdentifier" : "Microsoft.WindowsTerminal" },{{/if}}
 				{ "PackageIdentifier" : "SuperCuber.dotter" }
 			],
