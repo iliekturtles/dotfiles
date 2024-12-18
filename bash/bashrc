@@ -86,7 +86,7 @@ shopt -s histappend # Enable appending to $HISTFILE.
 stty -ixon          # Disable scroll-lock (Ctrl-s, Ctrl-q).
 tabs -4             # Set tab-stops to 4 characters.
 {{#if dotter.packages.starship}}
-{{#if dotter.packages.msys2}}
+{{#if dotter.packages.windows}}
 
 starship_precmd_user_func="set_title"
 

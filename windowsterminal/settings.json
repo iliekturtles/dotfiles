@@ -41,7 +41,7 @@
     ],
     "copyFormatting": "all",
     "copyOnSelect": false,
-    "defaultProfile": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+    "defaultProfile": "{{#if dotter.packages.msys2}}{17da3cac-b318-431e-8a3e-7fcdefe6d114}{{else}}{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}{{/if}}",
     "firstWindowPreference": "persistedWindowLayout",
     "launchMode": "maximized",
     "newTabMenu": 
@@ -94,28 +94,28 @@
                 "name": "Command Prompt"
             },
             {
-                "guid": "{0f7b5596-d4e4-52bf-9c63-8c1769c43cca}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
+                "guid": "{284123b5-0ad7-5d3a-92b4-e800f9b7e97f}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{916582e5-5dda-5b0a-aefd-e0bc6302c605}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
-            },
-            {
-                "guid": "{f5d54595-6dd0-59f8-b859-a19eef7354dc}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
