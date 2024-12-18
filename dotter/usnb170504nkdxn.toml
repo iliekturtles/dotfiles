@@ -9,6 +9,7 @@ packages = [
 	"fish",
 	"git",
 	"helix",
+	"keepass",
 	"msys2",
 	"neovim",
 	"neovide",

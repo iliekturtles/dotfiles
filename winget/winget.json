@@ -10,6 +10,7 @@
 				{{#if dotter.packages.firefox}}{ "PackageIdentifier" : "Mozilla.Firefox" },{{/if}}
 				{{#if dotter.packages.git}}{ "PackageIdentifier" : "Git.Git" },{{/if}}
 				{{#if dotter.packages.helix}}{ "PackageIdentifier" : "Helix.Helix" },{{/if}}
+				{{#if dotter.packages.keepass}}{ "PackageIdentifier" : "DominikReichl.KeePass" },{{/if}}
 				{{#if dotter.packages.neovide}}{ "PackageIdentifier" : "Neovide.Neovide" },{{/if}}
 				{{#if dotter.packages.neovim}}{ "PackageIdentifier" : "Neovim.Neovim" },{{/if}}
 				{{#if dotter.packages.onedrive}}{ "PackageIdentifier" : "Microsoft.OneDrive" },{{/if}}
