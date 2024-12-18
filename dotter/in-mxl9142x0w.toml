@@ -2,8 +2,10 @@ includes = ["dotter/windows.toml", "dotter/local-includes.toml"]
 packages = [
 	"bash",
 	"bat",
+	"chrome",
 	"delta",
 	"dotnet",
+	"firefox",
 	"fish",
 	"git",
 	"helix",
@@ -11,6 +13,7 @@ packages = [
 	"neovim",
 	"neovide",
 	"neovim-qt",
+	"onedrive",
 	"pacman",
 	"ripgrep",
 	"rust",
@@ -22,6 +25,7 @@ packages = [
 	"vsvim",
 	"windows",
 	"windowsterminal",
+	"winget",
 	"wsl-client",
 	"xsv",
 ]

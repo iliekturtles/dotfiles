@@ -1,0 +1,30 @@
+{
+	"$schema" : "https://aka.ms/winget-packages.schema.2.0.json",
+	"CreationDate" : "2024-12-18T11:08:09.548-00:00",
+	"Sources" : 
+	[
+		{
+			"Packages" : 
+			[
+				{{#if dotter.packages.chrome}}{ "PackageIdentifier" : "Google.Chrome" },{{/if}}
+				{{#if dotter.packages.firefox}}{ "PackageIdentifier" : "Mozilla.Firefox" },{{/if}}
+				{{#if dotter.packages.git}}{ "PackageIdentifier" : "Git.Git" },{{/if}}
+				{{#if dotter.packages.helix}}{ "PackageIdentifier" : "Helix.Helix" },{{/if}}
+				{{#if dotter.packages.neovide}}{ "PackageIdentifier" : "Neovide.Neovide" },{{/if}}
+				{{#if dotter.packages.neovim}}{ "PackageIdentifier" : "Neovim.Neovim" },{{/if}}
+				{{#if dotter.packages.onedrive}}{ "PackageIdentifier" : "Microsoft.OneDrive" },{{/if}}
+				{{#if dotter.packages.rust}}{ "PackageIdentifier" : "Rustlang.Rustup" },{{/if}}
+				{{#if dotter.packages.windowsterminal}}{ "PackageIdentifier" : "Microsoft.WindowsTerminal" },{{/if}}
+				{ "PackageIdentifier" : "SuperCuber.dotter" }
+			],
+			"SourceDetails" : 
+			{
+				"Argument" : "https://cdn.winget.microsoft.com/cache",
+				"Identifier" : "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name" : "winget",
+				"Type" : "Microsoft.PreIndexed.Package"
+			}
+		}
+	],
+	"WinGetVersion" : "1.9.25200"
+}

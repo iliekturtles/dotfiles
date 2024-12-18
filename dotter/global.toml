@@ -326,6 +326,12 @@ depends = ["shell"]
 [windowsterminal.files]
 "windowsterminal/settings.json" = "$LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 
+[winget]
+depends = ["windows"]
+
+[winget.files]
+"winget/winget.json" = "$LOCALAPPDATA/Microsoft/WinGet/winget.json"
+
 [wsl]
 
 [wsl-client]

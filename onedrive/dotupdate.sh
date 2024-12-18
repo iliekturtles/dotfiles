@@ -9,4 +9,6 @@ if ! systemctl --user is-enabled onedrive.service > /dev/null; then
     systemctl --user enable onedrive.service
     systemctl --user start onedrive.service
 fi
+{{else}}
+true # Empty function.
 {{/if}}
