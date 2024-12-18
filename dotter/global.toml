@@ -298,7 +298,7 @@ depends = ["shell"]
 "systemd/environment.d/envvars.conf" = "$XDG_CONFIG_HOME/environment.d/envvars.conf"
 
 [systemd-networkd]
-depends=["systemd"]
+depends = ["systemd"]
 
 [systemd-networkd.variables.systemd-networkd]
 ethernet = true
@@ -306,6 +306,7 @@ wlan = false
 wwan = false
 
 [tig]
+depends = ["git"]
 
 [tmux.files]
 "tmux/tmux.conf" = "$XDG_CONFIG_HOME/tmux/tmux.conf"
@@ -326,6 +327,9 @@ depends = ["git"]
 [windows]
 depends = ["shell"]
 
+[windowsterminal]
+depends = ["windows"]
+
 [windowsterminal.files]
 "windowsterminal/settings.json" = "$LOCALAPPDATA/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
 
@@ -336,7 +340,9 @@ depends = ["windows"]
 "winget/winget.json" = "$LOCALAPPDATA/Microsoft/WinGet/winget.json"
 
 [wsl]
+depends = ["linux"]
 
 [wsl-client]
+depends = ["windows"]
 
 [xsv]
