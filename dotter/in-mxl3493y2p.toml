@@ -9,12 +9,10 @@ packages = [
 	"fish",
 	"git",
 	"helix",
-	"msys2",
 	"neovim",
 	"neovide",
 	"neovim-qt",
 	"onedrive",
-	"pacman",
 	"ripgrep",
 	"rust",
 	"ssh",
@@ -22,17 +20,15 @@ packages = [
 	"tig",
 	"tmux",
 	"tortoisegit",
-	"vscode",
 	"vsvim",
 	"windows",
 	"windowsterminal",
 	"winget",
-	"wsl-client",
 	"xsv",
 ]
 
-[files]
-"msys2/etc/nsswitch.conf" = "C:/Users/mjboutin/msys64/etc/nsswitch.conf"
+# [files]
+# "msys2/etc/nsswitch.conf" = "C:/Users/mjboutin/msys64/etc/nsswitch.conf"
 
 [variables]
 
