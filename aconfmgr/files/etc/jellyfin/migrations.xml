@@ -81,5 +81,9 @@
       <Item1>4ef123d5-8eff-4b0b-869d-3aed07a60e1b</Item1>
       <Item2>MoveTrickplayFiles</Item2>
     </ValueTupleOfGuidString>
+    <ValueTupleOfGuidString>
+      <Item1>96c156a2-7a13-4b3b-a8b8-fb80c94d20c0</Item1>
+      <Item2>RemoveDuplicatePlaylistChildren</Item2>
+    </ValueTupleOfGuidString>
   </Applied>
 </MigrationOptions>
