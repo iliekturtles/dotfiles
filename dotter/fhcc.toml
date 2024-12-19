@@ -18,7 +18,6 @@ packages = [
 	"linux",
 	"neovim",
 	"neovide",
-	"neovim-qt",
 	"onedrive",
 	"paru",
 	"ripgrep",
@@ -31,7 +30,6 @@ packages = [
 	"systemd-networkd",
 	"tig",
 	"tmux",
-	"vscode",
 	"xsv",
 ]
 
