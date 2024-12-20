@@ -5,6 +5,7 @@ packages = [
 	"alacritty",
 	"bash",
 	"bat",
+	"ckb-next",
 	"delta",
 	"firefox",
 	"fish",
