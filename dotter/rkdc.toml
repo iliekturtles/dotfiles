@@ -6,6 +6,7 @@ packages = [
 	"bash",
 	"bat",
 	"chrome",
+	"ckb-next",
 	"delta",
 	"firefox",
 	"fish",

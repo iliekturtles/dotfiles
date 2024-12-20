@@ -72,6 +72,9 @@ HISTSIZE = "1000"
 
 [chrome]
 
+[ckb-next.files]
+"ckb-next/ckb-next.conf" = "$XDG_CONFIG_HOME/ckb-next/ckb-next.conf"
+
 [delta]
 depends = ["git"]
 
