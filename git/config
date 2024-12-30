@@ -101,7 +101,7 @@
 	cop = checkout -p
 	cs = "!git checkout $1 && git down ; git submodule update ; :"
 	down = merge --ff-only
-	drop-pr = "!BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git branch -D $BRANCH && git down"
+	drop-pr = "!DEFAULT_REMOTE=$(git config checkout.defaultRemote || echo origin) BRANCH=$(git rev-parse --abbrev-ref HEAD) DEFAULT_BRANCH=$(git config checkout.default-branch || git rev-parse --abbrev-ref \"$DEFAULT_REMOTE/HEAD\") && git checkout \"${DEFAULT_BRANCH#$DEFAULT_REMOTE/}\" && git branch -D \"$BRANCH\" && git down"
 	ds = diff --staged
 	f = fetch
 	facs = "!git fat && git checkout $1 && git down ; git submodule update ; :"
@@ -113,7 +113,7 @@
 	lag = log --all --graph --pretty=changelog --date-order
 	lg = log --graph --pretty=changelog --date-order
 	lp = log -p
-	pr = "!BRANCH=$(git rev-parse --abbrev-ref HEAD) PR_REMOTE=$(git config push.pr-remote || git config checkout.defaultRemote) && git push \"${PR_REMOTE:-origin}\" --force-with-lease && git checkout master && git branch -D $BRANCH && git down"
+	pr = "!DEFAULT_REMOTE=$(git config checkout.defaultRemote || echo origin) PR_REMOTE=$(git config push.pr-remote || echo \"$DEFAULT_REMOTE\") BRANCH=$(git rev-parse --abbrev-ref HEAD) DEFAULT_BRANCH=$(git config checkout.default-branch || git rev-parse --abbrev-ref \"$DEFAULT_REMOTE/HEAD\") && git push \"$PR_REMOTE\" --force-with-lease && git checkout \"${DEFAULT_BRANCH#$DEFAULT_REMOTE/}\" && git branch -D \"$BRANCH\" && git down"
 	rs = "!git checkout $1 && git reset --hard origin/$1 ; git submodule update ; :"
 	skipped = "!git ls-files -v | grep \"^[hS]\""
 	st = status -sb
