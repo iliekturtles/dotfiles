@@ -85,6 +85,9 @@ shopt -s globstar   # Enable ** glob pattern.
 shopt -s histappend # Enable appending to $HISTFILE.
 stty -ixon          # Disable scroll-lock (Ctrl-s, Ctrl-q).
 tabs -4             # Set tab-stops to 4 characters.
+
+# Readline settings.
+bind "set bell-style none"
 {{#if dotter.packages.starship}}
 {{#if dotter.packages.windows}}
 
