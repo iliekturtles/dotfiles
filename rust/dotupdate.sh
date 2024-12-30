@@ -38,13 +38,13 @@ if hash cmake 2>/dev/null; then
         {{#if dotter.packages.bat}}bat{{/if}} \
         cargo-sweep \
         cargo-update \
-        dotter \
         {{#if dotter.packages.delta}}git-delta{{/if}} \
         hexyl \
         hyperfine \
         {{#if dotter.packages.ripgrep}}ripgrep{{/if}} \
         {{#if dotter.packages.starship}}starship{{/if}} \
         {{#if dotter.packages.xsv}}xsv{{/if}}
+        #dotter \
         #cargo-asm \
         #cargon-binstall \
         #cargo-deadlinks \
