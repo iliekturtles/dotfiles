@@ -66,6 +66,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-firmware-marvell # Firmware files for Linux - marvell / Firmware for Marvell devices{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface # The Linux kernel and modules{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
+{{#if dotter.packages.mullvad-vpn}}AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop{{/if}}
 {{#if dotter.packages.neovide}}AddPackage neovide # No Nonsense Neovim Client in Rust{{/if}}
 {{#if dotter.packages.neovim-qt}}AddPackage neovim-qt # GUI for Neovim{{/if}}
 {{#if dotter.packages.neovim}}AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs{{/if}}
@@ -142,6 +143,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/mkinitcpio.d/linux-surface.preset'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}CopyFile '/etc/udev/rules.d/99-disable-surface-touch.rules'{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.tpmoverride}}CreateLink /etc/systemd/system/dev-tpmrm0.device /dev/null{{/if}}{{/if}}
+{{#if dotter.packages.mullvad-vpn}}CopyFile '/etc/mullvad-vpn/settings.json'{{/if}}
 {{#if dotter.packages.nvidia}}CopyFile '/etc/modprobe.d/nvidia.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
@@ -215,6 +217,8 @@ IgnorePath '/usr/lib/vlc/plugins/plugins.dat'
 IgnorePath '/usr/lib32/**/*.cache'
 IgnorePath '/usr/share/*'
 IgnorePath '/var/*'
+{{#if dotter.packages.mullvad-vpn}}IgnorePath '/etc/mullvad-vpn/account-history.json'{{/if}}
+{{#if dotter.packages.mullvad-vpn}}IgnorePath '/etc/mullvad-vpn/device.json'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/hosts'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/ld.so.conf.d/ld.wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/timezone'{{/if}}

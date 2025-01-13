@@ -36,6 +36,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux-surface.preset", if = "linux.surface" }
 "aconfmgr/files/etc/mkinitcpio.d/linux.preset" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.d/linux.preset", if = "dotter.packages.linux" }
 "aconfmgr/files/etc/modprobe.d/nvidia.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/nvidia.conf", if = "dotter.packages.nvidia" }
+"aconfmgr/files/etc/mullvad-vpn/settings.json" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mullvad-vpn/settings.json", if = "dotter.packages.mullvad-vpn" }
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/pacman.d/hooks/nvidia.hook" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.d/hooks/nvidia.hook", if = "(and dotter.packages.pacman dotter.packages.nvidia)" }
 "aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
@@ -221,6 +222,9 @@ tpmoverride = false
 
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
+
+[mullvad-vpn.files]
+"mullvad-vpn/gui_settings.json" = "$XDG_CONFIG_HOME/Mullvad VPN/gui_settings.json"
 
 [neovim.files]
 "neovim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
