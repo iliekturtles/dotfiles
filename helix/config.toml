@@ -3,6 +3,7 @@ theme = "onedarker"
 [editor]
 color-modes = true
 #cursorline = true # Selection/cursorline have similar colors.
+default-yank-register = "+"
 gutters = ["diagnostics", "spacer", "diff"]
 rulers = [101]
 true-color = true
@@ -22,7 +23,14 @@ right = ["diagnostics", "selections", "primary-selection-length", "separator", "
 [editor.lsp]
 # enable = false
 display-messages = true
+display-progress-messages = true
 
 [keys.normal]
+c = "change_selection_noyank"
+A-c = "change_selection"
+d = "delete_selection_noyank"
+A-d = "delete_selection"
+J = "join_selections_space"
+A-J = "join_selections"
 x = "extend_line"
 Z = {Q = ":quit!", Z = ":write-quit!"}
