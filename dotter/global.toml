@@ -153,6 +153,7 @@ signingKey = "~/.ssh/id_rsa"
 [helix.files]
 "helix/config.toml" = "$XDG_CONFIG_HOME/helix/config.toml"
 "helix/languages.toml" = "$XDG_CONFIG_HOME/helix/languages.toml"
+"helix/themes/onedarkerest.toml" = "$XDG_CONFIG_HOME/helix/themes/onedarkerest.toml"
 
 [htop.files]
 "htop/htoprc" = { type = "template", target = "$XDG_CONFIG_HOME/htop/htoprc" }
