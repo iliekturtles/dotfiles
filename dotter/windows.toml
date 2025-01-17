@@ -13,6 +13,7 @@ guitool = "tortoisemerge"
 [helix.files]
 "helix/config.toml" = "$APPDATA/helix/config.toml"
 "helix/languages.toml" = "$APPDATA/helix/languages.toml"
+"helix/themes/onedarkerest.toml" = "$APPDATA/helix/themes/onedarkerest.toml"
 
 [shell.variables.ssh]
 connection-sharing = false

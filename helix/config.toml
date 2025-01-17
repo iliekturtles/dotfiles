@@ -1,8 +1,8 @@
-theme = "onedarker"
+theme = "onedarkerest"
 
 [editor]
 color-modes = true
-#cursorline = true # Selection/cursorline have similar colors.
+cursorline = true
 default-yank-register = "+"
 gutters = ["diagnostics", "spacer", "diff"]
 rulers = [101]

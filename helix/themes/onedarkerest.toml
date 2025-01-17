@@ -1,0 +1,10 @@
+inherits = "onedarker"
+
+# "ui.cursorline.primary" = { bg = "#285070" }
+# "ui.cursorline.secondary" = { bg = "#142838" }
+
+# "ui.selection" = { bg = "#285070" }
+# "ui.selection.primary" = { bg = "#142838" }
+
+"ui.selection" = { bg = "#142838" }
+"ui.selection.primary" = { bg = "#285070" }
