@@ -24,6 +24,16 @@
             "id": "User.paste"
         },
         {
+            "command": 
+            {
+                "action": "globalSummon",
+                "monitor": "any",
+                "name": "notes"
+            },
+            "id": "User.globalSummon.ECEAEB3C",
+            "keys": "win+sc(41)"
+        },
+        {
             "command": "find",
             "id": "User.find",
             "keys": "ctrl+shift+f"
@@ -44,6 +54,7 @@
     "defaultProfile": "{{#if dotter.packages.msys2}}{17da3cac-b318-431e-8a3e-7fcdefe6d114}{{else}}{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}{{/if}}",
     "firstWindowPreference": "persistedWindowLayout",
     "launchMode": "maximized",
+    "minimizeToNotificationArea": true,
     "newTabMenu": 
     [
         {
