@@ -1,3 +1,4 @@
+ckb-next/ckb-next.conf filter=dotfiles
 fish/fish_variables text eol=lf
 kde/* filter=dotfiles
 keepassxc/keepassxc.ini filter=dotfiles

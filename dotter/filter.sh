@@ -29,6 +29,9 @@ function remove_key() {
 }
 
 case "$1" in
+    "ckb-next/ckb-next.conf")
+        remove_section_key "Devices" ".+\\\\Modified"
+        ;;
     "kde/"*)
         remove_section "\\\$Version"
         remove_section_key "KFileDialog Settings" "Recent (File|URL)s\\[\\\$e\\]"
