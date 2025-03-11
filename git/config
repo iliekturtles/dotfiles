@@ -45,16 +45,22 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+	mnemonicPrefix = true
+	renames = true
 	tool = {{git.diff.tool}}
 	wsErrorHighlight = all
 [fetch]
 	prune = true
+	pruneTags = true
+	#all = true
 [filter "dotfiles"]
 	clean = "dotter/filter.sh %f"
 [gpg]
 	format = ssh
 [gpg.ssh]
 	allowedSignersFile = ~/.ssh/allowed_signers
+[help]
+	autocorrect = prompt
 [http]
 {{#if git.http.sslbackend}}
 	sslbackend = {{git.http.sslbackend}}
@@ -67,7 +73,7 @@
 {{/if}}
 {{/if}}
 [merge]
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 	guitool = {{git.merge.guitool}}
 	tool = {{git.merge.tool}}
 [mergetool]
@@ -79,9 +85,12 @@
 [push]
 	autoSetupRemote = true
 	default = simple
+	followTags = true
 	recurseSubmodules = check
 [rebase]
 	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [rerere]
 	autoUpdate = true
 	enabled = true
@@ -89,6 +98,7 @@
 	fetchJobs = 0
 [tag]
 	gpgSign = {{git.tag.gpgsign}}
+	sort = version:refname
 [tig]
 	tab-size = 4
 [alias]
