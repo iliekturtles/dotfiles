@@ -133,7 +133,7 @@ ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
 [General]
-ColorSchemeHash=babca25f3a5cf7ece26a85de212ab43d0a141257
+ColorSchemeHash=8d483e98b770fbeba364db371382301dbfc92748
 
 [KDE]
 LookAndFeelPackage=org.kde.breezedark.desktop
@@ -161,6 +161,7 @@ Speedbar Width=140
 View Style=DetailTree
 
 [PreviewSettings]
+EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
 
 [WM]
