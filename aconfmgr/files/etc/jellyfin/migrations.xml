@@ -85,5 +85,9 @@
       <Item1>96c156a2-7a13-4b3b-a8b8-fb80c94d20c0</Item1>
       <Item2>RemoveDuplicatePlaylistChildren</Item2>
     </ValueTupleOfGuidString>
+    <ValueTupleOfGuidString>
+      <Item1>d34bfc33-5d2e-4790-8085-069ef6eecb4e</Item1>
+      <Item2>MigrateRatingLevels</Item2>
+    </ValueTupleOfGuidString>
   </Applied>
 </MigrationOptions>
