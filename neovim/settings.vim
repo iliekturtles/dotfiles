@@ -28,7 +28,6 @@ set nojoinspaces " Don't insert two spaces after punctuation when joining lines.
 set noshowmode
 set nowrap
 set nrformats-=octal " Disable octal when using CTRL-A and CTRL-X.
-set pastetoggle=<F2>
 set scrolloff=5
 set shiftwidth=4
 set showcmd
