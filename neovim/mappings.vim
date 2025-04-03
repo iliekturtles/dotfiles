@@ -26,6 +26,10 @@ nnoremap <leader>f :grep! ''<left>
 " Map space to stop search highlighting.
 nnoremap <leader><space> :noh<cr>
 
+" Map normal/insert mode F2 to toggle paste.
+nnoremap <silent> <f2> :set paste!<cr>
+inoremap <silent> <f2> <esc>:set paste!<cr>i
+
 " Map visual mode F2 to run the selection as an ex command.
 vnoremap <f2> :<c-u>exe join(getline("'<","'>"),'<bar>')<cr>
 
