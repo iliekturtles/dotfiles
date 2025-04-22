@@ -51,7 +51,6 @@
 	wsErrorHighlight = all
 [fetch]
 	prune = true
-	pruneTags = true
 	#all = true
 [filter "dotfiles"]
 	clean = "dotter/filter.sh %f"
