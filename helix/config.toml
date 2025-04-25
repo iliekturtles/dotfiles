@@ -32,6 +32,7 @@ d = "delete_selection_noyank"
 A-d = "delete_selection"
 J = "join_selections_space"
 A-J = "join_selections"
+A-r = ":config-reload"
 x = "extend_line"
 A-z = ":toggle soft-wrap.enable"
 Z = {Q = ":quit!", Z = ":write-quit!"}
