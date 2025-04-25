@@ -6,6 +6,7 @@ cursorline = true
 default-yank-register = "+"
 gutters = ["diagnostics", "spacer", "diff"]
 rulers = [101]
+text-width = 100
 true-color = true
 whitespace.render.nbsp = "all"
 whitespace.render.space = "all"
@@ -16,9 +17,12 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.soft-wrap]
+# wrap-at-text-width = true
+
 [editor.statusline]
-left = ["mode", "spinner", "file-name", "file-modification-indicator", "separator", "file-type", "file-line-ending", "file-encoding"]
-right = ["diagnostics", "selections", "primary-selection-length", "separator", "position-percentage", "total-line-numbers", "position"]
+left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "separator", "file-type", "file-line-ending", "file-encoding"]
+right = ["register", "diagnostics", "separator", "spacer", "version-control", "spacer", "separator", "selections", "primary-selection-length", "separator", "spacer", "position-percentage", "total-line-numbers", "position"]
 
 [editor.lsp]
 # enable = false
@@ -30,7 +34,17 @@ c = "change_selection_noyank"
 A-c = "change_selection"
 d = "delete_selection_noyank"
 A-d = "delete_selection"
+C-h = "jump_view_left"
 J = "join_selections_space"
 A-J = "join_selections"
-x = "extend_line"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
+A-r = ":config-reload"
+C-r = ":reload-all"
+X = "extend_line_above"
+A-z = ":toggle soft-wrap.enable"
 Z = {Q = ":quit!", Z = ":write-quit!"}
+
+[keys.select]
+X = "extend_line_above"
