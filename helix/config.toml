@@ -33,4 +33,5 @@ A-d = "delete_selection"
 J = "join_selections_space"
 A-J = "join_selections"
 x = "extend_line"
+A-z = ":toggle soft-wrap.enable"
 Z = {Q = ":quit!", Z = ":write-quit!"}
