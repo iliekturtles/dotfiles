@@ -40,7 +40,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
 "aconfmgr/files/etc/pacman.d/hooks/nvidia.hook" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.d/hooks/nvidia.hook", if = "(and dotter.packages.pacman dotter.packages.nvidia)" }
 "aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
-"aconfmgr/files/etc/ssh/sshd_config" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config", if = "dotter.packages.sshd" }
+"aconfmgr/files/etc/ssh/sshd_config.d/90-override.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config.d/90-override.conf", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
 "aconfmgr/files/etc/systemd/network/10-ethernet.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/10-ethernet.network", if = "systemd-networkd.ethernet" }
 "aconfmgr/files/etc/systemd/network/20-wlan.network" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/systemd/network/20-wlan.network", if = "systemd-networkd.wlan" }
