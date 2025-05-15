@@ -17,6 +17,7 @@ packages = [
 	"kde",
 	"keepassxc",
 	"linux",
+	"meld",
 	"neovim",
 	"neovide",
 	"neovim-qt",
