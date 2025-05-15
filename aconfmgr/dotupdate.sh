@@ -70,9 +70,11 @@ if ! systemctl is-enabled systemd-resolved.service > /dev/null; then
     sudo systemctl enable systemd-resolved.service
     sudo systemctl start systemd-resolved.service
 fi
+{{#if system-networkd.wlan}}
 
-if ! systemctl is-enabled iwd.service > /dev/null; then
-    sudo systemctl enable iwd.service
-    sudo systemctl start iwd.service
+if ! systemctl is-enabled NetworkManager.service > /dev/null; then
+    sudo systemctl enable NetworkManager.service
+    sudo systemctl start NetworkManager.service
 fi
+{{/if}}
 {{/if}}
