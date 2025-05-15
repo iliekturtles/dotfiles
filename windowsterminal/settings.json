@@ -4,14 +4,6 @@
     "actions": 
     [
         {
-            "command": "unbound",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
                 "action": "copy",
@@ -30,13 +22,7 @@
                 "monitor": "any",
                 "name": "notes"
             },
-            "id": "User.globalSummon.ECEAEB3C",
-            "keys": "win+sc(41)"
-        },
-        {
-            "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.globalSummon.ECEAEB3C"
         },
         {
             "command": 
@@ -45,14 +31,40 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         }
     ],
     "copyFormatting": "all",
     "copyOnSelect": false,
     "defaultProfile": "{{#if dotter.packages.msys2}}{17da3cac-b318-431e-8a3e-7fcdefe6d114}{{else}}{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}{{/if}}",
     "firstWindowPreference": "persistedWindowLayout",
+    "keybindings": 
+    [
+        {
+            "id": null,
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.globalSummon.ECEAEB3C",
+            "keys": "win+sc(41)"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
     "launchMode": "maximized",
     "minimizeToNotificationArea": true,
     "newTabMenu": 
