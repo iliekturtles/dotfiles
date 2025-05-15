@@ -221,6 +221,8 @@ lts = false
 surface = false
 tpmoverride = false
 
+[meld]
+
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
 

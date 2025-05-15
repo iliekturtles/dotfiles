@@ -1,0 +1,13 @@
+[/]
+enable-space-drawer=true
+highlight-current-line=true
+highlight-syntax=true
+indent-width=4
+prefer-dark-theme=true
+show-line-numbers=true
+style-scheme='classic'
+wrap-mode='none'
+
+[window-state]
+height=1393
+width=1280
