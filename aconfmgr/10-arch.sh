@@ -49,7 +49,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.kde}}AddPackage sddm-kcm # KDE Config Module for SDDM{{/if}}
 {{#if dotter.packages.kde}}AddPackage spectacle # KDE screenshot capture utility{{/if}}
 {{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
-{{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage --foreign iwgtk # Lightweight wireless networking GUI (front-end for iwd){{/if}}{{/if}}
+{{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage plasma-nm # Plasma applet written in QML for managing network connections{{/if}}{{/if}}
 {{#if dotter.packages.keepassxc}}AddPackage keepassxc # Cross-platform community-driven port of Keepass password manager{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
@@ -89,8 +89,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.signal}}AddPackage signal-desktop # Signal Private Messenger for Linux{{/if}}
 {{#if dotter.packages.ssh}}AddPackage openssh # SSH protocol implementation for remote login, command execution and file transfer{{/if}}
 {{#if dotter.packages.starship}}AddPackage starship # The cross-shell prompt for astronauts{{/if}}
-{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage iwd # Internet Wireless Daemon{{/if}}{{/if}}
-{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage wireless_tools # Tools allowing to manipulate the Wireless Extensions{{/if}}{{/if}}
+{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}AddPackage networkmanager # Network connection manager and user applications{{/if}}{{/if}}
 {{#if dotter.packages.tig}}AddPackage tig # Text-mode interface for Git.{{/if}}
 {{#if dotter.packages.tmux}}AddPackage tmux # Terminal multiplexer{{/if}}
 {{#if dotter.packages.vscode}}AddPackage --foreign visual-studio-code-bin # Visual Studio Code (vscode): Editor for building and debugging modern web and cloud applications (official binary version){{/if}}
@@ -157,7 +156,6 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '/run/systemd/resolve/resolv.conf'{{/if}}
 {{#if systemd-networkd.ethernet}}CopyFile '/etc/systemd/network/10-ethernet.network'{{/if}}
 {{#if systemd-networkd.wlan}}CopyFile '/etc/systemd/network/20-wlan.network'{{/if}}
-{{#if systemd-networkd.wlan}}CreateDir '/etc/iwd'{{/if}}
 {{#if systemd-networkd.wwan}}CopyFile '/etc/systemd/network/30-wwan.network'{{/if}}
 {{#unless dotter.packages.wsl}}CreateLink '/etc/resolv.conf' '../run/systemd/resolve/stub-resolv.conf'{{/unless}}
 
@@ -220,6 +218,7 @@ IgnorePath '/usr/share/*'
 IgnorePath '/var/*'
 {{#if dotter.packages.mullvad-vpn}}IgnorePath '/etc/mullvad-vpn/account-history.json'{{/if}}
 {{#if dotter.packages.mullvad-vpn}}IgnorePath '/etc/mullvad-vpn/device.json'{{/if}}
+{{#if dotter.packages.systemd-networkd}}{{#if systemd-networkd.wlan}}IgnorePath '/etc/NetworkManager'{{/if}}{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/hosts'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/ld.so.conf.d/ld.wsl.conf'{{/if}}
 {{#if dotter.packages.wsl}}IgnorePath '/etc/timezone'{{/if}}
