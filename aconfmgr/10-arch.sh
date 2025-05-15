@@ -148,7 +148,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
 {{#if dotter.packages.pacman}}{{#if dotter.packages.nvidia}}CopyFile '/etc/pacman.d/hooks/nvidia.hook'{{/if}}{{/if}}
-{{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config'{{/if}}
+{{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config.d/90-override.conf'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
 {{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' group utmp{{/if}}
 {{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' mode 2755{{/if}}
