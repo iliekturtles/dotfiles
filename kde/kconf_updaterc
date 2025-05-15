@@ -1,7 +1,13 @@
 updateInfoAdded=true
 
+[dolphin_detailsmodesettings.upd]
+done=rename-leading-padding,rename-side-padding,move-content-display
+
+[dolphin_statusandlocationbarssettings.upd]
+done=move-content-display,25.04-convert-bool-showstatusbar-to-enum-showstatusbar
+
 [gtkconfig.upd]
-done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option
+done=gtk_theme,dont_use_gtk_css_for_window_decorations,remove_deprecated_gtk4_option,25.04-convert-bool-showstatusbar-to-enum-showstatusbar
 
 [kcalcrc.upd]
 done=remove_deprecated_gtk4_option
