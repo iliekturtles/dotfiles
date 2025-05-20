@@ -36,6 +36,7 @@ if hash cmake 2>/dev/null; then
     RUSTFLAGS="-C target-cpu=native" cargo install-update -i \
         bacon \
         {{#if dotter.packages.bat}}bat{{/if}} \
+        cargo-expand \
         cargo-sweep \
         cargo-update \
         {{#if dotter.packages.delta}}git-delta{{/if}} \
@@ -48,7 +49,6 @@ if hash cmake 2>/dev/null; then
         #cargo-asm \
         #cargon-binstall \
         #cargo-deadlinks \
-        #cargo-expand \
         #cargo-outdated \
         #dua-cli \
         #fd-find \
