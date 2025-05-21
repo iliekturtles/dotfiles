@@ -24,8 +24,10 @@
 {{#if dotter.packages.delta}}
 [delta]
 	features = decorations
+{{#if dotter.packages.vscode}}
 	hyperlinks = true
 	hyperlinks-file-link-format = "vscode://file/{path}:{line}"
+{{/if}}
 	line-numbers = true
 	navigate = true
 	tabs = 4
