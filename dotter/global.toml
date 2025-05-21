@@ -194,7 +194,7 @@ signingKey = "~/.ssh/id_rsa"
 "kde/systemmonitorrc" = "$XDG_CONFIG_HOME/systemmonitorrc"
 "kde/systemsettingsrc" = "$XDG_CONFIG_HOME/systemsettingsrc"
 "kde/Trolltech.conf" = "$XDG_CONFIG_HOME/Trolltech.conf"
-"kde/user-dirs.dirs" = "$XDG_CONFIG_HOME/user-dirs.dirs"
+"kde/user-dirs.dirs" = { type = "template", target = "$XDG_CONFIG_HOME/user-dirs.dirs" }
 "kde/user-dirs.locale" = "$XDG_CONFIG_HOME/user-dirs.locale"
 "kde/xsettingsd/xsettingsd.conf" = "$XDG_CONFIG_HOME/xsettingsd/xsettingsd.conf"
 #"kde/kwinoutputconfig-$HOSTNAME.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
