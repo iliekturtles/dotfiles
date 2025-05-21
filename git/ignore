@@ -1,5 +1,7 @@
+{{#if dotter.packages.vscode}}
 .vscode/
 
+{{/if}}
 .gsession.vim
 .session.vim
 ~$*.xlsx
