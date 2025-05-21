@@ -34,7 +34,6 @@ packages = [
 	"systemd-networkd",
 	"tig",
 	"tmux",
-	"vscode",
 	"xsv",
 ]
 
