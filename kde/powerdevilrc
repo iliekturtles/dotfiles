@@ -1,26 +1,37 @@
 [AC][Display]
-DimDisplayWhenIdle=false
+DimDisplayIdleTimeoutSec=240
+DisplayBrightness=100
 TurnOffDisplayIdleTimeoutSec=300
+UseProfileSpecificDisplayBrightness=true
+
+[AC][Performance]
+PowerProfile=performance
 
 [AC][SuspendAndShutdown]
 AutoSuspendAction=0
 LidAction=64
-PowerButtonAction=64
+PowerButtonAction=8
 
 [Battery][Display]
 DimDisplayIdleTimeoutSec=240
 DisplayBrightness=50
 UseProfileSpecificDisplayBrightness=true
 
+[Battery][Performance]
+PowerProfile=balanced
+
 [Battery][SuspendAndShutdown]
 LidAction=64
-PowerButtonAction=1
+PowerButtonAction=8
 SleepMode=3
 
 [LowBattery][Display]
 DisplayBrightness=20
 
+[LowBattery][Performance]
+PowerProfile=power-saver
+
 [LowBattery][SuspendAndShutdown]
 LidAction=64
-PowerButtonAction=1
+PowerButtonAction=8
 SleepMode=3
