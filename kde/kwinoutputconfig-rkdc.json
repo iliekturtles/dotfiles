@@ -4,7 +4,6 @@
             {
                 "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
-                "brightness": 1,
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "eDP-1",
@@ -14,7 +13,6 @@
                 "iccProfilePath": "",
                 "mode": {
                     "height": 1600,
-                    "refreshRate": 60002,
                     "width": 2560
                 },
                 "overscan": 0,
@@ -29,14 +27,12 @@
             {
                 "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
-                "brightness": 1,
                 "colorProfileSource": "sRGB",
                 "connectorName": "Unknown-1",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
                 "mode": {
                     "height": 1600,
-                    "refreshRate": 60000,
                     "width": 2560
                 },
                 "overscan": 0,
