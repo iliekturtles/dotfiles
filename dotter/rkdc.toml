@@ -1,8 +1,8 @@
 includes = ["dotter/local-includes.toml"]
 packages = [
 	"aconfmgr",
-	"amd",
 	"alacritty",
+	"amd",
 	"bash",
 	"bat",
 	"chrome",
@@ -18,9 +18,8 @@ packages = [
 	"keepassxc",
 	"linux",
 	"meld",
-	"neovim",
 	"neovide",
-	"neovim-qt",
+	"neovim",
 	"nvidia",
 	"onedrive",
 	"paru",
