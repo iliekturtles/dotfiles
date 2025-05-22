@@ -54,6 +54,3 @@ default-kernel = "arch-surface"
 lts = true
 surface = true
 tpmoverride = true
-
-[variables.systemd-networkd]
-wlan = true
