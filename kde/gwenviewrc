@@ -4,7 +4,6 @@ SideBarPage=operations
 
 [MainWindow]
 MenuBar=Disabled
-ToolBarsMovable=Disabled
 
 [SideBar]
 IsVisible ViewMode=true
