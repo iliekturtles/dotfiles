@@ -132,14 +132,15 @@ autocrlf = "input"
 helper = "/usr/lib/git-core/git-credential-libsecret"
 
 [git.variables.git.diff]
-tool = "nvimdiff"
+guitool = ""
+tool = ""
 
 [git.variables.git.http]
 sslbackend = ""
 
 [git.variables.git.merge]
 guitool = ""
-tool = "nvimdiff"
+tool = ""
 
 [git.variables.git.safe]
 directory = []
@@ -224,7 +225,8 @@ lts = false
 surface = false
 tpmoverride = false
 
-[meld]
+[meld.variables.meld]
+tool = "meld"
 
 [msys2.files]
 "msys2/etc/nsswitch.conf" = "C:/msys2/etc/nsswitch.conf"
@@ -242,6 +244,7 @@ tpmoverride = false
 
 [neovim.variables.neovim]
 EDITOR = "nvim"
+tool = "nvimdiff"
 
 [neovide]
 depends = ["neovim"]
@@ -334,6 +337,9 @@ default-terminal = ""
 
 [tortoisegit]
 depends = ["git"]
+
+[tortoisegit.variables.tortoisegit]
+tool = "tortoisemerge"
 
 [vscode.files]
 "vscode/local/bin/code" = { type = "symbolic", target = "~/.local/bin/code", if = "dotter.packages.linux" }

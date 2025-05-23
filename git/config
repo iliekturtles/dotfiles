@@ -47,9 +47,10 @@
 [diff]
 	algorithm = histogram
 	colorMoved = default
+	guitool = {{first_non_empty git.diff.guitool meld.tool tortoisegit.tool}}
 	mnemonicPrefix = true
 	renames = true
-	tool = {{git.diff.tool}}
+	tool = {{first_non_empty git.diff.tool neovim.tool}}
 	wsErrorHighlight = all
 [fetch]
 	prune = true
@@ -75,8 +76,8 @@
 {{/if}}
 [merge]
 	conflictStyle = zdiff3
-	guitool = {{git.merge.guitool}}
-	tool = {{git.merge.tool}}
+	guitool = {{first_non_empty git.merge.guitool meld.tool tortoisegit.tool}}
+	tool = {{first_non_empty git.merge.tool neovim.tool}}
 [mergetool]
 	keepBackup = false
 [pretty]

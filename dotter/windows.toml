@@ -7,9 +7,6 @@ helper = "" # Git credential manager is used implicitly.
 [git.variables.git.http]
 sslbackend = "schannel"
 
-[git.variables.git.merge]
-guitool = "tortoisemerge"
-
 [helix.files]
 "helix/config.toml" = "$APPDATA/helix/config.toml"
 "helix/languages.toml" = "$APPDATA/helix/languages.toml"
