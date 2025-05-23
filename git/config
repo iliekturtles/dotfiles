@@ -54,7 +54,7 @@
 	wsErrorHighlight = all
 [fetch]
 	prune = true
-	#all = true
+	; all = true
 [filter "dotfiles"]
 	clean = "dotter/filter.sh %f"
 [gpg]
@@ -70,7 +70,7 @@
 [interactive]
 {{#if dotter.packages.delta}}
 {{#if (eq dotter.os "unix")}}
-	# Pipe bug in git-for-windows 1.42.
+	; Pipe bug in git-for-windows 1.42.
 	diffFilter = delta --color-only --features=interactive
 {{/if}}
 {{/if}}
