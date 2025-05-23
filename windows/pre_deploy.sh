@@ -9,7 +9,7 @@ function setenv() {
 }
 
 echo Setting shell variables...
-setenv EDITOR "{{shell.EDITOR}}"
+setenv EDITOR "{{first_non_empty shell.EDITOR neovim.EDITOR helix.EDITOR}}"
 setenv LESS "{{shell.LESS}}"
 
 # Explicitly set XDG variables as default values are set in dotter.sh.
