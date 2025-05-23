@@ -155,6 +155,9 @@ signingKey = "~/.ssh/id_rsa"
 "helix/languages.toml" = "$XDG_CONFIG_HOME/helix/languages.toml"
 "helix/themes/onedarkerest.toml" = "$XDG_CONFIG_HOME/helix/themes/onedarkerest.toml"
 
+[helix.variables.helix]
+EDITOR = "helix"
+
 [htop.files]
 "htop/htoprc" = { type = "template", target = "$XDG_CONFIG_HOME/htop/htoprc" }
 
@@ -237,6 +240,9 @@ tpmoverride = false
 "neovim/statusline.vim" = "$XDG_CONFIG_HOME/nvim/statusline.vim"
 "neovim/ui.vim" = "$XDG_CONFIG_HOME/nvim/ui.vim"
 
+[neovim.variables.neovim]
+EDITOR = "nvim"
+
 [neovide]
 depends = ["neovim"]
 
@@ -271,7 +277,7 @@ CARGO_HOME = "$XDG_DATA_HOME/cargo"
 "shell/dotupdate" = "~/.local/bin/dotupdate"
 
 [shell.variables.shell]
-EDITOR = "nvim"
+EDITOR = ""
 Encoding = "UTF-8"
 LESS = "-iFR -x4 --incsearch --mouse --wheel-lines=4"
 Locale = "en_US"
