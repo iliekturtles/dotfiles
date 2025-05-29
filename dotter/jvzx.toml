@@ -16,6 +16,7 @@ packages = [
 	"kde",
 	"keepassxc",
 	"linux",
+	"marksman",
 	"meld",
 	"mullvad-vpn",
 	"neovide",
