@@ -224,6 +224,8 @@ lts = false
 surface = false
 tpmoverride = false
 
+[marksman]
+
 [meld.variables.meld]
 tool = "meld"
 
