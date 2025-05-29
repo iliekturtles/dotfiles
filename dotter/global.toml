@@ -38,7 +38,6 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/modprobe.d/nvidia.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/nvidia.conf", if = "dotter.packages.nvidia" }
 "aconfmgr/files/etc/mullvad-vpn/settings.json" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mullvad-vpn/settings.json", if = "dotter.packages.mullvad-vpn" }
 "aconfmgr/files/etc/pacman.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.conf", if = "dotter.packages.pacman" }
-"aconfmgr/files/etc/pacman.d/hooks/nvidia.hook" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/pacman.d/hooks/nvidia.hook", if = "(and dotter.packages.pacman dotter.packages.nvidia)" }
 "aconfmgr/files/etc/sddm.conf.d/kde_settings.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sddm.conf.d/kde_settings.conf", if = "dotter.packages.kde" }
 "aconfmgr/files/etc/ssh/sshd_config.d/90-override.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/ssh/sshd_config.d/90-override.conf", if = "dotter.packages.sshd" }
 "aconfmgr/files/etc/sudoers" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/sudoers" }
