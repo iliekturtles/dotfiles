@@ -55,24 +55,26 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}
 {{#if dotter.packages.linux}}AddPackage power-profiles-daemon # Makes power profiles handling available over D-Bus{{/if}}
+{{#if dotter.packages.linux}}{{#if dotter.packages.nvidia}}AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage asusctl # Asus laptop control utilities{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage rog-control-center # Asus laptop control utilities{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage supergfxctl # A utility for Linux graphics switching on Intel/AMD iGPU + nVidia dGPU laptops{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage switcheroo-control # D-Bus service to check the availability of dual-GPU{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage linux-g14 # The g14 Linux kernel and modules{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage linux-g14-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}{{#if dotter.packages.nvidia}}AddPackage linux-g14-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}AddPackage linux-lts # The LTS Linux kernel and modules{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.lts}}{{#if dotter.packages.nvidia}}AddPackage linux-lts-headers # Headers and scripts for building modules for the LTS Linux kernel{{/if}}{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage iptsd # Userspace daemon for Intel Precise Touch & Stylus{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-firmware-marvell # Firmware files for Linux - marvell / Firmware for Marvell devices{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface # The Linux kernel and modules{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.surface}}{{#if dotter.packages.nvidia}}AddPackage linux-surface-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}{{/if}}
 {{#if dotter.packages.meld}}AddPackage meld # Compare files, directories and working copies{{/if}}
 {{#if dotter.packages.mullvad-vpn}}AddPackage --foreign mullvad-vpn-bin # The Mullvad VPN client app for desktop{{/if}}
 {{#if dotter.packages.neovide}}AddPackage neovide # No Nonsense Neovim Client in Rust{{/if}}
 {{#if dotter.packages.neovim-qt}}AddPackage neovim-qt # GUI for Neovim{{/if}}
 {{#if dotter.packages.neovim}}AddPackage neovim # Fork of Vim aiming to improve user experience, plugins, and GUIs{{/if}}
-{{#if dotter.packages.nvidia}}AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel{{/if}}
-{{#if dotter.packages.nvidia}}AddPackage nvidia-dkms # NVIDIA drivers - module sources{{/if}}
+{{#if dotter.packages.nvidia}}AddPackage lib32-nvidia-utils # NVIDIA drivers utilities (32-bit){{/if}}
+{{#if dotter.packages.nvidia}}AddPackage nvidia-open-dkms # NVIDIA drivers - module sources{{/if}}
 {{#if dotter.packages.onedrive}}AddPackage --foreign onedrive-abraunegg # Free OneDrive client written in D - abraunegg's fork. Follows the releases on https://github.com/abraunegg/onedrive/releases{{/if}}
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
@@ -148,7 +150,6 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.nvidia}}CopyFile '/etc/modprobe.d/nvidia.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/pacman.conf'{{/if}}
 {{#if dotter.packages.pacman}}CopyFile '/etc/makepkg.conf.d/localcompression.conf'{{/if}}
-{{#if dotter.packages.pacman}}{{#if dotter.packages.nvidia}}CopyFile '/etc/pacman.d/hooks/nvidia.hook'{{/if}}{{/if}}
 {{#if dotter.packages.sshd}}CopyFile '/etc/ssh/sshd_config.d/90-override.conf'{{/if}}
 {{#if dotter.packages.systemd-networkd}}CopyFile '/usr/lib/systemd/system/systemd-networkd-wait-online.service'{{/if}}
 {{#if dotter.packages.tmux}}SetFileProperty '/usr/lib/utempter/utempter' group utmp{{/if}}
