@@ -113,6 +113,7 @@ depends = ["shell"]
 "games/local/share/applications/steam.desktop" = "~/.local/share/applications/steam.desktop"
 
 [games.variables.games]
+minecraft = false
 poe = { pob = false, awakened = false }
 steam = { screensaver-fix = true }
 wow = { curseforge = false }
