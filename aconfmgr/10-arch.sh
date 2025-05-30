@@ -20,11 +20,13 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.firefox}}AddPackage firefox # Standalone web browser from mozilla.org{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.games}}AddPackage --foreign proton-ge-custom-bin # A fancy custom distribution of Valves Proton with various patches{{/if}}
+{{#if dotter.packages.games}}AddPackage --foreign protontricks # A simple wrapper that does winetricks things for Proton enabled games.{{/if}}
 {{#if dotter.packages.games}}AddPackage discord # All-in-one voice and text chat for gamers{{/if}}
 {{#if dotter.packages.games}}AddPackage gamemode # A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS{{/if}}
 {{#if dotter.packages.games}}AddPackage lib32-gamemode # A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS{{/if}}
 {{#if dotter.packages.games}}AddPackage steam # Valve's digital software delivery system{{/if}}
 {{#if dotter.packages.games}}AddPackage ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New{{/if}}
+{{#if dotter.packages.games}}{{#if games.minecraft}}AddPackage --foreign minecraft-launcher # Official Minecraft Launcher{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.poe.awakened}}AddPackage --foreign awakened-poe-trade-bin # Path of Exile trading app for price checking{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.poe.pob}}AddPackage --foreign path-of-building-community-git # An offline build planner for Path of Exile using PoBFrontend, LocalIdentity's fork{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.steam.screensaver-fix}}AddPackage --foreign steam-screensaver-fix # Fix for steam screensaving bug.{{/if}}{{/if}}
