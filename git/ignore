@@ -2,6 +2,12 @@
 .vscode/
 
 {{/if}}
+{{#if dotter.packages.neovim}}
+{{#if (or dotter.packages.neovide dotter.packages.neovim-qt)}}
 .gsession.vim
+{{/if}}
 .session.vim
+{{/if}}
+{{#if (eq dotter.os "windows")}}
 ~$*.xlsx
+{{/if}}
