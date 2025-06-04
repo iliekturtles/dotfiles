@@ -58,12 +58,11 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}
 {{#if dotter.packages.linux}}AddPackage power-profiles-daemon # Makes power profiles handling available over D-Bus{{/if}}
 {{#if dotter.packages.linux}}{{#if dotter.packages.nvidia}}AddPackage linux-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage asusctl # Asus laptop control utilities{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage rog-control-center # Asus laptop control utilities{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage supergfxctl # A utility for Linux graphics switching on Intel/AMD iGPU + nVidia dGPU laptops{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage switcheroo-control # D-Bus service to check the availability of dual-GPU{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage linux-g14 # The g14 Linux kernel and modules{{/if}}{{/if}}
-{{#if dotter.packages.linux}}{{#if linux.g14}}{{#if dotter.packages.nvidia}}AddPackage linux-g14-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage --foreign rog-control-center # Asus laptop control utilities{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage --foreign supergfxctl # A utility for Linux graphics switching on Intel/AMD iGPU + nVidia dGPU laptops{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.asus}}AddPackage --foreign plasma6-applets-supergfxctl # KDE Plasma plasmoid for supergfxctl{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}AddPackage --foreign linux-g14 # The g14 Linux kernel and modules{{/if}}{{/if}}
+{{#if dotter.packages.linux}}{{#if linux.g14}}{{#if dotter.packages.nvidia}}AddPackage --foreign linux-g14-headers # Headers and scripts for building modules for the Linux kernel{{/if}}{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}AddPackage linux-lts # The LTS Linux kernel and modules{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.lts}}{{#if dotter.packages.nvidia}}AddPackage linux-lts-headers # Headers and scripts for building modules for the LTS Linux kernel{{/if}}{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.surface}}AddPackage iptsd # Userspace daemon for Intel Precise Touch & Stylus{{/if}}{{/if}}
