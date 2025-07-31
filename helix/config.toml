@@ -19,6 +19,7 @@ select = "underline"
 
 [editor.soft-wrap]
 # wrap-at-text-width = true
+enable = false # https://github.com/helix-editor/helix/issues/12512
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "separator", "file-type", "file-line-ending", "file-encoding"]
