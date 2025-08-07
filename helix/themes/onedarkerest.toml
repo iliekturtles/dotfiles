@@ -1,11 +1,5 @@
 inherits = "onedarker"
 
-"ui.cursorline.primary" = { bg = "dark-black" }
-"ui.selection" = { modifiers = [ "reversed" ] }
+"tag" = { fg = "purple" }
 
-"punctuation.bracket" = "blue"
-"tag" = "purple"
-"type.parameter" = "green"
-
-[palette]
-dark-black = "#12100E"
+"ui.virtual.jump-label" = { fg = "gold", modifiers = ["bold", "underlined"] }
