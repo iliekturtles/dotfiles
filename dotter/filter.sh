@@ -49,10 +49,6 @@ case "$1" in
         remove_section_key "SideBar" "InformationSplitterSizes"
         remove_section_key "SideBar" "SideBarSplitterSizes"
         ;;
-    "kde/kconf_updaterc")
-        remove_key "ctime"
-        remove_key "mtime"
-        ;;
     "kde/kdeglobals")
         remove_section_key "DirSelect Dialog" "History Items\\[\\\$e\\]"
         remove_section_key "DirSelect Dialog" "DirSelectDialog Size"
