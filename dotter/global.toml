@@ -49,6 +49,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/wsl.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/wsl.conf", if = "dotter.packages.wsl" }
 "aconfmgr/files/etc/xdg/reflector/reflector.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/xdg/reflector/reflector.conf" }
 "aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/lib/systemd/system/systemd-networkd-wait-online.service", if = "dotter.packages.systemd-networkd" }
+"aconfmgr/files/usr/share/sddm/themes/breeze/theme.conf.user" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/usr/share/sddm/themes/breeze/theme.conf.user", if = "dotter.packages.kde" }
 
 [alacritty.files]
 "alacritty/alacritty.toml" = "$XDG_CONFIG_HOME/alacritty.toml"
