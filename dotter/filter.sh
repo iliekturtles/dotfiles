@@ -53,9 +53,6 @@ case "$1" in
         remove_section_key "DirSelect Dialog" "History Items\\[\\\$e\\]"
         remove_section_key "DirSelect Dialog" "DirSelectDialog Size"
         ;;
-    "kde/kwinoutputconfig-"*".json")
-        args+=(-e "/\"(brightness|refreshRate)\":/d")
-        ;;
     "kde/plasmashellrc")
         remove_key "PreloadWeight"
         ;;
