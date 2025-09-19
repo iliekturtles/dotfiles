@@ -203,13 +203,25 @@ EDITOR = "helix"
 "kde/user-dirs.dirs" = { type = "template", target = "$XDG_CONFIG_HOME/user-dirs.dirs" }
 "kde/user-dirs.locale" = "$XDG_CONFIG_HOME/user-dirs.locale"
 "kde/xsettingsd/xsettingsd.conf" = "$XDG_CONFIG_HOME/xsettingsd/xsettingsd.conf"
-#"kde/kwinoutputconfig-$HOSTNAME.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
+"kde/kwinoutputconfig.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
 
 [kde.variables.kde]
-scale = 1
 taskManagerScreen = 0
 
-[kde.variables.kde.kwinrc.tiling]
+[kde.variables.kde.monitors.0]
+uuid = ""
+brightness = 1
+connectorName = "eDP-1"
+detectedDdcCi = false
+edidHash = ""
+edidIdentifier = ""
+height = 1920
+refreshRate = 60000
+scale = 1
+vrrPolicy = "Automatic"
+width = 1080
+x = 0
+y = 0
 
 [keepass]
 

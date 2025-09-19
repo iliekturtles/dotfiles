@@ -38,9 +38,6 @@ packages = [
 	"xsv",
 ]
 
-[files]
-"kde/kwinoutputconfig-jvzx.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
-
 [variables]
 
 [variables.games]
@@ -50,9 +47,32 @@ gcompris = true
 [variables.kde]
 taskManagerScreen = 1
 
-[variables.kde.kwinrc.tiling]
-"5e038539-1348-5f39-b48c-d4ccf7420d2c" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
-"eefebce9-52d3-5bff-8490-46b59c2db081" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+[variables.kde.monitors.0]
+connectorName = "DP-1"
+detectedDdcCi = true
+edidHash = "7b89b9b09c780a7deea1f975db2cde78"
+edidIdentifier = "DEL 16857 1095512652 36 2021 0"
+height = 1440
+refreshRate = 143912
+uuid = "6dbf2330-3333-47c2-856c-c416a0ebbaae"
+width = 2560
+x = 2560
+y = 94
+
+[variables.kde.monitors.1]
+brightness = 1
+connectorName = "DP-2"
+detectedDdcCi = true
+edidHash = "d35d924c0e4f7078e0b8e01e59c5c42b"
+edidIdentifier = "DEL 16857 1095457100 36 2021 0"
+height = 1440
+refreshRate = 143912
+scale = 1
+uuid = "51f12c31-043f-4d6c-8694-de20392f7cff"
+vrrPolicy = "Automatic"
+width = 2560
+x = 0
+y = 0
 
 [variables.linux]
 lts = true

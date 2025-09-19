@@ -1,29 +1,38 @@
 [
     {
         "data": [
+            {{#each kde.monitors}}
             {
+                "allowDdcCi": true,
                 "allowSdrSoftwareBrightness": false,
                 "autoRotation": "InTabletMode",
+                "brightness": {{this.brightness}},
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
-                "connectorName": "eDP-1",
-                "edidHash": "df261155887e60481f3c52a2f9831a79",
-                "edidIdentifier": "SEC 13634 0 0 2013 0",
+                "connectorName": "{{this.connectorName}}",
+                "detectedDdcCi": {{this.detectedDdcCi}},
+                "edidHash": "{{this.edidHash}}",
+                "edidIdentifier": "{{this.edidIdentifier}}",
+                "edrPolicy": "always",
                 "highDynamicRange": false,
                 "iccProfilePath": "",
+                "maxBitsPerColor": 0,
                 "mode": {
-                    "height": 1440,
-                    "width": 2160
+                    "height": {{this.height}},
+                    "refreshRate": {{this.refreshRate}},
+                    "width": {{this.width}}
                 },
                 "overscan": 0,
                 "rgbRange": "Automatic",
-                "scale": {{kde.scale}},
+                "scale": {{this.scale}},
                 "sdrBrightness": 200,
                 "sdrGamutWideness": 0,
                 "transform": "Normal",
-                "vrrPolicy": "Automatic",
+                "uuid": "{{this.uuid}}",
+                "vrrPolicy": "{{this.vrrPolicy}}",
                 "wideColorGamut": false
-            }
+            }{{#if (not @last)}},{{/if}}
+            {{/each}}
         ],
         "name": "outputs"
     },
@@ -32,15 +41,18 @@
             {
                 "lidClosed": false,
                 "outputs": [
+                    {{#each kde.monitors}}
                     {
                         "enabled": true,
-                        "outputIndex": 0,
+                        "outputIndex": {{@key}},
                         "position": {
-                            "x": 0,
-                            "y": 0
+                            "x": {{this.x}},
+                            "y": {{this.y}}
                         },
-                        "priority": 0
-                    }
+                        "priority": 0,
+                        "replicationSource": ""
+                    }{{#if (not @last)}},{{/if}}
+                    {{/each}}
                 ]
             },
             {
@@ -53,7 +65,8 @@
                             "x": 0,
                             "y": 0
                         },
-                        "priority": 0
+                        "priority": 0,
+                        "replicationSource": ""
                     }
                 ]
             }

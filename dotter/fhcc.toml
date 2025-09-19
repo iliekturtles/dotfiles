@@ -36,19 +36,19 @@ packages = [
 	"xsv",
 ]
 
-[files]
-"kde/kwinoutputconfig-fhcc.json" = "$XDG_CONFIG_HOME/kwinoutputconfig.json"
-
 [variables]
 
 [variables.games]
 poe = { pob = true, awakened = false }
 
-[variables.kde]
+[variables.kde.monitors.0]
+edidHash = "df261155887e60481f3c52a2f9831a79"
+edidIdentifier = "SEC 13634 0 0 2013 0"
+height = 1440
+refreshRate = 59955
 scale = 1.5
-
-[variables.kde.kwinrc.tiling]
-"6d9fe4df-7b78-5008-b1ee-2d74432082d4" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+uuid = "62d35f07-112c-454b-a436-f0c1bd912705"
+width = 2160
 
 [variables.linux]
 default-kernel = "arch-surface"
