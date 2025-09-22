@@ -15,6 +15,7 @@ packages = [
 	"jellyfin",
 	"kde",
 	"keepassxc",
+	"libreoffice",
 	"linux",
 	"marksman",
 	"meld",

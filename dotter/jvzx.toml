@@ -15,6 +15,7 @@ packages = [
 	"htop",
 	"kde",
 	"keepassxc",
+	"libreoffice",
 	"linux",
 	"marksman",
 	"meld",

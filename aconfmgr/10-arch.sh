@@ -53,6 +53,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
 {{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage plasma-nm # Plasma applet written in QML for managing network connections{{/if}}{{/if}}
 {{#if dotter.packages.keepassxc}}AddPackage keepassxc # Cross-platform community-driven port of Keepass password manager{{/if}}
+{{#if dotter.packages.libreoffice}}AddPackage libreoffice-{{libreoffice.version}} # LibreOffice branch which contains new features and program enhancements{{/if}}
 {{#if dotter.packages.linux}}AddPackage fwupd # Simple daemon to allow session software to update firmware{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux # The Linux kernel and modules{{/if}}
 {{#if dotter.packages.linux}}AddPackage linux-firmware # Firmware files for Linux{{/if}}

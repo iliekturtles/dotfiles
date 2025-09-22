@@ -215,6 +215,9 @@ taskManagerScreen = 0
 "keepassxc/autostart/org.keepassxc.KeePassXC.desktop" = "$XDG_CONFIG_HOME/autostart/org.keepassxc.KeePassXC.desktop"
 "keepassxc/keepassxc.ini" = "$XDG_CONFIG_HOME/keepassxc/keepassxc.ini"
 
+[libreoffice.variables.libreoffice]
+version = "fresh"
+
 [linux.variables.linux]
 asus = false
 bluetooth = false
