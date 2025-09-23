@@ -45,6 +45,7 @@ packages = [
 
 [variables.games]
 dolphin = false
+gcompris = true
 
 [variables.kde]
 taskManagerScreen = 1

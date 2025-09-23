@@ -115,6 +115,7 @@ depends = ["shell"]
 
 [games.variables.games]
 dolphin = false
+gcompris = false
 minecraft = false
 poe = { pob = false, awakened = false }
 steam = { screensaver-fix = true }
