@@ -53,3 +53,6 @@ taskManagerScreen = 1
 [variables.kde.kwinrc.tiling]
 "5e038539-1348-5f39-b48c-d4ccf7420d2c" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
 "eefebce9-52d3-5bff-8490-46b59c2db081" = { "layoutDirection" = "horizontal", "tiles" = [ { "width" = 0.25 }, { "width" = 0.5}, { "width" = 0.25 } ] }
+
+[variables.linux]
+lts = true
