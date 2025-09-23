@@ -59,10 +59,6 @@ case "$1" in
     "kde/plasmashellrc")
         remove_key "PreloadWeight"
         ;;
-    "kde/spectaclerc")
-        remove_section "Save"
-        remove_section_key "GuiConfig" "window-position"
-        ;;
     "kde/systemmonitorrc")
         remove_section_key "General" "height"
         remove_section_key "General" "lastVisitedPage"
