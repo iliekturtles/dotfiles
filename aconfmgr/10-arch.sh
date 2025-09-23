@@ -26,6 +26,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.games}}AddPackage lib32-gamemode # A daemon/lib combo that allows games to request a set of optimisations be temporarily applied to the host OS{{/if}}
 {{#if dotter.packages.games}}AddPackage steam # Valve's digital software delivery system{{/if}}
 {{#if dotter.packages.games}}AddPackage ttf-liberation # Font family which aims at metric compatibility with Arial, Times New Roman, and Courier New{{/if}}
+{{#if dotter.packages.games}}{{#if games.dolphin}}AddPackage dolphin-emu # A Gamecube and Wii emulator{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.minecraft}}AddPackage --foreign minecraft-launcher # Official Minecraft Launcher{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.poe.awakened}}AddPackage --foreign awakened-poe-trade-bin # Path of Exile trading app for price checking{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.poe.pob}}AddPackage --foreign path-of-building-community-git # An offline build planner for Path of Exile using PoBFrontend, LocalIdentity's fork{{/if}}{{/if}}

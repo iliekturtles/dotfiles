@@ -114,6 +114,7 @@ depends = ["shell"]
 "games/local/share/applications/steam.desktop" = "~/.local/share/applications/steam.desktop"
 
 [games.variables.games]
+dolphin = false
 minecraft = false
 poe = { pob = false, awakened = false }
 steam = { screensaver-fix = true }

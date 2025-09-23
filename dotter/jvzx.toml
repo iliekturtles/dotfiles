@@ -43,6 +43,9 @@ packages = [
 
 [variables]
 
+[variables.games]
+dolphin = false
+
 [variables.kde]
 taskManagerScreen = 1
 
