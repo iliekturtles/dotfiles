@@ -48,7 +48,7 @@ A-r = ":config-reload"
 C-r = ":reload-all"
 X = "extend_line_above"
 A-z = ":toggle soft-wrap.enable"
-Z = {Q = ":quit!", Z = ":write-quit!"}
+Z = {Q = ":quit-all!", Z = ":write-quit-all!"}
 F8 = "@ '<down><ret>" # Go to next item in last picker.
 S-F8 = "@ '<up><ret>" # Go to prev item in last picker.
 "{" = "goto_prev_paragraph"
