@@ -6,9 +6,6 @@ Rows=1
 [Effect-overview]
 BorderActivate=9
 
-[Effect-windowview]
-BorderActivateAll=9
-
 [Tiling]
 padding=4
 
