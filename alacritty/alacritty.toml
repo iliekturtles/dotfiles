@@ -53,5 +53,11 @@ yellow = "0xc38418"
 background = "0x1b1918"
 foreground = "0xa8a19f"
 
+# Match git SHA1 hashes.
+[[hints.enabled]]
+regex = "[a-f0-9]{7,}"
+action = "Copy"
+binding = { key = "S", mods = "Control|Shift" }
+
 [window]
 startup_mode = "Maximized"
