@@ -131,6 +131,7 @@ CreateLink '/etc/localtime' '/usr/share/zoneinfo/{{shell.LocalTimeZone}}'
 {{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.conf'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/mkinitcpio.d/linux.preset'{{/if}}
 {{#if dotter.packages.linux}}CopyFile '/etc/udev/hwdb.d/10-keyboard.hwdb'{{/if}}
+{{#if dotter.packages.linux}}{{#if dotter.packages.amd}}CopyFile /etc/mkinitcpio.conf.d/amd.conf{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/asusd.ron{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/aura_19b6.ron{{/if}}{{/if}}
 {{#if dotter.packages.linux}}{{#if linux.asus}}CopyFile /etc/asusd/fan_curves.ron{{/if}}{{/if}}
