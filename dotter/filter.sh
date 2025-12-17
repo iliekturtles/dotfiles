@@ -30,6 +30,7 @@ function remove_key() {
 
 case "$1" in
     "ckb-next/ckb-next.conf")
+        remove_section_key "Devices" ".+\\\\HwModified"
         remove_section_key "Devices" ".+\\\\Modified"
         ;;
     "kde/"*)
