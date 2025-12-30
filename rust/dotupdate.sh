@@ -54,9 +54,10 @@ if hash cmake 2>/dev/null; then
         #fd-find \
         #pastel \
         #tokei \
-
-    cargo sweep -i -r -v
 else
     echo "cargo install-update not installed (cmake missing)."
 fi
 {{/if}}
+
+# Clean old artifacts
+cargo sweep -i -r -v "{{shell.SOURCE_HOME}}"
