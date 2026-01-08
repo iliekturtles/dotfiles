@@ -19,7 +19,7 @@ concat = "dotter/helpers/concat.rhai"
 "aconfmgr/files/etc/bluetooth/input.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/input.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/main.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/main.conf", if = "linux.bluetooth" }
 "aconfmgr/files/etc/bluetooth/network.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/bluetooth/network.conf", if = "linux.bluetooth" }
-"aconfmgr/files/etc/mkinitcpio.conf.d/amd.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf.d/amd.conf", if = "dotter.packages.amd" }
+"aconfmgr/files/etc/mkinitcpio.conf.d/amdgpu.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf.d/amdgpu.conf", if = "dotter.packages.amdgpu" }
 "aconfmgr/files/etc/mkinitcpio.conf.d/asus.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/mkinitcpio.conf.d/asus.conf", if = "linux.asus" }
 "aconfmgr/files/etc/modprobe.d/supergfxd.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/modprobe.d/supergfxd.conf", if = "linux.asus" }
 "aconfmgr/files/etc/supergfxd.conf" = { type = "template", target = "$XDG_CONFIG_HOME/aconfmgr/files/etc/supergfxd.conf", if = "linux.asus" }
@@ -56,6 +56,8 @@ concat = "dotter/helpers/concat.rhai"
 "alacritty/alacritty.toml" = "$XDG_CONFIG_HOME/alacritty.toml"
 
 [amd]
+
+[amdgpu]
 
 [bash]
 depends = ["shell"]

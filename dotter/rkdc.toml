@@ -3,6 +3,7 @@ packages = [
 	"aconfmgr",
 	"alacritty",
 	"amd",
+	"amdgpu",
 	"bash",
 	"bat",
 	"chrome",
