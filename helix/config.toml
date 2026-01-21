@@ -37,13 +37,13 @@ d = "delete_selection_noyank"
 A-d = "delete_selection"
 D = "delete_char_backward"
 C-h = "jump_view_left"
-H = "@vghv" # Extend to begining of line.
+H = ["collapse_selection", "extend_to_first_nonwhitespace"]
 J = "join_selections_space"
 A-J = "join_selections"
 C-j = "jump_view_down"
 C-k = "jump_view_up"
 C-l = "jump_view_right"
-L = "@vglv" # Extend to end of line.
+L = ["collapse_selection", "extend_to_line_end"]
 A-r = ":config-reload"
 C-r = ":reload-all"
 X = "extend_line_above"
@@ -57,6 +57,8 @@ S-F8 = "@ '<up><ret>" # Go to prev item in last picker.
 "#" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_prev"]
 
 [keys.select]
+H = "extend_to_first_nonwhitespace"
+L = "extend_to_line_end"
 X = "extend_line_above"
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
