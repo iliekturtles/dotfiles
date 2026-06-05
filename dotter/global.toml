@@ -276,6 +276,8 @@ depends = ["neovim"]
 
 [nvidia]
 
+[obsidian]
+
 [onedrive.files]
 "onedrive/config" = "$XDG_CONFIG_HOME/onedrive/config"
 "onedrive/sync_list" = "$XDG_CONFIG_HOME/onedrive/sync_list"

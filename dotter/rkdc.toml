@@ -24,6 +24,7 @@ packages = [
 	"neovide",
 	"neovim",
 	"nvidia",
+	"obsidian",
 	"onedrive",
 	"paru",
 	"ripgrep",
