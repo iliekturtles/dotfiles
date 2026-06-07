@@ -19,6 +19,8 @@
                 "colorPowerTradeoff": "PreferEfficiency",
                 "colorProfileSource": "sRGB",
                 "connectorName": "{{this.connectorName}}",
+                "customModes": [
+                ],
                 "detectedDdcCi": {{this.detectedDdcCi}},
                 "edidHash": "{{this.edidHash}}",
                 "edidIdentifier": "{{this.edidIdentifier}}",
@@ -27,6 +29,7 @@
                 "iccProfilePath": "",
                 "maxBitsPerColor": 0,
                 "mode": {
+                    "flags": 0,
                     "height": {{this.height}},
                     "refreshRate": {{this.refreshRate}},
                     "width": {{this.width}}
@@ -59,7 +62,7 @@
                             "x": {{this.x}},
                             "y": {{this.y}}
                         },
-                        "priority": 0,
+                        "priority": {{math @key "+" 1}},
                         "replicationSource": ""
                     }{{#if (not @last)}},{{/if}}
                     {{/each}}
