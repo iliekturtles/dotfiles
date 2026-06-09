@@ -37,16 +37,16 @@ packages = [
 	"systemd-networkd",
 	"tig",
 	"tmux",
-	"xsv",
 ]
 
 [variables]
 
 [variables.games]
+minecraft = true
 poe = { pob = true, awakened = true }
 
 [variables.kde.monitors.0]
-brightness = 0.5
+brightness = 1
 edidHash = "7e603c90a43726c174aeb3705844d2cf"
 edidIdentifier = "TMX 1 0 18 2022 0"
 height = 1600

@@ -260,12 +260,14 @@ tool = "meld"
 depends = ["nerdfont"]
 
 [neovim.files]
-"neovim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
-"neovim/mappings.vim" = "$XDG_CONFIG_HOME/nvim/mappings.vim"
-"neovim/plugins.vim" = "$XDG_CONFIG_HOME/nvim/plugins.vim"
-"neovim/settings.vim" = "$XDG_CONFIG_HOME/nvim/settings.vim"
-"neovim/statusline.vim" = "$XDG_CONFIG_HOME/nvim/statusline.vim"
-"neovim/ui.vim" = "$XDG_CONFIG_HOME/nvim/ui.vim"
+"neovim/lazyvim.json" = "$XDG_CONFIG_HOME/nvim/lazyvim.json"
+"neovim/init.lua" = "$XDG_CONFIG_HOME/nvim/init.lua"
+"neovim/lua/config/autocmds.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/autocmds.lua"
+"neovim/lua/helpers.lua" = "$XDG_CONFIG_HOME/nvim/lua/helpers.lua"
+"neovim/lua/config/keymaps.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/keymaps.lua"
+"neovim/lua/config/lazy.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/lazy.lua"
+"neovim/lua/config/options.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/options.lua"
+"neovim/lua/plugins/core.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/core.lua"
 
 [neovim.variables.neovim]
 EDITOR = "nvim"

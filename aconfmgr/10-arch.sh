@@ -34,6 +34,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.games}}{{#if games.steam.screensaver-fix}}AddPackage --foreign steam-screensaver-fix # Fix for steam screensaving bug.{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}AddPackage --foreign curseforge # CurseForge desktop client for Linux{{/if}}{{/if}}
 {{#if dotter.packages.git}}AddPackage git # the fast distributed version control system{{/if}}
+{{#if dotter.packages.git}}AddPackage tk # A windowing toolkit for use with tcl{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
@@ -52,6 +53,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.kde}}AddPackage sddm # QML based X11 and Wayland display manager{{/if}}
 {{#if dotter.packages.kde}}AddPackage sddm-kcm # KDE Config Module for SDDM{{/if}}
 {{#if dotter.packages.kde}}AddPackage spectacle # KDE screenshot capture utility{{/if}}
+{{#if dotter.packages.kde}}AddPackage wl-clipboard # Command-line copy/paste utilities for Wayland{{/if}}
 {{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
 {{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage plasma-nm # Plasma applet written in QML for managing network connections{{/if}}{{/if}}
 {{#if dotter.packages.keepassxc}}AddPackage keepassxc # Cross-platform community-driven port of Keepass password manager{{/if}}
@@ -85,7 +87,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.onedrive}}AddPackage --foreign onedrive-abraunegg # Free OneDrive client written in D - abraunegg's fork. Follows the releases on https://github.com/abraunegg/onedrive/releases{{/if}}
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
-{{#if dotter.packages.paru}}AddPackage --foreign paru-bin # Feature packed AUR helper{{/if}}
+{{#if dotter.packages.paru}}AddPackage --foreign paru # Feature packed AUR helper{{/if}}
 {{#if dotter.packages.ripgrep}}AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep{{/if}}
 {{#if dotter.packages.rust}}AddPackage bacon # A background rust code checker{{/if}}
 {{#if dotter.packages.rust}}AddPackage cargo-expand # Subcommand to show result of macro expansion{{/if}}
