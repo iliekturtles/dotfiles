@@ -256,6 +256,9 @@ tool = "meld"
 [mullvad-vpn.files]
 "mullvad-vpn/gui_settings.json" = "$XDG_CONFIG_HOME/Mullvad VPN/gui_settings.json"
 
+[neovim]
+depends = ["nerdfont"]
+
 [neovim.files]
 "neovim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"
 "neovim/mappings.vim" = "$XDG_CONFIG_HOME/nvim/mappings.vim"
@@ -273,6 +276,8 @@ depends = ["neovim"]
 
 [neovim-qt]
 depends = ["neovim"]
+
+[nerdfont]
 
 [nvidia]
 
