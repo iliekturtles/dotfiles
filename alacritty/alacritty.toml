@@ -53,6 +53,11 @@ yellow = "0xc38418"
 background = "0x1b1918"
 foreground = "0xa8a19f"
 
+{{#if dotter.packages.nerdfont}}
+[font]
+normal = { family = "NotoSansM Nerd Font Mono", style = "Regular" }
+
+{{/if}}
 # Match git SHA1 hashes.
 [[hints.enabled]]
 regex = "[a-f0-9]{7,}"
