@@ -17,6 +17,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.ckb-next}}AddPackage ckb-next # Corsair Keyboard and Mouse RGB Driver{{/if}}
 {{#if dotter.packages.delta}}AddPackage git-delta # Syntax-highlighting pager for git and diff output{{/if}}
 {{#if dotter.packages.dotnet}}AddPackage dotnet-sdk # The .NET Core SDK{{/if}}
+{{#if dotter.packages.fd}}AddPackage fd # Simple, fast and user-friendly alternative to find{{/if}}
 {{#if dotter.packages.firefox}}AddPackage firefox # Standalone web browser from mozilla.org{{/if}}
 {{#if dotter.packages.fish}}AddPackage fish # Smart and user friendly shell intended mostly for interactive use{{/if}}
 {{#if dotter.packages.games}}AddPackage --foreign proton-ge-custom-bin # A fancy custom distribution of Valves Proton with various patches{{/if}}

@@ -88,6 +88,8 @@ DELTA_PAGER = "less -S"
 [dotnet.variables.dotnet]
 DOTNET_CLI_TELEMETRY_OPTOUT = 1
 
+[fd]
+
 [firefox.files]
 "firefox/local/bin/firefox" = "~/.local/bin/firefox"
 "firefox/local/share/applications/firefox.desktop" = "$XDG_DATA_HOME/applications/firefox.desktop"
@@ -245,7 +247,7 @@ tool = "meld"
 "mullvad-vpn/gui_settings.json" = "$XDG_CONFIG_HOME/Mullvad VPN/gui_settings.json"
 
 [neovim]
-depends = ["nerdfont", "ripgrep"]
+depends = ["fd", "nerdfont", "ripgrep"]
 
 [neovim.files]
 "neovim/init.vim" = "$XDG_CONFIG_HOME/nvim/init.vim"

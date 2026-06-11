@@ -39,6 +39,7 @@ if hash cmake 2>/dev/null; then
         cargo-expand \
         cargo-sweep \
         cargo-update \
+        {{#if dotter.packages.fd}}fd-find{{/if}} \
         {{#if dotter.packages.delta}}git-delta{{/if}} \
         hexyl \
         hyperfine \
