@@ -257,6 +257,7 @@ depends = ["fd", "nerdfont", "ripgrep"]
 "neovim/lua/config/lazy.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/lazy.lua"
 "neovim/lua/config/options.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/options.lua"
 "neovim/lua/plugins/core.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/core.lua"
+"neovim/lua/plugins/onedark.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/onedark.lua"
 "neovim/lua/plugins/snacks.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/snacks.lua"
 
 [neovim.variables.neovim]
