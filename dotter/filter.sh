@@ -71,6 +71,9 @@ case "$1" in
     "keepassxc/keepassxc.ini")
         remove_section "KeeShare"
         ;;
+    "neovim/lazyvim.json")
+        args+=(-e "/\"(NEWS\.md|doc\/news\.txt)\":/d")
+        ;;
     "signal/ephemeral.json")
         args+=(-e "/\"(maximized|width|height|x|y)\":/d")
         ;;
