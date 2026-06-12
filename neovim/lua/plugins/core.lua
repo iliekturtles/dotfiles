@@ -2,6 +2,7 @@ return {
     {
         "LazyVim/LazyVim",
         opts = {
+            colorscheme = "onedark",
             news = {
                 neovim = true,
             },
@@ -11,7 +12,7 @@ return {
             { "<leader>l", enabled = false },
             { "<leader>lc", function() LazyVim.news.changelog() end, desc = "LazyVim Changelog", },
             { "<leader>le", "<Cmd>LazyExtras<CR>", desc = "Lazy Extras" },
-            { "<leader>lh", function() Snacks.dashboard() end, desc = "Home screen" },
+            { "<leader>lh", function() Snacks.dashboard() end, desc = "Home screen", },
             { "<leader>ll", "<Cmd>Lazy<CR>", desc = "Lazy" },
         },
     },

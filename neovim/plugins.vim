@@ -1,7 +1,5 @@
 call plug#begin()
 
-" Plug 'iliekturtles/vim-unicon'
-Plug 'navarasu/onedark.nvim'
 " Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim', !has('g:vscode') ? {} : { 'on': [] }
 " Plug 'scrooloose/nerdtree'
