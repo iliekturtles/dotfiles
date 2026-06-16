@@ -20,7 +20,6 @@ set hidden " Allow for hidden buffers.
 set keywordprg=:help
 set laststatus=2 " Always show the status line.
 set lazyredraw
-set list listchars=tab:→ ,space:·,trail:·,nbsp:·
 if has('mouse')
     set mouse=a
 endif
@@ -28,7 +27,6 @@ set nojoinspaces " Don't insert two spaces after punctuation when joining lines.
 set noshowmode
 set nowrap
 set nrformats-=octal " Disable octal when using CTRL-A and CTRL-X.
-set scrolloff=5
 set shiftwidth=4
 set showcmd
 set showmatch

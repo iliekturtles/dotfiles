@@ -1,6 +1,3 @@
-" Set ',' as <leader>.
-let mapleader=','
-
 " Map ,, to ,'s original functionality.
 nnoremap <leader>, ,
 
