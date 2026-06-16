@@ -259,6 +259,7 @@ depends = ["fd", "nerdfont", "ripgrep"]
 "neovim/lua/plugins/core.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/core.lua"
 "neovim/lua/plugins/onedark.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/onedark.lua"
 "neovim/lua/plugins/snacks.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/snacks.lua"
+"neovim/lua/plugins/which-key.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/which-key.lua"
 
 [neovim.variables.neovim]
 EDITOR = "nvim"
