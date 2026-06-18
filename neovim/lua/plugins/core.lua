@@ -34,7 +34,7 @@ return {
     { "mfussenegger/nvim-lint", enabled = false },
     { "neovim/nvim-lspconfig", enabled = false },
     { "nvim-lua/plenary.nvim", enabled = false },
-    { "nvim-lualine/lualine.nvim", enabled = false },
+    -- { "nvim-lualine/lualine.nvim", enabled = false },
     { "nvim-mini/mini.ai", enabled = false },
     -- { "nvim-mini/mini.icons", enabled = false },
     { "nvim-mini/mini.pairs", enabled = false },
