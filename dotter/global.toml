@@ -255,6 +255,7 @@ depends = ["fd", "nerdfont", "ripgrep"]
 "neovim/lua/config/autocmds.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/autocmds.lua"
 "neovim/lua/config/keymaps.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/keymaps.lua"
 "neovim/lua/config/lazy.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/lazy.lua"
+"neovim/lua/config/neovide.lua" = { type = "symbolic", target = "$XDG_CONFIG_HOME/nvim/lua/config/neovide.lua", if = "dotter.packages.neovide" }
 "neovim/lua/config/options.lua" = "$XDG_CONFIG_HOME/nvim/lua/config/options.lua"
 "neovim/lua/helpers.lua" = "$XDG_CONFIG_HOME/nvim/lua/helpers.lua"
 "neovim/lua/plugins/core.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/core.lua"
