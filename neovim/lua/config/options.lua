@@ -19,3 +19,6 @@ vim.o.scrolloff = 5
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 
+if vim.g.neovide then
+    require("config.neovide")
+end
