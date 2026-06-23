@@ -262,6 +262,7 @@ depends = ["fd", "nerdfont", "ripgrep"]
 "neovim/lua/plugins/lualine.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/lualine.lua"
 "neovim/lua/plugins/onedark.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/onedark.lua"
 "neovim/lua/plugins/snacks.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/snacks.lua"
+"neovim/lua/plugins/tree-sitter.lua" = { type = "template", target = "$XDG_CONFIG_HOME/nvim/lua/plugins/tree-sitter.lua", if = "dotter.packages.tree-sitter" }
 "neovim/lua/plugins/which-key.lua" = "$XDG_CONFIG_HOME/nvim/lua/plugins/which-key.lua"
 
 [neovim.variables.neovim]
