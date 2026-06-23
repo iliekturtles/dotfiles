@@ -19,6 +19,7 @@ packages = [
 	"tig",
 	"tmux",
 	"tortoisegit",
+	"tree-sitter",
 	"vsvim",
 	"windows",
 	"windowsterminal",

@@ -37,6 +37,7 @@ packages = [
 	"systemd-networkd",
 	"tig",
 	"tmux",
+	"tree-sitter",
 	"xsv",
 ]
 
