@@ -13,39 +13,6 @@ function sshmux() {
     ssh -t $@ 'exec bash -l -c '"'"'exec tmux new -A -s ssh'"'"''
 }
 {{/if}}
-{{#if dotter.packages.neovim}}
-
-# Start or restore a neovim session.
-function nvims() {
-    if [ -f .session.vim ]; then
-        nvim -S .session.vim $@
-    else
-        nvim -c "Obsession .session.vim" $@
-    fi
-}
-{{#if dotter.packages.neovide}}
-
-# Start or restore a neovide session.
-function neovides() {
-    if [ -f .gsession.vim ]; then
-        neovide -S .gsession.vim $@ & disown
-    else
-        neovide -c "Obsession .gsession.vim" $@ & disown
-    fi
-}
-{{/if}}
-{{#if dotter.packages.neovim-qt}}
-
-# Start or restore a neovim-qt session.
-function nvim-qts() {
-    if [ -f .gsession.vim ]; then
-        nvim-qt -S .gsession.vim $@ & disown
-    else
-        nvim-qt -c "Obsession .gsession.vim" $@ & disown
-    fi
-}
-{{/if}}
-{{/if}}
 {{#if dotter.packages.xsv}}
 
 function xsvp() {

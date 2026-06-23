@@ -6,7 +6,6 @@ Plug 'ctrlpvim/ctrlp.vim', !has('g:vscode') ? {} : { 'on': [] }
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'
