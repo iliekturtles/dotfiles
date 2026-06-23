@@ -10,10 +10,8 @@ return {
     keys = {
       { "<leader>L", enabled = false },
       { "<leader>l", enabled = false },
-      -- stylua: ignore
       { "<leader>lc", function() LazyVim.news.changelog() end, desc = "LazyVim Changelog", },
       { "<leader>le", "<Cmd>LazyExtras<CR>", desc = "Lazy Extras" },
-      -- stylua: ignore
       { "<leader>lh", function() Snacks.dashboard() end, desc = "Home screen", },
       { "<leader>ll", "<Cmd>Lazy<CR>", desc = "Lazy" },
     },
@@ -40,9 +38,9 @@ return {
   { "nvim-mini/mini.ai", enabled = false },
   -- { "nvim-mini/mini.icons", enabled = false },
   { "nvim-mini/mini.pairs", enabled = false },
-  { "nvim-treesitter/nvim-treesitter", enabled = false },
-  { "nvim-treesitter/nvim-treesitter-textobjects", enabled = false },
+  { "nvim-treesitter/nvim-treesitter", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
+  { "nvim-treesitter/nvim-treesitter-textobjects", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
   { "saghen/blink.cmp", enabled = false },
   { "stevearc/conform.nvim", enabled = false },
-  { "windwp/nvim-ts-autotag", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
 }
