@@ -1,6 +1,9 @@
 [ContentDisplay]
 UseShortRelativeDates=false
 
+[DetailsMode]
+PreviewSize=16
+
 [General]
 BrowseThroughArchives=true
 EditableUrl=true
@@ -9,6 +12,9 @@ OpenNewTabAfterLastTab=true
 ShowFullPath=true
 ShowFullPathInTitlebar=true
 Version=202
+
+[IconsMode]
+PreviewSize=16
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
