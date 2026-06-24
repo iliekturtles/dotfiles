@@ -34,6 +34,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.games}}{{#if games.steam.screensaver-fix}}AddPackage --foreign steam-screensaver-fix # Fix for steam screensaving bug.{{/if}}{{/if}}
 {{#if dotter.packages.games}}{{#if games.wow.curseforge}}AddPackage --foreign curseforge # CurseForge desktop client for Linux{{/if}}{{/if}}
 {{#if dotter.packages.git}}AddPackage git # the fast distributed version control system{{/if}}
+{{#if dotter.packages.git}}AddPackage tk # A windowing toolkit for use with tcl{{/if}}
 {{#if dotter.packages.helix}}AddPackage helix # A post-modern modal text editor{{/if}}
 {{#if dotter.packages.htop}}AddPackage htop # Interactive process viewer{{/if}}
 {{#if dotter.packages.intel}}AddPackage intel-ucode # Microcode update files for Intel CPUs{{/if}}
