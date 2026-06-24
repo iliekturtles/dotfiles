@@ -85,7 +85,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.onedrive}}AddPackage --foreign onedrive-abraunegg # Free OneDrive client written in D - abraunegg's fork. Follows the releases on https://github.com/abraunegg/onedrive/releases{{/if}}
 {{#if dotter.packages.pacman}}AddPackage --foreign pacdiff-pacman-hook-git # Pacman hook to review .pacnew files automatically{{/if}}
 {{#if dotter.packages.pacman}}AddPackage pacman-contrib # Contributed scripts and tools for pacman systems{{/if}}
-{{#if dotter.packages.paru}}AddPackage --foreign paru-bin # Feature packed AUR helper{{/if}}
+{{#if dotter.packages.paru}}AddPackage --foreign paru # Feature packed AUR helper{{/if}}
 {{#if dotter.packages.ripgrep}}AddPackage ripgrep # A search tool that combines the usability of ag with the raw speed of grep{{/if}}
 {{#if dotter.packages.rust}}AddPackage bacon # A background rust code checker{{/if}}
 {{#if dotter.packages.rust}}AddPackage cargo-expand # Subcommand to show result of macro expansion{{/if}}
