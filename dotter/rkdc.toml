@@ -46,15 +46,8 @@ packages = [
 poe = { pob = true, awakened = true }
 
 [variables.kde.monitors.0]
-brightness = 0.5
-edidHash = "7e603c90a43726c174aeb3705844d2cf"
-edidIdentifier = "TMX 1 0 18 2022 0"
-height = 1600
-refreshRate = 165000
-scale = 1.5
 uuid = "a05435cb-d87b-4d07-84a7-4df846be5b69"
-vrrPolicy = "Never"
-width = 2560
+scale = 1.5
 
 [variables.linux]
 asus = true
