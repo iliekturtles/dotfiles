@@ -53,6 +53,7 @@ AddPackage unzip # For extracting and viewing files in .zip archives
 {{#if dotter.packages.kde}}AddPackage sddm # QML based X11 and Wayland display manager{{/if}}
 {{#if dotter.packages.kde}}AddPackage sddm-kcm # KDE Config Module for SDDM{{/if}}
 {{#if dotter.packages.kde}}AddPackage spectacle # KDE screenshot capture utility{{/if}}
+{{#if dotter.packages.kde}}AddPackage wl-clipboard # Command-line copy/paste utilities for Wayland{{/if}}
 {{#if dotter.packages.kde}}AddPackage xdg-desktop-portal-kde # A backend implementation for xdg-desktop-portal using Qt/KF5{{/if}}
 {{#if dotter.packages.kde}}{{#if systemd-networkd.wlan}}AddPackage plasma-nm # Plasma applet written in QML for managing network connections{{/if}}{{/if}}
 {{#if dotter.packages.keepassxc}}AddPackage keepassxc # Cross-platform community-driven port of Keepass password manager{{/if}}
