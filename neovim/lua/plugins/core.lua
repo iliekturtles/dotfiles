@@ -37,7 +37,7 @@ return {
     -- { "nvim-lualine/lualine.nvim", enabled = false },
     { "nvim-mini/mini.ai", enabled = false },
     -- { "nvim-mini/mini.icons", enabled = false },
-    { "nvim-mini/mini.pairs", enabled = false },
+    -- { "nvim-mini/mini.pairs", enabled = false },
     { "nvim-treesitter/nvim-treesitter", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
     { "nvim-treesitter/nvim-treesitter-textobjects", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
     { "saghen/blink.cmp", enabled = false },
