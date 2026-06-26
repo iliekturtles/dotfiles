@@ -27,7 +27,7 @@ return {
     { "folke/todo-comments.nvim", enabled = false },
     { "folke/tokyonight.nvim", enabled = false },
     { "folke/trouble.nvim", enabled = false },
-    { "folke/ts-comments.nvim", enabled = false },
+    -- { "folke/ts-comments.nvim", enabled = false },
     -- { "folke/which-key.nvim", enabled = false },
     -- { "lewis6991/gitsigns.nvim", enabled = false },
     { "mason-org/mason.nvim", enabled = false },
