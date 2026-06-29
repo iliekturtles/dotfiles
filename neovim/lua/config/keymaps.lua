@@ -6,6 +6,9 @@ Snacks.toggle.zoom():map("<M-z>")
 -- Remap ,, to ,'s original functionality.
 vim.keymap.set("n", "<localleader>,", ",", { desc = "Repeat reverse find", remap = false })
 
+-- Map ^ to select all.
+vim.keymap.set({ "n", "v" }, "^", "vag", { desc = "Select all", remap = true })
+
 -- Swap p and P's functionality.
 vim.keymap.set("v", "p", "P", { desc = "Replace (no yank)", remap = false })
 vim.keymap.set("v", "P", "p", { desc = "Replace (yank)", remap = false })
@@ -13,9 +16,12 @@ vim.keymap.set("v", "P", "p", { desc = "Replace (yank)", remap = false })
 -- Map c/d/s/x to operate without yanking and <localleader> to yank.
 for key, desc in pairs({
   ["c"] = "Change",
+  ["C"] = "Change till line",
   ["d"] = "Delete",
+  ["D"] = "Delete till line",
   ["s"] = "Substitute",
   ["x"] = "Delete character",
+  ["X"] = "Delete character",
 }) do
   -- stylua: ignore
   for _, f in ipairs({ function(v) return v end, string.toupper, }) do
