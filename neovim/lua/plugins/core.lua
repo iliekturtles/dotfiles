@@ -35,7 +35,7 @@ return {
     { "neovim/nvim-lspconfig", enabled = false },
     { "nvim-lua/plenary.nvim", enabled = false },
     -- { "nvim-lualine/lualine.nvim", enabled = false },
-    { "nvim-mini/mini.ai", enabled = false },
+    -- { "nvim-mini/mini.ai", enabled = false },
     -- { "nvim-mini/mini.icons", enabled = false },
     -- { "nvim-mini/mini.pairs", enabled = false },
     { "nvim-treesitter/nvim-treesitter", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },

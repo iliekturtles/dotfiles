@@ -6,6 +6,9 @@ Snacks.toggle.zoom():map("<M-z>")
 -- Remap ,, to ,'s original functionality.
 vim.keymap.set("n", "<localleader>,", ",", { desc = "Repeat reverse find", remap = false })
 
+-- Map ^ to select all.
+vim.keymap.set("n", "^", "ggVG", { desc = "Select all", remap = false })
+
 -- Swap p and P's functionality.
 vim.keymap.set("v", "p", "P", { desc = "Replace (no yank)", remap = false })
 vim.keymap.set("v", "P", "p", { desc = "Replace (yank)", remap = false })
