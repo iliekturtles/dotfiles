@@ -20,7 +20,7 @@ return {
     -- { "MunifTanjim/nui.nvim", enabled = false },
     { "akinsho/bufferline.nvim", enabled = false },
     { "catppuccin/nvim", enabled = false },
-    { "folke/flash.nvim", enabled = false },
+    -- { "folke/flash.nvim", enabled = false },
     -- { "folke/lazydev.nvim", enabled = false },
     -- { "folke/noice.nvim", enabled = false },
     -- { "folke/persistence.nvim", enabled = false },

@@ -3,9 +3,6 @@
 -- Add any additional keymaps here
 Snacks.toggle.zoom():map("<M-z>")
 
--- Remap ,, to ,'s original functionality.
-vim.keymap.set("n", "<localleader>,", ",", { desc = "Repeat reverse find", remap = false })
-
 -- Map ^ to select all.
 vim.keymap.set("n", "^", "ggVG", { desc = "Select all", remap = false })
 
