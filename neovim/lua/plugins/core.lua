@@ -41,6 +41,6 @@ return {
   { "nvim-treesitter/nvim-treesitter", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
   { "nvim-treesitter/nvim-treesitter-textobjects", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
   { "saghen/blink.cmp", enabled = false },
-  { "stevearc/conform.nvim", enabled = false },
+  -- { "stevearc/conform.nvim", enabled = false },
   { "windwp/nvim-ts-autotag", enabled = {{#if dotter.packages.tree-sitter}}true{{else}}false{{/if}} },
 }
