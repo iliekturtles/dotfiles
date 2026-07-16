@@ -30,7 +30,7 @@ return {
   -- { "folke/ts-comments.nvim", enabled = false },
   -- { "folke/which-key.nvim", enabled = false },
   -- { "lewis6991/gitsigns.nvim", enabled = false },
-  { "mason-org/mason.nvim", enabled = false },
+  -- { "mason-org/mason.nvim", enabled = false },
   { "mfussenegger/nvim-lint", enabled = false },
   { "neovim/nvim-lspconfig", enabled = false },
   { "nvim-lua/plenary.nvim", enabled = false },
