@@ -16,6 +16,10 @@
             "id": "User.paste"
         },
         {
+            "command": "togglePaneZoom",
+            "id": "User.togglePaneZoom"
+        },
+        {
             "command": 
             {
                 "action": "globalSummon",
@@ -25,8 +29,8 @@
             "id": "User.globalSummon.ECEAEB3C"
         },
         {
-            "command": "togglePaneZoom",
-            "id": "User.togglePaneZoom"
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": 
@@ -36,10 +40,6 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
         }
     ],
     "copyFormatting": "all",
@@ -53,16 +53,16 @@
             "keys": "ctrl+c"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.togglePaneZoom",
+            "keys": "ctrl+shift+z"
         },
         {
             "id": null,
             "keys": "ctrl+v"
         },
         {
-            "id": "User.togglePaneZoom",
-            "keys": "ctrl+shift+z"
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": "User.globalSummon.ECEAEB3C",
@@ -136,13 +136,13 @@
             },
             {
                 "guid": "{284123b5-0ad7-5d3a-92b4-e800f9b7e97f}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{916582e5-5dda-5b0a-aefd-e0bc6302c605}",
-                "hidden": false,
+                "hidden": true,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
@@ -157,6 +157,18 @@
                 "hidden": true,
                 "name": "Visual Studio Debug Console",
                 "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{6cda4fda-f0ef-5230-9d10-98a4eab88978}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{cd906e0e-15fd-5ecb-906d-fb197366ba6f}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 18",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
