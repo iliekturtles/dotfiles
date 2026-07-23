@@ -21,7 +21,7 @@ rustup completions fish rustup > "$XDG_CONFIG_HOME/fish/completions/rustup.fish"
 {{/if}}
 {{#if (eq dotter.os "windows")}}
 
-local PATH="$PATH:/c/Program Files/Microsoft Visual Studio/2022/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
+local PATH="$PATH:/c/Program Files/Microsoft Visual Studio/18/Professional/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin"
 
 # Visual Studio individual components
 #    CMake tools for Windows
