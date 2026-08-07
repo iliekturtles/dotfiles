@@ -54,6 +54,7 @@
 	wsErrorHighlight = all
 [fetch]
 	prune = true
+	; pruneTags = true
 	; all = true
 [filter "dotfiles"]
 	clean = "dotter/filter.sh %f"
@@ -67,6 +68,8 @@
 {{#if git.http.sslbackend}}
 	sslbackend = {{git.http.sslbackend}}
 {{/if}}
+[init]
+	defaultBranch = main
 [interactive]
 {{#if dotter.packages.delta}}
 {{#if (eq dotter.os "unix")}}
