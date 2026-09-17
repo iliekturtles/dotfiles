@@ -29,58 +29,59 @@ function remove_key() {
 }
 
 case "$1" in
-    "ckb-next/ckb-next.conf")
-        remove_section_key "Devices" ".+\\\\HwModified"
-        remove_section_key "Devices" ".+\\\\Modified"
-        ;;
-    "kde/"*)
-        remove_section "\\\$Version"
-        remove_section_key "KFileDialog Settings" "Recent (File|URL)s\\[\\\$e\\]"
-        remove_key "lastScreen"
-        ;;&
-    "kde/dolphinrc")
-        remove_section_key "General" "ViewPropsTimestamp"
-        remove_section_key "KPropertiesDialog" "[0-9]+ screens?: (Height|Width)"
-        remove_section_key "KPropertiesDialog" "eDP-1 (Height|Width) [0-9]+x[0-9]+ eDP-1"
-        ;;
-    "kde/gwenviewrc")
-        remove_section "Recent Files"
-        remove_section_key "MainWindow" "State"
-        remove_section_key "MainWindow" "[0-9]+ screens?: Window-Maximized"
-        remove_section_key "SideBar" "InformationSplitterSizes"
-        remove_section_key "SideBar" "SideBarSplitterSizes"
-        ;;
-    "kde/kdeglobals")
-        remove_section_key "DirSelect Dialog" "History Items\\[\\\$e\\]"
-        remove_section_key "DirSelect Dialog" "DirSelectDialog Size"
-        ;;
-    "kde/plasmashellrc")
-        remove_key "PreloadWeight"
-        ;;
-    "kde/systemmonitorrc")
-        remove_section_key "General" "height"
-        remove_section_key "General" "lastVisitedPage"
-        remove_section_key "General" "maximized"
-        remove_section_key "General" "width"
-        remove_section_key "TaskDialog" "headerState"
-        ;;
-    "kde/systemsettingsrc")
-        remove_section_key "MainWindow" "[0-9]+x[0-9]+ screen: (Height|Width)"
-        remove_section_key "MainWindow" "State"
-        ;;
-    "keepassxc/keepassxc.ini")
-        remove_section "KeeShare"
-        ;;
-    "neovim/lazyvim.json")
-        args+=(-e "/\"(NEWS\.md|doc\/news\.txt)\":/d")
-        ;;
-    "signal/ephemeral.json")
-        args+=(-e "/\"(maximized|width|height|x|y)\":/d")
-        ;;
-    *) # Do no transformations.
-        cat
-        exit 0
-        ;;
+"ckb-next/ckb-next.conf")
+    remove_section_key "Devices" ".+\\\\HwModified"
+    remove_section_key "Devices" ".+\\\\Modified"
+    ;;
+"kde/"*)
+    remove_section "\\\$Version"
+    remove_section_key "KFileDialog Settings" "Recent (File|URL)s\\[\\\$e\\]"
+    remove_key "lastScreen"
+    ;;&
+"kde/dolphinrc")
+    remove_section_key "General" "ViewPropsTimestamp"
+    remove_section_key "KPropertiesDialog" "[0-9]+ screens?: (Height|Width)"
+    remove_section_key "KPropertiesDialog" "eDP-1 (Height|Width) [0-9]+x[0-9]+ eDP-1"
+    ;;
+"kde/gwenviewrc")
+    remove_section "Recent Files"
+    remove_section_key "MainWindow" "State"
+    remove_section_key "MainWindow" "[0-9]+ screens?: Window-Maximized"
+    remove_section_key "SideBar" "InformationSplitterSizes"
+    remove_section_key "SideBar" "SideBarSplitterSizes"
+    ;;
+"kde/kdeglobals")
+    remove_section_key "DirSelect Dialog" "History Items\\[\\\$e\\]"
+    remove_section_key "DirSelect Dialog" "DirSelectDialog Size"
+    remove_section_key "General" "ColorSchemeHash"
+    ;;
+"kde/plasmashellrc")
+    remove_key "PreloadWeight"
+    ;;
+"kde/systemmonitorrc")
+    remove_section_key "General" "height"
+    remove_section_key "General" "lastVisitedPage"
+    remove_section_key "General" "maximized"
+    remove_section_key "General" "width"
+    remove_section_key "TaskDialog" "headerState"
+    ;;
+"kde/systemsettingsrc")
+    remove_section_key "MainWindow" "[0-9]+x[0-9]+ screen: (Height|Width)"
+    remove_section_key "MainWindow" "State"
+    ;;
+"keepassxc/keepassxc.ini")
+    remove_section "KeeShare"
+    ;;
+"neovim/lazyvim.json")
+    args+=(-e "/\"(NEWS\.md|doc\/news\.txt)\":/d")
+    ;;
+"signal/ephemeral.json")
+    args+=(-e "/\"(maximized|width|height|x|y)\":/d")
+    ;;
+*) # Do no transformations.
+    cat
+    exit 0
+    ;;
 esac
 
 sed -E "${args[@]}"
