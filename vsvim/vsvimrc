@@ -24,7 +24,8 @@ nnoremap <leader><space> :noh<cr>
 noremap Y y$
 
 " Replace and delete without yanking unless <leader> is used.
-vnoremap p "_dP
+vnoremap p P
+vnoremap P p
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
