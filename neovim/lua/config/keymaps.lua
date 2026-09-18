@@ -5,10 +5,6 @@
 -- Map M-z to toggle zoom.
 Snacks.toggle.zoom():map("<M-z>")
 
--- Use very magic searching.
-vim.keymap.set({ "n", "v" }, "/", "/\\v", { desc = "Search forward", remap = false })
-vim.keymap.set({ "n", "v" }, "?", "?\\v", { desc = "Search backward", remap = false })
-
 -- Map ^ to select all.
 vim.keymap.set({ "n", "v" }, "^", "vag", { desc = "Select all", remap = true })
 
