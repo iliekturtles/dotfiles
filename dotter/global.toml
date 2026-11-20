@@ -274,6 +274,9 @@ tool = "nvimdiff"
 [neovide]
 depends = ["neovim"]
 
+[neovide.files]
+"neovide/config.toml" = "$XDG_CONFIG_HOME/neovide/config.toml"
+
 [neovim-qt]
 depends = ["neovim"]
 

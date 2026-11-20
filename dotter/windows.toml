@@ -12,6 +12,9 @@ sslbackend = "schannel"
 "helix/languages.toml" = "$APPDATA/helix/languages.toml"
 "helix/themes/onedarkerest.toml" = "$APPDATA/helix/themes/onedarkerest.toml"
 
+[neovide.files]
+"neovide/config.toml" = "$APPDATA/neovide/config.toml"
+
 [shell.variables.ssh]
 connection-sharing = false
 
