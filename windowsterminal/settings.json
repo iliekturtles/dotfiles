@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -16,11 +16,7 @@
             "id": "User.paste"
         },
         {
-            "command": "togglePaneZoom",
-            "id": "User.togglePaneZoom"
-        },
-        {
-            "command": 
+            "command":
             {
                 "action": "globalSummon",
                 "monitor": "any",
@@ -29,40 +25,44 @@
             "id": "User.globalSummon.ECEAEB3C"
         },
         {
-            "command": "find",
-            "id": "User.find"
+            "command": "togglePaneZoom",
+            "id": "User.togglePaneZoom"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         }
     ],
     "copyFormatting": "all",
     "copyOnSelect": false,
     "defaultProfile": "{{#if dotter.packages.msys2}}{17da3cac-b318-431e-8a3e-7fcdefe6d114}{{else}}{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}{{/if}}",
-    "firstWindowPreference": "persistedWindowLayout",
-    "keybindings": 
+    "firstWindowPreference": "persistedLayoutAndContent",
+    "keybindings":
     [
         {
             "id": null,
             "keys": "ctrl+c"
         },
         {
-            "id": "User.togglePaneZoom",
-            "keys": "ctrl+shift+z"
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
         },
         {
             "id": null,
             "keys": "ctrl+v"
         },
         {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.togglePaneZoom",
+            "keys": "ctrl+shift+z"
         },
         {
             "id": "User.globalSummon.ECEAEB3C",
@@ -75,27 +75,27 @@
     ],
     "launchMode": "maximized",
     "minimizeToNotificationArea": true,
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
     "newTabPosition": "afterLastTab",
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "colorScheme": "Base16 Atelier Forest",
             "cursorShape": "filledBox",
-            "font": 
+            "font":
             {
                 "face": "Cascadia Mono NF"
             },
             "intenseTextStyle": "bold",
             "padding": "0"
         },
-        "list": 
+        "list":
         [
             {{#if dotter.packages.msys2}}
             {
@@ -172,7 +172,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#1B1918",
